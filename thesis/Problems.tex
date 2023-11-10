@@ -1,0 +1,161 @@
+\documentclass{article}
+
+\usepackage{amsfonts}
+\usepackage[all]{xy}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage[hidelinks]{hyperref}
+\usepackage{ulem}
+
+\usepackage{geometry}
+\geometry{a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+\newtheorem{defn}{Definition}[section]
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{lem}[defn]{Lemma}
+\newtheorem{thm}[defn]{Theorem}
+\newtheorem{cor}[defn]{Corollary}
+\newtheorem{rmk}[defn]{Remark}
+\newtheorem{fact}[defn]{Fact}
+\newtheorem{problem}{Problem}
+\newtheorem*{ques}{Question}
+
+\setcounter{section}{0}
+
+\title{LSP}
+\author{wyz}
+\date{}
+
+\begin{document}
+
+
+	
+\section{Introduction}
+	
+\subsection{Main theorem}
+
+\begin{thm}
+		Let $ f:(X,B)\to S,f':(X',B')\to S' $ be two $ \mathbb{Q} $-factorial log MFS  with only klt singularities and MMP-related, inducing a birational map:
+		$$ \xymatrix{
+			(X,B)\ar[d]_f\ar@{.>}[r]^\Phi&(X',B')\ar[d]^{f'}\\
+			S&S'} $$
+		Then $ \Phi  $ is composition  of links of  four types:
+\end{thm}
+\begin{ques}
+	How can we control the links? In particular, for the birational maps $ \mathbb{P}^n\dashrightarrow \mathbb{P}^n $ induced by automorphism of $ \mathbb{A}^n $, can we control the induced maps $ \mathbb{A}^n\dashrightarrow \mathbb{A}^n $?
+\end{ques}
+
+\subsection{Prelimanery}
+		Let $ f:(X,B)\to S,f':(X',B')\to S' $ be two $ \mathbb{Q} $-factorial log MFS  with only klt singularities and MMP-related, inducing a birational map:
+		$$ \xymatrix{
+			(X,B)\ar[d]_f\ar@{.>}[r]^\phi&(X',B')\ar[d]^{f'}\\
+			S&S'} $$
+		Suppose  $ B=\sum_ib_iB_i+\sum_jd_jD_j $ and $ B'=\sum_jd_j'D_j+\sum_kb_k'B_k' $, where $ B_i $ are divisors on $ X $ but not on $ X' $, $ B_k' $ are divisors on $ X' $ but not on $ X $, and $ D_j $ are divisors on both $ X $ and $ X' $. By lamma above, $ d_j=d_j' $. Take a rational number $ \epsilon=1-\delta $ such that $ 0<b_i,d_j,b_k', -\mathrm{discrep}(X,B),-\mathrm{discrep}(X',B')<\epsilon<1 $, and fix the function $ \theta:\{\nu\}\to [0,1)_\mathbb{Q} $ as following:
+		\begin{itemize}
+			\item $ \theta(B_i)=b_i, \theta(D_j)=d_j,\theta(B_k')=b_k'$;
+			\item $ \theta(E)=\epsilon $ if $ E $ is exceptional on both $ X $ and $ X' $;
+			\item $ \theta(D)=0 $ if $ D $ is a divisor on both $ X $ and $ X' $, but not a componet of $ B $ or $ B' $.
+		\end{itemize}
+		Then the collection $ \mathcal{C}_\theta $ satisfies
+		\begin{enumerate}[1)]
+			\item $ (X,B) $ and $ (X',B') $ belongs to $ \mathcal{C}_\theta $;
+			\item For any finitely many klt pairs $ \{(X_l,B_l)\} $ in $ \mathcal{C}_\theta $, there is an object $ (Z,B_Z)\in \mathcal{C}_\theta $ and projective birational morphisms $ Y\to X_l $ dominating each	$ X_l $ as a process of $ (K+B) $-MMP over $ X_l $ (thus over $ \mathrm{Spec}\,\mathbb{C} $);
+			\item Any $ (K+B) $-MMP starting from an object in $ \mathcal{C}_\theta $ stays inside $ \mathcal{C}_\theta $, and so does any $ (K+B+cH) $-MMP where $ H $ is base point free and $ c\in \mathbb{Q}_{>0} $. 
+		\end{enumerate}
+\begin{ques}
+	Assume both are out come of $ (W,B_W) $,  let $ V $ be the  log resolution of $ W $ such that $ V\to X,V\to X' $ are birational morphisms. Consider the affine space in $ \mathrm{WDIV}_\mathbb{R}(V) $ generated as  
+	$$  \Delta=\sum b_iB_i+\sum d_jD_j+\sum b_k'B_k'+\sum e_lE_l+hH_V $$
+	Consider collection of all results of $ (K_V+\Delta) $-MMP on $ V $. (Or $ (K_V+\Delta) $-non-positive contration) . Can we deconposite the map in this collection?
+\end{ques}
+	
+\section{Termination}
+
+\subsection{lemmas}
+\begin{thm}
+		Let $ d $ be a natural number and $ \delta $ be a positivity real number, then the projective varieties $ X $ such that $ (X,B) $ is a $ \delta $-lc pair of dimension $ d $ for some boundary $ B $ with $ -(K_X+B) $ big  and nef form a bounded family.
+\end{thm}
+\begin{lem}
+	[Anti-pluri.lemma2.24]:Let $ \mathcal{P} $ be  a bounded set of couples. Then there is  a natural number $ I $ depending only on $ \mathcal{P} $ satisfying the following: Assume $ X $ is projective with klt singularities and $ M\geqslant 0 $ an integral divisor on $ X $ so that $ (X,\mathrm{Supp}\, M)\in \mathcal{P} $, then $ IK_X $ and $ IM $ are cartier.
+\end{lem}
+\begin{ques}
+	What does bounded family for pairs mean? Can we find an integer $ q $ such that $ qH_i $ is cartier for all $  X_i  $?
+\end{ques}
+
+
+	
+\begin{cor}
+		nef threshold $ \mu $ is discrete.	
+\end{cor}
+	\begin{proof}
+		Notice that all pairs in $ \mathcal{C}_\theta $ are klt and $ \delta $-lc, thus form a bounded family. Take the integral $ I $ in above lemma, then $ I(K_X+B) $ is cartier. Take a rational curve $ C $ in $ \overline{NE}(X/S) $, then by (JK, cor 2.8.4)
+		$$ 0<-I(K_X+B).C\leqslant 2I\dim X $$
+		Notice that $ \mu=\frac{qIH.C}{-I(K_X+B).C}\cdot \frac{1}{q} $, where $ qIH.C $ and $ -I(K_X+B).C $ are integers, thus 
+		$$ \mu\in \frac{1}{q(2I\dim X)!}\mathbb{N}.  $$
+	\end{proof}
+
+\begin{thm}
+		Fix a positive integral $ n $, $ I\subset [0,1] $ and a subset $ J $ of positive real numbers. If $ I,J $ satisfy the DCC, then $ \mathrm{LCT}_n(I,J) $ satisfies ACC.
+\end{thm}
+
+
+
+\subsection{Terimation}
+	\begin{prop}
+		There is no infinite loop in the flow chart of the log Sarkisov program.
+\end{prop}
+\begin{proof}
+Left to show that no infinite sequence under case $ \mu_i=\mu_0, \dim S_i=\dim S_0 $, all links are of type $ I,II $.
+	
+Let
+		$$ c:=\lim_{i}\frac{1}{\lambda_i}>\frac{1}{\lambda_i}=c_i $$
+		\begin{enumerate}[Step 1]
+			\item Claim that $ (X_i,B_i+cH_i) $ and $ (Z_i,B_i+cH_i) $ are log canonical for all $ i\gg 0 $. By ACC of LCT. Done.
+			\item They are all $ (K_{Z}+B_{Z}+cH_{Z}) $- MMP. Left to show $ (K_{Z^k}+B_{Z^k}+cH_{Z^k}) $ is not relatively nef over $ S_i $:
+			\begin{ques}
+				if $ c=\frac{1}{\mu} $, then there is a $ \mathbb{Q} $-divisor $ A $ on $ S $ and $ f^*A=K_X+B+cH $, thus 
+				$$ (K_{Z^k}+B_{Z^k}+cH_{Z^k})=pull\,back\,of (A)-aE^k\equiv_S -aE^k $$
+				where $ E^k $ is strict transform of $ E $ in $ Z^k $. Why $ -aE^k $ is not relatively nef over $ S_i $?
+				
+				Middle of page 396, Introduction to Mori's program. 
+		\end{ques}
+			\item Claim that $ (X_i,B_i+cH_i) $ is klt for all $ i\gg 0 $. 
+			\begin{ques}
+				Why is  the set $\{ \theta-ct(x;X,B;H);x\in X\} $  finite? Here $ \theta $-canonical threshold means the threshold for $ a(E;X,B+cH)\geqslant-\theta(E) $ with $ center_X(E)=x $.
+				
+				End of page 397, Introduction to Mori's program. 
+				
+				May need to show that the function of canonical threshold is upper semi-continous. Or more.
+			\end{ques}
+			\item
+			\begin{ques}
+				$ (X,B+cH) $ is plt, need to show that there are only finitely many exceptional divisor $ E_i $ over $ X $ with $ a(E_i,X,B+cH)<0 $.
+				
+				End of page 397, Introduction to Mori's program. 
+			\end{ques}
+		\end{enumerate}
+	\end{proof}
+	
+	
+\section{ample model}
+\begin{ques}
+	Relations of three papers:
+	\begin{itemize}
+		\item \textit{The Sarkisov program} by HACON and McKERNAN; 
+		\item \textit{The minimal model program for varieties of log general type} by HACON; 
+		\item  \textit{Log Sarkisov program} by Bruno.
+	\end{itemize}
+\end{ques}
+
+
+\begin{ques}
+	It seems that in the proof given by HACON and McKERNAN, we don't need lemmas above. Why?
+\end{ques}
+\section{application}
+Can we do concrete computations by method from BCHM? Or using both methods?
+
+For example, compute $ Aut(\mathbb{A}^n) $. Classify all quadratic automorphisms of $ \mathbb{A}^n $?
+
+\end{document}

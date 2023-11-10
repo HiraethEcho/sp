@@ -1,0 +1,170 @@
+\documentclass[11pt]{article}
+\usepackage{url}
+\usepackage{geometry}
+\geometry{a4paper,top=3cm,bottom=3cm,left=2.5cm,right=2.5cm}
+
+\setcounter{tocdepth}{1}
+
+\usepackage{amsfonts, amssymb, amscd}
+\usepackage{mathrsfs}
+\usepackage{tikz-cd}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumerate}
+\usepackage[all]{xy}
+
+
+\newtheorem{defn}{Definition}[section]
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{lem}[defn]{Lemma}
+\newtheorem{thm}[defn]{Theorem}
+\newtheorem{cor}[defn]{Corollary}
+\newtheorem{rmk}[defn]{Remark}
+\newtheorem{claim}[defn]{Claim}
+ 
+\begin{document}
+
+\title{Response to the report of the paper  \textit{A note on the Sarkisov program} by Chen and Wang}
+
+
+
+%\date{\today}
+
+
+\maketitle
+
+%\tableofcontents
+
+\section{For the referee's report}
+
+\begin{itemize}
+\item Minor suggestions are corrected. We go through the paper and correct some typos and errors.
+
+\bigskip
+
+\item We made a lot of efforts to rewrite the INTRODUCTION at Section 1 and the beginning of Section 3, 4 and 5. We wish the revises can illustrate the motivation of each method instead of extracting of the technical proofs. To be honest, it is very challenged for us.
+
+\end{itemize}
+
+\section{For Professor Hacon's corrections}
+
+\begin{itemize}
+    \item The tex file we attached for the latest version of the paper does not contain any macros, shorthand definitions, and contains all references.
+    
+    \bigskip
+    
+    \item \begin{verbatim}
+        Lemma 2.6. (3) do we need to specify that these inequalities should
+        hold for every P on X (not just the B_i components of B) and is
+        strict for P on X exc over X'
+    \end{verbatim} 
+    
+   We only need the inequalities in Lemma 2.6 (3) for $B_i$ components of $B$, not for all exceptional divisors $P$. We give a proof (3) $\Rightarrow$ (2).
+   
+   \bigskip
+
+\textbf{Lemma 2.6}:
+  Let $ \{(X_l,B_l)\} $ be a finite set of birational $ \mathbb{Q} $-factorial klt pairs, then the following are equivalent:
+  \begin{enumerate}
+    \item They are MMP-related;
+    \item There is a log smooth pair $ (W,B_W) $, and projective birational morphisms $ f_l:W\to  X_l $ dominating each $ X_l $, such that $ f_{l*}B_W=B_l $ and
+          \[ K_W+B_W=f_l^*(K_{X_l}+B_l)+\sum_{exceptional}{a_{li}E_{li}} \]
+          with $ a_{li}>0 $ for all $ f_l $-exceptional divisors $E_{li}$;
+    \item For any two pairs $ (X,B=\sum_ib_{i }B_i),(X',B'=\sum_{j}b_{j}'B_{j}') $ in the set,  $ a(B_i;X',B')\geqslant -b_i $ with strict inequality holding if and only if $ B_i $ is exceptional over $ X' $, and $ a(B'_j;X,B)\geqslant -b'_j $ with strict inequality holding if and only if $ B'_j $ is exceptional over $ X $.
+
+  \end{enumerate}
+  
+  \bigskip
+  
+  \item 
+  \begin{verbatim}
+        The last 5 lines on page 5 and first 4 on page 6 are very hard to 
+        follow (especially what is \mathcal C and "chain condition for
+        singularities.")
+    \end{verbatim} 
+  We rewrite the beginning of Section 3. Hopefully, it is clear now.
+  
+  \bigskip
+  
+  \item \begin{verbatim}
+      we can take a common resolution (W, BW ) in C_{theta} ... does this mean
+      that (W,B_W) is a common resolution of each element of C_{\theta} ?
+  \end{verbatim}
+  It means that for any two pairs in $\mathcal{C}_\theta$, there exists a pair $(W,B_W)$ in $\mathcal{C}_{\theta}$ and it is a common log resolution for these two pairs. We clarify it in the first bullet before Section 3.1.
+  
+  \bigskip
+  
+  \item \begin{verbatim}
+      the first two bullets are hard to understand.
+  \end{verbatim}
+  We rewrite this part. 
+  
+  \bigskip
+  
+  \item \begin{verbatim}
+      Definition 3.1. (1) holds for all divisors on X? If so we need to 
+      require that on some X there are finitely many non-zero values \theta 
+      (P) where P is a prime divisor on X (or remark that if this property 
+      does not hold, then the collection is empty)
+  \end{verbatim}
+  Yes, this collection may contain pairs $(W,B_W)$ such that $B_W$ is an infinite sum. However, in the collection we construct later (in Proposition 3.3), all boundaries are finite sums. Indeed, in the construction of $\theta$ in Proposition 3.3, for any divisor $D$ on $X$ and $X'$ which is not a component of $B$ or $B'$, we have $\theta(D)=0$.
+  
+  \bigskip
+  
+  
+  \textbf{Definition 3.1}:
+   Let  $\theta:\Sigma\to [0,1)_\mathbb{Q}$ be a function. Then we can define a collection $ \mathcal{C}_\theta $ of pairs  associated to $ \theta $, consisting of klt pairs $ (X,B=\sum a_iB_i) $ satisfying
+  \begin{enumerate}
+    \item $ a_i=\theta(B_i) $;
+    \item $ a(E;X,B)>-\theta(E) $ for all $ E $ exceptional over $ X $.
+  \end{enumerate}
+  \textbf{Proposition 3.3}:
+  Let $ f:(X,B)\to S$ and $f':(X',B')\to S' $ be two MMP-related $ \mathbb{Q} $-factorial klt Mori fibre spaces, inducing a birational map $\Phi$:
+  \[ \xymatrix{
+      (X,B)\ar[d]_f\ar@{.>}[r]^\Phi&(X',B')\ar[d]^{f'}\\
+      S&S'} \]
+  Suppose  $ B=\sum_ib_iB_i+\sum_jd_jD_j $ and $ B'=\sum_jd_j'D_j+\sum_kb_k'B_k' $, where $ B_i $ are divisors on $ X $ but not on $ X' $, $ B_k' $ are divisors on $ X' $ but not on $ X $, and $ D_j $ are divisors on both $ X $ and $ X' $. By Lemma 2.6, $ d_j=d_j' $. Take a rational number $ \epsilon < 1 $ such that $ \epsilon> -\operatorname{totdiscrep}(X,B),-\operatorname{totdiscrep}(X',B') $, and take the function $ \theta:\{\nu\}\to [0,1)_\mathbb{Q} $ as follows:
+  \begin{itemize}
+    \item $ \theta(B_i)=b_i, \theta(D_j)=d_j,\theta(B_k')=b_k'$;
+    \item $ \theta(E)=\epsilon $ if $ E $ is exceptional over both $ X $ and $ X' $;
+    \item $ \theta(D)=0 $ if $ D $ is a divisor on both $ X $ and $ X' $, but not a component of $ B $ or $ B' $.
+  \end{itemize}
+  Then the collection $ \mathcal{C}_\theta $ satisfies
+  \begin{enumerate}
+    \item $ (X,B) $ and $ (X',B') $ belong to $ \mathcal{C}_\theta $;
+    \item For any finitely many klt pairs $ \{(X_l,B_l)\} $ in $ \mathcal{C}_\theta $, there is an object $ (Z,B_Z)\in \mathcal{C}_\theta $ and projective birational morphisms $ Z\to X_l $ such that each $X_l$ is the output of a  $ (K_{Z}+B_{Z}) $-MMP over $ X_l $ (and hence a step of the $(K_Z+B_Z)$-MMP over $ \mathrm{Spec}\,\mathbb{C} $);
+    \item Any $ (K+B) $-MMP starting from an object in $ \mathcal{C}_\theta $ stays inside $ \mathcal{C}_\theta $, and so does any $ (K+B+cH) $-MMP where $ H $ is base point free and $ c\in \mathbb{Q}_{>0} $.
+  \end{enumerate}
+  
+  \bigskip
+  
+  \item
+  \begin{verbatim}
+      In the defn theta-canonical threshold, is it for all such E?
+  \end{verbatim}
+  
+  Yes, it is for all such $E$. We revised it.
+  
+  \bigskip
+  
+  \item We explained the reason to introduce $\mathcal{C}_{\theta}$ collection at the beginning of Section 3. If we define $\lambda$ to be the log canonical threshold for the case of klt pairs, it leads some problems. When we extract a divisor $E$ by $(Z,B_Z)\to (X,B)$, the coefficient of $E$ in $B_Z$ is $1$. If $E$ is a component of $B'$, we expect that the coefficient of $E$ in $B_Z$ is as same as the coefficient in $B'$, which is less than $1$.  Moreover, we have to work with lc MMP. Then the boundedness of Fano varieties fails.
+ 
+ If we construct the higher model $(Z,B_Z)$ in the collection $\mathcal{C}_{\theta}$, then the coefficient of $E$ in $B_Z$ is as we expect. Moreover, pairs in $\mathcal{C}_{\theta}$ are $\delta$-lc for some $\delta>0$.
+  
+  
+  \bigskip
+  
+  \item
+  \begin{verbatim}
+      
+\S 4 l 2, 3 is it \sim or \sim _Q or \equiv ? are G, H' general? 
+
+  \end{verbatim}
+Yes, it is $\sim_\mathbb{Q}$ instead of  $\sim$, and $G,H'$ are general divisors.
+
+\bigskip
+
+ \item We revised the remaining corrections according to  Professor Hacon's suggestions.
+
+\end{itemize}
+
+\end{document}

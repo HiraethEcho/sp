@@ -1,0 +1,515 @@
+\documentclass{article}
+
+\usepackage{amsfonts}
+\usepackage[all]{xy}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage[hidelinks]{hyperref}
+\usepackage{ulem}
+
+\usepackage{geometry}
+\geometry{a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+\newtheorem{defn}{Definition}[section]
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{lem}[defn]{Lemma}
+\newtheorem{thm}[defn]{Theorem}
+\newtheorem{cor}[defn]{Corollary}
+\newtheorem{rmk}[defn]{Remark}
+\newtheorem{fact}[defn]{Fact}
+\newtheorem{problem}{Problem}
+\newtheorem*{ques}{Question}
+
+\setcounter{section}{0}
+
+\title{LSP}
+\author{wyz}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+Everything is $ \mathbb{Q} $-factorial projective normal varieties over $ \mathbb{C} $.
+\subsection{Main theorem}
+When running MMP, we may have different results.
+\begin{defn}
+A finite family of klt pairs $ \{(X_i,B_i)\} $ is MMP-related if they are results of $ (K+B) $-MMP over $ \mathrm{Spec}\,\mathbb{C} $ from a nonsingular  projective variety $ (V,B_V) $ with snc boundary.
+\end{defn}
+Start with a nonsingular projective variety $ V $ with a snc boundary $ B_V $ and assume $ (K+B) $-MMP on $ V $ over $ \mathrm{Spec}\,\mathbb{C} $ ended with two different log MFS $ f:(X,B)\to S$ and  $f':(X',B')\to S' $, inducing a birational map $ \Phi:X\dashrightarrow X' $. Our goal is to find a program decomposing $ \phi $ into following four types of links:
+
+\begin{thm}
+Let $ f:(X,B)\to S,f':(X',B')\to S' $ be two $ \mathbb{Q} $-factorial log MFS  with only klt singularities and MMP-related, then we have a birational map:
+$$ \xymatrix{
+(X,B)\ar[d]_f\ar@{.>}[r]^\Phi&(X',B')\ar[d]^{f'}\\
+S&S'} $$
+Then there is a program to decompose $ \Phi  $ into composition of  four types of links .
+$$ \xymatrix{
+&Z\ar[ld]_p\ar@{.>}[r]&X_1\ar[dd]^{f_1}\\
+X\ar[d]_f&&\\
+S &&S_1\ar[ll]}$$
+$$ \textbf{I} $$
+$$ \xymatrix{
+&Z\ar[ld]_p\ar@{.>}[r]&Z'\ar[dr]^{q}&\\
+X\ar[d]&&&X_1\ar[d]_{f_1}\\
+S\ar@{=}[rrr]&&&S_1} $$
+$$ \textbf{II} $$
+$$ \xymatrix{
+X\ar[d]_f\ar@{.>}[r]^{flips}&Z\ar[rd]^{p}&\\
+S\ar[dr]&&X_1\ar[d]^{f_1}\\
+&T&S_1\ar[l]_\sim}$$
+$$ \textbf{III} $$
+$$ \xymatrix{
+X\ar[d]_f\ar@{.>}[rr]&&X_1\ar[d]^{f_1}\\
+S\ar[dr]&&S_1\ar[dl]\\
+&T &}$$
+$$ \textbf{IV} $$
+Here, all $ f $ and $ f_1 $ are log MFS, and all $ p,q $ are divisorial contractions, and all dash arrows are composition of flips or flops. 
+\end{thm}
+
+
+\subsection{Lemmas}
+
+BAB
+
+ACC for lct
+
+Termination of MMP with scaling;
+
+Extract certain divisors, in particular, maximal crepant blow up and extremal divisorial extraction, and terminalization.
+
+Finiteness of models: Definition of (weak) log canonical model, log terminal model, minimal model, nef model and ample model; Definition of $ \mathcal{L}_A(V),\mathcal{E}_A(V),\mathcal{N}_A(V),\mathcal{A}_{A,f},\mathcal{C}_{A,f},\mathcal{W}_{A,f} $; Finiteness and partition of $ \mathcal{E}_A(V) $.
+Consider $ X\xleftarrow{p}W\xrightarrow{q}X' $, we replace $ X $ by $ X_1 $, where $ X\dashrightarrow X_1 $ is composition of blow up, blow down and flips, such that $ X_1 $ is closer to $ X' $ than $ X $.
+\subsection{Sketch of three methods}	
+
+Sarkisov's original idea: Run 2-ray games with scaling of $ H' $: termination given by BAB and ACC for lct.
+
+2-ray game with double scaling; termination given by finiteness of ample models.
+
+using partition of $ \mathcal{E}_A(V) $ for a two dimensional affine sapce $ V $ in $ \mathrm{WDiv}_\mathbb{R}(W) $: termination given by finiteness of nef models.
+
+\section{Original method}
+
+Our goal is to adjust pair $ (X,B+\frac{1}{\mu}H) $ to close to $ (X',B'+\frac{1}{\mu}H') $, which is a minimal model as results of $ (K+B+cH) $-MMP on some $ (Z,B_Z)\in \mathcal{C}_\theta $. If $ \lambda \leqslant \mu $ and $ (K_X+B+\frac{1}{\mu} H) $  nef, then we are done by NFI criterion; If $ \lambda \leqslant \mu $ and $ (K_X+B+\frac{1}{\mu} H) $  not nef. This shows $ (K_X+B+\frac{1}{\mu} H) $ is $ \theta $-canonical, then we control $ \mu $ by  finding an extremal face $ F $ and a contraction $ g=cont_F:X\to T $
+$$ \xymatrix{
+X\ar[d]_f\ar[ddr]^g&\\
+S\ar[dr]&\\
+&T }$$
+and  running $ (K_X+B+\frac{1}{\mu} H) $-MMP on $ X $ over $ T $ (which is  a two ray game) to obtain $ (X_1,S_1) $; If $ \mu <\lambda $: This shows $ (K_X+B+\frac{1}{\mu} H) $ is not  $ \theta $-canonicalthen we control the singularity by taking an extremal divisorial blow up $ p:Z:\to X $ 
+$$ \xymatrix{
+&Z\ar[ld]_p\ar[ldd]^g\\
+X\ar[d]_f&\\
+S} $$
+and running $ K_Z+B_Z+\frac{1}{\lambda}H_Z $ on Z over $ S $. For each case the sarkisov degree goes down and the program terminates.
+\subsection{prepare}
+
+Suppose $ \Phi $ is defined on $ U\subset X $, then $ \mathrm{codim}\,(X-U,X)\geqslant 2 $ since $ X $ is normal. If we fix a very ample divisor $ A'  $ on $ S' $ and a sufficiently large and divisible integer $ \mu $ such that 
+$$ \mathcal{H}'=|-\mu' (K_{X'}+B') +f'^*A'| $$
+is a very ample complete linear system on $ X' $ over $ \mathrm{Spec}\,\mathbb{C} $,  inducing an embedding into $ \mathbb{P}^N $ for some $ N $. Pull back $ (\Phi|_U)^*\mathcal{H}' $ of linear system is base point free on $ U $, and can be extended  to a movable linear system on $ X $, which coincides with strict transform $ \mathcal{H}:=\Phi^{-1}_*\mathcal{H}' $ , and induces a rational map $ X\dashrightarrow \mathbb{P}^N $. Let $ (V,B_V) $ be a common log resolution of $ X $ and $ X' $ in $ \mathcal{C}_\theta $ with projective birational morphism $ \sigma:V\to X$,   $\sigma':V\to X' $ and $\sigma_*B_V=B, \sigma'_*B_V=B' $, denote
+$$ \mathcal{H}_V:=\sigma'^*\mathcal{H}' $$
+and then 
+$$ \mathcal{H}=\Phi^{-1}_*\mathcal{H}'=\sigma_*\sigma'^*\mathcal{H}' $$
+Furthermore, if $ \mathcal{H} $ is not base point free, then
+$$ \sigma^*\mathcal{H}=\mathcal{H}_V+F $$
+has a fixed part $ F\geqslant0 $, and $ \sigma(\mathrm{Supp}\,F)\subset X-U $. 
+
+Take a general member $ H' $ of the linear system $ \mathcal{H}' $ such that $ H_V:=\sigma^*H'=\sigma^{-1}_*H'=g^{-1}_*H\in \mathcal{H}_V $, where $ H:=\Phi^{-1}_*H' $. Since $ \rho(X/S)=1 $ (($\rho( X'/S')=1 $), any effective divisor on $ X $ ($ X' $) is $ f $($ f' $)-ample, including $ H $($ H' $). 
+By the choice of $ H' $,  $ K_{X'}+B'+\frac{1}{\mu}'H'=\frac{1}{\mu}'f'^*A' $ is nef and $ (X',B'+\frac{1}{\mu}'H') $ is a minimal model. Now consider the pairs $ (V,B_V+\frac{1}{\mu'}H_V) $ and $ (X,B+\frac{1}{\mu} H) $ where $ \frac{1}{\mu} $ is nef threshold of $ H $ w.r.t $ K_X+B $, the idea is running $ (K+B+cH) $-MMP on something like $ X $ or $ V $, and ended with a minimal model isomorphic to $ (X',B'+\frac{1}{\mu}'H') $.
+
+
+Fixing a category $ \mathcal{C}_\theta $. After running certain MMP, there is  a MFS $ (X_1,B_1)\to S_1$ birational to $ X $ and $ X' $, thus there is a birational map $ \Phi_1:X_1\dashrightarrow X' $. To show $ (X_1,B_1)\to S_1 $ is closer to $ (X',B') $ w.r.t. $ \mathcal{H}' $ in category $ \mathcal{C}_\theta $, we shall define the Sarkisov degree:
+\begin{defn}\label{def}
+Sarkisov degree of $ (X,B) $ w.r.t. $ \mathcal{H} $ in $ \mathcal{C}_\theta $ is a triple $ (\mu,\lambda,e) $ ordered lexocographically:
+\begin{itemize}
+\item Let $ C\subset X  $ be a curve contracted by $ f $, then 
+$$ \mu:=-\frac{\mathcal{H}.C}{(K_X+B).C} $$
+i.e. $ K_X+B+\frac{1}{\mu} H \equiv_S0$ and $ f^*A=K_X+B+\frac{1}{\mu} H $ for some $ \mathbb{Q} $-divisor on $ S $;
+\item Take a common log resolution  $ (V,B_V)\in \mathcal{C}_\theta $ with $ B_V=\sum \theta(E)E $ and projective birational morphisms $ \sigma:V\to X $, $ \sigma':V\to X' $. Take a general member $ H'\in \mathcal{H}' $ such that $ H_V:=\sigma'^{-1}_*H'=g^{-1}_*H $. Suppose $ \sigma^*H=H_V+\sum f_lF_l $ with $ \sum f_lF_l $ effective and $ \sigma $-exceptional (by negativity lemma), then we have ramification formulas
+$$ K_V+B_V=\sigma^*(K_X+B+cH)+\sum a_lE_l  $$
+$$ K_V+B_V+cH_V=\sigma^*(K_X+B+cH)+\sum(a_l-cf_l)E_l $$
+where $ \sum a_lE_l $ is effective and supported on $ \mathrm{Exc}\,\sigma $.   Let
+$$ \frac{1}{\lambda}:=\max\{ \frac{f_l}{a_l}\} $$
+This is independent on the choice of log resolution. In fact $ \frac{1}{\lambda} $ is called $ \theta $-canonical threshold w.r.t. $ (X,B;H) $, i.e.
+$$ \frac{1}{\lambda}:=\max\{c:a(E;X,B+cH)\geqslant-\theta(E) ,E\text{exceptionl over }X \}$$ 
+If $ \mathcal{H} $ is base point free, then $ F=0 $ and $ E-cF\geqslant 0  $ always holds, in which case $ \lambda=0 $ by definition;
+\item $ e=0 $ if $ \mathcal{H} $ is base point free (and hence $ \lambda=0 $), otherwise 
+$$ e=\#\{E_i; E_i \sigma\text{-exceptional and } a(E;X,B+\frac{1}{\lambda} H)=-\theta(E) \} $$
+or equivalently in the formular 
+$$ K_V+B_V+\frac{1}{\lambda} H_V=\sigma^*(K_X+B+\frac{1}{\lambda} H)+E-\frac{1}{\lambda} F $$
+$ e $ is the number of components in $ E-\frac{1}{\lambda} F $ with coefficient $ 0 $. These components are called $ (K_X+B+\frac{1}{\lambda} H) $-crepent. 
+\end{itemize}
+\end{defn}
+
+\subsection{Flow chart}
+
+\textbf{Start:}
+\begin{enumerate}[step 1]
+\item If $ \lambda\leqslant\mu $:
+
+By definition \ref{def}, we have 
+
+If $ K_X+B+\frac{1}{\mu}H $ is nef, then by NFI, $ \Phi $ is an isomorphism and leads to \textbf{END};
+
+$ \mathbb{R},\mathcal{R} $
+\textbf{NFI}
+\item If $ K_X+B+\frac{1}{\mu}H $ is not nef, suppose $ f $ is the contraction w.r.t.  a $ (K_X+B) $-negative extremal ray $ R\subset \overline{NE}(X/S) $, then $ (K_X+B+\frac{1}{\mu}H).R=0 $ by definition of $ \mu $.  Take an extremal ray $ P\in \overline{NE}(X) $ such that $ (K_X+B+\frac{1}{\mu}H).P<0 $ and $ F:=P+R $ is an extremal face.
+
+\begin{rmk}
+[Corti, Factoring birational maps of 3-fold after Sarkisov]
+
+Surjective map $ f_*:N_1(X)\to N_1(S) $ can be identified with $ \pi: N_1(X)\to N_1(X)/\pm R $ and $ \pi(\overline{NE}(X))=\overline{NE}(S) $. Since $ (K_X+B+\frac{1}{\mu}H) $ is trivial on $ R $ and not nef, it is pull back $ f^*A $ of a non nef divisor $ A $ on $ S $. By the cone theorem of $ (B+\frac{1}{\mu}H) $, $ \overline{NE}(X)_{A<0} $ is a locally finitely generated polyhedral, thus there is an  $ A $-negative extremal ray $ \hat P=D^\perp\cap \overline{NE}(S) $ where $ D $ is a nef divisor on $ S $. Now consider the extremal face $ F $ w.r.t $ f^*D $ ($ F=\pi^{-1}(\pm \hat P)\cap \overline{NE}(X) $), clearly $ F=R+P $ where $ P $ is the lift ray of $ \hat P $. Furthermore, $ (K_X+B+\frac{1}{\mu}H).P=A.\hat P<0 $.
+\end{rmk}
+Take  $ 0<t\ll 1 $ such that $ (K_X+B+(\frac{1}{\mu}-t)H).P<0 $, then $  (K_X+B+(\frac{1}{\mu}-t)H).R<0 $ and $ F $ is a $  (K_X+B+(\frac{1}{\mu}-t)H) $-negative extremal face. Since $ (X,B+(\frac{1}{\mu}-t)H) $ is klt, there is  a contraction $ g:X\to T $ w.r.t. to $ F $ factorizing through $ f:X\to S $: 
+$$ \xymatrix{
+X\ar[d]_f\ar[ddr]^g&\\
+S\ar[dr]&\\
+&T }$$
+$ (X,B+\frac{1}{\mu}H) $ is klt, and $ \rho(X/T)=2 $, thus we can  run $ (K_X+B+\frac{1}{\mu}H) $-MMP on $ X $ over $ T $ as a 2-ray game: Identify $ \overline{NE}(X/T) $ with $ F=R+P $, since $ (K_X+B+\frac{1}{\mu}H).P<0 $, there is a contraction w.r.t. $ P $ over $ T $. If the contraction is a flip
+$$ \xymatrix{
+X\ar[ddr]_g\ar@{.>}[rr]\ar[rd]^h&&X^+\ar[ddl]^{g^+}\ar[ld]_{h^+}\\
+&Y\ar[d]&\\
+&T&} $$ 
+then $ (K_{X^+}+B^++\frac{1}{\mu}H^+) $ is $ g^+ $-ample, and $ \rho(X^+/T)=2 $, and isomrophic in codimension 1. $ (X^+,B^++\frac{1}{\mu}H^+)/T $ is a minimal model, or there is a negative extremal ray and MMP goes on. The sequence of flips is finite, and the first non-flip contraction is either a divisorial contraction or a fibering contraction.
+
+This MMP terminates with one of following results: 
+\begin{enumerate}[1)]
+\item If after finitely many flips $ X\dashrightarrow Z $, first non-flip contraction is a divisorial contraction $ p:Z\to X_1\xrightarrow{g_1}T $, and the MMP ended with a MFS.  Since $ \rho(X_1/T)=1 $, there is no further flips or divisorial contraction, thus must be followed by a fibering contraction $ f_1:X_1\to Y $ with $ Y\xrightarrow{\sim}S $.
+$$ \xymatrix{
+X\ar[d]_f\ar[ddr]^g\ar@{.>}[r]^{flips}&Z\ar[rd]^{p}&\\
+S\ar[dr]&&X_1\ar[d]^{f_1}\ar[ld]_{g_1}\\
+&T&Y\ar[l]_\sim}$$
+Furthermore, we can take $ H' $ general enough (avoid the divisor contracted by $ p $) such that $ H_1 $ is strict transform of $ H $ and $ H' $. Since $ \rho(X_1/Y)=1 $ and $ H_1 $ is effective, $ H_1 $ is $ f_1 $-ample, thus $ (K_{X_1}+B_1) $ is $ f_1 $-negative and $ (X_1,B_1)/Y $ is a log MFS.  Take $ S_1=Y $.
+$$ \xymatrix{
+X\ar[d]_f\ar@{.>}[r]^{flips}&Z\ar[rd]^{p}&\\
+S\ar[dr]&&X_1\ar[d]^{f_1}\\
+&T&S_1\ar[l]_\sim}$$
+This is a link of type III. 	
+\item If after finitely many flips $ X\dashrightarrow X_1 $, first non-flip contraction is a fibering contraction $ f_1:X_1\to Y  $
+$$ \xymatrix{
+X\ar[d]_f\ar[ddr]^g\ar@{.>}[rr]^{\psi_1}&&X_1\ar[d]^{f_1}\ar[ddl]_{g_1}\\
+S\ar[dr]&&Y\ar[dl]\\
+&T &}$$
+Same as above, $ (X_1,B_1)/Y $ is a log MFS. Take $ S_1=Y $
+$$ \xymatrix{
+X\ar[d]_f\ar@{.>}[rr]^{\psi_1}&&X_1\ar[d]^{f_1}\\
+S\ar[dr]&&S_1\ar[dl]\\
+&T &}$$
+this is a link of type IV. 
+\item If after finitely many flips $ X\dashrightarrow Z $, first non-flip contraction is a divisorial contraction $ p:Z\to X_1\xrightarrow{g_1}T $ with 
+$$ K_Z+B_Z+\frac{1}{\mu}H_Z=p^*(K_{X_1}+B_1+\frac{1}{\mu}H_1)+eE $$
+where $ e>0 $ and the MMP ended with a log minimal model. Since  $ \rho(X_1/T)=1 $, $ (X_1,B_1+\frac{1}{\mu}H_1) $ must be the log minimal model.
+$$ \xymatrix{
+X\ar[d]_f\ar[ddr]^g\ar@{.>}[r]^{flips}&Z\ar[rd]^{p}&\\
+S\ar[dr]&&X_1\ar[dl]_{g_1}\\
+&T&}$$
+Claim that the only ray of $ \overline{NE}(X_1/T) $ is $ (K_{X_1}+B_1+\frac{1}{\mu}H_1) $-trivial. Indeed, take a curve $ C\subset X_1 $ contracted by $ g_1 $ away from indeterminacy of $ X_1\dashrightarrow X $ ( union of image of exceptional divisor of $ p $ and all flipped curves) and not contained in the base locus of $ \mathcal{H}_1 $, then $ C $ can be considered also to lie on $ X $ and contracted by $ g $ and $ H_1.C\geqslant 0 $.  The union of  indeterminacy locus and base locus of $ \mathcal{H}_1 $ is a closed subset of $ X_1 $, thus suppose there is an open subset $ U_1 $ of $ X_1 $ avoiding that closed subset, and  isomorphic to an open subset $ U $ of $ X $. Then  thus $ [C]\in F $ and
+\begin{equation*}
+\begin{aligned}
+0\geqslant& (K_X+B+\frac{1}{\mu}H).C\\
+=&(K_Z+B_Z+\frac{1}{\mu}H_Z).C\\
+=&(K_Z+B_Z+\frac{1}{\mu}H_Z-eE).C\\
+=&(K_{X_1}+B_1+\frac{1}{\mu}H_1).C\geqslant 0\\
+\end{aligned}
+\end{equation*}
+Therefore $ (K_{X_1}+B_1+\frac{1}{\mu}H_1).C=0 $. Furthermore, $ H_1 $ is effective, thus is $ g_1 $-ample, and hence $ (K_{X_1}+B_1) $ is $ g_1 $-negative, and $ (X_1,B_1)/T $ is a log MFS. Take $ S_1=T $
+$$ \xymatrix{
+X\ar[d]_f\ar@{.>}[r]&Z\ar[rd]^{p}&\\
+S\ar[dr]&&X_1\ar[d]^{f_1}\\
+&T&S_1\ar@{=}[l]}$$
+This is a link of type III. Since $ (K_{X_1}+B_1+\frac{1}{\mu}H_1) $ is trivial on the ray $ R=\overline{NE}(X_1/S_1) $, we  have 
+$$ \mu=\mu_1 $$
+Notice that $ (X_1,B_1+\frac{1}{\mu}H_1) $ stays $ \theta $-canonical, we have
+$$ \lambda_1\leqslant \mu=\mu_1 $$
+Furthermore, $ \rho(X_1)=\rho(X)-1 $.
+\item If after finitely many flips $ X\dashrightarrow X_1 $, MMP ends with log minimal model $ (X_1,B_1+\frac{1}{\mu}H_1)/T $
+$$ \xymatrix{
+X\ar[d]_f\ar[ddr]^g\ar@{.>}[rr]^{flips}&&X_1\ar[ddl]_{g_1}\\
+S\ar[dr]&&\\
+&T &}$$
+Claim that there is a ray of $ \overline{NE}(X_1/T) $ is $ (K_{X_1}+B_1+\frac{1}{\mu}H_1) $-trivial and $ (K_{X_1}+B_1) $-negative. Indeed, take a curve $ C\subset X_1 $ contracted by $ g_1 $ away from indeterminacy of $ X_1\dashrightarrow X $ ( union of all flipped curves) and not contained in the base locus of $ \mathcal{H}_1 $, then $ C $ can be considered also to lie on $ X $ and contracted by $ g $ and $ H_1.C\geqslant 0 $, thus $ [C]\in F $ and
+\begin{equation*}
+\begin{aligned}
+0\geqslant& (K_X+B+\frac{1}{\mu}H).C\\
+=&(K_{X_1}+B_1+\frac{1}{\mu}H_1).C\geqslant 0\\
+0> &(K_X+B+(\frac{1}{\mu}-t)H).C\\
+=&(K_{X_1}+B_1+(\frac{1}{\mu}-t)H_1).C\geqslant (K_{X_1}+B_1).C
+\end{aligned}
+\end{equation*}
+Take a contraction $ f_1:X_1\to S_1 $ w.r.t. $ (K_{X_1}+B_1) $-negative ray $ R=\mathbb{R}_{\geqslant 0}[C] $
+$$ \xymatrix{
+X\ar[d]_f\ar@{.>}[rr]&&X_1\ar[d]^{f_1}\\
+S\ar[dr]&&S_1\ar[dl]\\
+&T &}$$
+This is a link of type IV. Since $ (K_{X_1}+B_1+\frac{1}{\mu}H_1) $ is trivial on the ray $ R=\overline{NE}(X_1/S_1) $, we  have 
+$$ \mu=\mu_1 $$
+Notice that $ (X_1,B_1+\frac{1}{\mu}H_1) $ stays $ \theta $-canonical, we have
+$$ \lambda_1\leqslant \mu=\mu_1 $$
+\end{enumerate}
+\item If $ \lambda>\mu $, then $ (X,B+\frac{1}{\mu}H) $ is not $ \theta $-canonical. Take a extremal blow up $ p:(Z,B_Z,H_Z)\to (X,B,H) $ in $ \mathcal{C}_\theta $ w.r.t. $ K_X+B+\frac{1}{\lambda}H $, i.e. $ (Z,B_Z) $ is $ \theta $-terminal and $ p^*(K_X+B+\frac{1}{\lambda}H)=K_Z+B_Z+\frac{1}{\lambda}H_Z $ where $ B_Z=\sum\theta(E_\nu)E_\nu $ and $ E=\mathrm{Exc}\,p $ is a prime divisor on $ Z $.  Let $ H_Z=p^{-1}_*H $ a strict transform of a general member $ H' $ of $ \mathcal{H}' $: 
+$$ \xymatrix{
+&Z\ar[ld]_p\ar[ldd]\\
+X\ar[d]&\\
+S} $$
+Run $ (K_Z+B_Z+\frac{1}{\lambda}H_Z) $-MMP on $ Z $ over $ S $, then it always ends with a MFS. Otherwise, there are two cases:
+\begin{enumerate}[a)]
+\item After finitely many flips $ Z\dashrightarrow Z' $, first non flip contraction is a divisorial contraction $ q:Z'\to X_1 $. Since $ \rho(X_1/S)=1 $, $ (X_1,B_1+\frac{1}{\lambda}H_1) $ must be the ending log minimal model.
+$$ \xymatrix{
+&Z\ar[ld]_p\ar[rdd]^{g}\ar@{.>}[rr]^{flips}&&Z'\ar[dr]^{q}&\\
+X\ar[drr]\ar@{.>}[rrrr]^{\psi_1}&&&&X_1\ar[dll]^{g_1}\\
+&&S&&} $$
+Let $ E_q=\mathrm{Exc}\,q $, then 
+$$ K_{Z'}+B_{Z'}+\frac{1}{\lambda}H_{Z'}=q^*(K_{X_1}+B_1+\frac{1}{\lambda}H_1)+aE_q $$
+Take a curve $ C_X\subset X $ contracted by $ f $ and away from $ p(E) $ (thus can be considered to be a curve $ C_Z $ on $ Z $) and flipped curves (thus can be considered to be a curve $ C_{Z'} $ on $ Z' $) and $ E_q $ (thus $ E_q.C_Z\geqslant 0 $ ), then
+\begin{equation*}
+\begin{aligned}
+0\leqslant& (K_{X_1}+B_1+\frac{1}{\lambda}H_1).q_*C_{Z'} \text{ (it is minimal model)}\\
+=&(K_{Z'}+B_{Z'}+\frac{1}{\lambda}H_1-aE_q).C_{Z'}\\
+=&(K_{Z}+B_{Z}+\frac{1}{\lambda}H_1-aE_q).C_{Z}\\
+\leqslant &(K_{Z}+B_{Z}+\frac{1}{\lambda}H_1).C_{Z}\\
+=&(K_X+B+\frac{1}{\lambda}H).C_X\\
+<&(K_{X}+B+\frac{1}{\mu}H).C_X  \,(\frac{1}{\lambda}<\frac{1}{\mu})\\
+=&0
+\end{aligned}
+\end{equation*} 
+Contraction!
+\item If after finitely many flips $ Z\dashrightarrow X_1 $,  $ (X_1,B_1+\frac{1}{\lambda}H_1) $ is the ending log minimal model.
+$$ \xymatrix{
+&Z\ar[ld]_p\ar[ldd]\ar@{.>}[r]^{flips}&X_1\ar[lldd]^{g_1}\\
+X\ar[d]_f&&\\
+S &&}$$
+Take a curve $ C_X\subset X $ contracted by $ f $ and away from $ p(E) $ (thus can be considered to be a curve $ C_Z $ on $ Z $) and flipped curves (thus can be considered to be a curve $ C_{1} $ on $X_1$). Then
+\begin{equation*}
+\begin{aligned}
+0\leqslant& (K_{X_1}+B_1+\frac{1}{\lambda}H_1).C_1 \text{ (it is minimal model)}\\
+=&(K_{Z}+B_{Z}+\frac{1}{\lambda}H_1).C_{Z}\\
+= &(K_X+B+\frac{1}{\lambda}H).C_X\\
+<&(K_{X}+B+\frac{1}{\mu}H).C_X  \,(\frac{1}{\lambda}<\frac{1}{\mu})\\
+=&0
+\end{aligned}
+\end{equation*} 
+Again  a contradiction!
+\end{enumerate}  
+Thus WMA the MMP ends with a MFS:
+\begin{enumerate}[1)]
+\item After finitely many flips $ Z\dashrightarrow Z' $, first non flip contraction is a divisorial contraction $ q:Z'\to X_1 $. Since $ \rho(X_1/S)=1 $, there is no further flips or divisorial contraction, thus must be followed by a fibering contraction $ f_1:X_1\to Y $ with $ Y\xrightarrow{\sim}S $.
+$$ \xymatrix{
+&Z\ar[lddd]^g\ar[ld]_p\ar@{.>}[r]&Z'\ar[dr]^{q}\ar[llddd]^{g'}&\\
+X\ar[dd]&&&X_1\ar[dd]_{f_1}\ar[ddlll]^{g_1}\\
+&&&\\
+S&&&Y\ar[lll]_{\sim}} $$
+Since $ (K_{X_1}+B_1+\frac{1}{\lambda}H_1) $ is $ f_1 $-negative, and $ H_1 $ is $ f_1 $- ample, $ (K_{X_1}+B_1) $ is $ f_1 $-negative, and $ (X_1,B_1)/Y $ is a log MFS.  Take $ S_1=Y $.
+
+$$ \xymatrix{
+&Z\ar[ld]_p\ar@{.>}[r]&Z'\ar[dr]^{q}&\\
+X\ar[d]\ar@{.>}[rrr]^{\psi_1}&&&X_1\ar[d]_{f_1}\\
+S\ar@{=}[rrr]&&&S_1} $$
+This is a link of type II.
+\item If after finitely many flips $ Z\dashrightarrow X_1 $, first non-flip contraction is a fibering contraction $ f_1:X_1\to Y  $ 
+$$ \xymatrix{
+&Z\ar[ld]_p\ar[ldd]\ar@{.>}[r]^{flips}&X_1\ar[lldd]^{g_1}\ar[dd]^{f_1}\\
+X\ar[d]_f&&\\
+S &&Y\ar[ll]}$$
+Since $ (K_{X_1}+B_1+\frac{1}{\lambda}H_1) $ is $ f_1 $-negative, and $ H_1 $ is $ f_1 $- ample, $ (K_{X_1}+B_1) $ is $ f_1 $-negative, and $ (X_1,B_1)/Y $ is a log MFS.  Take $ S_1=Y $.
+$$ \xymatrix{
+&Z\ar[ld]_p\ar@{.>}[r]&X_1\ar[dd]^{f_1}\\
+X\ar[d]_f&&\\
+S &&S_1\ar[ll]}$$
+This is a link of type I.
+\end{enumerate} 
+\end{enumerate}
+
+
+\textbf{Track Sarkisov degree}
+
+\begin{enumerate}[(A)]
+\item 
+\begin{enumerate}[1)]
+\item For case (A)-1),2),  since $ K_{X_1}+B_1+\frac{1}{\mu}H_1 $ is $ f_1 $-negative, we have 
+$$ \mu_1<\mu $$
+\item For case (A)-3),4), Since $ (K_{X_1}+B_1+\frac{1}{\mu}H_1) $ is trivial on the ray $ R=\overline{NE}(X_1/S_1) $ for both case, we have
+$$ \mu_1=\mu $$
+Notice that $ (X_1,B_1+\frac{1}{\mu}H_1) $ stays $ \theta $-canonical, we have
+$$ \lambda_1\leqslant \mu=\mu_1 $$
+Thus this go back to case (A). Furthermore,   for case (A)-3) we have
+$$ \rho(X_1)=\rho(X)-1 $$
+and for case (A)-4), the birational map
+$$ X\dashrightarrow X_1 $$
+is composition of finitely many flips.
+\end{enumerate}	
+\item For case (B): 
+\begin{enumerate}[1)]
+\item For both case B-1),2), claim that 
+$$ \mu_1\leqslant \mu $$
+with equality holds iff 
+\begin{equation*}
+\begin{aligned}
+\text{either } &\dim S_i<\dim S_{i+1} \\
+\text{or }&\dim S_i=\dim S_{i+1} \text{ and the link is square} 
+\end{aligned}
+\end{equation*} 
+Indeed, since $ \lambda>\mu $, we have a ramification fomular
+$$ K_Z+B_Z+\frac{1}{\mu}H_Z=p^*(K_X+B+\frac{1}{\mu}H)+bE, b>0 $$
+Take a curve $ C_1\subset X_1 $ contracted by $ f_1 $ away from locus of indeterminacy of the birational map $ X_1\dashrightarrow Z $, then $ C_1 $ is also a curve lies on $ Z $, then
+\begin{equation*}
+\begin{aligned}
+0=& (K_{X}+B+\frac{1}{\lambda}H).p_*C \text{ (by definition of )} \mu\\
+=&(K_{Z}+B_{Z}+\frac{1}{\lambda}H_Z+bE).C_{Z}\\
+\geqslant&(K_Z+B_Z+\frac{1}{\lambda}H_Z).C_Z\\
+=&(K_{X_1}+B_1+\frac{1}{\mu}H_1).C_1
+\end{aligned}
+\end{equation*} 
+which implies 
+$$ \mu_1\leqslant \mu $$
+If $ \mu_1=\mu $, then $ E.C_Z=0 $, thus $ E $ is numerically trivial on $ S $ and $ S_1 $, therefore it  does not dominate $ S $ or $ S_1 $. If furthermore $ \dim S_1=\dim S $, then in fact $  S_1\to S  $ is a birational map, since both are normal in the field $ K(X)=K(Z)=K(X_1) $, and thus is square.
+\item Claim that 
+$$ \lambda_1\leqslant \lambda $$
+and if $ \lambda_1=\lambda $, then 
+$$ e_1<e $$
+Indeed, since $ (X_1,B_1+\frac{1}{\lambda_1}H_1) $ is obtained by MMP from a $ \theta $-canoical pair $ (Z,B_Z+\frac{1}{\lambda}H_Z) $, thus is also $ \theta $-canonical, and hence $ \lambda_1\leqslant \lambda $. Moreover, if $ \lambda_1=\lambda $, for the case (B)-1), 
+$$ K_{Z'}+B_{Z'}+\frac{1}{\lambda}H_{Z'}=q^*(K_{X_1}+B_1+\frac{1}{\lambda}H_1)+aE_q\, (a>0) $$
+thus $ E_q $ is not a $ (K_{X_1}+B_1+\frac{1}{\lambda}H_1) $-crepant divisor, therefore $ e_1\leqslant e-1<e $; for the case (B)-2), $ E $ is not an exceptional divisor on $ X_1 $, thus the same holds.
+\end{enumerate} 
+\end{enumerate}
+
+\subsection{Termination}
+Discreteness of $ \mu $By boundedness of Fano varieties;
+
+ACC of lct
+
+\begin{prop}
+There is no infinite loop in the flow chart of the log Sarkisov program.
+\end{prop}
+\begin{proof}
+Otherwise, if there is an infinite loop, i.e. there are infinitely many $ X_i $ and birational maps obtained from the program:
+$$ X=X_0\dashrightarrow X_1\dashrightarrow \cdots\dashrightarrow X_i \dashrightarrow\cdots\dashrightarrow X'$$
+Since $ \mu'\leqslant\mu_{i+1}\leqslant \mu_i $, and as is shown in (Discreteness) that $ \{\mu_i\} $ is discreteness, there is an integer $ N $ such that $ \mu_i=\mu_N $ for all $ i>N $. In fact, WMA $ N=0 $ and $ \mu_i=\mu_0=\mu $ for all $ i $. 
+
+Notice that for case (A)-1),2), we have $ \mu_{i+1}<\mu_i $, thus there is no such links in the infinite sequence. If there is a link as case (A)-3) or 4), then $ \mu_{i+1}=\mu_i=\mu  $ and $ \lambda_{i+1}\leqslant \mu $, thus next link must be case (A)-3) or 4) again, and all links following must be case (A)-3) or 4). For case (A)-3) we have $ \rho(X_{i+1})=\rho(X_i)-1 $, therefore there are only finitely many such links, and all links after are  case (A)-4). However, such links are $ (K+B+\frac{1}{\mu}H) $-flips and such flips terminates. Therefore there are no links of case (A)-3),4), and i.e. all links are of case (B).
+
+For case (B), recall that $ \mu_{i+1}=\mu_i $ implies that 
+\begin{equation*}
+\begin{aligned}
+\text{either } &\dim S_i<\dim S_{i+1} \\
+\text{or }&\dim S_i=\dim S_{i+1} \text{ and the link is square} 
+\end{aligned}
+\end{equation*} 
+and notice that $ \dim S_i< \dim X $, hence WMA $ \dim S_i=\dim S_0 $ (Note that $ \dim S_0 \neq 0$, otherwise all $ X_i $ are isomorphic, which is absurd). We are left to show that there is no infinite sequence with stationary $ \mu_i $ and $ \dim S_i $:
+
+Since for case (B), $ \lambda_{i+1}\leqslant \lambda_i $ and $ \lambda_{i+1}=\lambda_i $ implies $ e_{i+1}<e_i $, furthermore $ \frac{1}{\lambda_i}\leqslant \frac{1}{\mu_0} $ , we hae
+$$ c:=\lim_{i}\frac{1}{\lambda_i}>\frac{1}{\lambda_i}=c_i $$
+We prove it in servel steps:
+\begin{enumerate}[Step 1]
+\item Claim that $ (X_i,B_i+cH_i) $ and $ (Z_i,B_i+cH_i) $ are log canonical for all $ i\gg 0 $. Otherwise, let
+$$ \alpha_i=\mathrm{lct}(X_i,B_i;H_i) $$
+then there are infinitely many $ i $ such that $ c>\alpha_i $. By definition of $ \lambda_i $, we have $ \alpha_i>c_i $. Notice that $ c_i $ accumulates from below to $ c $ and never equals, there are infinitely many $ \alpha_i $, which contradicts to acc conditation of lct. The same argument applies to $ (Z_i,B_i+cH_i) $. Therefore, WMA all pairs are log canonical.
+\item For each link there are flips
+$$ \xymatrix{
+&Z_i=Z_i^0\ar[ld]_{p^0_i}\ar[dr]^{q^0_i}\ar@{.>}[rr]&&Z_i^1\ar[ld]_{p^1_i}\ar[rd]^{q^1_i}&&\cdots&&Z_i^k\ar[ld]_{p^k_i}\ar[dr]^{q^k_i}\\
+X_i=X^0_i\ar[d]_{f_i} &&X^1_i&&X_i^2&\cdots&&&\\
+S_i }$$
+Claim that such 2-ray game of $ (K+B+c_iH) $-MMP on $ Z_i $ is also a 2-ray game of $ (K+B+cH) $-MMP. In this step we may drop the foot $ i $ (or assume $ i=0 $). Let $ P^k=\overline{NE}(Z^k/X^k) $ and $ Q^k=\overline{NE}(Z^k/X^{k+1}) $, then $ P^k $ is $ (K_{Z^k}+B_{Z^k}+c_0H_{Z^k}) $-positive and $ (K_{Z^k}+B_{Z^k}+c_0H_{Z^k}) $-negative. Need to show this also holds for $ (K_{Z^k}+B_{Z^k}+cH_{Z^k}) $. Prove this by induction on $ k $.
+
+Since $ c>c_i $, we have 
+$$ K_Z+B_Z+cH_Z=p^*(K_X+B+cH)-aE\,(a>0) $$
+By negativity lemma, there is a curve $ C_Z $ on $ Z $ mapping to a point on $ X $, and $ E.C_Z<0 $, thus we have $ (K_Z+B_Z+cH_Z).P^0>0 $, where $ P^0=\mathbb{R}_{\geqslant0}[C_Z]=\overline{NE}(Z/X) $.
+
+Suppose
+$$ (K_{Z^k}+B_{Z^k}+cH_{Z^k}).P^k>0 $$
+claim that $ (K_{Z^k}+B_{Z^k}+cH_{Z^k}) $ is not nef over $ S $: note that $ c\leqslant \frac{1}{\mu} $, if $ c=\frac{1}{\mu} $, then there is a $ \mathbb{Q} $-divisor $ A $ on $ S $ and $ f^*A=K_X+B+cH $, thus 
+$$ (K_{Z^k}+B_{Z^k}+cH_{Z^k})=pull\,back\,of (A)-aE^k\equiv_S -aE^k $$
+where $ E^k $ is strict transform of $ E $ in $ Z^k $. Since $ E^k $ is effective, $ 0\neq [E^k]\in \overline{Eff}(Z^k/S)\supset \overline{Nef}(Z^k/S) $, therefore $ [-aE^k]\notin \overline{Nef}(Z^k/S) $; If $ c<\frac{1}{\mu} $, then take a curve $ C\subset X $ contracted by $ f $, away from indeterminacy of $ X\dashrightarrow Z^k $, then
+\begin{equation*}
+\begin{aligned}
+&(K_{Z^k}+B_{Z^k}+cH_{Z^k}).C\\
+=&   (K_{Z}+B_{Z}+cH_{Z}).C\\
+\leqslant& (K_{X}+B+cH).C\\
+<&(K_X+B+\frac{1}{\mu}H).C=0
+\end{aligned}
+\end{equation*} 
+Since $ (K_{Z^k}+B_{Z^k}+cH_{Z^k}) $ is not nef and $ P^k $ is positive, the other extremal ray $ Q^k $ is negative. This implies step 2. 
+
+Furthermore, by decreasing of canonical divisor, we have
+$$ a(\nu;X_i,B_i+cH_i)\leqslant a(\nu;X,B+cH) $$
+%	$$ a(\nu;X_i,B_i+cH_i)\geqslant a(\nu;X_{i+1},B_{i+1}+cH_{i+1}) $$
+and strictly inequality holds iff $ X_l\dashrightarrow X_{l+1} $ is not an isomorphism at center of $ \nu $ on $ X_l $ for some $ l<i $
+\item Claim that $ (X_i,B_i+cH_i) $ is klt for all $ i\gg 0 $. Otherwise, if there are infinitely many $ i $ such that $ (X_i,B_i+cH_i) $ is not klt, since they are all log canonical, this is equivalent to say there infinitely many $ i $ and $ \nu_i $ such that
+$$ -1=a(\nu_i;X_i,B_i+cH_i)\geqslant a(\nu_i;X_0,B_0+cH_0)\geqslant -1  $$
+Therefore $ a(\nu;X_i,B_i+cH_i)=-1 $ and $ X_0\dashrightarrow X_i $ isomorphism at the center $ z(\nu_i,X) $. Thus the local $ \theta $-canonical threholds are same
+$$ \theta-ct(\nu_i;X,B;H)=\theta-ct(\nu_i;X_i,B_i;H_i) $$
+On the other hand, by definition
+$$ c_i \leqslant \theta-ct(\nu_i;X_i,B_i;H_i) $$
+and since $ (X,B+cH) $ is not klt along $ z(\nu_i,X) $, it is not $ \theta $-canonical, thus
+$$ \theta-ct(\nu_i;X_i,B_i;H_i)<c $$
+Therefore
+$$ c_i\leqslant \theta-ct(\nu_i;X,B;H)<c $$
+But the set $\{ \theta-ct(x;X,B;H);x\in X\} $ is finite, a contradiction! WMA $ (X_i,B_i+cH_i) $ are all klt.
+\item Remark that $ E_i=\mathrm{Exc}(p_i) $ are all distinct.
+
+Since $ (X,B+cH) $ is klt, then there are only finitely many $ E_i $ with $ a(E_i,X,B+cH)<0 $. But there are in fact infinitely many
+$$ a(E_i;X,B+cH)\leqslant  a(E_i;X_i,B_i+cH_i)<0 ,$$ 
+a contradiction! 
+\end{enumerate}
+\end{proof}
+
+
+\section{Double scaling}
+\subsection{prepare}
+
+\subsection{Flow chart}
+Construct $ X_i $ by introduction
+\subsection{termination}
+
+\section{Geography of cone of divisors}
+\subsection{prepare}
+
+\subsection{construct one link}
+
+\subsection{decomposite into links}
+lemma 4.1 etc
+\section{application}
+compute or describe $ Aut(\mathbb{A}^n) $snd $ Bir(\mathbb{P}^n) $.
+
+relation with ample model etc
+
+do some concrete compute?  Quadratic isomorphisms of $ \mathbb{A}^n $?
+
+
+In dimension 2, we have following examples (there are no flips):
+$$ \xymatrix{
+&\mathbb{F}_1\ar[ld]_p\ar[d]^{f_1}\\
+\mathbb{P}^2\ar[d]_f&\mathbb{P}^1\ar[ld]\\
+pt &}$$
+$$ \textbf{I} $$
+$$ \xymatrix{
+&\mathrm{Bl}_P\mathbb{F}_n\ar[ld]_p\ar[rd]^q&\\
+\mathbb{F}_n\ar[d]_f&&\mathbb{F}_{n\pm 1}\ar[d]^{f_1}\\
+\mathbb{P}^1 &&\mathbb{P}^1\ar@{=}[ll]}$$
+$$ \textbf{II} $$
+$$ \xymatrix{
+\mathbb{F}_1\ar[d]_f\ar[rd]^{p}&\\
+\mathbb{P}^1\ar[rd]&\mathbb{P}^2\ar[d]^{f_1}\\
+&pt}$$
+$$ \textbf{III} $$
+$$ \xymatrix{
+\mathbb{P}^1\times \mathbb{P}^1\ar@{=}[rr]\ar[d]_f&&\mathbb{P}^1\times \mathbb{P}^1\ar[d]^{f_1}\\
+\mathbb{P}^1\ar[rd]&&\mathbb{P}^1\ar[ld]\\
+&pt&}$$
+$$ \textbf{IV} $$
+
+nagata automorphism?
+\section{test} 
+\begin{thm}
+this is crazy
+\end{thm}
+what?
+\[
+K_Y=\pi^*(K_X+D)+\sum_{i}^{} a_iE_i
+\]
+
+\end{document}
