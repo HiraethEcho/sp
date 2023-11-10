@@ -1,0 +1,1303 @@
+
+%Packages
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{thmtools,enumerate}
+
+\usepackage[german,english]{babel}
+\usepackage[autostyle]{csquotes}
+
+\usepackage{todonotes}
+\newcommand\xie[1]{\todo[color=green!30]{#1}}
+\newcommand\xieinline[1]{\todo[inline,color=green!30]{#1}}
+
+\newcommand\tsak[1]{\todo[color=blue!40]{#1}}
+\newcommand\tsakinline[1]{\todo[inline,color=blue!40]{#1}}
+\setlength{\marginparwidth}{2.5cm}
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left = 3cm,
+	right = 3cm,
+	top = 3cm,
+	bottom = 3cm,
+}
+
+\usepackage[all]{xy}
+\usepackage{graphicx}
+
+\usepackage{tikz-cd}
+\usetikzlibrary{babel}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=red,
+	citecolor=blue}
+
+%Commands
+\theoremstyle{plain}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{exa}[thm]{Example}
+\newtheorem{notation}[thm]{Notation}
+
+\theoremstyle{plain}
+
+\newtheorem{thmA}{Theorem}
+\renewcommand{\thethmA}{\Alph{thmA}}
+\newtheorem{corA}[thmA]{Corollary}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+
+\newcommand{\OO}{\mathcal{O}}
+
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Exc}{Exc}
+\DeclareMathOperator{\mult}{mult}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\NEb}{\overline{\mathrm{NE}}}
+\DeclareMathOperator{\proj}{Proj}
+\DeclareMathOperator{\spec}{Spec}
+\DeclareMathOperator{\sbs}{\mathbf{B}}
+
+
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\Weil}{\operatorname{Weil}}
+%\newcommand{\Ngklt}{\operatorname{Ngklt}}
+%\newcommand{\Nlc}{\operatorname{Nlc}}
+\newcommand{\Div}{\operatorname{Div}}
+
+
+%\renewcommand{\labelenumi}{$\mathrm{(\roman{enumi})}$}
+%\renewcommand{\labelenumii}{$\mathrm{(\arabic{enumii})}$}
+
+\begin{document}
+	
+	\title[Remarks on the Existence of Minimal Models]{Remarks on the Existence of Minimal Models \\ of Log Canonical Generalized Pairs}
+	
+	\author[Nikolaos Tsakanikas]{Nikolaos Tsakanikas}
+	\address{Max Planck Institute for Mathematics, Vivatsgasse 7, 53111 Bonn, Germany}
+	\email{tsakanikas@mpim-bonn.mpg.de}
+	
+	\author[Lingyao Xie]{Lingyao Xie}
+	\address{Department of Mathematics, The University of Utah, Salt Lake City, UT 84112, USA}
+	\email{lingyao@math.utah.edu}
+	
+	\thanks{2020 \emph{Mathematics Subject Classification}: 14E30. \newline
+		\indent \emph{Keywords}: Minimal Model Program, generalized pairs, minimal models, weak Zariski decompositions, Nakayama-Zariski decomposition, Mori fiber spaces.
+	}
+	
+	\begin{abstract}
+		Given an NQC log canonical generalized pair $(X,B+M)$, we prove that we may run a $(K_X+B+M)$-MMP with scaling of an ample divisor which terminates, provided that $(X,B+M)$ has a minimal model in a weaker sense or that $K_X+B+M$ is not pseudo-effective. Consequently, we establish the existence of Mori fibre spaces for non-pseudo-effective NQC log canonical generalized pairs of arbitrary dimension. In addition, we obtain several results concerning the existence of minimal models for pseudo-effective NQC log canonical generalized pairs. For example, we show that any such generalized pair whose boundary contains an ample divisor has a good minimal model. Finally, we reduce the problem of the existence of minimal models of NQC log canonical generalized pairs to the problem of the existence of minimal models of smooth varieties.
+	\end{abstract}
+	
+	\maketitle
+	
+	\begingroup
+	\hypersetup{linkcolor=black}
+	\setcounter{tocdepth}{1}
+	\tableofcontents
+	\endgroup
+	
+	
+	
+	
+	\section{Introduction}
+	
+	The theory of generalized pairs was originally introduced by Birkar and Zhang \cite{BZ16} in order to address the effective Iitaka fibration conjecture. However, it has now become a central topic in birational geometry due to its plethora of applications, for instance towards the existence of minimal models conjecture \cite{LT22a,LT22b,LX22a,LX22b}, the termination of flips conjecture \cite{HM20,CT20} or the generalized non-vanishing conjecture \cite{HanLiu20,Hash22b,LMPTX22}. The paper \cite{Bir21c} provides an overview of even further applications of generalized pairs.
+	
+	For the definition of the fundamental concept of an NQC log canonical generalized pair we refer to Subsection \ref{subsection:g-pairs}. The Minimal Model Program (MMP) for these geometric objects developed rapidly since their introduction. Initially, it was established for NQC log canonical generalized pairs whose underlying variety is $\Q$-factorial klt \cite{BZ16,HanLi22}, as several core results regarding their MMP, such as the existence of flips, can be reduced to analogous statements for usual pairs under this additional assumption. Currently, the MMP for generalized pairs works in full generality, namely, the recent papers \cite{HaconLiu21}, \cite{Xie22} and \cite{LX22b} proved the Cone theorem, the Contraction theorem and the existence of flips, respectively, for NQC log canonical generalized pairs.  Therefore, it should now be possible, at least in principle, to remove the $\Q$-factoriality assumption from many already existing results about generalized pairs.
+	
+	We are primarily concerned here with the problem of the existence of minimal models and Mori fiber spaces of (not necessarily $\Q$-factorial) NQC log canonical generalized pairs. To a certain extent, this paper could be regarded as a continuation of the previous works \cite{LT22a,LT22b}, but our results rely essentially also on the substantial recent progress in the MMP for generalized pairs discussed above. More precisely, using crucially the Contraction theorem for (purely) NQC log canonical generalized pairs \cite{Xie22} and establishing basic properties of the MMP in this very general framework (see Subsection \ref{subsection:MMP_g-pairs}), our first goal in this paper is to refine the majority of the results of \cite{LT22b} by removing the assumption that the underlying variety is $\Q$-factorial.
+	
+	Our main result is the following, which improves on \cite[Theorem 1.2]{LT22b} in the way explained above and extends \cite[Theorem 1.7]{HH20} to the setting of generalized pairs.
+	
+	\begin{thmA}[= Theorem \ref{thm:mainthm}]
+		\label{thm:mainthm_intro}
+		Let $ (X/Z,B+M) $ be an NQC log canonical generalized pair. Assume that either
+		\begin{enumerate}[\normalfont (a)]
+			\item $ (X,B+M) $ has a minimal model in the sense of Birkar-Shokurov over $ Z $, or
+			
+			\item $ K_X+B+M $ is not pseudo-effective over $ Z $.
+		\end{enumerate}
+		Let $ A $ be an effective $ \R $-Cartier $ \R $-divisor on $ X $ which is ample over $ Z $ such that the NQC generalized pair $ \big( X/Z, (B+A)+M \big) $ is log canonical and the divisor $ K_X + B + A + M $ is nef over $Z$. Then there exists a $ (K_X + B + M) $-MMP over $Z$ with scaling of $A$ that terminates.
+		In particular:
+		\begin{itemize}
+			\item $ (X,B+M) $ has a minimal model in the sense of Birkar-Shokurov over $ Z $ if and only if it has a minimal model over $Z$; 
+			
+			\item if $ K_X+B+M $ is not pseudo-effective over $ Z $, then $ (X,B+M) $ has a Mori fiber space over $ Z $.
+		\end{itemize}
+	\end{thmA}
+	
+	We refer to Subsection \ref{subsection:MM_CM_MFS} for the definitions of the various notions of models of a generalized pair that appear in the above theorem. We emphasize that Theorem \ref{thm:mainthm_intro} has numerous applications. The first ones are the next three results, which constitute refinements (in the above sense) of results obtained previously in \cite{LT22a,LT22b}.
+	%Note that the phrase \enquote{existence of minimal models for smooth varieties}, which appears below, means the existence of \emph{relative} minimal models.
+	
+	\begin{thmA}[= Theorem \ref{thm:EMM_implication}]
+		\label{thm:EMM_implication_intro}
+		The existence of minimal models for smooth varieties of dimension $n$ implies the existence of minimal models for NQC log canonical generalized pairs of dimension $n$.
+	\end{thmA}
+	
+	\begin{thmA}[= Theorem \ref{thm:MM_uniruled}]
+		\label{thm:MM_uniruled_intro}
+		Assume the existence of minimal models for smooth varieties of dimension $n-1$.
+		
+		Let $ (X/Z,B+M) $ be an NQC log canonical generalized pair of dimension $ n $ such that $ K_X+B+M $ is pseudo-effective over $ Z $. If a general fiber of the morphism $ X \to Z $ is uniruled, then $(X,B+M)$ has a minimal model over $Z$.
+	\end{thmA}
+	
+	%In particular, we prove the existence of minimal models of (not necessarily $\Q$-factorial) NQC log canonical generalized pairs in dimension $4$, as well as in many cases in dimension $5$.
+	
+	\begin{corA}[= Corollaries \ref{cor:maincor_I} and \ref{cor:maincor_II}]
+		\label{cor:maincor_intro}
+		Let $ (X/Z,B+M) $ be an NQC log canonical generalized pair of dimension $ n $ such that $ K_X+B+M$ is pseudo-effective over $ Z $. The following statements hold:
+		\begin{enumerate}[\normalfont (i)]
+			\item If $n \leq 4$, then $ (X,B+M) $ has a minimal model over $Z$.
+			
+			\item If $ n = 5 $ and $ (X,B+M) $ admits an NQC weak Zariski decomposition over $ Z $ (e.g., if $ K_X+B+M $ is effective over $ Z $), then $ (X,B+M) $ has a minimal model over $Z$.
+			
+			\item If $n \leq 5$ and a general fiber of the morphism $ X\to Z $ is uniruled, then $ (X,B+M) $ has a minimal model over $Z$.
+		\end{enumerate}
+	\end{corA}
+	
+	A few words about the proof of the above corollary are now in order. Part (i) follows immediately from Theorem \ref{thm:EMM_implication_intro}, since the existence of relative minimal models for smooth varieties of dimension $ n \leq 4 $ is well-known, while part (iii) is a special case of Theorem \ref{thm:MM_uniruled_intro} for $n=5$. Part (ii) is an easy consequence of Theorem \ref{thm:mainthm_intro} and \cite[Theorem 4.4(i)]{LT22a}; see also Subsection \ref{subsection:NQC_WZD} for the definition of the notion of an NQC weak Zariski decomposition of an $\R$-Cartier divisor.
+	
+	\medskip
+	
+	Next, we discuss two more applications of Theorem \ref{thm:mainthm_intro} that relate the existence of certain types of Zariski decompositions to the existence of minimal models of generalized pairs. First, assuming the existence of minimal models for smooth varieties of dimension $n-1$, we show that the existence of an NQC weak Zariski decomposition of an NQC log canonical generalized pair of dimension $n$ is equivalent to the existence of a minimal model of that generalized pair; see Theorem \ref{thm:MM_NQC_WZD}. Second, by working in the absolute setting ($ Z = \spec \C $) and by considering instead a stronger form of Zariski decomposition, namely the so-called NQC Nakayama-Zariski decomposition, we obtain the following analogous result without any assumptions in lower dimensions, which extends \cite[Theorem 1.1]{BH14b} to the setting of generalized pairs.
+	
+	\begin{thmA}[= Theorem \ref{thm:MM_NQC_NZD}]
+		\label{thm:MM_NQC_NZD_intro}
+		Let $ (X,B+M) $ be an NQC log canonical generalized pair. Then $ (X,B+M) $ has a minimal model (resp.\ good minimal model) if and only if it admits birationally a Nakayama-Zariski decomposition with NQC (resp.\ semi-ample) positive part.
+	\end{thmA}
+	
+	We refer to Subsection \ref{subsection:NQC_NZD} for the definition of the Nakayama-Zariski decomposition of a pseudo-effective $\R$-Cartier divisor with NQC or semi-ample positive part and for some additional information. We also highlight that Theorem \ref{thm:MM_logbigmoduli} and Lemma \ref{lem:Hash20d_3.11} below are applications of Theorem \ref{thm:MM_NQC_NZD_intro}. The former (resp.\ the latter) is a generalization of \cite[Theorem 4.5]{Hash22c} (resp.\ \cite[Lemma 3.11]{Hash20d}) to the setting of generalized pairs.
+	
+	\medskip
+	
+	Besides allowing us to refine several previous results, such as the ones presented above, Theorem \ref{thm:mainthm_intro} can also be utilized in order to derive new ones; this is the second objective of this paper. First and foremost, we provide one of the missing pieces from the MMP for generalized pairs: we show that any NQC log canonical generalized pair whose canonical class is pseudo-effective and whose boundary contains an ample divisor has a \emph{good} minimal model, generalizing thus \cite[Theorem 1.5]{HH20} to the context of generalized pairs.
+	
+	\begin{thmA}[= Theorem \ref{thm:EGMM_boundary_contains_ample} and Corollary \ref{cor:finite_generation}]
+		Let $ \big( X/Z,(B+A)+M \big) $ be an NQC log canonical generalized pair such that $K_X+B+A+M$ is pseudo-effective over $Z$, where $ A $ is an effective $ \R $-Cartier $\R$-divisor which is ample over $ Z $. Then there exists a $(K_X+B+A+M)$-MMP over $Z$ which terminates with a good minimal model of $ \big( X,(B+A)+M \big) $ over $ Z $.
+		
+		In particular, if $B$, $A$ and $M$ are $\Q$-divisors, then
+		\[ R(X/Z,K_X+B+A+M) := \bigoplus_{m \geq 0} \pi_* \OO_X \big( m(K_X+B+A+M) \big) \]
+		is a finitely generated $ \OO_Z $-algebra, where $ \pi $ is the projective morphism $ X \to Z $.
+	\end{thmA}
+	
+	Furthermore, we can now extend to the setting of generalized pairs all results from \cite[Subsection 3.2]{Hash20d}, albeit this is often only partially possible; see Section \ref{section:applications} for the details. For instance, we obtain the following sufficient conditions for the existence of minimal models of abundant or log abundant NQC log canonical generalized pairs (whose underlying variety is projective); see Subsection \ref{subsection:log_abundant} for the relevant definitions.
+	
+	\begin{corA}[= Corollaries \ref{cor:Hash20d_3.13} and \ref{cor:Hash20d_3.12}]
+		\label{cor:Hash20d_3.13+3.12_intro}
+		Let $(X,B+M)$ be an NQC log canonical generalized pair. Assume that $K_X+B+M$ is pseudo-effective and abundant and that all lc centers of $(X,B+M)$ have dimension at most $ 4 $. Then $(X,B+M)$ has a minimal model which is abundant.
+		
+		In particular, any NQC log canonical generalized pair $(X,B+M)$ of dimension $6$ such that $K_X+B+M$ is pseudo-effective and abundant and $\llcorner B \lrcorner = 0$ has a minimal model which is abundant.
+	\end{corA}
+	
+	\begin{corA}[= Corollary \ref{cor:Hash20d_3.10}]
+		\label{cor:Hash20d_3.10_intro}
+		Let $(X,B+M)$ be an NQC log canonical generalized pair. Assume that $K_X+B+M$ is pseudo-effective and log abundant with respect to $(X,B+M)$. Assume, moreover, that the stable base locus of $K_X+B+M$ does not contain the center of any divisorial valuation $ P $ over $X$ such that $ a(P,X,B+M) < 0 $. Then $(X,B+M)$ has a minimal model which is log abundant.
+	\end{corA}
+	
+	We conclude the introduction by commenting briefly on the previous two corollaries. First, observe that the $\dim X = 5$ case of Corollary \ref{cor:Hash20d_3.13+3.12_intro} is a special case of Corollary \ref{cor:maincor_intro}(ii) and then the condition $\llcorner B \lrcorner =0$ is actually redundant. On the other hand, the $\dim X = 6$ case of Corollary \ref{cor:Hash20d_3.13+3.12_intro} is new, cf.\ \cite[Corollary 1.6]{Hash20d}. 
+	
+	One of the main ingredients for the proof of Corollary \ref{cor:Hash20d_3.13+3.12_intro} is \cite[Theorem 3.14]{Hash22a}. Hashizume's theorem, together with Theorem \ref{thm:mainthm_intro}, imply, in particular, that an NQC klt generalized pair $(X,B+M)$ such that $K_X+B+M$ is pseudo-effective and abundant has a minimal model $(X',B'+M')$, which is also (klt and) abundant. If, moreover, all divisors involved have rational coefficients, then it follows from \cite[Theorem 2]{Chaud22b} that $(X',B'+M')$ is actually a \emph{good} minimal model of $(X,B+M)$. In particular, we infer that NQC klt generalized pairs \emph{of general type} with rational coefficients have good minimal models. We will actually show in Theorem \ref{thm:EMM_general_type} that a more general version of the previous result follows readily from \cite{BCHM10}.
+	
+	Finally, as far as Corollary \ref{cor:Hash20d_3.10_intro} is concerned, motivated by the case of usual pairs, one might expect to deduce the existence of a \emph{good} minimal model of $(X,B+M)$ in the setting of Corollary \ref{cor:Hash20d_3.10_intro}. However, as demonstrated by \cite[Example 2.2]{LX22b}, this need not be true in the context of generalized pairs; in other words, the canonical divisor of a log canonical generalized pair is not necessarily semi-ample even if it is nef and log abundant.
+	
+	\medskip
+	
+	\emph{Acknowledgements}: We would like to thank Guodu Chen, Enrica Floris, Christopher Hacon, Jingjun Han, Kenta Hashizume, Vladimir Lazi\'c, Jihao Liu, Zhixin Xie and Sokratis Zikas for useful comments and suggestions. Part of this project was completed when the first author visited Enrica Floris at the University of Poitiers in November 2022. He would like to express his gratitude to the members of the Department of Mathematics of the University of Poitiers, especially to Enrica Floris and Sokratis Zikas, for their hospitality. N.T.\ is grateful to the Max Planck Institute for Mathematics (MPIM) in Bonn for its hospitality and financial support. L.X.\ is partially supported by the NSF research grants no:\ DMS-1801851, DMS-1952522 and by a grant from the Simons Foundation; Award Number:\ 256202.
+	
+	
+	
+	
+	\section{Preliminaries}
+	
+	Throughout the paper we work over the field $ \C $ of complex numbers. Unless otherwise stated, we assume that varieties are normal and quasi-projective and that a variety $X$ over a variety $Z$, denoted by $X/Z$, is projective over $Z$. We often quote in the paper the Negativity lemma; see \cite[Lemma 3.39(1)]{KM98} and \cite[Lemma 2.3.26]{Fuj17}.
+	
+	A \emph{fibration} is a projective surjective morphism with connected fibers. A \emph{birational contraction} is a birational map whose inverse does not contract any divisors.
+	
+	Let $ \pi \colon X\to Z $ be a projective morphism between normal varieties. An $ \R $-Cartier $ \R $-divisor $ D $ on $ X $ is said to be \emph{pseudo-effective over $ Z $} if it is pseudo-effective on a very general fiber of $ \pi $; and \emph{NQC (over $ Z $)} \cite{HanLi22} if it is a non-negative linear combination of $\Q$-Cartier divisors on $X$ which are nef over $ Z $. Two $ \R $-Cartier $ \R $-divisors $ D_1 $ and $ D_2 $ on $ X $ are said to be \emph{$\R$-linearly equivalent over $ Z $}, denoted by $ D_1 \sim_{\R,Z} D_2 $, if there exists an $\R$-Cartier $\R$-divisor $G$ on $Z$ such that $D_1\sim_\R D_2+\pi^*G$; and \emph{numerically equivalent over $ Z $}, denoted by $ D_1 \equiv_Z D_2 $, if it holds that $ D_1\cdot C = D_2 \cdot C $ for any curve $ C $ contained in a fiber of $ \pi $. Finally, we denote by $ N^1(X/Z)_\R $ the $\mathbb{R}$-vector space of relative numerical equivalence classes of $\mathbb{R}$-Cartier divisors on $ X $ over $ Z $
+	%that is, $N^1(X/Z)_\R :=  \operatorname{Pic}(X)_\R \ / \equiv_{Z}$, 
+	and by $ \rho(X/Z) $ the \emph{relative Picard number} of $ X $ over $ Z $, i.e., $  \rho(X/Z) := \dim_\R N^1(X/Z)_\R $.
+	
+	\medskip
+	
+	The following result, which is the relative version of \cite[Proposition 1.45]{KM98}, should be well-known, but we provide its proof for the convenience of the reader nonetheless. It plays a fundamental role in the proof of Lemma \ref{lem:MMP_ampleness_boundary} and, by extension, in the proof of Theorem \ref{thm:EGMM_boundary_contains_ample}.
+	
+	\begin{lem}\label{lem:KM98_1.45_relative}
+		Let $ f \colon X \to Y $ and $ g \colon Y \to Z $ be projective morphisms of varieties. If $ H $ is an $f$-ample divisor on $X$ and if $ L $ is a $g$-ample divisor on $Y$, then the divisor $ H + \nu f^* L$ is $(g \circ f)$-ample for $ \nu \gg 0 $.
+	\end{lem}
+	
+	\begin{proof}
+		Fix a point $ z \in Z $ and consider the projective fibers $ Y_z := g^{-1}(z) $ and $ X_z := (g \circ f)^{-1}(z) = f^{-1}(Y_z) $ and the induced map $ f |_{X_z} \colon X_z \to Y_z $. Note that $ L |_{Y_z} $ is ample and $ H |_{X_z} $ is ample over $ Y_z $. Therefore, by \cite[Proposition 1.45]{KM98}, $ (H + \nu f^*L) |_{X_z} $ is ample on $X_z$ for $ \nu_z \gg 0 $. It follows now from \cite[Proposition 1.41]{KM98} that the divisor $ H + \nu_z f^*L $ is ample over some open neighborhood $ U_z \subseteq Z $ of $z$ for $ \nu_z \gg 0 $. 
+		Now, since $ Z $ is quasi-compact, it can be covered by only finitely many such open subsets $ U_z \subseteq Z $. Thus, for any sufficiently large positive integer $ \nu $, the divisor $ H + \nu f^*L $ on $X$ is ample over $ Z $, as asserted.
+	\end{proof}
+	
+	
+	\subsection{Generalized pairs}
+	\label{subsection:g-pairs}
+	
+	For the standard theory of usual pairs and the Minimal Model Program (MMP) we refer to \cite{KM98,Fuj17}, while for the recently developed theory of generalized pairs we refer to \cite{BZ16,HaconLiu21,LT22a,LT22b,LX22a,LX22b,Xie22} and the relevant references therein. 
+	
+	We recall now the definitions of generalized pairs and their usual classes of singularities. Afterwards, we briefly discuss some basic results about generalized pairs.
+	
+	\begin{dfn}
+		A \emph{generalized pair}, abbreviated as \emph{g-pair}, consists of 
+		\begin{itemize}
+			\item a normal variety $ X $, equipped with a projective morphism $ X \to Z $,
+			
+			\item an effective $ \R $-divisor $ B $ on $X$,
+			
+			\item a projective birational morphism $ f \colon W \to X $ from a normal variety $ W $ and an $\R$-Cartier $\R$-divisor $ M_W $ on $ W $ which is nef over $ Z $,
+		\end{itemize}
+		such that the divisor $ K_X + B + M $ is $ \R $-Cartier, where $ M := f_* M_W $. 
+		We say that the divisor $ B $ (resp.\ $ M $) is the \emph{boundary part} (resp.\ the \emph{nef part}) of the g-pair, and we call the given g-pair \emph{NQC} if $M_W$ is an NQC divisor (over $ Z $) on $ W $.
+	\end{dfn}
+	
+	We note that the variety $ W $ in the definition may always be chosen as a sufficiently high birational model of $ X $; see \cite[Definition 1.4]{BZ16}. Usually we denote a g-pair as above by $(X/Z,B+M)$, but remember the whole g-pair structure. In a few occasions all divisors involved will be $\Q$-divisors and then we will use the term \emph{$\Q$-g-pair} to refer to such a g-pair. Sometimes we will work exclusively in the absolute setting ($Z = \spec \C$) and then the underlying variety $X$ of any given g-pair $(X,B+M)$ will be projective, even though this will not be mentioned explicitly, since it is implied by our conventions above.
+	
+	\begin{dfn}
+		Let $ (X,B+M) $ be a g-pair with data $ W \overset{f}{\longrightarrow} X \to Z $ and $ M_W $. Let $ E $ be a divisorial valuation over $ X $; its \emph{center} on $ X $ is denoted by $ c_X(E) $. We may assume that $ c_X(E) $ is a prime divisor on $ W $. If we write 
+		\[ K_W + B_W + M_W \sim_\R f^* ( K_X + B + M ) \]
+		for some $ \R $-divisor $ B_W $ on $ W $, then the \emph{discrepancy of $ E $ with respect to $ (X,B+M) $} is defined as
+		\[ a(E, X, B+M) :=-\mult_E B_W . \]
+		
+		We say that the g-pair $ (X,B+M) $ is:
+		\begin{enumerate}[(a)]
+			\item \emph{klt} if $  a(E,X,B+M) > -1 $ for any divisorial valuation $ E $ over $ X $;
+			
+			\item \emph{lc} if $  a(E,X,B+M) \geq -1 $ for any divisorial valuation $ E $ over $ X $;
+			
+			\item \emph{dlt} if it is lc and if there exists an open subset $U \subseteq X$ such that $(U,B|_U)$ is a log smooth pair, and if $ a(E,X,B+M) = -1 $ for some divisorial valuation $ E $ over $X$, then $ c_X(E) \cap U \neq \emptyset $ and $ c_X(E) \cap U $ is an lc center of $(U,B|_U)$.
+		\end{enumerate}
+	\end{dfn}
+	
+	We highlight that, according to \cite[Theorem 6.1]{Hash22a}, the above definition of dlt singularities, namely \cite[Definition 2.3]{HanLi22}, and the one from \cite[Subsection 2.13(2)]{Bir19} coincide for NQC g-pairs.
+	
+	\medskip
+	
+	We also recall that, given an  lc g-pair $ (X,B+M) $, an irreducible subvariety $ S $ of $ X $ is called an \emph{lc center} of $ (X,B+M) $ if there exists a divisorial valuation $ E $ over $ X $ such that $  c_X(E) = S $ and $ a(E,X,B + M) = -1 $.
+	
+	\medskip
+	
+	The next result is \cite[Proposition 3.10]{HanLi22} and will be frequently used in the paper without explicit mention.
+	
+	\begin{lem}
+		Let $ (X,B+M) $ be an lc g-pair with data $ W \overset{f}{\to} X \to Z $ and $ M_W $. Then, after possibly replacing $ f $ with a higher model, there exist a $\Q$-factorial dlt g-pair $(X',B'+M')$ with data $ W \overset{g}{\to} X' \to Z $ and $ M_W $, and a projective birational morphism $ h \colon X' \to X $ such that 
+		\[ K_{X'} + B' + M' \sim_\R h^* (K_X + B + M) \quad \text{and} \quad B' = h_*^{-1} B + E , \]
+		where $ E $ is the sum of all $ h $-exceptional prime divisors on $ X' $. The g-pair $(X',B'+M')$ is called a \emph{dlt blow-up} of $(X,B+M)$.
+	\end{lem}
+	
+	We now derive an easy corollary of the Negativity lemma, which plays a key role in the paper nonetheless.
+	
+	\begin{lem}\label{lem:pullback_P+N}
+		Let $ (X,B+M) $ be an NQC lc g-pair with data $ W \overset{f}{\longrightarrow} X \to Z $ and $ M_W $. Let $ P $ be the pushforward to $ X $ of an NQC divisor (over $ Z $) on a birational model of $ X $ and let $ N $ be an effective $ \R $-divisor on $ X $ such that $ N+P $ is $ \R $-Cartier. After possibly replacing $f$ with a higher model, we may assume that $W$ is smooth and that there exists an $\R$-divisor $P_W$ on $W$ such that $P_W$ is NQC (over $Z$) and $ f_* P_W = P $. Then we may write
+		\[ f^*(P+N) = P_W + f_*^{-1} N + E_W , \]
+		where $E_W$ is an effective $f$-exceptional $\R$-divisor on $W$.
+	\end{lem}
+	
+	\begin{proof}
+		Since $ f_* (P_W + f_*^{-1} N) = P + N $ by construction, we may write
+		\[ f^*(P+N) = P_W + f_*^{-1} N + E_W \]
+		for some $f$-exceptional $\R$-Cartier $\R$-divisor $E_W$ on $W$. Since $P_W$ is clearly nef over $X$, we infer that $ - (f_*^{-1} N + E_W) $ is also nef over $X$, and since $N \geq 0$, by the Negativity lemma we obtain $ f_*^{-1} N + E_W \geq 0 $. But $ f_*^{-1} N $ and $ E_W $ have no common components, which implies that $ E_W \geq 0 $, as claimed.
+	\end{proof}
+	
+	Finally, the following result will be often used in the paper without explicit mention, cf.\ \cite[Lemma 2.3]{LT22b}. It is an analogue of \cite[Corollaries 2.35(1) and 2.39(1)]{KM98} in the context of g-pairs. For brevity we only outline its proof below.
+	
+	\begin{lem}
+		Let $ (X/Z,B+M) $ be a g-pair. Let $ P $ be the pushforward to $ X $ of an NQC divisor (over $ Z $) on a birational model of $ X $ and let $ N $ be an effective $ \R $-divisor on $ X $ such that $ N+P $ is $ \R $-Cartier. If the g-pair $ \big( X, (B+N) + (M+P) \big) $ is klt (resp.\ dlt, resp.\ lc), then the g-pair $ (X,B+M) $ is also klt (resp.\ dlt, resp.\ lc).
+	\end{lem}
+	
+	\begin{proof}
+		To prove the statement for klt (resp.\ lc) singularities, we argue as in the proof of \cite[Lemma 2.6]{CT20} and we apply Lemma \ref{lem:pullback_P+N} instead of implementing directly the Negativity lemma as in op.\ cit. Moreover, to prove the statement for dlt singularities, we argue as in the proof of \cite[Lemma 2.3]{LT22b} and we apply Lemma \ref{lem:pullback_P+N} as explained previously.
+	\end{proof}
+	
+	
+	\subsection{Minimal models, canonical models and Mori fiber spaces}
+	\label{subsection:MM_CM_MFS}
+	
+	We first recall the definition of (good) minimal models and Mori fiber spaces both \emph{in the usual sense} and \emph{in the sense of Birkar-Shokurov}.
+	
+	\begin{dfn}\label{dfn:MM_MFS}
+		Assume that we have a birational map $\varphi \colon X \dashrightarrow X'$ over $ Z $ and g-pairs $(X/Z,B+M)$ and $(X'/Z,B'+M')$ such that $(X,B+M)$ is lc and the divisors $ M $ and $ M' $ are pushforwards of the same nef $ \R $-Cartier $\R$-divisor on a common birational model of $X$ and $X'$.
+		
+		\begin{center}
+			\begin{tikzcd}
+				(X,B+M) \arrow[rr, dashed, "\varphi"] \arrow[dr] && (X',B'+M') \arrow[dl] \\
+				& Z
+			\end{tikzcd}
+		\end{center}
+		
+		\begin{enumerate}[(a)]
+			\item The map $\varphi$ is called a \emph{minimal model in the sense of Birkar-Shokurov over $Z$} of the g-pair $(X,B+M)$ if 
+			\begin{itemize}
+				\item $ B' =\varphi_*B+E$, where $E$ is the sum of all $ \varphi^{-1} $-exceptional prime divisors on $ X' $,
+				
+				\item $X'$ is $\Q$-factorial,
+				
+				\item $K_{X'}+B'+M'$ is nef over $Z$, and 
+				
+				\item for any $\varphi $-exceptional prime divisor $ F $ on $ X $ we have 
+				\[ a(F,X,B+M) < a(F,X',B'+M') . \]
+			\end{itemize}
+			
+			If, moreover, $\varphi$ is a birational contraction, and $X'$ is not necessarily $\Q$-factorial if $X$ is not $\Q$-factorial (but $X'$ is required to be $\Q$-factorial if $X$ is $\Q$-factorial), then the map $\varphi$ is called a \emph{minimal model (in the usual sense) of $(X,B+M)$ over $ Z $}.
+			
+			Finally, a minimal model $ \varphi \colon (X,B+M) \dashrightarrow (X',B'+M') $ in the usual sense or in the sense of Birkar-Shokurov of $ (X,B+M) $ over $ Z $ is called \emph{good} if the divisor $ K_{X'} + B' + M' $ is semi-ample over $ Z $.
+			
+			\item The map $\varphi$ is called a \emph{Mori fiber space in the sense of Birkar-Shokurov over $Z$} of the g-pair $(X,B+M)$ if 
+			\begin{itemize}
+				\item $ B' =\varphi_*B+E$, where $E$ is the sum of all $ \varphi^{-1} $-exceptional prime divisors on $ X' $, 
+				
+				\item $X'$ is $\Q$-factorial,
+				
+				\item there exists a $ (K_{X'} + B' + M') $-negative extremal contraction $ X' \to T $ over $ Z $ with $ \dim X' > \dim T $, and
+				
+				\item for any divisorial valuation $ F $ over $ X $ we have
+				\[ a(F,X,B+M) \leq a(F,X',B'+M') \]
+				and the strict inequality holds if $ c_X(F) $ is a $\varphi $-exceptional prime divisor on $ X $.
+			\end{itemize}
+			
+			If, moreover, $\varphi$ is a birational contraction, and $X'$ is not necessarily $\Q$-factorial if $X$ is not $\Q$-factorial (but $X'$ is required to be $\Q$-factorial if $X$ is $\Q$-factorial), then the map $ \varphi $ is called a \emph{Mori fiber space (in the usual sense) of $ (X,B+M) $ over $ Z $}.
+		\end{enumerate}
+	\end{dfn}
+	
+	We emphasize that in Definition \ref{dfn:MM_MFS} we allow a minimal model  (resp.\ Mori fiber space) in the sense of Birkar-Shokurov to be lc and not only dlt; see \cite[Remark 2.4]{Hash18a} and \cite[p.\ 34, Comment]{Tsak21} for the justification. We also remark that the g-pair $ (X',B'+M')$ in Definition \ref{dfn:MM_MFS} is lc. Indeed, if it is a (good) minimal model (in any sense) of $ (X,B+M) $, then this follows immediately from \cite[Lemma 2.8(i)]{LMT}, while if it is a Mori fiber space (in any sense) of $ (X,B+M) $, then this follows from the above inequalities on discrepancies.
+	
+	\medskip
+	
+	We briefly discuss now the differences between the aforementioned two notions of a minimal model of a given g-pair. It is easy to check that minimal models in the usual sense and in the sense of Birkar-Shokurov coincide (modulo $\Q$-factoriality) in the klt case; see \cite[Remark 2.4(iii)]{Bir12b} and \cite[Subsection 2.2.4]{Tsak21}. The following theorem, which is an immediate consequence of Proposition \ref{prop:mainprop}, allows us to compare these two notions in the lc case as well, cf.\ \cite[Lemma 2.9(ii)]{LT22a}, \cite[Theorem 1.2(a)]{LT22b}.
+	
+	\begin{thm}
+		Let $ (X/Z,B+M) $ be an NQC lc g-pair. Then $ (X,B+M) $ has a minimal model over $ Z $ if and only if $ (X,B+M) $ has a minimal model in the sense of Birkar-Shokurov over $ Z $.
+	\end{thm}
+	
+	\begin{proof}
+		If $ (X',B'+M') $ is a minimal model of $ (X,B+M) $ over $ Z $, then a dlt blow-up of $ (X',B'+M') $ is a minimal model in the sense of Birkar-Shokurov of $ (X,B+M) $ over $ Z $. The converse follows immediately from Proposition \ref{prop:mainprop}. Note also that the statement for $M=0$ follows from \cite[Theorem 1.7]{HH20}.
+	\end{proof}
+	
+	\begin{rem}\label{rem:WCM_EMM}
+		With the same notation as in Definition \ref{dfn:MM_MFS}, if in part (a) we omit the second bullet and we replace the fourth bullet with the weaker condition \enquote{for any $\varphi $-exceptional prime divisor $ F $ on $ X $ we have $ a(F,X,B+M) \leq a(F,X',B'+M') $}, then we say that $(X',B'+M')$ is a \emph{weak canonical model in the sense of Birkar-Shokurov of $(X,B+M)$ over $Z$}; see \cite[Definition 2.26]{Tsak21} or \cite[Definition 3.2(2)]{HaconLiu21}. According to \cite[Proposition 2.33]{Tsak21} or \cite[Lemma 3.15]{HaconLiu21}, if an NQC lc g-pair $ (X/Z,B+M) $ has a weak canonical model in the sense of Birkar-Shokurov over $Z$, then it has a minimal model in the sense of Birkar-Shokurov over $Z$. This implication plays a crucial role in certain constructions that will be presented in Section \ref{section:lifting_MMP}.
+	\end{rem}
+	
+	For the sake of completeness we also mention here that any two minimal models in the usual sense (resp.\ in the sense of Birkar-Shokurov) of an lc g-pair are isomorphic in codimension $ 1 $; see \cite[Lemma 2.12]{CT20} (resp.\ \cite[Lemma 3.1]{Chaud22c}).
+	
+	\medskip
+	
+	The following basic result about good minimal models will be needed for the proof of Theorems \ref{thm:MM_NQC_NZD} and \ref{thm:MM_logbigmoduli}.
+	
+	\begin{lem}\label{lem:GMM}
+		Let $(X/Z,B+M)$ be an lc g-pair. If $ (X,B+M) $ has a good minimal model in the usual sense or in the sense of Birkar-Shokurov over $ Z $, then every minimal model in the usual sense or in the sense of Birkar-Shokurov of $ (X,B+M) $ over $ Z $ is also good.
+	\end{lem}
+	
+	\begin{proof}		
+		If $ (X,B+M) $ has a good minimal model $ (V,B_V+M_V) $ over $ Z $, then a dlt blow-up of $ (V,B_V+M_V) $ is a good minimal model in the sense of Birkar-Shokurov of $ (X,B+M) $ over $ Z $, so it suffices to prove the statement under this assumption. Hence, assume now that there exists a good minimal model $ (X',B'+M') $ in the sense of Birkar-Shokurov of $ (X,B+M) $ over $ Z $. The first part of the proof below is similar to the proof of \cite[Remark 2.7]{Bir12a}, but we provide all the details for the convenience of the reader.
+		
+		Fix a minimal model $ (X'',B'' + M'') $ in the sense of Birkar-Shokurov of $ (X,B+M) $ over $ Z $, pick a (sufficiently high) common resolution of indeterminacies $ (p,q,r) \colon W \to X \times X' \times X'' $ of the maps $ X \dashrightarrow X' $ and $ X \dashrightarrow X'' $, 
+		\begin{center}
+			\begin{tikzcd}
+				&&& X' \\
+				W \arrow[rr, "p"] \arrow[urrr, bend left = 20, "q"] \arrow[drrr, bend right = 20, "r" swap] && X \arrow[ur, dashed] \arrow[dr, dashed] \\
+				&&& X''
+			\end{tikzcd}
+		\end{center}
+		and set 
+		\[ E' := p^* (K_X+B+M) - q^* (K_{X'} + B' + M') \]
+		and
+		\[ E'' := p^* (K_X+B+M) - r^* (K_{X''} + B'' + M'') . \]
+		By \cite[Remark 2.6]{LT22b} (see also \cite[Remark 2.6]{Bir12a}), $ E' $ is effective and $ q $-exceptional, while $ E'' $ is effective and $ r $-exceptional. Since $ q_* (E'' - E') \geq 0 $ and $ -(E'' - E') $ is $ q $-nef, by the Negativity lemma we deduce that $ E'' - E' \geq 0 $. Similarly, we have $ E' - E'' \geq 0 $. Therefore, $ E' = E'' $, which yields
+		\[ q^* (K_{X'} + B' + M') = r^* (K_{X''} + B'' + M'') . \]
+		Since $ K_{X'} + B' + M' $ is semi-ample over $ Z $ by assumption, we infer that $ K_{X''} + B'' + M'' $ is also semi-ample over $ Z $; in other words, $ (X'',B'' + M'') $ is a good minimal model in the sense of Birkar-Shokurov of $ (X,B+M) $ over $ Z $.\footnote{Note that this part of the proof is also valid if we assume instead that both $ (X',B'+M') $ and $ (X'',B''+M'') $ are only weak canonical models in the sense of Birkar-Shokurov over $ (X,B+M) $ over $ Z $; see also \cite[Lemma 3.9]{HaconLiu21}.}
+		
+		Finally, fix a minimal model $ (Y,B_Y+M_Y) $ of $ (X,B+M) $ over $ Z $ and consider a dlt blow-up
+		$ h \colon (T,B_T+M_T) \to (Y,B_Y+M_Y) $
+		of $ (Y,B_Y+M_Y) $. Then $ (T,B_T+M_T) $ is a minimal model in the sense of Birkar-Shokurov of $ (X,B+M) $ over $ Z $, which is actually a good minimal model in the sense of Birkar-Shokurov of $ (X,B+M) $ over $ Z $ by the previous paragraph; in particular, $ K_T + B_T + M_T $ is semi-ample over $ Z $. Since $ K_T + B_T + M_T \sim_\R h^*(K_Y + B_Y + M_Y) $, we infer that $ K_Y + B_Y + M_Y $ is also semi-ample over $ Z $; in other words, $ (Y,B_Y+M_Y) $ is a good minimal model of $ (X,B+M) $ over $ Z $.
+	\end{proof}
+	
+	Next, we recall the definition of a canonical model of a g-pair.
+	
+	\begin{dfn}
+		Consider a diagram
+		\begin{center}
+			\begin{tikzcd}
+				(X,B+M) \arrow[rr, dashed, "\varphi"] \arrow[dr] && (X',B'+M') \arrow[dl] \\
+				& Z
+			\end{tikzcd}
+		\end{center}
+		as in Definition \ref{dfn:MM_MFS}.
+		If
+		\begin{itemize}
+			\item $ \varphi $ is a birational contraction,
+			
+			\item $ B' = \varphi_* B $,
+			
+			\item $K_{X'}+B'+M'$ is ample over $Z$, and 
+			
+			\item for any $\varphi $-exceptional prime divisor $ F $ on $ X $ we have 
+			\[ a(F,X,B+M) \leq a(F,X',B'+M') , \]
+		\end{itemize}
+		then the map $ \varphi $ is called a \emph{canonical model of $ (X,B+M) $ over $ Z $}.
+	\end{dfn}
+	
+	Note that the g-pair $ (X',B'+M')$ is lc by \cite[Lemma 2.8(i)]{LMT}, and it is unique up to isomorphism by \cite[Lemma 2.12]{LMT}.
+	
+	\medskip
+	
+	Finally, as promised at the end of the introduction, we show that NQC klt generalized pairs of general type have good minimal models using the main result of \cite{BCHM10} and an auxiliary result from \cite{LX22b}.
+	
+	\begin{thm}\label{thm:EMM_general_type}
+		Let $(X,B+M)$ be a klt g-pair such that $K_X+B+M$ is big over $Z$. Then $(X,B+M)$ has a good minimal model over $Z$ as well as a canonical model over $Z$.
+	\end{thm}
+	
+	\begin{proof}
+		Since $K_X+B+M$ is big over $Z$, there exist an effective $\R$-Cartier $\R$-divisor $A$ on $X$ which is ample over $Z$ and an effective $\R$-Cartier $\R$-divisor $E$ on $X$ such that $A+E\sim_{\R,Z}K_X+B+M$. Since $(X,B+M)$ is klt, for any $ 0 < \varepsilon \ll 1 $ the g-pair $(X,B+\varepsilon A+\varepsilon E+M)$ with boundary part $B+\varepsilon A+\varepsilon E $ is also klt according to \cite[Remark 4.2(2)]{BZ16}. If we regard instead $B+\varepsilon E$ as the boundary part and $\varepsilon A + M$ as the nef part of the aforementioned g-pair, then by \cite[Lemma 3.4]{LX22b} there exists an effective $\R$-divisor $\Delta$ on $X$ such that $(X,\Delta)$ is a klt pair and $K_X+\Delta \sim_{\R,Z} K_X+B+\varepsilon E+\varepsilon A+M$. According to \cite{BCHM10}, 
+		%see also \cite[Theorem 4.4.1]{Fuj17}
+		the pair $(X,\Delta)$ has a good minimal model over $Z$ as well as a canonical model over $Z$. But since $ K_X+\Delta \sim_{\R,Z} (1+\varepsilon) (K_X+B+M)$, the same holds for the g-pair $(X/Z,B+M)$, as asserted.
+	\end{proof}
+	
+	\begin{cor}
+		Let $(X,B+M)$ be a klt $\Q$-g-pair with data $ W \to X \overset{\pi}{\longrightarrow} Z $ and $ M_W $ such that $K_X+B+M$ is big over $Z$. Then 
+		\[ R(X/Z,K_X+B+M) := \bigoplus_{m \geq 0} \pi_* \OO_X \big( m(K_X+B+M) \big) \]
+		is a finitely generated $ \OO_Z $-algebra.
+	\end{cor}
+	
+	\begin{proof}
+		The statement follows immediately from Theorem \ref{thm:EMM_general_type}.
+	\end{proof}
+	
+	
+	\subsection{The MMP for generalized pairs}
+	\label{subsection:MMP_g-pairs}
+	
+	In this paper we use the foundations of the MMP for (not necessarily $ \Q $-factorial) NQC lc g-pairs, which were recently established in the papers \cite{HaconLiu21,LX22b,Xie22}. More precisely, by \cite[Theorem 5.1]{HaconLiu21} and by \cite[Theorem 1.5]{Xie22} we now have a \emph{Cone theorem} and a \emph{Contraction theorem} for (not necessarily $ \Q $-factorial) NQC lc g-pairs, respectively, while \cite[Theorem 1.2]{LX22b} proved the \emph{existence of flips} in this setting. Therefore, given a (not necessarily $ \Q $-factorial) NQC lc g-pair $ (X/Z,B+M) $, we may run a $ (K_X + B + M) $-MMP over $Z$. 
+	
+	%The following remark contains useful information about the MMP for NQC lc g-pairs.
+	
+	\begin{rem}\label{rem:non-Q-fact_MMP}
+		Let $ (X/Z,B+M) $ be an NQC lc g-pair and assume that $ K_X+B+M $ is not nef over $ Z $. By \cite[Theorem 5.1]{HaconLiu21} there exists a $ (K_X+B+M) $-negative extremal ray $ R \in \NEb(X/Z) $ and by \cite[Theorem 1.5]{Xie22} we may consider the contraction $ g \colon X \to Y $ of $ R $. If $ \dim Y < \dim X $, then $ g $ is a \emph{Fano contraction}, that is, it determines a Mori fiber space structure on $(X/Z,B+M)$. If, on the other hand, $ \dim Y = \dim X $, then $ g $ is a birational contraction, and either $ \codim_X \Exc(g) = 1 $, in which case $g$ may contract more than one divisor, or $ \codim_X \Exc(g) \geq 2 $, in which case $g$ is small.
+		
+		In any of those two cases ($ \dim Y < \dim X $ or $ \dim Y = \dim X $), the numerical equivalence over $Y$ coincides with the $\R$-linear equivalence over $Y$. Indeed, let $D$ be an $\R$-Cartier divisor on $X$ such that $D \equiv_Y 0 $, or equivalently, $D \cdot R = 0$. Then $ D = \sum d_j D_j $, where each $d_j \in \R$ and each $D_j$ is a Cartier $\Z$-divisor on $X$ which is numerically trivial over $Y$; cf.\ \cite[Example 1.3.10]{Laz04}. In other words, $D_j \cdot R = 0$, and by (the third bullet of) \cite[Theorem 1.5]{Xie22} we deduce that $D_j \sim g^* G_j$ for some Cartier $\Z$-divisor $G_j$ on $Y$. Hence, $ D \sim_\R g^* \big( \sum d_j G_j \big)$, that is, $ D \sim_{\R,Y} 0 $, which proves the claim.
+		
+		Assume from now on that $g$ is a birational contraction. Then, as in the proof of \cite[Theorem 1.6]{Xie22}, we obtain a diagram
+		\begin{center}
+			\begin{tikzcd}[column sep = 2.5em, row sep = 2.5em]
+				(X,B+M) \arrow[dr, "g" swap] \arrow[rr, dashed, "\varphi"] \arrow[ddr, bend right = 25pt] && (X',B'+M') \arrow[dl, "h"] \arrow[ddl, bend left = 25pt] \\
+				& Y \arrow[d] \\
+				& Z
+			\end{tikzcd}
+		\end{center}
+		where the NQC lc g-pair $ (X'/Z,B'+M') $ is the canonical model of $ (X,B+M) $ over $ Y $; see also \cite[Section 4.9]{Fuj17}. We emphasize that both $\varphi$ and $h$ are birational contractions by construction; see, for example, the proof of \cite[Theorem 1.2]{LX22b} for the details. 
+		
+		We also make the following observations, which will be useful later in the paper.
+		\begin{enumerate}[(1)]            
+			\item If $g$ contracts a prime divisor $F$ on $X$, then $\varphi$ contracts $F$ as well, since it cannot be an isomorphism at the generic point of $F$ according to \cite[Lemma 2.8(ii)(a)]{LMT}.
+			
+			\item The birational contraction $h$ is small, regardless of whether $g$ is small or not. Indeed, arguing by contradiction and using the fact that $\varphi$ is a birational contraction, this follows readily from \cite[Lemma 2.8(ii)(b)]{LMT}.
+			
+			\item It follows from Remark \ref{rem:WCM_EMM} that $ (X,B+M) $ has a minimal model in the sense of Birkar-Shokurov over $ Y $.
+		\end{enumerate}
+	\end{rem}
+	
+	We establish now some basic properties of the MMP for (not necessarily $\Q$-factorial) NQC lc g-pairs.
+	
+	\begin{lem}\label{lem:properties_of_MMP}
+		Let $(X/Z,B+M)$ be an NQC lc g-pair. Consider a step of a $(K_X+B+M)$-MMP over $ Z $:
+		\begin{center}
+			\begin{tikzcd}
+				(X,B+M) \arrow[rr, dashed, "\varphi"] \arrow[dr, "g" swap] && (X',B'+M') \arrow[dl, "h"] \\
+				& Y
+			\end{tikzcd}
+		\end{center}
+		Denote by $\K$ the field $\Q$ of rational numbers or the field $\R$ of real numbers. Then the following statements hold:
+		
+		\begin{enumerate}[\normalfont (i)]
+			\item If $D$ is a $\K$-Cartier divisor on $X$, then $\varphi_*D$ is a $\K$-Cartier divisor on $X'$.
+			
+			\item The birational contraction $\varphi$ induces a linear map 
+			\[ N^1(X/Z)_\K \to N^1(X'/Z)_\K , \ [D]_Z \mapsto [\varphi_* D]_Z . \]
+			If, moreover, $\varphi$ is small, then the induced linear map is injective.
+		\end{enumerate}
+	\end{lem}
+	
+	\begin{proof}~
+		
+		\medskip
+		
+		\noindent (i) It suffices to treat the case $ \K = \Q $, so let $D$ be a $\Q$-Cartier divisor on $X$. We first claim that the map $\varphi$ is also a step of a $(K_X+\hat{B}+\hat{M})$-MMP over $Z$ for some lc $\Q$-g-pair $(X,\hat{B}+\hat{M})$. To prove this assertion, by \cite[Theorem 2.28]{HaconLiu21} we may find positive real numbers $r_1,\dots,r_m$ and $\Q$-divisors $B_1,\dots, B_\ell$ and $M_1,\dots, M_\ell$ on $X$ such that 
+		$$\sum_{j=1}^\ell r_j=1, \quad B = \sum_{j=1}^\ell r_j B_j,\quad M = \sum_{j=1}^\ell r_j M_j, $$
+		each $\Q$-g-pair $(X,B_j+M_j)$ is lc, each divisor $ K_X + B_j + M_j $ is $ \Q $-Cartier, and we have
+		\begin{equation}\label{eq:1_properties_of_MMP}
+			K_X + B + M = \sum_{j=1}^\ell r_j \big( K_X + B_j + M_j \big) . 
+		\end{equation}
+		Since $\rho(X/Y) = 1$, for each $1 \leq j \leq \ell$ there exists $\alpha_j \in \R$ such that
+		\begin{equation}\label{eq:2_properties_of_MMP}
+			K_X+B+M \equiv_Y \alpha_j (K_X+B_j+M_j) .
+		\end{equation}
+		Since $-(K_X+B+M)$ is ample over $Y$, it holds that $\alpha_j \neq 0 $ for every $1 \leq j \leq \ell$. Moreover, at least one of the $\alpha_j$, say $\alpha_1$, must be positive, since otherwise each divisor $K_X+B_j+M_j$ would be ample over $Y$ by \eqref{eq:2_properties_of_MMP}, and hence $ K_X+B+M $ would also be ample over $Y$ by \eqref{eq:1_properties_of_MMP}, which is impossible. Therefore, $(X/Z,B_1+M_1)$ is an lc $\Q$-g-pair such that $-(K_X+B_1+M_1)$ is ample over $Y$. Then, by definition of an MMP step (see also the proof of \cite[Theorem 1.6]{Xie22} and \cite[Section 4.9]{Fuj17}), we have
+		\[ X' \simeq \proj_Y \bigg( \bigoplus_{m \geq 0} g_*  \OO_X \big( m (K_X +B_1 + M_1) \big) \bigg) . \]
+		Thus, $\varphi$ is a step of a $(K_X+B_1+M_1)$-MMP over $Z$.
+		
+		Consequently, we may assume that $(X,B+M)$ itself is a $\Q$-g-pair. We denote by $R$ the $(K_X+B+M)$-negative extremal ray contracted by $g = \operatorname{cont}_R$. Since $\rho(X/Y) = 1$, there exists $\mu \in \Q$ such that 
+		$$ \big( D+\mu(K_X+B+M) \big) \cdot R = 0. $$
+		Take a positive integer $m$ such that $ m \big( D+\mu(K_X+B+M) \big) $ is Cartier. By (the third bullet of) \cite[Theorem 1.5]{Xie22} there exists a Cartier $\Z$-divisor $G$ on $Y$ such that 
+		$$ m \big( D+\mu(K_X+B+M) \big) \sim g^* G . $$
+		Therefore, 
+		$$ m \big( \varphi_*D + \mu(K_{X'}+B'+M') \big) \sim h^* G $$ 
+		is a Cartier $\Z$-divisor on $X'$; see also Remark \ref{rem:non-Q-fact_MMP}(2). Since $K_{X'}+B'+M'$ is itself $\Q$-Cartier by construction, we conclude that $\varphi_* D$ is a $\Q$-Cartier divisor on $X'$, which completes the proof of (i).
+		
+		\medskip
+		
+		\noindent (ii) The existence of the linear map 
+		\[ N^1(X/Z)_\K \to N^1(X'/Z)_\K , \ [D]_Z \mapsto [\varphi_* D]_Z \]
+		follows immediately from (i).
+		
+		Assume now that $\varphi$ is small and also that $D' := \varphi_* D \equiv_Z 0$. We will show that $D \equiv_Z 0 $. To this end, consider a common resolution of indeterminacies $ (p,q) \colon W \to X \times X' $ of the map $\varphi$.
+		\begin{center}
+			\begin{tikzcd}[column sep = 3em, row sep = 2.5em]
+				& W \arrow[dl, "p" swap] \arrow[dr, "q"] \\
+				X \arrow[rr, dashed, "\varphi"] \arrow[dr, "g" swap] && X' \arrow[dl, "h"] \\
+				& Y
+			\end{tikzcd}
+		\end{center}
+		Since $D'$ is nef over $Y$, we can readily check that $-(p^*D-q^*D')$ is nef over $X$. Since $\varphi$ is small, the $\K$-Cartier $\K$-divisor $p^*D-q^*D'$ is $p$-exceptional, and it follows now from the Negativity lemma that $p^*D-q^*D'\geq 0$. Since $-D'$ is also nef over $Y$, we have $q^*D'-p^*D\ge0$ as well, and hence $p^*D=q^*D'$. It follows that $D \equiv_Z 0 $, which completes the proof of (ii).
+	\end{proof}
+	
+	Even though we may run a $ (K_X + B + M) $-MMP over $Z$ for any given NQC lc g-pair $ (X/Z,B+M) $, its termination is not known in general. However, \cite{CT20} establishes the termination of flips (and hence of any MMP) for all NQC lc g-pairs of dimension $3$ as well as for NQC lc g-pairs of dimension $4$ whose canonical class is pseudo-effective; see also \cite{HM20,HanLiu22}.
+	
+	As the next result demonstrates, we may also run MMPs with scaling in this very general setting. Their termination is also unsettled in general, but there are already several results in the literature regarding this termination problem. We refer to \cite{BZ16,LT22a,LT22b,LX22a} and the relevant references therein for more information. See also Theorem \ref{thm:LT22b_4.1} below, which constitutes an exact analogue of \cite[Theorem 4.1(iii)]{Bir12a} in the setting of g-pairs, as well as Sections \ref{section:proofs_main_results} and \ref{section:applications} for further developments.
+	
+	\begin{lem}\label{lem:MMP_with_scaling}
+		Let $ (X/Z,B+M) $ be an NQC lc g-pair. Let $ P $ be the pushforward to $ X $ of an NQC divisor (over $ Z $) on a birational model of $ X $ and let $ N $ be an effective $ \R $-divisor on $ X $ such that $ N+P $ is $ \R $-Cartier. Assume that the NQC g-pair $ \big( X, (B+N) + (M+P) \big) $ is lc and that the divisor $ K_X + B + N + M + P $ is nef over $ Z $. Then we may run a $ (K_X+B+M) $-MMP over $ Z $ with scaling of $ N+P $. 
+		
+		In particular, we may run a $ (K_X + B + M) $-MMP over $Z$ with scaling of an ample divisor.
+	\end{lem}
+	
+	\begin{proof}
+		It is straightforward to check that \cite[Corollary 5.22]{HaconLiu21} holds if the assumption that $ X $ is $ \Q $-factorial (which is present in op.\ cit.) is replaced by the assumption that $ N+P $ is $ \R $-Cartier (which is included in the above statement). Thus, taking the second paragraph of Remark \ref{rem:non-Q-fact_MMP} into account (for the repetitions of the procedure), the previous observation and \cite[Theorem 1.5]{Xie22} imply that one may run a $ (K_X+B+M) $-MMP over $ Z $ with scaling of $ N+P $. Now, regarding the last sentence of the lemma, set $ N = 0 $ and take $ P $ to be a general ample over $ Z $ $\R$-divisor on $X$ to conclude.
+	\end{proof}
+	
+	The recently established Contraction theorem for (not necessarily $\Q$-factorial) NQC lc g-pairs has even further and significant consequences. Specifically, it allows us to remove the $ \Q $-factoriality assumption from the majority of the results of the paper \cite{LT22b}. We indicate now such refinements of \cite[Lemma 2.13, Theorem 2.14, Lemma 2.16 and Theorem 4.1]{LT22b}. This discussion will be completed in Section \ref{section:proofs_main_results}, where \cite[Proposition A.3, Theorem 1.2, Corollaries 1.3 and 1.4, and Theorem 1.5]{LT22b} will also be refined accordingly.
+	
+	\begin{rem}\label{rem:comments_on_LT22b}
+		For ease of reference we will use here the same notation as the one from those parts of \cite{LT22b} which will be mentioned below.
+		\begin{enumerate}[(1)]
+			\item Taking Lemmas \ref{lem:pullback_P+N} and \ref{lem:MMP_with_scaling} into account, it is straightforward to check that 
+			%the $ \Q $-factoriality assumption in \cite[Subsection 2.5]{LT22b} can be dropped. More precisely, 
+			\cite[Lemma 2.13 and Theorem 2.14]{LT22b} also hold without the assumption that the underlying variety $ X_1 $ of the given NQC lc g-pair $ \big( X_1/Z , (B_1+N_1) + (M_1+P_1) \big) $ is $ \Q $-factorial; see also Section \ref{section:lifting_MMP} for further developments.
+			
+			\item In view of Lemma \ref{lem:MMP_with_scaling} and \cite[Section 3]{LX22a}, one may readily check that \cite[Lemma 2.16]{LT22b} also holds without the assumption that the underlying variety $ X $ of the given NQC lc g-pair $ \big( X/Z , (B+N) + (M+P) \big) $ is $ \Q $-factorial.
+		\end{enumerate}
+	\end{rem}
+	
+	\begin{thm}\label{thm:LT22b_4.1}
+		Let $ (X/Z,B+M) $ be an NQC lc g-pair. Let $ P $ be the pushforward to $X$ of an NQC divisor (over $ Z $) on a high birational model of $ X $ and let $ N $ be an effective $ \R $-divisor on $ X $ such that $ N+P $ is $ \R $-Cartier. Assume that the NQC g-pair $ \big( X, (B+N) + (M+P) \big) $ is lc and that the divisor $ K_X + B + N + M + P $ is nef over $ Z $. Consider a $ (K_X + B + M) $-MMP over $Z$ with scaling of $ N+P $, denote by $ \lambda_i $ the corresponding nef thresholds at the steps of this MMP and set $ \lambda := \lim\limits_{i\to \infty} \lambda_i $.
+		
+		If $ \lambda \neq \lambda_i $ for every $ i $ and if $\big(X,(B+\lambda N)+(M+\lambda P)\big)$ has a minimal model in the sense of Birkar-Shokurov over $Z$, then the given MMP terminates.
+	\end{thm}
+	
+	\begin{proof}
+		Taking Lemma \ref{lem:MMP_with_scaling} into account, we may repeat verbatim the proof of \cite[Theorem 4.1]{LT22b}, except that we now invoke the refined version of \cite[Theorem 2.14]{LT22b}, which was discussed in Remark \ref{rem:comments_on_LT22b}(1), in Step 5 of that proof\footnote{For the sake of clarity we note that \cite[Lemma 2.16]{LT22b} was (only) applied in Step 5 of the proof of \cite[Theorem 4.1]{LT22b} to NQC $ \Q $-factorial dlt g-pairs. Therefore, the slightly more general version of \cite[Lemma 2.16]{LT22b} mentioned in Remark \ref{rem:comments_on_LT22b}(2) is not required for the proof of Theorem \ref{thm:LT22b_4.1}.}.
+	\end{proof}
+	
+	The final result in this subsection exploits the \emph{boundedness of the length of extremal rays}, namely \cite[Theorem 1.3(2)]{HaconLiu21}, and plays a fundamental role in the proofs of Theorem \ref{thm:mainthm} and Lemma \ref{lem:scaling_numbers_to_zero}. It is a variant of \cite[Lemma 3.21]{HanLi22} and constitutes a generalization of \cite[Lemma 2.20]{LT22a}, cf.\ \cite[Proposition 2.12]{LT22b}. For brevity we only indicate below the necessary modifications to the proof of \cite[Lemma 2.20]{LT22a} and we refer to op.\ cit.\ for the details. We stress that the proof of Lemma \ref{lem:trivial_MMP} also relies essentially on the Contraction theorem for NQC lc g-pairs, namely \cite[Theorem 1.5]{Xie22}.
+	
+	\begin{lem}\label{lem:trivial_MMP}
+		Let $ (X/Z,B+M) $ be an NQC lc g-pair. Let $ P $ be the pushforward to $ X $ of an NQC divisor (over $ Z $) on a birational model of $ X $ and let $ N $ be an effective $ \R $-divisor on $ X $ such that $ N+P $ is $ \R $-Cartier. Assume that the NQC g-pair $ \big( X, (B+N) + (M+P) \big) $ is lc and that the divisor $ K_X + B + N + M + P $ is nef over $ Z $. Then there exists $ \varepsilon_0 >0 $ such that for every $ \varepsilon \in (0,\varepsilon_0)$, any $ \big(K_X + B + M + (1-\varepsilon)(N+P) \big) $-MMP over $Z$ is $ (K_X + B + N + M + P) $-trivial.
+	\end{lem}
+	
+	\begin{proof}
+		To prove the statement, we argue as in the proof of \cite[Lemma 2.20]{LT22a}, the difference being that we now work with the g-pair $ \big( X, (B+N) + (M+P) \big) $ and we invoke \cite[Proposition 2.6]{HanLiu20}, (the third bullet of) \cite[Theorem 1.5]{Xie22} and \cite[Theorem 1.3(2)]{HaconLiu21} instead of [HL18, Prop.\ 3.16] = \cite[Proposition 3.20]{HanLi22}, \cite[Theorem 3.25(4)]{KM98} and [HL18, Prop.\ 3.13] = \cite[Proposition 3.17]{HanLi22}, respectively.
+	\end{proof}
+	
+	
+	\subsection{Log abundant generalized pairs}
+	\label{subsection:log_abundant}
+	
+	In this subsection we work exclusively in the absolute setting, that is, we assume that $ Z = \spec \C $. Therefore, $ X $ always denotes here a normal \emph{projective} variety.
+	
+	Given a normal projective variety $ X $ and an $ \R $-Cartier $ \R $-divisor $ D $ on $ X $, we denote by $ \kappa_\iota(X,D) $ the \emph{invariant Iitaka dimension} of $ D $ and by $ \kappa_\sigma(X,D) $ the \emph{numerical dimension} of $ D $; see \cite{Choi08} and \cite{Nak04}, respectively.
+	We say that $ D $ is \emph{abundant} if the equality $ \kappa_\iota(X,D) = \kappa_\sigma(X,D) $ holds. In particular, we say that an lc g-pair $ (X,B+M) $ is \emph{abundant} if the divisor $ K_X+B+M $ is abundant.
+	
+	\begin{rem}\label{rem:abundant_MM}
+		Let $(X,B+M)$ be an lc g-pair and let $ \varphi \colon (X,B+M) \dashrightarrow (X',B'+M')$ be a minimal model (in any sense) of $(X,B+M)$. Then $(X,B+M)$ is abundant if and only if $(X',B'+M')$ is abundant. Indeed, for any resolution of indeterminacies $ (p,q) \colon W \to X \times X' $ of the map $\varphi$ we may write
+		\[ p^* (K_X+B+M) \sim_\R q^* (K_{X'}+B'+M') + E , \]
+		where $E$ is an effective $q$-exceptional $\R$-Cartier $\R$-divisor on $W$ (see \cite[Lemma 2.8(i)]{LMT} and \cite[Remark 2.6]{LT22b}), and it follows now from \cite[Remark 2.15(2)]{Hash20d} that $K_X+B+M$ is abundant if and only if $K_{X'}+B'+M'$ is abundant.
+	\end{rem}
+	
+	The following definition will be needed in Section \ref{section:applications}. For more information about the notion that will be defined below as well as for its relative version we refer to \cite[Subsection 2.3]{Hash20d}.
+	
+	\begin{dfn}
+		Let $ (X,B+M) $ be an lc g-pair, where $ X $ is a normal projective variety. An $ \R $-Cartier $ \R $-divisor $ D $ on $ X $ is said to be \emph{log abundant with respect to $ (X,B+M) $} if $ D $ is abundant and for any lc center $ S $ of $ (X,B+M) $ with normalization $ \nu \colon S^\nu \to S $ the divisor $ \nu^* D $ is abundant. In particular, we say that the given lc g-pair $ (X,B+M) $ is \emph{log abundant} if the divisor $ K_X+B+M $ is log abundant with respect to $ (X,B+M) $.
+	\end{dfn}
+	
+	\begin{lem}\label{lem:dlt_blow-up_log_abundant}
+		Let $(X,B+M)$ be an lc g-pair and let $h \colon (X',B'+M') \to (X,B+M) $ be a dlt blow-up of $(X,B+M)$. Then $(X,B+M)$ is log abundant if and only if $(X',B'+M')$ is log abundant.
+	\end{lem}
+	
+	\begin{proof}
+		Since
+		$$ K_{X'} + B' + M' \sim_{\R} h^* (K_X + B + M) , $$
+		by \cite[Remark 2.15(2)]{Hash20d} we deduce that $K_X+B+M$ is abundant if and only if $K_{X'}+B'+M'$ is abundant.
+		
+		For any divisorial valuation $E$ over $X$ we have $a(E,X,B+M) = a(E,X',B'+M')$, and thus $c_X(E)$ is an lc center of $(X,B+M)$ if and only if $c_{X'}(E)$ is an lc center of $(X',B'+M')$. Therefore, given an lc center $W'$ of $(X',B'+M')$, its image $W := h(W')$ is an lc center of $(X,B+M)$. Since $W'$ is normal (see \cite[Subsection 2.3]{HanLi22}), the restriction $ h|_{W'} \colon W' \to W $ of $h$ to $W'$ factors through the normalization $W^\nu$ of $W$, so we obtain a projective surjective morphism $ \xi \colon W' \to W^\nu $. Since 
+		\[ (K_{X'}+B'+M')|_{W'} \sim_\R \xi^* \big( (K_X+B+M)|_{W^\nu} \big) , \]
+		by \cite[Remark 2.15(2)]{Hash20d} we deduce that $(K_X+B+M)|_{W^\nu}$ is abundant if and only if $(K_{X'}+B'+M')|_{W'}$ is abundant, which proves the statement.
+	\end{proof}
+	
+	\begin{lem}\label{lem:log_abundant_MMs}
+		Let $(X,B+M)$ be an lc g-pair and let $(X',B'+M')$ and $(X'',B''+M'')$ be two minimal models (in any sense) of $(X,B+M)$. Then $(X',B'+M')$ is log abundant if and only if $(X'',B''+M'')$ is log abundant.
+	\end{lem}
+	
+	\begin{proof}
+		In view of Lemma \ref{lem:dlt_blow-up_log_abundant}, it suffices to treat the case when both $(X',B'+M')$ and $(X'',B''+M'')$ are minimal models in the sense of Birkar-Shokurov of $(X,B+M)$ and have dlt singularities as well. Then the lc centers of $(X',B'+M')$ and $(X'',B''+M'')$ are normal (and finitely many); see \cite[Subsection 2.3]{HanLi22}. 
+		%We use below the same notation as in the second paragraph of the proof of Lemma \ref{lem:GMM}.
+		
+		Pick a sufficiently high common resolution of indeterminacies $ (p,q,r) \colon W \to X \times X' \times X'' $ of the maps $ X \dashrightarrow X' $ and $ X \dashrightarrow X'' $ such that all lc centers of $(X',B'+M')$ and $(X'',B''+M'')$ have been extracted on $ W $. Then the occurring equality $E' = E''$ (see the second paragraph of the proof of Lemma \ref{lem:GMM}) implies
+		\begin{equation}\label{eq:1_log_abundant_MMs}
+			a(D,X',B'+M') = a(D,X'',B''+M'') \ \text{ for any prime divisor $D$ on $W$} 
+		\end{equation}
+		and
+		\begin{equation}\label{eq:2_log_abundant_MMs}
+			q^* (K_{X'} + B' + M') = r^* (K_{X''} + B'' + M'') .
+		\end{equation}
+		By \eqref{eq:1_log_abundant_MMs} and by construction, for any lc center $S$ of $(X',B'+M')$ there exists a prime divisor $D$ on $W$ whose image $T := r(D)$ is an lc center of $(X'',B''+M'')$, and vice versa. Then the statement follows readily by using \eqref{eq:2_log_abundant_MMs} and by invoking \cite[Remark 2.15(2)]{Hash20d}, bearing also the proof of Lemma \ref{lem:dlt_blow-up_log_abundant} in mind.
+	\end{proof}
+	
+	
+	
+	
+	\section{Lifting an MMP}
+	\label{section:lifting_MMP}
+	
+	Our first goal in this section is to demonstrate how one can \enquote{lift} an MMP starting with an NQC lc g-pair to an MMP starting with an NQC $\Q$-factorial dlt g-pair, cf.\ \cite[Section 3]{LMT}.
+	
+	\medskip
+	
+	Let $ ( X_1/Z, B_1+M_1) $ be an NQC lc g-pair. Assume that the divisor $K_{X_1} + B_1 + M_1$ is not nef over $Z$. Consider the first step
+	\begin{center}
+		\begin{tikzcd}[column sep = 2em, row sep = large]
+			(X_1,B_1+M_1) \arrow[rr, dashed, "\pi_1"] \arrow[dr, "\theta_1" swap] && (X_2,B_2+M_2) \arrow[dl, "\theta_1^+"] \\
+			& Z_1
+		\end{tikzcd}
+	\end{center}
+	of a $ (K_{X_1}+B_1+M_1)$-MMP over $Z$, assuming (for our purposes here) that $\theta_1$ is not a Mori fiber space, and a dlt blow-up 
+	$ h_1 \colon (X_1', B_1' + M_1') \to (X_1,B_1+M_1) $
+	of $ (X_1,B_1+M_1) $. 
+	%According to Remark \ref{rem:non-Q-fact_MMP}, the g-pair $ (X_2,B_2+M_2) $ is the canonical model of $ (X_1,B_1+M_1) $ over $ Z_1 $ and $ (X_1,B_1+M_1) $ has a minimal model in the sense of Birkar-Shokurov over $ Z_1 $. 
+	By arguing as in the first paragraph of the proof of \cite[Lemma 2.13]{LT22b} and by taking Remark \ref{rem:non-Q-fact_MMP}(3) into account, we may construct the following diagram:
+	\begin{center}
+		\begin{tikzcd}[column sep = 2em, row sep = large]
+			(X_1',B_1'+M_1') \arrow[d, "h_1" swap] \arrow[rr, dashed, "\rho_1"] && (X_2',B_2'+M_2') \arrow[d, "h_2" swap]
+			\\ 
+			(X_1,B_1+M_1) \arrow[dr, "\theta_1" swap] \arrow[rr, dashed, "\pi_1"] && (X_2,B_2+M_2) \arrow[dl, "\theta_1^+"] 
+			\\
+			& Z_1
+		\end{tikzcd}
+	\end{center}
+	where the map $ \rho_1 \colon X_1' \dashrightarrow X_2' $ is a $(K_{X_1'}+B_1'+M_1')$-MMP over $ Z_1 $ (with scaling of an ample divisor) and the map $ h_2 \colon (X_2',B_2'+M_2') \to (X_2,B_2+M_2) $ is a dlt blow-up of $ (X_2,B_2+M_2) $.
+	
+	\begin{rem}\label{rem:lifting_Picard_number_drops}
+		%We use here the same notation as above. 
+		If $\theta_1$ contracts a prime divisor $D$ on $X_1$, then so does $\pi_1$ according to Remark \ref{rem:non-Q-fact_MMP}(1). Furthermore, the strict transform $ (h_1)_*^{-1} D $ of $D$ on $X_1'$ must be contracted by $\rho_1$. Indeed, by \cite[Lemma 2.8(ii)(a)]{LMT} we obtain 
+		\[ a(D,X_1',B_1'+M_1') = a(D,X_1,B_1+M_1) < a(D,X_2,B_2+M_2) = a(D,X_2',B_2'+M_2') , \]
+		which shows that $\rho_1$ cannot be an isomorphism at the generic point of $ (h_1)_*^{-1} D $ and proves the previous claim. In particular, it follows from the above and from \cite[Corollary 5.19 and Theorem 6.3]{HaconLiu21} that $ \rho(Y_2/Z) < \rho(Y_1/Z) $.
+	\end{rem}
+	
+	Now, if we are given instead a $ (K_{X_1}+B_1+M_1)$-MMP over $Z$, then by repeating the above procedure we obtain the following result, which plays a crucial role in the proof of Proposition \ref{prop:mainprop}.
+	
+	\begin{thm}\label{thm:lifting_MMP}
+		Let $ ( X_1/Z, B_1+M_1) $ be an NQC lc g-pair. Consider a $ (K_{X_1}+B_1+M_1)$-MMP over $Z$:
+		\begin{center}
+			\begin{tikzcd}[column sep = 0.8em, row sep = large]
+				(X_1,B_1+M_1) \arrow[dr, "\theta_1" swap] \arrow[rr, dashed, "\pi_1"] && (X_2,B_2+M_2) \arrow[dl, "\theta_1^+"] \arrow[dr, "\theta_2" swap] \arrow[rr, dashed, "\pi_2"] && (X_3,B_3+M_3) \arrow[dl, "\theta_2^+"] \arrow[rr, dashed, "\pi_3"] && \cdots \\
+				& Z_1 && Z_2
+			\end{tikzcd}
+		\end{center}
+		Then there exists a diagram
+		\begin{center}
+			\begin{tikzcd}[column sep = 0.8em, row sep = large]
+				(X_1',B_1'+M_1') \arrow[d, "h_1" swap] \arrow[rr, dashed, "\rho_1"] && (X_2',B_2'+M_2') \arrow[d, "h_2" swap] \arrow[rr, dashed, "\rho_2"] && (X_3',B_3'+M_3') \arrow[d, "h_3" swap] \arrow[rr, dashed, "\rho_3"] && \dots 
+				\\ 
+				(X_1,B_1+M_1) \arrow[dr, "\theta_1" swap] \arrow[rr, dashed, "\pi_1"] && (X_2,B_2+M_2) \arrow[dl, "\theta_1^+"] \arrow[dr, "\theta_2" swap] \arrow[rr, dashed, "\pi_2"] && (X_3,B_3+M_3) \arrow[dl, "\theta_2^+"] \arrow[rr, dashed, "\pi_3"] && \dots \\
+				& Z_1 && Z_2
+			\end{tikzcd}
+		\end{center}
+		where, for each $i \geq 1$, 
+		\begin{itemize}
+			\item the map $ \rho_i \colon X_i' \dashrightarrow X_{i+1}' $ is a $(K_{X_i'}+B_i'+M_i')$-MMP over $ Z_i $, and
+			
+			\item the map $ h_i \colon (X_i',B_i'+M_i') \to (X_i,B_i+M_i) $ is a dlt blow-up.
+		\end{itemize}
+		In particular, the sequence on top of the above diagram is a $ (K_{X_1'}+B_1'+M_1') $-MMP over $ Z $, where $ (X_1'/Z,B_1'+M_1') $ is an NQC $ \Q $-factorial dlt g-pair.
+		
+		Furthermore, there exists an integer $k \geq 1$ such that the map $ \pi_i \colon X_i \dashrightarrow X_{i+1} $ is small and the induced linear map $ N^1(X_i/Z)_\R \to N^1(X_{i+1}/Z)_\R $ is an isomorphism for each $ i \geq k $; in particular, it holds that $ \rho(X_i/Z) = \rho(X_{i+1}/Z) $ for each $ i \geq k $.
+	\end{thm}
+	
+	\begin{proof}
+		It remains to prove the second part of the statement.
+		In view of Lemma \ref{lem:properties_of_MMP}(ii) and Remark \ref{rem:lifting_Picard_number_drops}, we may find an integer $ \ell_1 \geq 1 $ such that for each $ i \geq \ell_1 $ the birational contraction $ \pi_i \colon X_i \dashrightarrow X_{i+1} $ is small and the induced linear map $ N^1(X_i/Z)_\R \to N^1(X_{i+1}/Z)_\R $ is injective. By relabelling the given $ (K_{X_1}+B_1+M_1)$-MMP over $Z$, we may assume that $ \ell_1 = 1 $. We obtain thus a non-decreasing sequence $ \big\{ \rho(X_i/Z) \big\}_{i=1}^{+\infty} $ of positive integers which is bounded from above by $ \rho(X_1'/Z) < +\infty $; see \cite[Corollary 5.19 and Theorem 6.3]{HaconLiu21}. Therefore, this sequence must stabilize, that is, there exists an integer $ \ell_2 \geq 1 $ such that for each $ i \geq \ell_2 $ the linear map $ N^1(X_i/Z)_\R \to N^1(X_{i+1}/Z)_\R $ is an isomorphism. We are done by taking $ k := \ell_2 \geq \ell_1 \geq 1 $.
+	\end{proof}
+	
+	Our second objective in this section is to explain how one can make an analogous construction when one considers an MMP \emph{with scaling} starting with an NQC lc g-pair, cf.\ \cite[Subsection 2.5]{LT22b}.
+	
+	\medskip
+	
+	% Let $ ( X_1/Z, B_1+M_1) $ be an NQC lc g-pair. Let $ P_1 $ be the pushforward to $ X_1 $ of an NQC divisor (over $ Z $) on a birational model of $ X_1 $ and let $ N_1 $ be an effective $ \R $-divisor on $ X_1 $ such that $ N_1 + P_1 $ is $ \R $-Cartier. Assume that the NQC g-pair $ \big( X_1, (B_1+N_1) + (M_1+P_1) \big) $ is lc and that the divisor $ K_{X_1} + B_1 + N_1 + M_1 + P_1 $ is nef over $ Z $. Recall that, under these assumptions, we may run a $ (K_{X_1}+B_1+M_1)$-MMP over $Z$ with scaling of $ N_1 + P_1 $ according to Lemma \ref{lem:MMP_with_scaling}.
+	
+	Let the g-pair $ ( X_1/Z, B_1+M_1) $ and the divisors $P_1$ and $N_1$ be as in Lemma \ref{lem:MMP_with_scaling} so that we may run a $ (K_{X_1}+B_1+M_1)$-MMP over $Z$ with scaling of $ N_1 + P_1 $. Assume that the divisor $K_{X_1} + B_1 + M_1$ is not nef over $Z$, and set
+	\[ \lambda_1 := \inf \{ t \in \R_{\geq 0} \mid K_{X_1} + (B_1 + t N_1) + (M_1 + t P_1) \text{ is nef over } Z \} \in (0,1] . \]
+	Consider the first step
+	\begin{center}
+		\begin{tikzcd}[column sep = 2em, row sep = large]
+			(X_1,B_1+M_1) \arrow[rr, dashed, "\pi_1"] \arrow[dr, "\theta_1" swap] && (X_2,B_2+M_2) \arrow[dl, "\theta_1^+"] \\
+			& Z_1
+		\end{tikzcd}
+	\end{center}
+	of a $ (K_{X_1}+B_1+M_1)$-MMP over $Z$ with scaling of $N_1+P_1$, assuming (for our purposes here) that $\theta_1$ is not a Mori fiber space, as well as a dlt blow-up 
+	$ h_1 \colon (X_1', B_1' + M_1') \to (X_1,B_1+M_1) $
+	of $ (X_1,B_1+M_1) $; in particular, we have 
+	\[ K_{X_1'} + B_1'+M_1' \sim_\R h_1^*(K_{X_1} + B_1 + M_1) . \]
+	Let $f_1\colon W\to X_1$ be a log resolution of $(X_1,B_1+N_1)$ which factors through $X_1'$ and such that there exists an $\R$-divisor $P_W$ on $W$ such that $P_W$ is NQC (over $Z$) and $ (f_1)_* P_W = P $. By Lemma \ref{lem:pullback_P+N} we may write 
+	\[ f_1^*(P_1+N_1) = P_W + (f_1)_*^{-1} N_1 + E_1 , \]
+	where $ E_1 $ is an effective $ f_1 $-exceptional $ \R $-divisor on $ W $. We now define $N_1'$ and $P_1'$ as the pushforwards of $(f_1)_*^{-1} N_1+E_1$ and $P_W$, respectively, to $X_1'$, and we note that
+	\begin{equation}\label{eq:1_lifting_MMP_with_scaling}
+		N_1' + P_1' = h_1^* (N_1 + P_1) .
+	\end{equation}
+	By arguing as in the proof of \cite[Lemma 2.13]{LT22b} and by taking Remark \ref{rem:non-Q-fact_MMP}(3) into account, we may construct the following diagram:
+	\begin{center}
+		\begin{tikzcd}[column sep = 2em, row sep = large]
+			(X_1',B_1'+M_1') \arrow[d, "h_1" swap] \arrow[rr, dashed, "\rho_1"] && (X_2',B_2'+M_2') \arrow[d, "h_2" swap]
+			\\ 
+			(X_1,B_1+M_1) \arrow[dr, "\theta_1" swap] \arrow[rr, dashed, "\pi_1"] && (X_2,B_2+M_2) \arrow[dl, "\theta_1^+"] 
+			\\
+			& Z_1
+		\end{tikzcd}
+	\end{center}
+	where the map $ \rho_1 \colon X_1' \dashrightarrow X_2' $ is a $(K_{X_1'}+B_1'+M_1')$-MMP over $ Z_1 $ with scaling of $ N_1' + P_1' $ and the map $ h_2 \colon (X_2',B_2'+M_2') \to (X_2,B_2+M_2) $ is a dlt blow-up of $ (X_2,B_2+M_2) $. Moreover, this MMP is also a $(K_{X_1'}+B_1'+M_1')$-MMP over $ Z $ with scaling of $  N_1' + P_1' $, and if we set $P_2 := (\pi_1)_* P_1 $, $N_2 := (\pi_1)_* N_1 $, $ P_2' :=(\rho_1)_* P_1' $ and $N_2' :=(\rho_1)_* N_1'$, then we have
+	\begin{equation}\label{eq:2_lifting_MMP_with_scaling}
+		N_2' + P_2' = h_2^* (N_2 + P_2) .
+	\end{equation}
+	
+	A priori, the map $ \rho_1 \colon X_1' \dashrightarrow X_2' $ is a $(K_{X_1'}+B_1'+M_1')$-MMP over $ Z_1 $ with scaling of an ample divisor. However, the following crucial observation, which is also contained in the proof of \cite[Lemma 2.13]{LT22b}, allows us to view $\rho_1$ as a $(K_{X_1'}+B_1'+M_1')$-MMP with scaling of $ N_1' + P_1' $ over $Z_1$ or over $ Z $, as mentioned above. Specifically, if we denote by $ Y^j \dashrightarrow Y^{j+1} $ the steps of the $(K_{X_1'}+B_1'+M_1')$-MMP over $ Z_1 $ with scaling of an ample divisor, where $ Y^1 := X_1' $ and $ Y^k := X_2' $, and by $B^j$, $M^j$, $N^j$ and $P^j$ the pushforwards of $B_1'$, $M_1'$, $N_1'$ and $P_1'$, respectively, to $Y^j$, and if we consider the nef thresholds $\nu_j$ at the steps of this MMP, i.e., 
+	$$ \nu_j := \inf \big\{ t \in \R_{\geq 0} \mid K_{Y^j} + (B^j + t N^j) + (M^j + t P^j) \text{ is nef over } Z \big\} , \ j \in \{1,\dots,k \} , $$
+	then we can check that $ \nu_j = \lambda_1 $ for every $ j \in \{1, \dots, k-1 \} $.
+	
+	Therefore, if we are given instead a $ (K_{X_1}+B_1+M_1)$-MMP over $Z$ with scaling of $N_1 + P_1$, then by repeating the above procedure and by taking the previous observation, Lemma \ref{lem:properties_of_MMP}(ii) and Remark \ref{rem:lifting_Picard_number_drops} into account, we obtain the following result, which plays a central role in the proofs of Corollaries \ref{cor:Hash20d_3.9} and \ref{cor:Hash20d_3.13}.
+	
+	\begin{thm} \label{thm:lifting_MMP_with_scaling}
+		Let $ (X_1/Z,B_1+M_1) $ be an NQC lc g-pair. Let $ P_1 $ be the pushforward to $ X_1 $ of an NQC divisor (over $ Z $) on a birational model of $ X_1 $ and let $ N_1 $ be an effective $ \R $-divisor on $ X_1 $ such that $ N_1 + P_1 $ is $ \R $-Cartier. Assume that the NQC g-pair $ \big( X_1, (B_1+N_1) + (M_1+P_1) \big) $ is lc and that the divisor $ K_{X_1} + B_1 + N_1 + M_1 + P_1 $ is nef over $ Z $.
+		Consider a $(K_{X_1} + B_1 + M_1)$-MMP over $Z$ with scaling of $ N_1 + P_1 $:
+		\begin{center}
+			\begin{tikzcd}[column sep = 0.8em, row sep = large]
+				(X_1,B_1+M_1) \arrow[dr, "\theta_1" swap] \arrow[rr, dashed, "\pi_1"] && (X_2,B_2+M_2) \arrow[dl, "\theta_1^+"] \arrow[dr, "\theta_2" swap] \arrow[rr, dashed, "\pi_2"] && (X_3,B_3+M_3) \arrow[dl, "\theta_2^+"] \arrow[rr, dashed, "\pi_3"] && \cdots \\
+				& Z_1 && Z_2
+			\end{tikzcd}
+		\end{center}
+		and denote by $N_i$ and $P_i$ the pushforwards of $N_1$ and $P_1$, respectively, to $X_i$. Then there exists a diagram
+		\begin{center}
+			\begin{tikzcd}[column sep = 0.8em, row sep = large]
+				(X_1',B_1'+M_1') \arrow[d, "h_1" swap] \arrow[rr, dashed, "\rho_1"] && (X_2',B_2'+M_2') \arrow[d, "h_2" swap] \arrow[rr, dashed, "\rho_2"] && (X_3',B_3'+M_3') \arrow[d, "h_3" swap] \arrow[rr, dashed, "\rho_3"] && \dots 
+				\\ 
+				(X_1,B_1+M_1) \arrow[dr, "\theta_1" swap] \arrow[rr, dashed, "\pi_1"] && (X_2,B_2+M_2) \arrow[dl, "\theta_1^+"] \arrow[dr, "\theta_2" swap] \arrow[rr, dashed, "\pi_2"] && (X_3,B_3+M_3) \arrow[dl, "\theta_2^+"] \arrow[rr, dashed, "\pi_3"] && \dots \\
+				& Z_1 && Z_2
+			\end{tikzcd}
+		\end{center}
+		where, for each $i \geq 1$, 
+		\begin{itemize}
+			\item the map $ \rho_i \colon X_i' \dashrightarrow X_{i+1}' $ is a $(K_{X_i'}+B_i'+M_i')$-MMP over $Z$ with scaling of $ N_i' + P_i' $, where the divisors $ N_i' $ and $ P_i' $ on $ X_i' $ are defined as in \eqref{eq:2_lifting_MMP_with_scaling} (or as in \eqref{eq:1_lifting_MMP_with_scaling} for $i=1$), and
+			
+			\item the map $ h_i \colon (X_i',B_i'+M_i') \to (X_i,B_i+M_i) $ is a dlt blow-up.
+		\end{itemize}
+		In particular, the sequence on top of the above diagram is a $ (K_{X_1'}+B_1'+M_1') $-MMP over $ Z $ with scaling of $ N_1' + P_1' = h_1^* (N_1 + P_1) $, where $ (X_1'/Z,B_1'+M_1') $ is an NQC $ \Q $-factorial dlt g-pair.
+		
+		Furthermore, if we denote by $\lambda_i$ the nef thresholds at the steps of the $(K_{X_1} + B_1 + M_1)$-MMP over $Z$ with scaling of $ N_1 + P_1 $, that is,
+		\[ \lambda_i := \inf \{ t \in \R_{\geq 0} \mid K_{X_i} + (B_i + t N_i) + (M_i + t P_i) \text{ is nef over } Z \} , \]
+		and by $\mu_i$ the nef thresholds at the corresponding steps of the $ (K_{X_1'}+B_1'+M_1') $-MMP over $ Z $ with scaling of $ N_1' + P_1' = h_1^* (N_1 + P_1) $, that is,
+		\[ \mu_i := \inf \{ t \in \R_{\geq 0} \mid K_{X_i'} + (B_i' + t N_i') + (M_i' + t P_i') \text{ is nef over } Z \} , \]
+		then it holds that 
+		\[ \lambda_i = \mu_i \quad \text{for every } i \geq 1 . \]
+		
+		Finally, there exists an integer $k \geq 1$ such that the map $ \pi_i \colon X_i \dashrightarrow X_{i+1} $ is small and the induced linear map $ N^1(X_i/Z)_\R \to N^1(X_{i+1}/Z)_\R $ is an isomorphism for each $ i \geq k $.
+	\end{thm}
+	
+	We conclude this section with some clarifying comments about Theorem \ref{thm:lifting_MMP_with_scaling}. 
+	%We use below the same notation as above. 
+	Each map $ \rho_i \colon X_i' \dashrightarrow X_{i+1}' $ is, in general, the composite of finitely many steps of a $(K_{X_i'}+B_i'+M_i')$-MMP over $ Z $ with scaling of $ N_i' + P_i' = h_i^* (N_i + P_i) $, but not necessarily just one step (e.g., a flip). Additionally, the nef thresholds at the steps of this MMP, denoted by 
+	$$ \nu_j^{(i)} , \ i \geq 1 , \ 1 \leq j \leq k_i , $$ 
+	% $$ \big\{ \nu_j^{(i)} \big\}_{j=1}^{k_i} , \ i \geq 1, $$ 
+	where $ \nu_1^{(i)}$ is computed on $X_i'$ and $ \nu_{k_i}^{(i)} $ is computed on $X_{i+1}'$, 
+	satisfy the following properties:
+	\[ \nu_j^{(i)} = \lambda_i \ \text{ for all } 1 \leq j < k_i \quad \text{and} \quad \nu_{k_i}^{(i)} = \lambda_{i+1} , \]
+	where $ \lambda_i $ denotes the nef threshold at the $i$-th step of the given $(K_{X_1} + B_1 + M_1)$-MMP over $Z$ with scaling of $ N_1 + P_1 $. Finally, the sequence $ \{ \mu_i \}_{i=1}^{+\infty} $ of nef thresholds defined above forms a subsequence of $ \big\{ \nu_j^{(i)} \big\}_{i=1, \ j=1}^{+\infty, \ k_i} $, namely, we have
+	\[ \mu_i = \nu_1^{(i)} = \lambda_i \quad \text{for each } i \geq 1 . \]
+	
+	
+	
+	
+	\section{Proofs of main results}
+	\label{section:proofs_main_results}
+	
+	We first remove from \cite[Proposition A.3 and Theorem 1.2]{LT22b} the assumption that the underlying variety is $ \Q $-factorial; see Proposition \ref{prop:mainprop} and Theorem \ref{thm:mainthm}, respectively. 
+	%For the proof of the former we use crucially Theorems \ref{thm:LT22b_4.1} and \ref{thm:lifting_MMP}, as well as \cite[Theorem 1.2(1)]{LX22a}, whereas the proof of the latter relies also on Lemma \ref{lem:trivial_MMP} and Proposition \ref{prop:mainprop}. Note that the backbone of all these results, apart from \cite[Theorem 1.2(1)]{LX22a}, is the Contraction theorem for NQC lc g-pairs, namely \cite[Theorem 1.5]{Xie22}. 
+	Since the strategy for the proof of Proposition \ref{prop:mainprop} and Theorem \ref{thm:mainthm} is essentially the same as the one employed in \cite{LT22b}, although there are additional complications now due to the absence of $\Q$-factoriality, we only outline the proof of these results below and we refer to op.\ cit.\ for the details.
+	
+	\begin{prop}\label{prop:mainprop}
+		Let $ (X/Z,B+M) $ be an NQC lc g-pair. Assume that $ (X,B+M) $ has a minimal model in the sense of Birkar-Shokurov over $ Z $ or that $ K_X+B+M $ is not pseudo-effective over $ Z $. Then there exists a $ (K_X + B + M) $-MMP over $Z$ which terminates. In particular, $ (X,B+M) $ has a minimal model or a Mori fiber space over $ Z $.
+	\end{prop}
+	
+	\begin{proof}
+		By arguing by contradiction and by repeating (almost) verbatim\footnote{In our setting, we also have to use Theorem \ref{thm:lifting_MMP} (as in the proof of \cite[Proposition 6.2]{HH20}) and Lemma \ref{lem:properties_of_MMP}(i). In addition to that, we need to replace \cite[Section 3.3]{HanLi22} with \cite[Theorem 2.28]{HaconLiu21}, and \cite[Theorem 1.3(4)(c)]{HaconLiu21} with (the third bullet of) \cite[Theorem 1.5]{Xie22}.} the proof of \cite[Proposition A.3]{LT22b}, we infer that eventually there exists a $ (K_X+B+M) $-MMP over $ Z $ with scaling of an (appropriately chosen) ample divisor $ A $:
+		\begin{center}
+			\begin{tikzcd}[column sep = 0.8em, row sep = 2em]
+				(X_1,B_1+M_1) \arrow[dr, "\theta_1" swap] \arrow[rr, dashed, "\pi_1"] && (X_2,B_2+M_2) \arrow[dl, "\theta_1^+"] \arrow[dr, "\theta_2" swap] \arrow[rr, dashed, "\pi_2"] && (X_3,B_3+M_3) \arrow[dl, "\theta_2^+"] \arrow[rr, dashed, "\pi_3"] && \cdots \\
+				& Z_1 && Z_2
+			\end{tikzcd}
+		\end{center}
+		where $(X_1,B_1+M_1) := (X,B+M) $, which consists only of flips, whose nef thresholds satisfy $ \lambda_i > \lambda_{i+1} $ for every $ i \geq 1 $, and which does not terminate by assumption. Now, we set $\lambda := \lim_{i\to \infty}\lambda_i$ and we observe that $\lambda < \lambda_i$ for every $ i \geq 1 $. Since each divisor $ K_{X_i} + B_i + M_i + \lambda_i A_i $ is nef over $ Z $ by construction of the MMP with scaling, where $A_i$ denotes the strict transform of $A$ on $X_i$, the divisor $K_X+B+M+\lambda A$ is pseudo-effective over $Z$. By the assumptions of the proposition when $ \lambda = 0 $ or by \cite[Theorem 1.2(1)]{LX22a} when $ \lambda > 0 $ we conclude that the g-pair $\big(X,(B+\lambda A)+M\big)$ has a minimal model in the sense of Birkar-Shokurov over $Z$. Hence, the above MMP terminates by Theorem \ref{thm:LT22b_4.1}, a contradiction. 
+	\end{proof}
+	
+	\begin{thm}\label{thm:mainthm}
+		Let $ (X/Z,B+M) $ be an NQC lc g-pair. Assume that $ (X,B+M) $ has a minimal model in the sense of Birkar-Shokurov over $ Z $ or that $ K_X+B+M $ is not pseudo-effective over $ Z $. Let $ A $ be an effective $ \R $-Cartier $ \R $-divisor on $ X $ which is ample over $ Z $ such that $ \big( X/Z, (B+A)+M \big) $ is lc and $ K_X + B + A + M $ is nef over $Z$. Then there exists a $ (K_X + B + M) $-MMP over $Z$ with scaling of $A$ that terminates. In particular, $ (X,B+M) $ has a minimal model or a Mori fiber space over $ Z $.
+	\end{thm}
+	
+	\begin{proof}
+		We may repeat verbatim the proof of \cite[Theorem 1.2]{LT22b}, except that we replace \cite[Theorem A.2]{LT22b} with \cite[Theorem 1.2(1)]{LX22a}, \cite[Proposition 2.12]{LT22b} with Lemma \ref{lem:trivial_MMP}, \cite[Proposition A.3]{LT22b} with Proposition \ref{prop:mainprop}, and \cite[Theorem 4.1]{LT22b} with Theorem \ref{thm:LT22b_4.1}.
+	\end{proof}
+	
+	In the remainder of this section we discuss numerous applications of Proposition \ref{prop:mainprop}. The ones presented in Subsection \ref{subsection:boundaries_contain_ample} (resp.\ Subsection \ref{subsection:NQC_NZD}) are generalizations of \cite[Theorem 1.5]{HH20} (resp.\ \cite[Theorem 1.1]{BH14b} and \cite[Theorem 4.5]{Hash22c}) to the setting of g-pairs, while the ones discussed in Subsections \ref{subsection:EMM} and \ref{subsection:NQC_WZD} are related to the papers \cite{LT22a,LT22b}.
+	
+	
+	\subsection{Generalized pairs whose boundary contains an ample divisor}
+	\label{subsection:boundaries_contain_ample}
+	
+	We establish here an analogue of \cite[Theorem 1.5]{HH20} in the context of g-pairs; see Theorem \ref{thm:EGMM_boundary_contains_ample}. We begin with an auxiliary result, which is crucial for the proof of Theorem \ref{thm:EGMM_boundary_contains_ample}.
+	
+	\begin{lem}\label{lem:MMP_ampleness_boundary}
+		Let $\big(X/Z, (B+A)+M \big)$ be an NQC lc g-pair, where $A$ is an effective $ \R $-Cartier $ \R $-divisor on $ X $ which is ample over $Z$ and contains no lc center of the g-pair $ \big(X/Z,(B+A)+M \big)$. If $ \varphi \colon X \dasharrow X' $ is a partial $ (K_X+B+A+M) $-MMP over $Z$, then there exist effective $ \R $-divisors $ \widetilde A $ and $ \widetilde B $ on $ X' $ such that
+		\begin{itemize}
+			\item $ \widetilde A $ is ample over $ Z $,
+			
+			\item $ \widetilde B + \widetilde A \sim_{\R,Z} \varphi_*(B+A)$,
+			
+			\item $ \big( X'/Z, (\widetilde B + \widetilde A) + M' \big) $ is an NQC lc g-pair, and
+			
+			\item $\widetilde A$ contains no lc center of $ \big( X'/Z, (\widetilde B + \widetilde A) +M' \big) $.
+		\end{itemize}
+	\end{lem}
+	
+	\begin{proof}
+		We may assume that $\varphi$ is a single step of a $(K_X+B+A+M)$-MMP over $Z$:
+		\begin{center}
+			\begin{tikzcd}
+				(X,B+M) \arrow[rr, dashed, "\varphi"] \arrow[dr, "g" swap] && (X',B'+M') \arrow[dl, "h"] \\
+				& Y
+			\end{tikzcd}
+		\end{center}
+		Arguing as in the first paragraph of the proof of Lemma \ref{lem:properties_of_MMP}(i), we may further assume that $\big(X,(B+A)+M\big)$ is a $\Q$-g-pair. Then there exists a $\Q$-divisor $H$ on $X$ which is ample over $Y$ such that $ K_X+B+A+M+H \sim_{\Q,g} 0 $, and hence, by definition, the above MMP step is constructed as follows:
+		$$ h \colon X' \simeq \proj_Y \Bigg( \bigoplus_{m \geq 0} g_* \OO_X(-mH) \Bigg) \longrightarrow Y. $$
+		
+		Let $H'$ be the strict transform of $H$ on $X'$. Then $-H'$ is ample over $Y$. Since the $\Q$-divisor $A$ on $X$ is ample over $Z$ and since relative ampleness is an open condition, we may find a $\Q$-divisor $C$ on $Y$ which is ample over $Z$ such that the divisor $ A - g^*C $ is still ample over $Z$. Additionally, for any sufficiently small rational number $ \varepsilon > 0 $, both $\Q$-divisors 
+		\[ A-g^*C+\varepsilon H \quad \text{and} \quad h^*C-\varepsilon H' \quad \text{are ample over } Z . \]
+		Indeed, the claim about the former follows as above, while the claim about the latter follows from Lemma \ref{lem:KM98_1.45_relative}. Thus, we may find a sufficiently general
+		$$ 0 \leq  E_{\varepsilon} \sim_{\Q,Z} A-g^*C+\varepsilon H $$
+		such that $ \big(X,(B+E_\varepsilon)+M \big)$ is an NQC lc g-pair and any lc center of $\big(X,(B+E_\varepsilon)+M\big)$ is an lc center of $\big(X,(B+A)+M\big)$. We denote by $E'_\varepsilon$ the strict transform of $E_\varepsilon$ on $X'$. Since the map $ \varphi \colon X \dashrightarrow X' $ is also a single step of a $(K_X+B+E_\varepsilon+M)$-MMP over $Z$ for $\varepsilon \ll 1$ due to the choice of $E_\varepsilon$, the NQC g-pair $\big(X',(B'+E'_\varepsilon)+M'\big)$ is also lc. Furthermore, we may choose
+		$$ 0 \leq \widetilde A \sim_{\Q,Z} h^*C-\varepsilon H' $$
+		sufficiently general such that the NQC g-pair $\big(X',(B'+E'_\varepsilon+ \widetilde A)+M'\big)$ is lc and $\widetilde A$ contains no lc center of $\big(X',(B'+E'_\varepsilon+\widetilde A)+M\big)$. Now, we set 
+		$$ \widetilde B := B' + E'_\varepsilon , $$
+		and by construction we have 
+		$$ \varphi_*(B+A) \sim_{\Q,Z} \widetilde B + \widetilde A . $$ 
+		Therefore, the divisors $ \widetilde A $ and $ \widetilde B $ on $X'$ satisfy all the requirements.
+	\end{proof}
+	
+	\begin{thm}\label{thm:EGMM_boundary_contains_ample}
+		Let $ \big( X/Z,(B+A)+M \big) $ be an NQC lc g-pair, where $ A $ is an effective $ \R $-Cartier $\R$-divisor which is ample over $ Z $. If the divisor $K_X+B+A+M$ is pseudo-effective over $Z$, then there exists a $(K_X+B+A+M)$-MMP over $Z$ which terminates with a good minimal model of $ \big( X,(B+A)+M \big) $ over $ Z $.
+	\end{thm}
+	
+	\begin{proof}
+		By \cite[Theorem 1.2(1)]{LX22a} the g-pair $\big(X, (B+A) + M \big)$ has a minimal model in the sense of Birkar-Shokurov over $ Z $. Therefore, by Proposition \ref{prop:mainprop} there exists a $ (K_X + B + A + M) $-MMP over $Z$ which terminates with a minimal model $ \big( X',(B'+A')+M' \big) $ of $ \big( X,(B+A)+M \big) $ over $ Z $. By replacing $A$ with a general member of its $\R$-linear system, we may assume that $A$ contains no lc center of the g-pair $ \big(X/Z,(B+A)+M \big)$. It follows now from Lemma \ref{lem:MMP_ampleness_boundary} and from \cite[Theorem 1.2]{Xie22} that the divisor $ K_{X'} + B' + A' + M' $ is semi-ample over $ Z $, which proves the assertion.
+	\end{proof}
+	
+	\begin{cor}\label{cor:finite_generation}
+		Let $ \big( X, (B+A)+M \big) $ be an lc $\Q$-g-pair with data $ W \to X \overset{\pi}{\longrightarrow} Z $ and $ M_W $, where $A$ is an effective $\Q$-Cartier $\Q$-divisor on $ X $ which is ample over $Z$. Then 
+		\[ R(X/Z,K_X+B+A+M) := \bigoplus_{m \geq 0} \pi_* \OO_X \big( m(K_X+B+A+M) \big) \]
+		is a finitely generated $ \OO_Z $-algebra.
+	\end{cor}
+	
+	\begin{proof}
+		The statement follows immediately from Theorem \ref{thm:EGMM_boundary_contains_ample}.
+	\end{proof}
+	
+	
+	\subsection{On the existence of minimal models of generalized pairs}
+	\label{subsection:EMM}
+	
+	With the aid of results from \cite[Section 4]{LT22a}, we derive here several corollaries of Proposition \ref{prop:mainprop}, which refine \cite[Corollary 1.3, Theorem 1.5 and Corollary 1.4]{LT22b}, respectively, and which include \cite[Theorem A, Theorem C and Corollary D]{LT22a}, respectively, as special cases.
+	
+	\begin{thm} \label{thm:EMM_implication}
+		The existence of minimal models for smooth varieties of dimension $n$ implies the existence of minimal models for NQC lc g-pairs of dimension $n$.
+	\end{thm}
+	
+	\begin{proof}
+		Follows immediately from \cite[Theorem 4.1(i)]{LT22a} and Proposition \ref{prop:mainprop}.
+	\end{proof}
+	
+	\begin{thm}\label{thm:MM_uniruled}
+		Assume the existence of minimal models for smooth varieties of dimension $n-1$.
+		
+		Let $ (X/Z,B+M) $ be an NQC lc g-pair of dimension $ n $ such that $ K_X+B+M $ is pseudo-effective over $ Z $. If a general fiber of the morphism $ X \to Z $ is uniruled, then $(X,B+M)$ has a minimal model over $Z$.
+	\end{thm}
+	
+	\begin{proof}
+		Follows immediately from \cite[Theorem 4.3]{LT22a} and Proposition \ref{prop:mainprop}.
+	\end{proof}
+	
+	\begin{cor}\label{cor:maincor_I}
+		Let $ (X/Z,B+M) $ be an NQC lc g-pair of dimension $ n $ such that $ K_X+B+M$ is pseudo-effective over $ Z $. The following statements hold:
+		\begin{enumerate}[\normalfont (i)]
+			\item If $n \leq 4$, then $ (X,B+M) $ has a minimal model over $Z$.
+			
+			\item If $n \leq 5$ and a general fiber of the morphism $ X\to Z $ is uniruled, then $ (X,B+M) $ has a minimal model over $Z$.
+		\end{enumerate}
+	\end{cor}
+	
+	\begin{proof}
+		The existence of minimal models for terminal varieties of dimension $ n \leq 4 $ over $ Z $ is well-known; see \cite[Theorem 5-1-15]{KMM87}. Consequently, (i) and (ii) follow from Theorem \ref{thm:EMM_implication} and Theorem \ref{thm:MM_uniruled}, respectively.
+	\end{proof}
+	
+	
+	\subsection{NQC weak Zariski decompositions}
+	\label{subsection:NQC_WZD}
+	
+	We recall the notion of an NQC weak Zariski decomposition and we refer to \cite{Bir12b,HanLi22,LT22a,LT22b} for more information.
+	
+	\begin{dfn}\label{dfn:NQC_WZD}
+		Let $ X \to Z $ be a projective morphism between normal varieties and let $ D $ be an $ \R $-Cartier $\R$-divisor on $ X $. An \emph{NQC weak Zariski decomposition of $ D $ over $Z$} consists of a projective birational morphism $ f \colon W \to X $ from a normal variety $ W $ and a numerical equivalence $ f^* D \equiv_Z P + N $, where $ P $ is an NQC divisor (over $ Z $) on $ W $ and $ N $ is an effective $\R$-Cartier $\R$-divisor on $W$.
+		
+		Let $ (X/Z,B+M) $ be an NQC g-pair such that $ K_X+B+M $ is pseudo-effective over $ Z $. We say that $ (X,B+M) $ \emph{admits an NQC weak Zariski decomposition over $Z$} if the divisor $ K_X + B + M $ admits an NQC weak Zariski decomposition over $Z$.
+	\end{dfn}
+	
+	The state-of-the-art result concerning the relation between the existence of NQC weak Zariski decompositions and the existence of minimal models for (generalized) pairs is the following, cf.\ \cite[Theorem 1.5]{Bir12b}, \cite[Theorem 1.5]{HanLi22}.
+	
+	\begin{thm}\label{thm:MM_NQC_WZD}
+		Assume the existence of minimal models for smooth varieties of dimension $n-1$. 
+		
+		\begin{enumerate}[\normalfont (i)]
+			\item Let $ (X/Z,B) $ be an lc pair of dimension $ n $. The following are equivalent:
+			\begin{enumerate}[\normalfont (1)]
+				\item $ (X,B) $ admits an NQC weak Zariski decomposition over $Z$,
+				
+				\item $ (X,B) $ has a minimal model over $Z$.
+			\end{enumerate}
+			
+			\item Let $ (X/Z,B+M) $ be an NQC lc g-pair of dimension $ n $. The following are equivalent:
+			\begin{enumerate}[\normalfont (1)]
+				\item $ (X,B+M) $ admits an NQC weak Zariski decomposition over $Z$,
+				
+				\item $ (X,B+M) $ has a minimal model over $Z$.
+			\end{enumerate}
+		\end{enumerate}
+	\end{thm}
+	
+	\begin{proof}~
+		
+		\medskip
+		
+		\noindent (i) This is \cite[Theorem B]{LT22a}.
+		
+		\medskip
+		
+		\noindent (ii) For the implication (2) $ \implies $ (1) see, for example, \cite[Corollary 3.10]{Tsak21}. The converse implication follows immediately from \cite[Theorem 4.4(i)]{LT22a} and Proposition \ref{prop:mainprop}.
+	\end{proof}
+	
+	\begin{cor}\label{cor:maincor_II}
+		Let $ (X/Z,B+M) $ be an NQC lc g-pair such that $ K_X+B+M$ is pseudo-effective over $ Z $. If $ \dim X = 5$ and if $ (X,B+M) $ admits an NQC weak Zariski decomposition over $ Z $, then $ (X,B+M) $ has a minimal model over $Z$.
+	\end{cor}
+	
+	\begin{proof}
+		Follows immediately from \cite[Theorem 5-1-15]{KMM87} and Theorem \ref{thm:MM_NQC_WZD}(ii).
+	\end{proof}
+	
+	
+	\subsection{NQC Nakayama-Zariski decomposition}
+	\label{subsection:NQC_NZD}
+	
+	Throughout this subsection we work exclusively in the absolute setting; see the beginning of Subsection \ref{subsection:log_abundant}.
+	
+	Given a pseudo-effective $\R$-divisor $D$ on a smooth projective variety $X$, Nakayama \cite{Nak04} defined a decomposition $ D = P_\sigma (D) + N_\sigma (D) $, which is usually called \emph{the Naka\-yama-Zariski decomposition of $D$}. The divisor $ P_\sigma(D) $ (resp.\ $ N_\sigma(D) $) is called \emph{the positive part} (resp.\ \emph{the negative part}) of the Nakayama-Zariski decomposition of $D$. Note that $ N_\sigma(D) $ is effective by construction and $ P_\sigma(D) $ is movable by \cite[Lemma III.1.8 and Proposition III.1.14(1)]{Nak04}.
+	
+	The above decomposition can be extended both to the singular setting, see for instance \cite[Section 4]{BH14b} and \cite[Subsection 2.1]{Hash20d}, and to the relative setting, see for example \cite[Subsection III.4]{Nak04} and \cite[Section 3]{LX22a}. However, according to \cite{Les16}, the relative Nakayama-Zariski decomposition of a relatively pseudo-effective $ \R $-divisor is not always well-defined.
+	
+	For general properties of the Nakayama-Zariski decomposition we refer to \cite[Chapter III]{Nak04}; see also \cite[Lemma 4.1]{BH14b}. We now recall the following definitions.
+	
+	\begin{dfn} \label{dfn:NQC_NZD}
+		Let $ X $ be a normal projective variety and let $ D $ be a pseudo-effective $ \R $-Cartier $ \R $-divisor on $ X $. We say that \emph{$ D $ admits birationally a Nakayama-Zariski decomposition with nef} (resp.\ \emph{NQC}, \emph{semi-ample}) \emph{positive part} if there exists a resolution $ f \colon W \to X $ such that $ P_\sigma ( f^* D ) $ is nef (resp.\ NQC, semi-ample).
+		
+		Let $ (X,B+M) $ be a g-pair such that $ K_X+B+M $ is pseudo-effective. We say that $ (X,B+M) $ \emph{admits birationally a Nakayama-Zariski decomposition with nef} (resp.\ \emph{NQC}, \emph{semi-ample}) \emph{positive part} if the divisor $ K_X + B + M $ admits birationally a Nakayama-Zariski decomposition with nef (resp.\ NQC, semi-ample) positive part.
+	\end{dfn}
+	
+	If the given g-pair $ (X,B+M) $ is NQC, 
+	%which is a typical assumption not only throughout this paper but also in the majority of the recent works in birational geometry, 
+	then we will be interested only in a birational Nakayama-Zariski decomposition of $ K_X+B+M $ with NQC positive part. For brevity we sometimes refer to such a decomposition simply as an \emph{NQC Nakayama-Zariski decomposition}, since it is highly unlikely that this will cause any confusion. The NQC variant of Definition \ref{dfn:NQC_NZD} was introduced in \cite{Tsak21}, where various properties of that decomposition were established, which are completely analogous to properties of weak Zariski decompositions that were thoroughly studied in \cite[Subsection 2.3]{LT22a}. We refer to \cite[Chapter 3]{Tsak21} for further information.
+	
+	\medskip
+	
+	The next theorem describes the relation between the existence of \enquote{good} Nakayama-Zariski decompositions and the existence of (good) minimal models for (generalized) pairs, cf.\ Theorem \ref{thm:MM_NQC_WZD}. Part (i) is essentially \cite[Theorem 1.1]{BH14b}, while part (ii) is essentially \cite[Theorem 4.18]{Tsak21}. For brevity we only outline the proof below.
+	
+	\begin{thm} \label{thm:MM_NQC_NZD}
+		The following statements hold:
+		
+		\begin{enumerate}[\normalfont (i)]
+			\item Let $ (X,B) $ be an lc pair such that $ K_X+B $ is pseudo-effective. Then $ (X,B) $ has a minimal model (resp.\ good minimal model) if and only if it admits birationally a Nakayama-Zariski decomposition with nef (resp.\ semi-ample) positive part.
+			
+			\item Let $ (X,B+M) $ be an NQC lc g-pair such that $ K_X+B+M $ is pseudo-effective. Then $ (X,B+M) $ has a minimal model (resp.\ good minimal model) if and only if it admits birationally a Nakayama-Zariski decomposition with NQC (resp.\ semi-ample) positive part.
+		\end{enumerate}
+	\end{thm}
+	
+	\begin{proof}~
+		
+		\medskip
+		
+		\noindent (i) If $ (X,B) $ has a minimal model (resp.\ good minimal model), then it follows from \cite[Remark 2.6]{Bir12a} and \cite[Lemma 4.1(2)]{BH14b} that $ (X,B) $ admits birationally a Nakayama-Zariski decomposition with nef (resp.\ semi-ample) positive part. 
+		%		Note that, in either case, this is an NQC Nakayama-Zariski decomposition by construction and by \cite[2.1.8 and Theorem 4.7.2(3)]{Fuj17}.
+		
+		If $ (X,B) $ admits birationally a Nakayama-Zariski decomposition with nef positive part, then it has a minimal model in the sense of Birkar-Shokurov by \cite[Theorem 1.1]{BH14b}, and thus it has a minimal model by \cite[Theorem 1.7]{HH20}. If, moreover, $ (X,B) $ admits birationally a Nakayama-Zariski decomposition with semi-ample positive part, then the same arguments also yield that $ (X,B) $ has a good minimal model, taking into account \cite[Theorem 3.25(4)]{KM98} and Lemma \ref{lem:GMM}; see also (the paragraph preceeding) \cite[Theorem 2.23]{Hash20d}. 
+		%		Note that again, in any case, $ (X,B) $ admits an NQC Nakayama-Zariski decomposition.
+		
+		\medskip
+		
+		\noindent (ii) The \enquote{only if} part of the statement follows from (the proof of) \cite[Corollary 3.27]{Tsak21}. Now, regarding the \enquote{if} part of the statement, if $ (X,B+M) $ admits birationally a Nakayama-Zariski decomposition with NQC positive part, then it has a minimal model in the sense of Birkar-Shokurov by \cite[Theorem 4.18]{Tsak21}, and thus it has a minimal model by Proposition \ref{prop:mainprop}. If, moreover, $ (X,B+M) $ admits birationally a Nakayama-Zariski decomposition with semi-ample positive part, then by repeating verbatim the proof of \cite[Theorem 4.18]{Tsak21}, while bearing \cite[2.1.8]{Fuj17} in mind, we deduce that $ (X,B+M) $ has a good minimal model in the sense of Birkar-Shokurov. 
+		%		Note that the NQC condition is used crucially here due to \cite[Lemma 3.22]{HanLi22}.
+		It follows from Lemma \ref{lem:GMM} and Proposition \ref{prop:mainprop} that $ (X,B+M) $ has a good minimal model.
+	\end{proof}
+	
+	\begin{rem}~
+		\label{rem:comment_BH14b_1.1-g}
+		\begin{enumerate}[(1)]
+			\item In Theorem \ref{thm:MM_NQC_NZD}(i) there is no loss of generality if we replace the phrase \enquote{$ (X,B) $ admits birationally a Nakayama-Zariski decomposition with nef positive part} with the phrase \enquote{$ (X,B) $ admits birationally a Nakayama-Zariski decomposition with NQC positive part}. Indeed, this follows readily from the construction and \cite[2.1.8 and Theorem 4.7.2(3)]{Fuj17}. Thus, (i) may be regarded as a special case of (ii) for $ M = 0 $.
+			
+			\item The NQC condition is used crucially in Theorem \ref{thm:MM_NQC_NZD}(ii) due to the application of \cite[Lemma 3.22]{HanLi22} for its proof.
+		\end{enumerate}
+	\end{rem}
+	
+	We conclude this subsection with the generalization of  \cite[Theorem 4.5]{Hash22c} to the context of g-pairs. More precisely, we establish the minimal model theory for NQC lc g-pairs admitting an lc-trivial fibration with log big moduli part (noting that log bigness is satisfied on a sufficiently high birational model of the base of the lc-trivial fibration). We only outline the proof below and we refer to op.\ cit.\ for the details as well as for the relevant definitions.
+	
+	\begin{thm}\label{thm:MM_logbigmoduli}
+		The following statements hold:
+		
+		\begin{enumerate}[\normalfont (i)]
+			\item Let $ (X,B) $ be an lc pair admitting an lc-trivial fibration with log big moduli part. Then $ (X,B) $ has a good minimal model or a Mori fiber space.
+			
+			\item Let $(X,B+M)$ be an NQC lc g-pair admitting an lc-trivial fibration with log big moduli part. Then $(X,B+M)$ has a good minimal model or a Mori fiber space.
+		\end{enumerate}
+	\end{thm}
+	
+	\begin{proof}~
+		
+		\medskip
+		
+		\noindent (i) Follows immediately from \cite[Theorem 4.5]{Hash22c}, taking \cite[Theorem 1.7]{HH20} and Lemma \ref{lem:GMM} into account.
+		
+		\medskip
+		
+		\noindent (ii)
+		Assume first that $ K_X+B+M $ is not pseudo-effective. Then $ (X,B+M) $ has a Mori fiber space by Proposition \ref{prop:mainprop}.
+		
+		Assume now that $K_X+B+M$ is pseudo-effective. In order to show that $(X,B+M)$ has a good minimal model, we argue as in the proof of \cite[Theorem 4.5]{Hash22c}\footnote{For more details regarding the assertions about the existence of certain Nakayama-Zariski decompositions in the proof of \cite[Theorem 4.5]{Hash22c} we refer to \cite[Lemma 4.1(2)]{BH14b}, \cite[Remark 3.21]{Tsak21} and the proof of \cite[Proposition 3.26]{Tsak21}.}, except that we now invoke Theorem \ref{thm:MM_NQC_NZD}(ii) instead of \cite[Theorem 2.23]{Hash20d}.
+	\end{proof}
+	
+	
+	
+	
+	\section{Applications}
+	\label{section:applications}
+	
+	In this last section of the paper we present several corollaries of our main results. In particular, we generalize below appropriately to the setting of g-pairs all results from \cite[Subsection 3.2]{Hash20d}.
+	
+	First, we discuss an application of Theorem \ref{thm:mainthm}, which generalizes \cite[Lemma 2.12]{Hash20d} to the setting of g-pairs and improves on \cite[Lemma 2.9]{LX22a} by removing the assumption that the underlying variety is $ \Q $-factorial klt. For brevity we only indicate below the necessary modifications to the proof of \cite[Lemma 2.9]{LX22a}.
+	%but we note that similar ideas were implemented in the proof of Theorem \ref{thm:mainthm}.
+	
+	\begin{lem}\label{lem:scaling_numbers_to_zero}
+		Let $(X/Z,B+M)$ be an NQC lc g-pair. Let $H$ be an effective $\R$-Cartier $\R$-divisor on $X$ such that the NQC g-pair $\big(X/Z, (B+H)+M \big)$ is lc and the divisor $K_X+B+H+M$ is nef over $Z$. Assume also that for any $\nu \in (0,1]$ the NQC lc g-pair $ \big(X, (B + \nu H) + M \big)$ has a minimal model in the sense of Birkar-Shokurov over $ Z $. Then we can construct a $(K_X+B+M)$-MMP over $Z$ with scaling of $H$
+		$$(X_1, B_1+M_1) := (X,B+M) \dashrightarrow (X_2,B_2+M_2) \dashrightarrow \cdots \dashrightarrow (X_i,B_i+M_i)\dashrightarrow \cdots$$
+		with the following property: if we denote by $H_i$ the strict transform of $H$ on $X_i$ and by 
+		$$ \lambda_i := \inf \{ t \geq 0 \mid K_{X_i}+B_i+tH_i+M_i \text{ is nef over } Z \} $$
+		the corresponding nef threshold, then it holds that 
+		\[ \lim_{i \to +\infty}\lambda_i=0 , \]
+		regardless of whether this $ (K_X+B+M) $-MMP over $ Z $ with scaling of $H$ terminates or not.
+	\end{lem}
+	
+	\begin{proof}
+		We may repeat verbatim the proof of \cite[Lemma 2.9]{LX22a}, except that we replace \cite[Lemma 3.21]{HanLi22} with Lemma \ref{lem:trivial_MMP}, \cite[Theorem 2.24]{HaconLiu21} with Theorem \ref{thm:mainthm}, and \cite[Theorem 4.1]{HanLi22} with Theorem \ref{thm:LT22b_4.1}.
+	\end{proof}
+	
+	Next, we extend \cite[Corollaries 3.8 and 3.9]{Hash20d} to the context of g-pairs as well as to the relative setting; see Corollaries \ref{cor:Hash20d_3.8} and \ref{cor:Hash20d_3.9}, respectively. For the definition of the notion of a \emph{relatively log abundant} log canonical generalized pair that appears below we refer, e.g., to \cite[Subsection 2.3]{Hash20d}.
+	
+	\begin{cor}\label{cor:Hash20d_3.8}
+		Any MMP with scaling of an ample divisor starting with an NQC $ \Q $-factorial dlt g-pair contains only finitely many log abundant NQC $ \Q $-factorial dlt g-pairs.
+	\end{cor}
+	
+	\begin{proof}
+		Fix an NQC $ \Q $-factorial dlt g-pair $(X/Z,B+M)$. Pick an effective $\R$-Cartier $\R$-divisor $A$ on $X$ which is ample over $ Z $ such that $ \big(X/Z, (B+A)+M \big) $ is lc and $ K_X+B+A+M $ is nef over $ Z $. We distinguish two cases.
+		
+		If $ K_X+B+M $ is not pseudo-effective over $ Z $, then by \cite[Lemma 4.4(1)]{BZ16} any $ (K_X+B+M) $-MMP over $ Z $ with scaling of $ A $ terminates with a Mori fiber space of $ (X,B+M) $ over $ Z $, so the statement clearly holds.
+		
+		If $K_X+B+M$ is pseudo-effective over $ Z $, then run a $ (K_X+B+M) $-MMP over $ Z $ with scaling of $ A $, denote by $ \lambda_i $ the nef thresholds at the steps of this MMP and set $ \lambda := \lim_{i\to \infty} \lambda_i $. If $ \lambda > 0 $, then this MMP terminates; see the second paragraph of the proof of \cite[Lemma 2.10]{LT22b} for the details. If $ \lambda = 0 $, then by \cite[Theorem 7.6]{LX22a}, cf.\ \cite[Theorem 3.15]{Hash22a}, this MMP contains only finitely many log abundant NQC $ \Q $-factorial dlt g-pairs. Thus, in any case, the statement holds.
+	\end{proof}
+	
+	\begin{cor}\label{cor:Hash20d_3.9}
+		Let $(X/Z,B+M)$ be an NQC lc g-pair and let $A$ be an effective $\R$-Cartier $\R$-divisor on $X$ which is ample over $ Z $ such that $ \big(X/Z, (B+A)+M \big) $ is lc and $ K_X+B+A+M $ is nef over $ Z $. Then there exists a $(K_X+B+M)$-MMP over $ Z $ with scaling of $A$ which contains only finitely many log abundant NQC lc g-pairs.
+	\end{cor}
+	
+	\begin{proof}
+		Assume first that $K_X+B+M$ is not pseudo-effective over $ Z $. By Theorem \ref{thm:mainthm} there exists a $(K_X+B+M)$-MMP over $ Z $ with scaling of $A$ that terminates with a Mori fiber space of $ (X,B+M) $ over $ Z $, so the statement clearly holds.
+		
+		Assume now that $K_X+B+M$ is  pseudo-effective over $ Z $. By \cite[Theorem 1.2(1)]{LX22a}, for any $ \nu \in (0,1] $ the NQC lc g-pair $\big(X, (B+\nu A)+M \big)$ has a minimal model in the sense of Birkar-Shokurov over $ Z $. Therefore, by Lemma \ref{lem:scaling_numbers_to_zero} we can construct a $(K_X+B+M)$-MMP over $ Z $ with scaling of $A$ whose nef thresholds $ \lambda_i $ converge to zero, that is, $ \lim_{i \to \infty} \lambda_i = 0 $, regardless of whether this MMP terminates or not. If it does terminate, then the statement clearly holds. Otherwise, to prove the statement, we argue by contradiction as follows. Assume that this $(K_X+B+M)$-MMP over $ Z $ with scaling of $A$ contains infinitely many log abundant NQC lc g-pairs. By considering a dlt blow-up $ h \colon (X',B'+M') \to (X,B+M) $ and by applying Theorem \ref{thm:lifting_MMP_with_scaling}, we can construct a $(K_{X'}+B'+M')$-MMP over $Z$ with scaling of $ h^* A $, which contains infinitely many log abundant NQC lc g-pairs according to Lemma \ref{lem:dlt_blow-up_log_abundant} and whose nef thresholds $\mu_i$ converge to zero, that is, $\lim_{i \to \infty} \mu_i = 0 $. However, this is impossible by \cite[Theorem 7.6]{LX22a}, cf.\ \cite[Theorem 3.15]{Hash22a}. Thus, the statement holds in this case as well.
+	\end{proof}
+	
+	\noindent \emph{Convention}: From this point forward we work exclusively in the absolute setting, as in Subsection \ref{subsection:NQC_NZD}.
+	
+	\medskip
+	
+	First, by applying Theorem \ref{thm:MM_NQC_NZD}(ii), we may generalize \cite[Lemma 3.11]{Hash20d} to the setting of g-pairs.
+	
+	\begin{lem}\label{lem:Hash20d_3.11}
+		Let $(X,B+M)$ be an NQC lc g-pair such that $K_X+B+M$ is pseudo-effective. Assume that there exists a projective morphism $ \pi \colon X \to Y $ to a projective variety $ Y $ such that $ \dim Y \leq 4 $ and $K_X+B+M \sim_{\R,Y} 0$. Then $(X,B+M)$ has a minimal model.
+	\end{lem}
+	
+	\begin{proof}
+		By taking the Stein factorization of $\pi$, we may assume that $Y$ is a normal variety and that $\pi$ is a fibration.
+		By the canonical bundle formula \cite{Fil20,HanLiu21} there exists an NQC lc g-pair structure $ (Y,B_Y+M_Y) $ on $ Y $ such that
+		\begin{equation}\label{eq:CBF_dim4}
+			K_X+B+M \sim_\R \pi^*(K_Y+B_Y+M_Y) .
+		\end{equation}
+		By Corollary \ref{cor:maincor_I}(i), $ (Y,B_Y+M_Y)$ has a minimal model, and hence it admits an NQC Nakayama-Zariski decomposition by Theorem \ref{thm:MM_NQC_NZD}(ii). By \eqref{eq:CBF_dim4} and by \cite[Remark 3.21]{Tsak21}, $ (X,B+M) $ admits an NQC Nakayama-Zariski decomposition as well, and thus it has a minimal model by Theorem \ref{thm:MM_NQC_NZD}(ii).
+	\end{proof}
+	
+	The following two results constitute analogues of \cite[Corollaries 3.13 and 3.12]{Hash20d}, respectively, in the setting of g-pairs.
+	
+	\begin{cor}\label{cor:Hash20d_3.13}
+		Let $(X,B+M)$ be an NQC lc g-pair. Assume that $K_X+B+M$ is pseudo-effective and abundant and that all lc centers of $(X,B+M)$ have dimension at most $ 4 $. Then $(X,B+M)$ has a minimal model which is abundant.
+	\end{cor}
+	
+	\begin{proof}
+		First, consider a dlt blow-up $ h \colon (X',B'+M') \to (X,B+M) $ of $(X,B+M)$, and set $ (X_1, B_1+M_1) := (X,B+M) $, $ (X_1', B_1'+M_1') := (X',B'+M') $ and $ h_1 := h$. As in the second paragraph of the proof of Corollary \ref{cor:Hash20d_3.9}, we can construct the following diagram:
+		\begin{center}
+			\begin{tikzcd}[column sep = 0.8em, row sep = large]
+				(X_1',B_1'+M_1') \arrow[d, "h_1" swap] \arrow[rr, dashed, "\rho_1"] && (X_2',B_2'+M_2') \arrow[d, "h_2" swap] \arrow[rr, dashed, "\rho_2"] && (X_3',B_3'+M_3') \arrow[d, "h_3" swap] \arrow[rr, dashed, "\rho_3"] && \dots 
+				\\ 
+				(X_1,B_1+M_1) \arrow[rr, dashed, "\pi_1"] && (X_2,B_2+M_2) \arrow[rr, dashed, "\pi_2"] && (X_3,B_3+M_3) \arrow[rr, dashed, "\pi_3"] && \dots
+			\end{tikzcd}
+		\end{center}
+		where the sequence at the bottom is a $(K_X+B+M)$-MMP with scaling of an ample divisor $H$ whose nef thresholds $ \lambda_i $ satisfy $ \lambda := \lim_{i \to \infty} \lambda_i = 0 $, the sequence on top is a $(K_{X'}+B'+M')$-MMP with scaling of $ h^* H $ whose nef thresholds $ \mu_i $ also satisfy $ \mu := \lim_{i \to \infty} \mu_i = 0 $, and each map $ h_i \colon (X_i',B_i'+M_i') \to (X_i,B_i+M_i) $ is a dlt blow-up.
+		
+		Next, for any $i \geq 1$ and any lc center $T_i$ of $(X'_i,B'_i+M'_i)$ we define an NQC dlt g-pair $(T_i,B'_{T_i}+M'_{T_i})$ by adjunction: 
+		$$ K_{T_i}+B'_{T_i}+M'_{T_i}=(K_{X'_i}+B'_{i}+M'_i)|_{T_{i}} ; $$
+		see \cite[Subsection 2.3]{HanLi22} for the details. We will now show that $(T_i,B'_{T_i}+M'_{T_i})$ has a minimal model or a Mori fiber space. Since all lc centers of $(X,B+M)$ have dimension at most $ 4 $ by assumption, the same holds for all lc centers of $(X_i,B_i+M_i)$ as well. Therefore, the morphism $h_i \colon X'_i \to X_i$ induces a morphism $T_i \to S_i$ to a projective variety $S_i$ such that $ \dim S_i \leq 4$ and $K_{T_i}+B'_{T_i}+M'_{T_i} \sim_{\R,S_i} 0$; see the second paragraph of the proof of Lemma \ref{lem:dlt_blow-up_log_abundant} for the details. By Lemma \ref{lem:Hash20d_3.11} or by Proposition \ref{prop:mainprop} the g-pair $(T_i,B'_{T_i}+M'_{T_i})$ has indeed a minimal model or a Mori fiber space.
+		
+		Now, due to the above, by using the standard argument of special termination (see \cite{LMT} and \cite[Remark 2.21]{Hash20d} for the details), together with \cite[Theorem 4.1]{HanLi22}, we may find a positive integer $m$ such that any step in the sequence
+		$$(X'_m,B'_m+M'_m) \dashrightarrow (X'_{m+1},B'_{m+1}+M'_{m+1}) \dashrightarrow\cdots \dashrightarrow (X'_i,B'_i+M'_i)\dashrightarrow \cdots$$
+		is an isomorphism in a neighborhood of $\Supp \llcorner B'_{i}\lrcorner$.
+		Since $\mu=0$, by \cite[Lemma 3.8]{Hash22a} (see also \cite[Remark III.2.8 and Lemma V.1.9]{Nak04}) the restriction of 
+		$K_{X'_m}+B'_m+M'_m$ to any component of $\llcorner B'_m\lrcorner$ is nef and, additionally, for any divisorial valuation $P$ over $X'_m$ whose center $c_{X'_m}(P)$ intersects an lc center of $(X'_m,B'_m+M'_m)$ we have
+		$$ \sigma_{P}(K_{X'_m}+B'_m+M'_m)=0 . $$
+		Since $K_{X}+B+M$ is abundant and the map $(X',B'+M') \dashrightarrow (X_m',B_m'+M_m')$ is a partial $(K_{X'}+B'+M')$-MMP, by the Negativity lemma and by \cite[Remark 2.15(2)]{Hash20d} we deduce that $K_{X'_m}+B'_m+M'_m$ is also abundant. Hence,
+		by \cite[Theorem 3.14]{Hash22a} the g-pair $(X'_m,B'_m+M'_m)$ has a minimal model in the sense of Birkar-Shokurov, and thus so does the g-pair $(X',B'+M')$ by \cite[Corollary 3.20]{HaconLiu21}. Note that this minimal model in the sense of Birkar-Shokurov of $(X',B'+M')$ is also a minimal model in the sense of Birkar-Shokurov of the given g-pair $(X,B+M)$. Therefore, Proposition \ref{prop:mainprop}, together with Remark \ref{rem:abundant_MM}, imply that $(X,B+M)$ has a minimal model which is abundant.
+	\end{proof}
+	
+	\begin{cor}\label{cor:Hash20d_3.12}
+		Let $(X,B+M)$ be an NQC lc g-pair of dimension $\dim X = 6$. Assume that $K_X+B+M$ is pseudo-effective and abundant and that $\llcorner B \lrcorner = 0$. Then $(X,B+M)$ has a minimal model which is abundant.
+	\end{cor}
+	
+	\begin{proof}
+		Since $\dim X = 6$, the condition $\llcorner B \lrcorner =0$ implies that any lc center of $(X,B+M)$ has dimension $\leq 4$, so the statement follows immediately from Corollary \ref{cor:Hash20d_3.13}.
+	\end{proof}
+	
+	We stress now that Corollaries \ref{cor:Hash20d_3.13} and \ref{cor:Hash20d_3.12} are not exact analogues of \cite[Corollaries 3.13 and 3.12]{Hash20d}, respectively, in the setting of g-pairs and we explain below the main reason why we cannot obtain completely analogous statements in this general framework. Specifically, in \cite[Corollaries 3.12 and 3.13]{Hash20d} it is shown that the divisor $K_X+\Delta$ is abundant using the assumption that $ \kappa_\iota(X,K_X+\Delta)\geq \dim X-3 $ as follows: first, by taking the Iitaka fibration $f \colon X\to V$ associated with $K_X+\Delta$ and by invoking the Abundance theorem for 3-dimensional lc pairs, one deduces
+	$$ \kappa_\iota(F,K_F+\Delta_F)=\kappa_\sigma(F,K_F+\Delta_F)=0 , $$
+	where $F$ is a general fiber of $f$ and $(K_F+\Delta_F) :=(K_X+\Delta)|_F$, and then by applying \cite[Proposition V.2.7(9)]{Nak04} one obtains
+	$$ \kappa_\sigma(X,K_X+\Delta) \leq \kappa_\sigma(F,K_F+\Delta_F)+\dim V = \kappa_\iota(X,K_X+\Delta) , $$
+	which implies that $K_X+\Delta$ is abundant. However, the Abundance conjecture starts to fail even in dimension one for generalized pairs; see, e.g., \cite[Section 3]{BH14b}. The following example, whose first part is briefly discussed also in \cite[Section 2, Paragraph after Theorem 2.1]{Tot09}, shows that the canonical divisor $K_X+B+M$ of a g-pair $(X,B+M)$ may not be abundant even if it is nef and satisfies $\kappa_\iota(X,K_X+B+M)=0$.
+	
+	%\url{https://math.stackexchange.com/questions/2354053/rigid-and-nef-implies-numerically-trivial}
+	
+	\begin{exa}
+		Let $g \colon S \to \mathbb{P}^2$ be the blow-up of $\mathbb{P}^2$ at nine very general points of an elliptic curve $C $ and let $E$ be the strict transform of $C$ on $S$. Since $C \in |\OO_{\mathbb{P}^2}(3)| $, and thus $C^2 = 9$, it is easy to see that $E^2 = 0$, and since $E$ is irreducible, we infer that $E$ is nef. Additionally, it holds that $K_S+E \sim g^* (K_{\mathbb{P}^2} + C) \sim 0$.
+		%(and thus we also have $ K_S \cdot E = 0 $). 
+		Note that $E$ is not numerically trivial, and since it is not big either, we conclude that $\kappa_\sigma(S,E) = 1$. Furthermore, the normal bundle $\mathcal{O}_S(E)|_E$ of $E$ in $S$ is a non-torsion line bundle of degree $0$ on $E$, and hence no positive multiple of $E$ moves in $S$, that is, for every $n \geq 1$, the effective divisor $nE$ is the unique element of the linear system $ |nE|$. Therefore, $\kappa(S,E) = 0$. 
+		
+		Now, we may regard $(S,E+E)$ as an lc g-pair with boundary part $E$ and nef part $E$ as well. It follows from the above that $K_S + E + E \sim E $ is nef and it holds that
+		$$ \kappa_\iota(S,K_S+E+E)=\kappa(S,E)=0 , $$
+		while
+		$$ \kappa_\sigma(S,K_S+E+E)=\kappa_\sigma(S,E)=1 . $$
+	\end{exa}
+	
+	% \begin{exa}
+		%     Let $g \colon S \to \mathbb{P}^2$ be the blow-up of $\mathbb{P}^2$ at nine very general points of an elliptic curve $C$ and let $E$ be the strict transform of $C$ on $S$. Then it is easy to see that $\mathcal{O}_S(E)|_E$ is non-torsion and that $E \cdot E=0$.
+		%     Note also that $K_S+E \sim 0$, since $C \in |\OO_{\mathbb{P}^2}(3)|$. It follows that $E$ is nef and that $K_S \cdot E = 0 $. In particular, we may regard $(S,E+E)$ as an lc g-pair with boundary part $E$ and nef part $E$ as well.
+		
+		%     Let $A$ be any sufficiently ample divisor on $S$ such that $A-K_S$ is also ample. Then by the Kodaira vanishing theorem we obtain
+		%     $$ H^i(S,A+nE)=0, \ \forall i>0, \ \forall n \geq 0 , $$
+		%     and thus the Riemann-Roch theorem yields
+		%     \begin{align*}
+			%         H^0(S,A+nE) &= \chi(S,A+nE) \\ 
+			%         &= \chi(S,\mathcal{O}_S)+\frac{1}{2}(A+nE)(A+nE-K_S) ,
+			%     \end{align*}
+		%     which is a linear function of $n$ with slope $A \cdot E > 0 $, since $K_S \cdot E=0$. 
+		%     Hence, by definition,
+		%     $$ \kappa_\sigma(S,K_S+E+E)=\kappa_\sigma(S,E)=1 , $$ 
+		%     but obviously $|nE|$ has only one element (namely, $nE$ itself), since $E$ is extremal, so 
+		%     $$ \kappa_\iota(S,K_S+E+E)=\kappa(S,E)=0 . $$
+		% \end{exa}
+	
+	It remains to deduce an analogue of \cite[Corollary 3.10]{Hash20d} in the setting of g-pairs; this is Corollary \ref{cor:Hash20d_3.10} below. We begin with an auxiliary result, which plays a key role in the proof of Corollary \ref{cor:Hash20d_3.10}. Specifically, the next lemma provides a sufficient condition for the termination of an MMP with scaling of an ample divisor starting from an NQC $\Q$-factorial dlt g-pair, essentially when the corresponding nef thresholds converge to zero.
+	
+	\begin{lem}\label{lem:Hash20d_3.10_auxiliary}
+		Let $(X,B+M)$ be an NQC $\Q$-factorial dlt g-pair. Assume that $K_X+B+M$ is pseudo-effective and log abundant with respect to $(X,B+M)$, and that the stable base locus of $K_X+B+M$ does not contain the center of any divisorial valuation $ P $ over $X$ such that $ a(P,X,B+M) < 0 $. Then any $(K_X+B+M)$-MMP with scaling of an ample divisor terminates with a minimal model of $(X,B+M)$ which is log abundant.
+	\end{lem}
+	
+	\begin{proof}
+		Run a $(K_X+B+M)$-MMP with scaling of an ample divisor:
+		$$ (X_1, B_1+M_1) := (X,B+M) \dashrightarrow (X_2,B_2+M_2) \dashrightarrow \cdots \dashrightarrow (X_i,B_i+M_i)\dashrightarrow \cdots $$
+		Fix $i\geq 1$ and pick an lc center $S_i$ of $(X_i,B_i+M_i)$. Then there exists an lc center $S$ of $(X,B+M)$ such that the map $X \dashrightarrow X_i$ induces a birational map $S \dashrightarrow S_i$; see \cite[Lemma 2.18(iii)]{Tsak21}. Define NQC dlt g-pairs $(S,B_S+M_S)$ and $(S_i,B_{S_i}+M_{S_i})$ by adjunction: 
+		\[ K_S+B_S+M_S=(K_X+B+M)|_S \quad \text{and} \quad K_{S_i}+B_{S_i}+M_{S_i}=(K_{X_i}+B_i+M_i)|_{S_i} ; \]
+		see \cite[Subsection 2.3]{HanLi22} for the details. By \cite[Lemma 2.18(iv)]{Tsak21} for any divisorial valuation $P$ over $S$ we have
+		\[ a(P,S,B_S+M_S) \leq a(P,S_i,B_{S_i}+M_{S_i}) . \]
+		In addition, by our assumptions, \cite[Lemma 3.5]{Hash22a} and \cite[Lemma 3.6(4)]{LX22a}, for every prime divisor $G$ on $S_i$ we have 
+		\[ a(G,S_i,B_{S_i}+M_{S_i})\leq a(G,S,B_S+M_S) . \]
+		Therefore, \cite[Lemma 3.9]{Hash22a} implies that the divisor $K_{S_i}+B_{S_i}+M_{S_i}$ is abundant. Hence, for every $i \geq 1$ the g-pair $(X_i,B_i+M_i)$ is log abundant. It follows now from Corollary \ref{cor:Hash20d_3.8} that the above $(K_X+B+M)$-MMP with scaling terminates with a minimal model $(Y,B_Y+M_Y)$ of $(X,B+M)$, while by construction the divisor $K_Y+B_Y+M_Y$ is log abundant with respect to $(Y,B_Y+M_Y)$.
+	\end{proof}
+	
+	\begin{cor}\label{cor:Hash20d_3.10}
+		Let $(X,B+M)$ be an NQC lc g-pair. Assume that $K_X+B+M$ is pseudo-effective and log abundant with respect to $(X,B+M)$, and that the stable base locus of $K_X+B+M$ does not contain the center of any divisorial valuation $P$ over $X$ such that $ a(P,X,B+M) < 0 $. Then $(X,B+M)$ has a minimal model which is log abundant.
+	\end{cor}
+	
+	\begin{proof}
+		Let $ h \colon (X',B'+M') \to (X,B+M) $ be a dlt blow-up of $(X,B+M)$. By Lemma \ref{lem:dlt_blow-up_log_abundant}, $K_{X'}+B'+M'$ is pseudo-effective and log abundant with respect to $(X',B'+M')$. Moreover, by \cite[Lemma 2.3]{LMT} we deduce that the stable base loci of $K_X+B+M$ and $K_{X'}+B'+M'$ are related as follows:
+		\[ \sbs(K_{X'}+B'+M') = h^{-1} \big( \sbs(K_X+B+M) \big) . \]
+		It follows that $(X',B'+M')$ satisfies the same hypotheses as $(X,B+M)$, so Lemma \ref{lem:Hash20d_3.10_auxiliary} yields that $(X',B'+M')$ has a minimal model $(Y'',B_Y''+M_Y'')$ which is log abundant. Note that $(Y'',B_Y''+M_Y'')$ is a minimal model in the sense of Birkar-Shokurov of $(X,B+M)$, and thus Proposition \ref{prop:mainprop} implies that $(X,B+M)$ has a minimal model $(Y,B_Y+M_Y)$. Let $ t \colon (Y',B_Y'+M_Y') \to (Y,B_Y+M_Y) $ be a dlt blow-up of $(Y,B_Y+M_Y)$. Note that $(Y',B_Y'+M_Y')$ is a minimal model in the sense of Birkar-Shokurov of $(X,B+M)$, so it is also log abundant by Lemma \ref{lem:log_abundant_MMs}. Therefore, by Lemma \ref{lem:dlt_blow-up_log_abundant} we conclude that $(Y,B_Y+M_Y)$ is log abundant, which completes the proof.
+	\end{proof}
+	
+	Finally, as in the case of Corollaries \ref{cor:Hash20d_3.13} and \ref{cor:Hash20d_3.12}, we remark that Corollary \ref{cor:Hash20d_3.10} is also only a partial analogue of \cite[Corollary 3.10]{Hash20d} in the context of g-pairs. Indeed, in contrast to the case of usual pairs, where it is well-known that a nef and log abundant canonical divisor is semi-ample (see, e.g., \cite{Xie22} for more information), we cannot necessarily deduce the existence of a good minimal model of the g-pair $(X,B+M)$ from Corollary \ref{cor:Hash20d_3.10}, as demonstrated by \cite[Example 2.2]{LX22b}.
+	
+	
+	
+	
+	\bibliographystyle{amsalpha}
+	\bibliography{BibliographyForPapers}
+	
+\end{document}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
