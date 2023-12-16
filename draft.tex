@@ -1,0 +1,73 @@
+%!TeX program = xelatex
+\documentclass{article}
+
+\usepackage{amsfonts}
+\usepackage[all]{xy}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage[hidelinks]{hyperref}
+\usepackage{ulem}
+\usepackage{tikz}  
+\usetikzlibrary{arrows.meta}%画箭头用的包
+
+\usepackage{geometry}
+\geometry{a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+\newtheorem{defn}{Definition}[section]
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{lem}[defn]{Lemma}
+\newtheorem{thm}[defn]{Theorem}
+\newtheorem{cor}[defn]{Corollary}
+\newtheorem{rmk}[defn]{Remark}
+\newtheorem{fact}[defn]{Fact}
+\newtheorem{problem}{Problem}
+\newtheorem*{ques}{Question}
+
+\setcounter{section}{0}
+
+\title{drafts}
+\author{wyz}
+\date{\today}
+
+\begin{document}
+
+  \maketitle
+  %\tableofcontents
+  %\newpage
+\section{some theorems}
+
+\begin{thm}[gdltsp]\label{thm: gdltsp}
+  Assume that
+  \begin{itemize}
+    \item $W\rightarrow Z$ is a contraction between normal quasi-projective varieties,
+    \item $(W,B_W+M_W)$ is a $\mathbb Q$-factorial dlt gpair with associated nef$/Z$ $\bb$-divisor $M$, such that $K_W+B_W+M_W$ is not pseudo-effective$/Z$,
+    \item $\rho_X: W\dashrightarrow X$ and $\rho_Y: W\dashrightarrow Y$ are two $(K_W+B_W+M_W)$-MMP$/Z$ such that $(\rho_X)_*(K_W+B_W+M_W)=K_X+B_X+M_X$ and $(\rho_Y)_*(K_W+B_W+M_W)=K_X+B_Y+M_Y$,
+    \item $\phi_X: X\rightarrow S_X$ is a $(K_X+B_X+M_X)$-Mori fiber space$/Z$ and $\phi_Y: X\rightarrow S_Y$ is a $(K_Y+B_Y+M_Y)$-Mori fiber space$/Z$.
+  \end{itemize}
+  \begin{center}$\xymatrix{
+        & W\ar@{-->}[dl]_{\rho_X}\ar@{-->}[dr]^{\rho_Y}& \\
+        X \ar@{->}[d]_{\phi_X}\ar@{-->}[rr]^{f}   &  & Y\ar@{->}[d]^{\phi_Y} \\
+        S_X & &S_Y }$
+  \end{center}
+  Then the induced birational map $f: X\dashrightarrow Y$ is given by a finite sequence of Sarkisov links$/Z$, i.e. $f$ can be written as $X_0\dashrightarrow X_1\dots\dashrightarrow X_n\cong Y$, where each $X_{i}\dashrightarrow X_{i+1}$ is a Sarkisov link$/Z$, and
+\end{thm}
+
+\begin{thm}[gkltsp]\label{thm: gkltsp}
+  Assume that
+  \begin{itemize}
+    \item $W\rightarrow Z$ is a contraction between normal quasi-projective varieties,
+    \item $(W,B_W,\mathbf{M}$ is a $\mathbb Q$-factorial gklt g-pair with associated nef$/Z$ $\bb$-divisor $M$, such that $K_W+B_W+M_W$ is not pseudo-effective$/Z$,
+    \item $\rho_X: W\dashrightarrow X$ and $\rho_Y: W\dashrightarrow Y$ are two $(K_W+B_W+M_W)$-MMP$/Z$ such that $(\rho_X)_*(K_W+B_W+M_W)=K_X+B_X+M_X$ and $(\rho_Y)_*(K_W+B_W+M_W)=K_X+B_Y+M_Y$,
+    \item $\phi_X: X\rightarrow S_X$ is a $(K_X+B_X+M_X)$-Mori fiber space$/Z$ and $\phi_Y: X\rightarrow S_Y$ is a $(K_Y+B_Y+M_Y)$-Mori fiber space$/Z$.
+  \end{itemize}
+  \begin{center}$\xymatrix{
+        & W\ar@{-->}[dl]_{\rho_X}\ar@{-->}[dr]^{\rho_Y}& \\
+        X \ar@{->}[d]_{\phi_X}\ar@{-->}[rr]^{f}   &  & Y\ar@{->}[d]^{\phi_Y} \\
+        S_X & &S_Y }$
+  \end{center}
+  Then the induced birational map $f: X\dashrightarrow Y$ is given by a finite sequence of Sarkisov links$/Z$, i.e. $f$ can be written as $X_0\dashrightarrow X_1\dots\dashrightarrow X_n\cong Y$, where each $X_{i}\dashrightarrow X_{i+1}$ is a Sarkisov link$/Z$, and
+\end{thm}
+\end{document}
