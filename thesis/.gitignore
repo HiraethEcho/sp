@@ -1,0 +1,11 @@
+Img/
+Tmp/
+*.aux
+*.lot
+*.log
+*.toc
+*.gz
+*.out
+*.lof
+*.loappfig
+*.loapptab
