@@ -21,26 +21,23 @@
 \end{definition}
 
 \section{极小模型纲领}
-我们将极小模型纲领中出现的代数簇对称为极小模型的\textbf{结果}
-We call the varieties that appear while running an MMP, the \textbf{results} of the MMP, and the varieties that appear at the end of the MMP (which are either minimal models or Mori fibre spaces) are the \textbf{outputs} of the MMP.
+我们将极小模型纲领中出现的代数簇对称为极小模型的\textbf{结果}，将MMP停止处的代数簇称为MMP的\textbf{输出}(要么是极小模型，要么是森纤维空间)。对于极小模型纲领，有如下结果。
+\begin{theorem}[标量MMP的终结定理]
+	\cite[Corollary 1.4.2]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $(X, B)$ 是  $\mathbb{Q}$-分解 klt 代数簇对，其中 $K_{X}+B$  $\mathbb{R}$-Cartier 除子， 且$B$ 是 $\pi$-big。若 $C\geqslant0$ 为 $\mathbb{R}$-除子，且$K_{X}+B+C$ 是 klt 和  $\pi$-数值有效(nef)，那么在 $U$ 上运行 $C$-标量的  $(K_{X}+B)$-极小模型纲领，那么这个极小模型纲领将终结。
+\end{theorem}
+\begin{theorem}[极小模型输出]\label{notpseudoeffmfs}
+	\cite[Corollary 1.3.3]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $(X, B)$ 是 $\mathbb{Q}$-分解 klt 代数簇对，其中 $K_{X}+B$ 是$\mathbb{R}$-Cartier 除子。若 $K_{X}+B$ 不是 $\pi$-伪有效的，那么运行 $U$ 上的  $(K_{X}+B)$-极小模型纲领，将终结于森纤维空间$g:Y\to Z$。
+\end{theorem}
 
-\begin{thm}
-	\cite[Corollary 1.4.2]{BCHM10} Let $ \pi: X\to U $ be a projective morphism of normal quasi-projective varieties, and let $(X, B)$ be a $\mathbb{Q}$-factorial klt pair where $K_{X}+B$ is $\mathbb{R}$-Cartier and $B$ is $\pi$-big. Let $C\geqslant0$ be an $\mathbb{R}$-divisor. If $K_{X}+B+C$ is klt and  $\pi$-nef, then we may run the $(K_{X}+B)$-MMP over $U$  with scaling of $C$ and this MMP terminates.
-\end{thm}
-
-\begin{thm}\label{notpseudoeffmfs}
-	\cite[Corollary 1.3.3]{BCHM10} Let $ \pi: X\to U $ be a projective morphism of normal quasi-projective varieties, and let $(X, B)$ be a $\mathbb{Q}$-factorial klt pair where $K_{X}+B$ is $\mathbb{R}$-Cartier.  If $K_{X}+B$ is  not $\pi$-pesudo-effective, then we may run the $(K_{X}+B)$-MMP over  $U$  and end with a Mori fibre space $g:Y\to Z$.
-\end{thm}
-
-\begin{cor}\label{extraction}
-	\cite[Corollary 13.7]{haconMinimalModelProgram2012} Let $ (X,B) $ be a  klt pair and $\mathfrak{C}$ be any set of exceptional divisors $E$  of discrepancy $ a(E;X,B)\leqslant 0 $. Then there is a birational morphism $ f:Z\to X $ and a $ \mathbb{Q} $-divisor $ B_Z $ such that:
+\begin{corollary}\label{extraction}
+	\cite[Corollary 13.7]{haconMinimalModelProgram2012} 令 $ (X,B) $ 为 klt 代数簇对， $\mathfrak{C}$是任意差异数满足 $ a(E;X,B)\leqslant 0 $的例外除子 $E$ 的集合，那么有双有理态射 $ f:Z\to X $ 和 $ \mathbb{Q} $-除子 $ B_Z $ 使得：
 	\begin{enumerate}
-		\item $ (Z,B_Z) $ is klt;
-		\item $ E $ is an $f$-exceptional divisor if and only if $ E\in \mathfrak{C} $;
-		\item $ \operatorname{mult}_{E}B_Z=-a(E;X,B) $ if $E \in \mathfrak{C}$, and $ f_*B_Z=B $ and $ K_Z+B_Z=f^*(K_X+B) $.
+		\item $ (Z,B_Z) $ 是klt代数簇对：
+		\item $ E $ 是 $f$-例外除子当且仅当 $ E\in \mathfrak{C} $；
+		\item  若 $E \in \mathfrak{C}$则$ \operatorname{mult}_{E}B_Z=-a(E;X,B) $ ，且$ f_*B_Z=B $ 和 $ K_Z+B_Z=f^*(K_X+B) $。
 	\end{enumerate}
-	In particular, if we take $\mathfrak{C}$ to be the set consisting of all exceptional divisors $E$ of discrepancy $a(E; X, B)\leqslant 0$, then $ Z $ is called \textbf{terminalization} of $ X $; if we take $\mathfrak{C}$ to be the set consisting of only one exceptional divisor $E$ of discrepancy $a(E; X, B)\leqslant 0$, then $ f: Z\to X $ is called a \textbf{divisorial extraction}.
-\end{cor}
+	特别的，若却 $\mathfrak{C}$ 为所有差异数满足$a(E; X, B)\leqslant 0$的例外除子 $E$ 的集合，那么 $ Z $ 被称为 $X$ 的 \textbf{terminalization} ；若取e $\mathfrak{C}$为仅包含一个差异数满足 $a(E; X, B)\leqslant 0$的例外除子，那么 $ f: Z\to X $ 被称为 \textbf{除子解压}( \textbf{divisorial extraction} )。
+\end{corollary}
 
 \begin{defn}
 	\cite[Definition 3.3]{brunoLogSarkisovProgram1995}
