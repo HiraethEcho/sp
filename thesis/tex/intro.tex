@@ -1,80 +1,76 @@
 \chapter{绪论}
 极小模型纲领(minimal model program, MMP) 的目标是按双有理等价类分类代数簇，并选取选择恰当的代表元。极小模型纲领猜想，每一个代数簇都双有理等价于一个极小模型(minimal model) 或一个森纤维空间(Mori fibre space, mfs)，但这样的代表元有时并不唯一，于是自然的问题就是不同代表元之间的关系。对于极小模型的情形，我们有
 \begin{theorem}[平转连接极小模型]
-  令$(W,B_{W})$为一个$\mathbb{Q}$-分解的终极对(terminal pair)，且$(X,B_{X}),(Y,B_{Y})$是它的两个极小模型。那么双有理映射$X \dashrightarrow Y$可以分解为一系列$(K_{X}+B_{X})$-平转(flop).
+	令$(W,B_{W})$为一个$\mathbb{Q}$-分解的终极对(terminal pair)，且$(X,B_{X}),(Y,B_{Y})$是它的两个极小模型。那么双有理映射$X \dashrightarrow Y$可以分解为一系列$(K_{X}+B_{X})$-平转(flop).
 \end{theorem}
 对于森纤维空间，由Sarkisov纲领可知
 \begin{theorem}[主定理]
-  令 $ f:(X, B)\to S$ 和 $f':(X', B')\to S' $ 为两个 MMP-连接的$ \mathbb{Q} $-分解 klt 算术森纤维空间，则有双有理映射 $\Phi$：
-  \[
-    \xymatrix{
-      (X,B)\ar[d]_f\ar@{.>}[r]^\Phi & (X',B')\ar[d]^{f'}\\
-      S & S'}
-  \]
-可以分解为Sarkisov连接映射的复合，即
-\[
-  \Phi=\Psi_{n}\circ \cdots \circ \Psi_{1}
-\]
-其中$\Psi_{i}:X_{i}\dashrightarrow X_{i+1} $ 是下列四种Sarkisov连接之一：
+	令 $ f:(X, B)\to S$ 和 $f':(X', B')\to S' $ 为两个 MMP-连接的$ \mathbb{Q} $-分解 klt 算术森纤维空间，则有双有理映射 $\Phi$：
+	\[
+		\xymatrix{
+			(X,B)\ar[d]_f\ar@{.>}[r]^\Phi & (X',B')\ar[d]^{f'}\\
+			S & S'}
+	\]
+	可以分解为Sarkisov连接映射的复合，即
+	\[
+		\Phi=\Psi_{n}\circ \cdots \circ \Psi_{1}
+	\]
+	其中$\Psi_{i}:X_{i}\dashrightarrow X_{i+1} $ 是下列四种Sarkisov连接之一：
 
-  $\textbf{I}$:
-  $\xymatrix{
-      Z\ar[d]_p\ar@{.>}[r]&X_1\ar[d]^{f_1}\\
-      X\ar[d]_f&S_1\ar[dl]^{t}\\
-      S &}$
-  $\textbf{II}$:
-  $\xymatrix{
-      Z\ar[d]_p\ar@{.>}[r]&Z'\ar[d]^{q}&\\
-      X\ar[d]_{f}&X_1\ar[d]^{f_1}\\
-      S\ar[r]^{\sim}&S_1}$
+	$\textbf{I}$:
+	$\xymatrix{
+			Z\ar[d]_p\ar@{.>}[r]&X_1\ar[d]^{f_1}\\
+			X\ar[d]_f&S_1\ar[dl]^{t}\\
+			S &}$
+	$\textbf{II}$:
+	$\xymatrix{
+			Z\ar[d]_p\ar@{.>}[r]&Z'\ar[d]^{q}&\\
+			X\ar[d]_{f}&X_1\ar[d]^{f_1}\\
+			S\ar[r]^{\sim}&S_1}$
 
-  $\textbf{III}$:
-  $
-    \xymatrix{
-    X\ar@{.>}[r]\ar[d]_f& Z\ar[d]^q& \\
-    S\ar[rd]_{s}         & X_{1}\ar[d]^{f_{1}}&\\
-    &S_{1}
-    }
-  $
-  $\textbf{IV}$:
-  $\xymatrix{
-      X\ar[d]_f\ar@{.>}[rr]&&X_1\ar[d]^{f_1}\\
-      S\ar[dr]_{s}&&S_1\ar[dl]^{t}\\
-      &T &}$
+	$\textbf{III}$:
+	$
+		\xymatrix{
+		X\ar@{.>}[r]\ar[d]_f& Z\ar[d]^q& \\
+		S\ar[rd]_{s}         & X_{1}\ar[d]^{f_{1}}&\\
+		&S_{1}
+		}
+	$
+	$\textbf{IV}$:
+	$\xymatrix{
+			X\ar[d]_f\ar@{.>}[rr]&&X_1\ar[d]^{f_1}\\
+			S\ar[dr]_{s}&&S_1\ar[dl]^{t}\\
+			&T &}$
 
-      其中所有$ f:(X, B)\to S $ and $ f_1:(X_1, B_1)\to S_1 $ 都是算术森纤维空间，所有$p,q$ 都是除子压缩，所有虚线的映射都是翻转(flip)、平转(flop)或反向翻转(inverse flip)的复合。
+	其中所有$ f:(X, B)\to S $ and $ f_1:(X_1, B_1)\to S_1 $ 都是算术森纤维空间，所有$p,q$ 都是除子压缩，所有虚线的映射都是翻转(flip)、平转(flop)或反向翻转(inverse flip)的复合。
 \end{theorem}
 在具有叶状结构的代数簇对(foliated pair)上有类似结果：
 \begin{theorem}[主定理2]
- TODO 
+	TODO
 \end{theorem}
 Sarkisov纲领起源于对直纹曲面的分类 \cite{sarkisovBIRATIONALAUTOMORPHISMSCONIC1981}, \cite{sarkisovCONICBUNDLESTRUCTURES1983}.
 对terminal三位代数簇的完整证明由Corti给出，使用的是下降法。\cite{cortiFactoringBirationalMaps}.
-由下降法的Sarkisov纲领归纳地构造Sarkisov连接。选取一个定义了双有理映射$\Phi:X \dashrightarrow X'$的线性系 $\mathcal{H}$ (或一个一般的除子 $H \in \mathcal{H}$)，那么第一个Sarkisov连接 $\psi_1:X\dashrightarrow X_1$ 由运行一种特殊的极小模型纲领得到，被称为 $2$-ray game，并且取决于 $\mathcal{H}$ ($H$) 的选取。接着用 $\Phi_{1}=\Phi\circ \psi_1^{-1}: X_1 \dashrightarrow X'$替代 $\Phi:X\dashrightarrow X'$并重复这一过程。 
+由下降法的Sarkisov纲领归纳地构造Sarkisov连接。选取一个定义了双有理映射$\Phi:X \dashrightarrow X'$的线性系 $\mathcal{H}$ (或一个一般的除子 $H \in \mathcal{H}$)，那么第一个Sarkisov连接 $\psi_1:X\dashrightarrow X_1$ 由运行一种特殊的极小模型纲领得到，被称为 $2$-ray game，并且取决于 $\mathcal{H}$ ($H$) 的选取。接着用 $\Phi_{1}=\Phi\circ \psi_1^{-1}: X_1 \dashrightarrow X'$替代 $\Phi:X\dashrightarrow X'$并重复这一过程。
 
-Sarkisov次数$(\mu,\lambda,e)$可以度量两个森纤维空间的“距离”
+Sarkisov次数$(\mu,\lambda,e)$可以度量两个森纤维空间的“距离”。由Fano代数簇的有界性，第一个不变量$\mu$落在一个离散集中。第二个不变量典范阈值(canonical threshold)$\lambda$ 和第三个不变量相容除子(crepant divisor)的个数和代数簇相对于$
+	H$的奇异性质有关。每构造一个Sarkisov连接，新的双有理映射$X_{i}\dashrightarrow X'$的Sarkisov次数$
+	(\mu_{i},\lambda_{i},e_{i})$会下降，于是Sarkisov纲领将在有限步内终结。
 
-The Sarkisov degree $(\mu,\lambda,e)$ is designed to prove the termination. The invariant (nef threshold) $\mu$ lies in a discrete set due  to the boundedness of Fano varieties. The invariants (canonical threshold) $\lambda$ and (the number of crepant divisors) $e$ are related to the singularities of $K_X$ with respect to $H$. 
-The Sarkisov degree drops after the replacement, and the Sarkisov program terminates after finitely many steps. 
-Bruno and Matsuki \cite{brunoLogSarkisovProgram1995} generalize this method to the case of $\mathbb{Q}$-factorial klt threefolds. Moreover, they outline the Sarkisov program for $\mathbb{Q}$-factorial klt pairs in any dimension.
-After important advances in the minimal model program, such as the termination of the MMP with scaling \cite{BCHM10}, the ACC of lcts \cite{HMX14}, the boundedness of $\delta$-lc Fano varieties \cite{Bir19}, \cite{birkarSingularitiesLinearSystems2020}, the program they outlined works partially. The main remaining open question is related to the termination of flips and ascending chain condition (or finiteness) of local log canonical thresholds.
-We call this approach the original method. We are not aware of detailed references discussing the original method for higher dimensional klt pairs, and therefore we discuss this in detail in Section 3. 
-
-Using the finiteness of weak log canonical models established in \cite{BCHM10}, Hacon \cite{haconMinimalModelProgram2012} gives another approach to the Sarkisov program, which is called the double scaling method and is known to terminate in all dimensions. 
-Both approaches construct the Sarkisov links by 2-ray games. 
-But in this approach, a common log resolution $(W,B_W)$ of two Mori fibre spaces is fixed as the roof of the program such that each Sarkisov link is ``under the roof'', and each Mori fibre space in the Sarkisov links is a weak log canonical model of $W$. 
-The termination of the method of double scaling can then be shown using techniques similar to the termination of flips with scaling.
-Liu \cite{liuSarkisovProgramGeneralized2021} generalizes Hacon's method to generalized pairs.
- We introduce the double scaling method in Section 4.
+Bruno和Matsuki \cite{brunoLogSarkisovProgram1995} 将这种方法推广到 $\mathbb{Q}$-分解的klt奇点的三维代数簇的情形。并且他们给出了任意维$\mathbb{Q}$-分解klt奇点代数簇的Sarkisov纲领的下降法的大纲。之后在极小模型纲领中有一些重要进展，例如标量极小模型纲领(MMP with scaling) 的终结性 \cite{BCHM10}，lct的ACC (accending chain condition)\cite{HMX14}， $\delta$-lc Fano 簇的有界性 \cite{Bir19}, \cite{birkarSingularitiesLinearSystems2020}，这些进展使得Bruno和Matsuki的大纲部分地可行，剩下的主要问题与算术翻转的终结性和局部算术典范阈值(local log canonical thresholds)的ACC(或者有限性)有关。
+本文将这种方法称为下降法，并且在第三章第第一节具体讨论。
 
 
-Using the idea of Shokurov's polytopes \cite{Sho96}, \cite{cs11}, Hacon and M\textsuperscript{c}Kernan \cite{haconSarkisovProgram2012} give a different approach to the Sarkisov program without using 2-ray games.
-Let $W$ be a common log resolution of $(X,B)\to S$ and $(X',B')\to S'$, then there are divisors $D$ and $D'$ on $W$ such that $S$ and $S'$ are ample models of $W$ for $K_W+D$ and $K_W+D'$ respectively. 
-Moreover, there are some other divisors $D_i$ in the polytope of boundaries of $W$ corresponding to other Mori fibre spaces $X_i\to S_i$ and ample models $S_i$ of $W$. Then there is a path in the polytope connecting these divisors $D_i$ and it gives a decomposition of $\Phi$ into Sarkisov links.
-Miyamoto \cite{miyamoto2019TheSP} uses this method to show that the Sarkisov program works for lc log surfaces or $\mathbb{Q}$-factorial log surfaces over an algebraically closed field of any characteristic. 
-We call this approach the polytope method and introduce it in Section 5. 
+利用弱典范模型的有限性\cite{BCHM10} (finiteness of weak log canonical models)，Hacon \cite{haconMinimalModelProgram2012} 给出了另一种构造Sarkisov纲领的方法，在本文中称之为双标量法，这种方法对所有维数都成立。
+这两种方法都是通过2-ray game来构造Sarkisov连接，但是在双标量法中固定了两个森纤维空间的公共算术解消 $(W,B_W)$ 作为Sarkisov纲领的``屋顶''，使得分解中的每一个森纤维空间都是$W$的某个弱算术典范模型。双标量法的Sarkisov纲领的终结性由弱算术典范模型的有限性推出，这与标量翻转(flips with scaling)的终结性的证明类似。
+刘继豪 \cite{liuSarkisovProgramGeneralized2021} 将这种方法推广到了 generalized pairs的情况。本文第三章第二节介绍这种方法。
 
-In Section 6, we give examples to illustrate each method of the Sarkisov program.
 
-The Sarkisov program has many applications, such as the classical result for the Cremona group of rank 2. That is, any birational automorphism of the projective plane is a composition of automorphisms of the projective plane and standard quadratic transforms (see \cite{ksc04} Chapter 2). Takahashi \cite{tak95} establishes the Sarkisov program for log surfaces and obtains another proof for the classical algebraic result: any automorphism of the affine plane is a composition of linear transformations and upper triangular transformations (see \cite{mat02}, Chapter 13). For more applications, we refer to \cite{lam22} by Lamy.
+利用Shokurov的多面体方法 \cite{Sho96}, \cite{cs11}, Hacon 和 M\textsuperscript{c}Kernan \cite{haconSarkisovProgram2012}给出了一种新方法不通过2-ray game实现Sarkisov纲领。
+令 $W$ 为 $(X,B)\to S$ 和 $(X',B')\to S'$ 的公共算术解消，则在 $W$ 上有两个除子 $D$ 和 $D'$，使得 $S$ 和 $S'$ 是 $W$ 相对于 $K_W+D$ 和 $K_W+D'$的丰沛模型(ample model)。进一步，$W$的除子的多面体的边界上有其他除子 $D_{i}$，每个除子对应一个森纤维空间 $X_i\to S_i$ 和 $W$的丰沛模型$S_i$。于是在多面体边界上有一条路径连接这些除子 $D_{i}$，并且将$\Phi$分解为对应的Sarkisov连接。
+Miyamoto \cite{miyamoto2019TheSP} 将这种方法应用到了任意特征代数闭域上的lc算术曲面或 $\mathbb{Q}$-分解算术曲面。
+本文将这种方法成为有限模型法，并且在第三章第三节介绍。
+
+在第三章第四节，本文给出三种方法的具体例子。
+
+Sarkisov 纲领有许多应用，例如2阶Cremona群的经典结果。即每一个射影平面的双有理自同构都是由自同构和标准二次映射复合生成。 (见 \cite[Chapter 2]{ksc04} )。 Takahashi \cite{tak95} 对算术曲面建立了特殊的Sarkisov纲领，并得到了另一个经典代数结论的几何证明：每一个仿射平面的自同构都由仿射自同构和上三角变换复合。(见 \cite[Chpter 13]{mat02}, Chapter 13)。Lamy\cite{lam22}给出了更多其他应用。
 
