@@ -23,10 +23,10 @@
 \section{极小模型纲领}
 我们将极小模型纲领中出现的代数簇对称为极小模型的\textbf{结果}，将MMP停止处的代数簇称为MMP的\textbf{输出}(要么是极小模型，要么是森纤维空间)。对于极小模型纲领，有如下结果。
 \begin{theorem}[标量MMP的终结定理]
-	\cite[Corollary 1.4.2]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $(X, B)$ 是  $\mathbb{Q}$-分解 klt 代数簇对，其中 $K_{X}+B$  $\mathbb{R}$-Cartier 除子， 且$B$ 是 $\pi$-big。若 $C\geqslant0$ 为 $\mathbb{R}$-除子，且$K_{X}+B+C$ 是 klt 和  $\pi$-数值有效(nef)，那么在 $U$ 上运行 $C$-标量的  $(K_{X}+B)$-极小模型纲领，那么这个极小模型纲领将终结。
+	\cite[Corollary 1.4.2]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $(X, B)$ 是  $\mathbb{Q}$-分解 klt 代数簇对，其中 $K_{X}+B$  $\mathbb{R}$-Cartier 除子， 且$B$ 是 $\pi$-big。若 $C\geqslant0$ 为 $\mathbb{R}$-除子，且$K_{X}+B+C$ 是 klt 和  $\pi$-数值有效(nef)，那么在 $U$ 上运行 $C$-标量的  $(K_{X}+B)$-MMP，那么这个极小模型纲领将终结。
 \end{theorem}
 \begin{theorem}[极小模型输出]\label{notpseudoeffmfs}
-	\cite[Corollary 1.3.3]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $(X, B)$ 是 $\mathbb{Q}$-分解 klt 代数簇对，其中 $K_{X}+B$ 是$\mathbb{R}$-Cartier 除子。若 $K_{X}+B$ 不是 $\pi$-伪有效的，那么运行 $U$ 上的  $(K_{X}+B)$-极小模型纲领，将终结于森纤维空间$g:Y\to Z$。
+	\cite[Corollary 1.3.3]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $(X, B)$ 是 $\mathbb{Q}$-分解 klt 代数簇对，其中 $K_{X}+B$ 是$\mathbb{R}$-Cartier 除子。若 $K_{X}+B$ 不是 $\pi$-伪有效的，那么运行 $U$ 上的  $(K_{X}+B)$-MMP，将终结于森纤维空间$g:Y\to Z$。
 \end{theorem}
 
 \begin{corollary}\label{extraction}
@@ -36,83 +36,83 @@
 		\item $ E $ 是 $f$-例外除子当且仅当 $ E\in \mathfrak{C} $；
 		\item  若 $E \in \mathfrak{C}$则$ \operatorname{mult}_{E}B_Z=-a(E;X,B) $ ，且$ f_*B_Z=B $ 和 $ K_Z+B_Z=f^*(K_X+B) $。
 	\end{enumerate}
-	特别的，若却 $\mathfrak{C}$ 为所有差异数满足$a(E; X, B)\leqslant 0$的例外除子 $E$ 的集合，那么 $ Z $ 被称为 $X$ 的 \textbf{terminalization} ；若取e $\mathfrak{C}$为仅包含一个差异数满足 $a(E; X, B)\leqslant 0$的例外除子，那么 $ f: Z\to X $ 被称为 \textbf{除子解压}( \textbf{divisorial extraction} )。
+	特别的，若却 $\mathfrak{C}$ 为所有差异数满足$a(E; X, B)\leqslant 0$的例外除子 $E$ 的集合，那么 $ Z $ 被称为 $X$ 的 \textbf{终端化}(terminalization) ；若取e $\mathfrak{C}$为仅包含一个差异数满足 $a(E; X, B)\leqslant 0$的例外除子，那么 $ f: Z\to X $ 被称为 \textbf{除子解压}( \textbf{divisorial extraction} ).
 \end{corollary}
 
-\begin{defn}
+\begin{definition}
 	\cite[Definition 3.3]{brunoLogSarkisovProgram1995}
-	Two or more pairs $ \{(X_i,B_i)\} $ are called \textbf{MMP-related} if they are results of $ (K_W+B_W) $-MMPs starting from a given log smooth pair $(W,B_{W})$.
-\end{defn}
+	如果多个代数簇对 $ \{(X_i,B_i)\} $是从算术光滑的代数簇对 $(W,B_{W})$的 $(K_{W}+B_{W}) $-MMP的不同结果，则称它们为MMP-相关的 ( \textbf{MMP-related} ) if they are results of $ (K_W+B_W) $-MMPs starting from a given log smooth pair $(W,B_{W})$.
+\end{definition}
 
-\begin{lem}\label{MMPrelatedConditation}
+\begin{lemma}\label{MMP-相关的条件}
 	\cite[Proposition 3.4]{brunoLogSarkisovProgram1995}
-	Let $ \{(X_l,B_l)\} $ be a finite set of birational $ \mathbb{Q} $-factorial klt pairs, then the following are equivalent:
+	令 $ \{(X_l,B_l)\} $ 为有限多个互相双有理等价的 $ \mathbb{Q} $-分解 klt 代数簇对，那么下列条件等价：
 	\begin{enumerate}
-		\item They are MMP-related;
-		\item There is a log smooth pair $ (W,B_W) $, and projective birational morphisms $ f_l:W\to  X_l $ dominating each $ X_l $, such that $ f_{l*}B_W=B_l $ and
+		\item 它们是MMP-相关的；
+		\item 存在一个算术光滑代数簇对 $ (W,B_W) $和一组射影双有理态射  $ f_l:W\to  X_l $ 支配每个 $ X_l $，满足 $ f_{l*}B_W=B_l $ 和分歧等式
 		      \[ K_W+B_W=f_l^*(K_{X_l}+B_l)+\sum_{exceptional}{a_{li}E_{li}} \]
-		      with $ a_{li}>0 $ for all $ f_l $-exceptional divisors $E_{li}$;
-		\item For any two pairs $ (X,B=\sum_ib_{i }B_i),(X',B'=\sum_{j}b_{j}'B_{j}') $ in the set,  $ a(B_i;X',B')\geqslant -b_i $ with strict inequality holding if and only if $ B_i $ is exceptional over $ X' $, and $ a(B'_j;X,B)\geqslant -b'_j $ with strict inequality holding if and only if $ B'_j $ is exceptional over $ X $.
+		      其中对每个$ f_l $-例外除子$E_{li}$满足 $a_{li}>0$ 的不等式条件；
+		\item 对任意两个代数簇对 $ (X,B=\sum_ib_{i }B_i),(X',B'=\sum_{j}b_{j}'B_{j}') $ ， 有  $ a(B_i;X',B')\geqslant -b_i $ 且严格不等式成立当且仅当 $ B_i $ 是 $ X' $上的例外除子。同样的，有 $ a(B'_j;X,B)\geqslant -b'_j $ 且严格不等式成立当且仅当$ B'_j $ 是 $ X $上的例外除子。
 	\end{enumerate}
-\end{lem}
+\end{lemma}
 \begin{proof}
-	We give a sketch proof for $(3) \implies (2)$. Let $W$ be a common resolution which dominates each pair $(X_l,B_l=\sum b_{li}B_{li})$ with a birational projective morphism $f_l:W\to X_l$ and that the union $f_{l*}^{-1}B_l\cup E_{li}$ is a divisor with only normal crossing. Let $B_W=\sum_t d_tD_t $ where $d_t = b_{li}$ if $D_t$ coincides with any component of $\cup_l f_{l*}^{-1}B_l$, and $d_t=1$ if $B_t$ is an exceptional divisor over any of $X_l$. This is well defined thanks to the condition (3). The inequality condition in the ramification formula for the log pair $(W,B_W)$ also follows from (3).
+  我们给出  $(3) \implies (2)$的简略证明：令 $W$ 为支配每个代数簇对 $(X_l,B_l=\sum b_{li}B_{li})$ 的算术光滑解消，并有射影双有理态射 $f_l:W\to X_l$，它们例外除子的并$f_{l*}^{-1}B_l\cup E_{li}$是一个横截相交的除子。令 $B_W=\sum_t d_tD_t $，其中  如果 $D_t$ 是$\cup_l f_{l*}^{-1}B_l$中的某个素除子则$d_t = b_{li}$，如果$B_{t}$是每个 $X_{l}$上的例外除子，则  $d_t=1$。由条件(3)， 这是定义良好的。那么 $(W,B_{W})$上的分歧等式(ramification formula)中的不等式条件也由(3)得到. The inequality condition in the ramification formula for the log pair $(W,B_W)$ also follows from (3).
 \end{proof}
 
 \section{有限极小模型}
 
-\begin{defn}
+\begin{definition}
 	\cite[\S 2]{haconSarkisovProgram2012} A rational map $f:X\dashrightarrow Y$ is called a \textbf{rational contraction} if there is a resolution $p:W\to X$  and $q:W\to Y$  of $f$  such that $p$  and $q$  are contraction morphisms and $p$  is birational. We say that $f$ is a \textbf{birational contraction} if $q$  is, in addition, birational and every $p$-exceptional divisor is $q$-exceptional. If in addition, $f^{-1}$ is also a \textbf{birational contraction}, then $f$ is called a \textbf{small birational map}.
-\end{defn}
+\end{definition}
 
-\begin{defn}\label{negativemap}
+\begin{definition}\label{negativemap}
 	\cite[Definition 3.6.1]{BCHM10} Let $f:X\dashrightarrow Y$ be a birational map of normal quasi-projective varieties, and $p:W\to X$ and $q:W\to Y$  a resolution of indeterminacy of $f$. Let $D$ be an $\mathbb{R}$-Cartier divisor on $X$ such that  $D_{Y}=f_*D$ is  also $\mathbb{R}$-Cartier. Then $f$ is called \textbf{$D$-non-positive} (respectively \textbf{$D$-negative)} if
 	\begin{itemize}
 		\item $f$ does not extract any divisor;
 		\item $E=p^{*}D-q^*D_Y$ is effective and exceptional over $Y$ (respectively $\operatorname{Supp}p_*E$ contains all $f$-exceptional divisors).
 	\end{itemize}
-\end{defn}
+\end{definition}
 
 Recall the definitions of models in \cite{BCHM10}
-\begin{defn}
+\begin{definition}
 	\cite[Definition 3.6.5]{BCHM10} Let $ \pi:(X,D)\to U $ be a projective morphism of normal quasi-projective varieties and let $D$ be an $\mathbb{R}$-Cartier divisor on $X$. Let $ f: X\dashrightarrow Y $ be a birational map over $ U $, then $ Z $ is a \textbf{semiample model } for $ D $ over $ U $ if $ f $ is $ (K_X+D) $-non-positive and $ K_Y+f_*D $ is semiample over $ U $.
 
 	Let $ g:X\dashrightarrow Z $ be a rational map over $ U $, then $ Z $ is an \textbf{ample model } for $ D $ over $ U $ if there is  an ample divisor $H$  over $U$  on $Z$  such that if $p:W \to X $ and $q:W \to Z $ resolves $g$, then $q$ is a contraction morphism, and we may write $p^*D \sim_{\mathbb{R},U} q^*H+E$, where $E\geqslant 0$ and for any $B \in |p^*D/U|_{\mathbb{R}}$, then $B\geqslant E$.
-\end{defn}
-\begin{defn}\label{models}
+\end{definition}
+\begin{definition}\label{models}
 	\cite[Definition 3.6.7]{BCHM10} Let $ \pi:(X,D)\to U $ be a projective morphism of normal quasi-projective varieties, if $ K_X+D $ is log canonical and $ f:X\dashrightarrow Y $ is a birational contraction, then define:
 	\begin{enumerate}
 		\item $ Y $ is a \textbf{weak log canonical model} for $ K_X+D $ over $ U $ if $ f $ is $ (K_X+D) $-non-positive and $ K_Y+f_*D $ is nef over $ U $;
 		\item $ Y $ is the \textbf{log canonical model} for $ K_X+D $ over $ U $ if $ f $ is $ (K_X+D) $-non-positive and $ K_Y+f_*D $ is ample over $ U $;
 		\item $ Y $ is  a \textbf{log terminal model} for $ K_X+D $ over $ U $ if $ f $ is $ (K_X+D)$-negative and $ K_Y+f_*D $ is dlt and nef over $ U $ and $ Y $ is $ \mathbb{Q} $-factorial.
 	\end{enumerate}
-\end{defn}
+\end{definition}
 
-\begin{lem}\cite[Lemma 3.6.6]{BCHM10}
+\begin{lemma}\cite[lemmama 3.6.6]{BCHM10}
 	Let $\pi:X \to U$ be a projective morphism of normal quasi-projective varieties and let $D$ be an $\mathbb{R}$-Cartier divisor on $X$.
 	\begin{enumerate}
 		\item If $g_{i}:X \dashrightarrow X_{i}, i=1,2$ are two ample models of $D$ over $U$, then there is an isomorphism $h:X_{1}\to X_{2}$ and $g_{2}=h \circ g_{1}$.
 		\item If $f:X \dashrightarrow Y$ is a semiample model of $D$ over $U$, then the ample model $g:X \dashrightarrow  Z$ of $D$ over $U$   exists and $g=h \circ f$, where $h:Y \to Z$ is a contraction and $f_*D \sim_{\mathbb{R},U}h^*H$ for the ample divisor $H$ corresponding to the ample model $Z$.
 		\item  If $f:X \dashrightarrow Y$ is a birational map over $U$, then $f$ is the ample model of $D$ over $U$ if and only if $f$ is a semiample model of $D$ over $U$ and $f_*D$ is ample over $U$.
 	\end{enumerate}
-\end{lem}
+\end{lemma}
 
-By the above lemma, there is another definition of log canonical models:
+By the above lemmama, there is another definition of log canonical models:
 
-\begin{defn}
+\begin{definition}
 	Let $ \pi:(X, D)\to U $ be a projective morphism of normal quasi-projective varieties, $ K_X+D $ log canonical and $ f: X\dashrightarrow Y $  a birational map that extracts no divisors, then $ Y $ is the \textbf{log canonical model} if it is the ample model.
-\end{defn}
+\end{definition}
 
 Furthermore, for big boundaries, we have
-\begin{lem}\cite[Lemma 3.9.3]{BCHM10} Let $ \pi:(X,B)\to U $ be a projective morphism of normal quasi-projective varieties. Suppose $(X, B)$ is a klt pair and  $B$ is big over $U$. If $f:X\dashrightarrow Y$ is a weak log canonical model over $U$, then
+\begin{lemma}\cite[lemmama 3.9.3]{BCHM10} Let $ \pi:(X,B)\to U $ be a projective morphism of normal quasi-projective varieties. Suppose $(X, B)$ is a klt pair and  $B$ is big over $U$. If $f:X\dashrightarrow Y$ is a weak log canonical model over $U$, then
 	\begin{itemize}
 		\item $f$ is a semiample model over $U$;
 		\item  the ample model $g:X \dashrightarrow Z$ over $U$ exists;
 		\item  there is a contraction $h:Y\to Z$ such that $K_{Y}+f_*B\sim_{\mathbb{R},U} h^*H$ for some ample $\mathbb{R}$-divisor $H$ on $Z$ over $U$.
 	\end{itemize}
-\end{lem}
+\end{lemma}
 
-\begin{defn}\label{polytopeofdivisor}
+\begin{definition}\label{polytopeofdivisor}
 	\cite[Definition 1.1.4]{BCHM10} Let $ \pi: X\to U $ be a projective morphism of normal quasi-projective varieties, and let $ V $ be a finite-dimensional affine subspace of $ \operatorname{WDiv}_{\mathbb{R}}(X) $ defined over the rational numbers. Fix an $ \mathbb{R} $-divisor $ A\geqslant 0 $, and then define
 	\[
 		\begin{aligned}
@@ -127,12 +127,12 @@ Furthermore, for big boundaries, we have
 	In addition, let $ \mathcal{C}_{A,\pi,g}(V) $ denote the closure of $ \mathcal{A}_{A,\pi,g}(V) $ in $\mathcal{L}_{A}(V)$.
 
 	If the base $U$ is clear, or it is a point, then we may omit $\pi$ and simply write $\mathcal{E}_{A}(V)$ and $\mathcal{A}_{A,f}$.
-\end{defn}
+\end{definition}
 
-\begin{thm}[Finiteness of weak log canonical models, \cite{BCHM10} Theorem E]\label{finitewlcm}
+\begin{theorem}[Finiteness of weak log canonical models, \cite{BCHM10} Theorem E]\label{finitewlcm}
 
 	Let $\pi: X\to U$ be a projective morphism of normal quasi-projective varieties, and $A$ be a general divisor relatively ample over $U$, and $V \subset \operatorname{WDiv}_{\mathbb{R}}(X)$ be a finite-dimensional rational subspace. Suppose that there is a klt pair $(X,\Delta_{0})$. Then there are finitely many birational maps $f_{i}:X \dashrightarrow X_{i}$ over $U$, $1\leqslant i\leqslant l$ such that if $f:X \dashrightarrow  Y$ is a weak log canonical model of $K_{X}+D$ over $U$ for some $D \in \mathcal{L}_{A}(V)$, then there is an index $1\leqslant i\leqslant l$ and an  isomorphism  $h_{i}:X_{i} \to Y$  such that $f=h_{i}\circ f_{i}$.
 
-\end{thm}
+\end{theorem}
 \section{叶状结构}
 
