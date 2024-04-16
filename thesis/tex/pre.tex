@@ -1,5 +1,7 @@
 \chapter{预备知识}
 \section{代数簇与奇点}
+% TODO: contraction definition; resolution; snc; intersection?
+
 \begin{definition}
 
 	令 $(X, B)$ 为代数簇对， 且 $f: Y\to X$ 是它的算术解消，则有
@@ -56,54 +58,56 @@
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
-  我们给出  $(3) \implies (2)$的简略证明：令 $W$ 为支配每个代数簇对 $(X_l,B_l=\sum b_{li}B_{li})$ 的算术光滑解消，并有射影双有理态射 $f_l:W\to X_l$，它们例外除子的并$f_{l*}^{-1}B_l\cup E_{li}$是一个横截相交的除子。令 $B_W=\sum_t d_tD_t $，其中  如果 $D_t$ 是$\cup_l f_{l*}^{-1}B_l$中的某个素除子则$d_t = b_{li}$，如果$B_{t}$是每个 $X_{l}$上的例外除子，则  $d_t=1$。由条件(3)， 这是定义良好的。那么 $(W,B_{W})$上的分歧等式(ramification formula)中的不等式条件也由(3)得到. The inequality condition in the ramification formula for the log pair $(W,B_W)$ also follows from (3).
+  我们给出  $(3) \implies (2)$的简略证明：令 $W$ 为支配每个代数簇对 $(X_l,B_l=\sum b_{li}B_{li})$ 的算术光滑解消，并有射影双有理态射 $f_l:W\to X_l$，它们例外除子的并$f_{l*}^{-1}B_l\cup E_{li}$是一个横截相交的除子。令 $B_W=\sum_t d_tD_t $，其中  如果 $D_t$ 是$\cup_l f_{l*}^{-1}B_l$中的某个素除子则$d_t = b_{li}$，如果$B_{t}$是每个 $X_{l}$上的例外除子，则  $d_t=1$。由条件(3)， 这是定义良好的。那么 $(W,B_{W})$上的分歧等式(ramification formula)中的不等式条件也由(3)得到。
 \end{proof}
 
 \section{有限极小模型}
 
 \begin{definition}
-	\cite[\S 2]{haconSarkisovProgram2012} A rational map $f:X\dashrightarrow Y$ is called a \textbf{rational contraction} if there is a resolution $p:W\to X$  and $q:W\to Y$  of $f$  such that $p$  and $q$  are contraction morphisms and $p$  is birational. We say that $f$ is a \textbf{birational contraction} if $q$  is, in addition, birational and every $p$-exceptional divisor is $q$-exceptional. If in addition, $f^{-1}$ is also a \textbf{birational contraction}, then $f$ is called a \textbf{small birational map}.
+	\cite[\S 2]{haconSarkisovProgram2012} 对有理映射 $f:X\dashrightarrow Y$  若有 $f$的解消$p:W\to X$ 和 $q:W\to Y$ 满足$p$  和 $q$ 都是压缩态射且 $p$ 双有理态射，则称 $f$ 为有理压缩映射( \textbf{rational contraction})  。若 $ q$也是双有理态射， 且每个 $p$-例外除子都是 $q$-例外除子，则称 $f$为双有理压缩映射 (\textbf{birational contraction})。如果 $f^{-1}$ 也是双有理压缩映射，则称 $f$ 为小双有理映射   ( \textbf{small birational map} )。
 \end{definition}
 
 \begin{definition}\label{negativemap}
-	\cite[Definition 3.6.1]{BCHM10} Let $f:X\dashrightarrow Y$ be a birational map of normal quasi-projective varieties, and $p:W\to X$ and $q:W\to Y$  a resolution of indeterminacy of $f$. Let $D$ be an $\mathbb{R}$-Cartier divisor on $X$ such that  $D_{Y}=f_*D$ is  also $\mathbb{R}$-Cartier. Then $f$ is called \textbf{$D$-non-positive} (respectively \textbf{$D$-negative)} if
+	\cite[Definition 3.6.1]{BCHM10}令 $f:X\dashrightarrow Y$为正规拟射影代数簇间的双有理映射，且 $p:W\to X$ 和 $q:W\to Y$是 $f$的解消。若 $D$是 $X$ 上的$\mathbb{R}$-Cartier 除子，满足  $D_{Y}=f_*D$ 也是 $\mathbb{R}$-Cartier除子，那么如果满足
 	\begin{itemize}
-		\item $f$ does not extract any divisor;
-		\item $E=p^{*}D-q^*D_Y$ is effective and exceptional over $Y$ (respectively $\operatorname{Supp}p_*E$ contains all $f$-exceptional divisors).
+		\item $f$ 不解压任何除子(即 $f$ 是双有理压缩 )；
+		\item $E=p^{*}D-q^*D_Y$ 是  $Y$上的有效除子 (对应的， $\operatorname{Supp}p_*E$ 包含全部 $f$-例外除子)。
 	\end{itemize}
+ 则称$f$为 $D$-非正性的  (\textbf{$D$-non-positive}) ，对应的， $D$-负性的 ( \textbf{$D$-negative)}。
 \end{definition}
 
-Recall the definitions of models in \cite{BCHM10}
+回顾双有理代数几何中关于模型的定义 \cite{BCHM10}：
 \begin{definition}
-	\cite[Definition 3.6.5]{BCHM10} Let $ \pi:(X,D)\to U $ be a projective morphism of normal quasi-projective varieties and let $D$ be an $\mathbb{R}$-Cartier divisor on $X$. Let $ f: X\dashrightarrow Y $ be a birational map over $ U $, then $ Z $ is a \textbf{semiample model } for $ D $ over $ U $ if $ f $ is $ (K_X+D) $-non-positive and $ K_Y+f_*D $ is semiample over $ U $.
+	\cite[Definition 3.6.5]{BCHM10} 令 $ \pi:(X,D)\to U $为正规拟射影代数簇间的射影态射， $K_{X}+D$ 是 $X$ 上的$\mathbb{R}$-Cartier除子，且$ f: X\dashrightarrow Y $是 $U$ 上的双有理映射。  如果 $ f $ 是 $ (K_X+D) $-非正性的且 $ K_Y+f_*D $ 是 $ U $上半丰沛的，那么称 $Z$ 和 $f$ 为关于 $D$的半丰沛模型。
 
-	Let $ g:X\dashrightarrow Z $ be a rational map over $ U $, then $ Z $ is an \textbf{ample model } for $ D $ over $ U $ if there is  an ample divisor $H$  over $U$  on $Z$  such that if $p:W \to X $ and $q:W \to Z $ resolves $g$, then $q$ is a contraction morphism, and we may write $p^*D \sim_{\mathbb{R},U} q^*H+E$, where $E\geqslant 0$ and for any $B \in |p^*D/U|_{\mathbb{R}}$, then $B\geqslant E$.
+	令 $ g:X\dashrightarrow Z $ 为$ U $上的有理映射，$p:W \to X $ 和 $q:W \to Z $是对 $g$ 的解消，其中 $q$ 是压缩态射 。 若$Z$ 上有 $U$ 上的丰沛除子 $H$ ，且 $p^*(K_{X}+D) \sim_{\mathbb{R},U} q^*H+E$ ，其中 $E$  满足    对 任意的 $B \in |p^*(K_{X}+D)/U|_{\mathbb{R}}$都有 $B\geqslant E$，则称 $Z$ 是 $X$ 关于$D$ 的\textbf{丰沛模型} (\textbf{ample model}) 。
 \end{definition}
 \begin{definition}\label{models}
-	\cite[Definition 3.6.7]{BCHM10} Let $ \pi:(X,D)\to U $ be a projective morphism of normal quasi-projective varieties, if $ K_X+D $ is log canonical and $ f:X\dashrightarrow Y $ is a birational contraction, then define:
+	\cite[Definition 3.6.7]{BCHM10} 令 $ \pi:(X,D)\to U $为正规拟射影代数簇间的射影态射，若 $ K_X+D $ 是 lc且$ f:X\dashrightarrow Y $是双有理压缩映射，那么有如下定义：
 	\begin{enumerate}
-		\item $ Y $ is a \textbf{weak log canonical model} for $ K_X+D $ over $ U $ if $ f $ is $ (K_X+D) $-non-positive and $ K_Y+f_*D $ is nef over $ U $;
-		\item $ Y $ is the \textbf{log canonical model} for $ K_X+D $ over $ U $ if $ f $ is $ (K_X+D) $-non-positive and $ K_Y+f_*D $ is ample over $ U $;
-		\item $ Y $ is  a \textbf{log terminal model} for $ K_X+D $ over $ U $ if $ f $ is $ (K_X+D)$-negative and $ K_Y+f_*D $ is dlt and nef over $ U $ and $ Y $ is $ \mathbb{Q} $-factorial.
+		\item 如果 $f$ 是  $ (K_X+D) $-非正性的且 $ K_Y+f_*D $ 是 $ U $上数值有效的，则  称$ Y $为关于 $D$ 在 $U$ 的  \textbf{弱算术典范模型}(\textbf{weak log canonical model})；
+		\item 如果 $f$ 是  $ (K_X+D) $-非正性的且 $ K_Y+f_*D $ 是 $ U $上丰沛的，则  称$ Y $为关于 $D$ 在 $U$ 的  \textbf{算术典范模型}(\textbf{ log canonical model})；
+		\item 如果 $f$ 是  $ (K_X+D) $-负性的且 $ K_Y+f_*D $ 是 $ U $上数值有效的和$\mathbb{Q}$-分解的，并且具有dlt奇点，则  称$ Y $为关于 $D$ 在 $U$ 的  \textbf{算术终端模型}(\textbf{log terminal model})。
 	\end{enumerate}
 \end{definition}
 
 \begin{lemma}\cite[lemmama 3.6.6]{BCHM10}
-	Let $\pi:X \to U$ be a projective morphism of normal quasi-projective varieties and let $D$ be an $\mathbb{R}$-Cartier divisor on $X$.
+	令 $\pi:X \to U$ 是正规拟射影代数簇间的射影态射，且 $D$是 $X$ 上的 $\mathbb{R}$-Cartier除子。
+
 	\begin{enumerate}
-		\item If $g_{i}:X \dashrightarrow X_{i}, i=1,2$ are two ample models of $D$ over $U$, then there is an isomorphism $h:X_{1}\to X_{2}$ and $g_{2}=h \circ g_{1}$.
-		\item If $f:X \dashrightarrow Y$ is a semiample model of $D$ over $U$, then the ample model $g:X \dashrightarrow  Z$ of $D$ over $U$   exists and $g=h \circ f$, where $h:Y \to Z$ is a contraction and $f_*D \sim_{\mathbb{R},U}h^*H$ for the ample divisor $H$ corresponding to the ample model $Z$.
-		\item  If $f:X \dashrightarrow Y$ is a birational map over $U$, then $f$ is the ample model of $D$ over $U$ if and only if $f$ is a semiample model of $D$ over $U$ and $f_*D$ is ample over $U$.
+		\item 如果 $g_{i}:X \dashrightarrow X_{i}, i=1,2$ 是 关于 $D$的  $U$上的两个丰沛模型，那么有同构态射 $h:X_{1}\to X_{2}$ 满足 $g_{2}=h \circ g_{1}$。即丰沛模型在同构意义下唯一。
+		\item 如果 $f:X \dashrightarrow Y$是 $U$ 上关于 $D$ 的 半丰沛模型，那么 $U$ 上关于 $D$ 的丰沛模型 $g:X \dashrightarrow  Z$存在，并且 $g=h \circ f$，其中 $h:Y \to Z$是压缩态射， $Z$ 上有对应丰沛除子 $H$  满足$f_*D \sim_{\mathbb{R},U}h^*H$。
+		\item  若 $f:X \dashrightarrow Y$  是$U$上双有理映射，那么 $f$是关于$D$ 在 $U$上的丰沛模型当且仅当$f$是关于 $D$ 在 $U$ 上的  半丰沛模型 且 $f_*D$ 在 $U$上丰沛。
 	\end{enumerate}
 \end{lemma}
-
-By the above lemmama, there is another definition of log canonical models:
+根据上述引理，有算术典范模型的等价定义：
 
 \begin{definition}
-	Let $ \pi:(X, D)\to U $ be a projective morphism of normal quasi-projective varieties, $ K_X+D $ log canonical and $ f: X\dashrightarrow Y $  a birational map that extracts no divisors, then $ Y $ is the \textbf{log canonical model} if it is the ample model.
+	令 $ \pi:(X, D)\to U $是正规拟射影代数簇间的射影态射，$ K_X+D $ 有lc奇点且$ f: X\dashrightarrow Y $ 是不解压任何除子的双有理映射。 如果 $ Y $是 关于 $D$ 在 $U$ 上的丰沛模型，那么称之为\textbf{算术典范模型} ( \textbf{log canonical model} ) 。
 \end{definition}
 
 Furthermore, for big boundaries, we have
+进一步，对于
 \begin{lemma}\cite[lemmama 3.9.3]{BCHM10} Let $ \pi:(X,B)\to U $ be a projective morphism of normal quasi-projective varieties. Suppose $(X, B)$ is a klt pair and  $B$ is big over $U$. If $f:X\dashrightarrow Y$ is a weak log canonical model over $U$, then
 	\begin{itemize}
 		\item $f$ is a semiample model over $U$;
