@@ -48,31 +48,31 @@
 \begin{theorem}[主定理2]
 	TODO
 \end{theorem}
-Sarkisov纲领起源于对直纹曲面的分类 \cite{sarkisovBIRATIONALAUTOMORPHISMSCONIC1981}, \cite{sarkisovCONICBUNDLESTRUCTURES1983}.
-对终端三维代数簇(terminal threefolds)的完整证明由Corti给出，使用的是下降法。\cite{cortiFactoringBirationalMaps}.
+Sarkisov纲领起源于对直纹曲面的分类 \citet{sarkisovBIRATIONALAUTOMORPHISMSCONIC1981}, \citet{sarkisovCONICBUNDLESTRUCTURES1983}.
+对终端三维代数簇(terminal threefolds)的完整证明由Corti给出，使用的是下降法。\citet{cortiFactoringBirationalMaps}.
 由下降法的Sarkisov纲领归纳地构造Sarkisov连接。选取一个定义了双有理映射$\Phi:X \dashrightarrow X'$的线性系 $\mathcal{H}$ (或一个一般的除子 $H \in \mathcal{H}$)，那么第一个Sarkisov连接 $\psi_1:X\dashrightarrow X_1$ 由运行一种特殊的极小模型纲领得到，被称为 $2$-ray game，并且取决于 $\mathcal{H}$ ($H$) 的选取。接着用 $\Phi_{1}=\Phi\circ \psi_1^{-1}: X_1 \dashrightarrow X'$替代 $\Phi:X\dashrightarrow X'$并重复这一过程。
 
 Sarkisov次数$(\mu,\lambda,e)$可以度量两个森纤维空间的“距离”。由Fano代数簇的有界性，第一个不变量$\mu$落在一个离散集中。第二个不变量典范阈值(canonical threshold)$\lambda$ 和第三个不变量相容除子(crepant divisor)的个数和代数簇相对于$
 	H$的奇异性质有关。每构造一个Sarkisov连接，新的双有理映射$X_{i}\dashrightarrow X'$的Sarkisov次数$
 	(\mu_{i},\lambda_{i},e_{i})$会下降，于是Sarkisov纲领将在有限步内终结。
 
-Bruno和Matsuki \cite{brunoLogSarkisovProgram1995} 将这种方法推广到 $\mathbb{Q}$-分解的klt奇点的三维代数簇的情形。并且他们给出了任意维$\mathbb{Q}$-分解klt奇点代数簇的Sarkisov纲领的下降法的大纲。之后在极小模型纲领中有一些重要进展，例如标量极小模型纲领(MMP with scaling) 的终结性 \cite{BCHM10}，lct的ACC (accending chain condition)\cite{HMX14}， $\delta$-lc Fano 簇的有界性 \cite{Bir19}, \cite{birkarSingularitiesLinearSystems2020}，这些进展使得Bruno和Matsuki的大纲部分地可行，剩下的主要问题与算术翻转的终结性和局部算术典范阈值(local log canonical thresholds)的ACC(或者有限性)有关。
+Bruno和Matsuki \citet{brunoLogSarkisovProgram1995} 将这种方法推广到 $\mathbb{Q}$-分解的klt奇点的三维代数簇的情形。并且他们给出了任意维$\mathbb{Q}$-分解klt奇点代数簇的Sarkisov纲领的下降法的大纲。之后在极小模型纲领中有一些重要进展，例如标量极小模型纲领(MMP with scaling) 的终结性 \citet{BCHM10}，lct的ACC (accending chain condition)\citet{HMX14}， $\delta$-lc Fano 簇的有界性 \citet{Bir19}, \citet{birkarSingularitiesLinearSystems2020}，这些进展使得Bruno和Matsuki的大纲部分地可行，剩下的主要问题与算术翻转的终结性和局部算术典范阈值(local log canonical thresholds)的ACC(或者有限性)有关。
 本文将这种方法称为下降法，并且在第三章第第一节具体讨论。
 
 
-利用弱典范模型的有限性\cite{BCHM10} (finiteness of weak log canonical models)，Hacon \cite{haconMinimalModelProgram2012} 给出了另一种构造Sarkisov纲领的方法，在本文中称之为双标量法，这种方法对所有维数都成立。
+利用弱典范模型的有限性\citet{BCHM10} (finiteness of weak log canonical models)，Hacon \citet{haconMinimalModelProgram2012} 给出了另一种构造Sarkisov纲领的方法，在本文中称之为双标量法，这种方法对所有维数都成立。
 这两种方法都是通过2-ray game来构造Sarkisov连接，但是在双标量法中固定了两个森纤维空间的公共算术解消 $(W,B_W)$ 作为Sarkisov纲领的``屋顶''，使得分解中的每一个森纤维空间都是$W$的某个弱算术典范模型。双标量法的Sarkisov纲领的终结性由弱算术典范模型的有限性推出，这与标量翻转(flips with scaling)的终结性的证明类似。
-刘继豪 \cite{liuSarkisovProgramGeneralized2021} 将这种方法推广到了 generalized pairs的情况。本文第三章第二节介绍这种方法。
+刘继豪 \citet{liuSarkisovProgramGeneralized2021} 将这种方法推广到了 generalized pairs的情况。本文第三章第二节介绍这种方法。
 
 
-利用Shokurov的多面体方法 \cite{Sho96}, \cite{cs11}, Hacon 和 M\textsuperscript{c}Kernan \cite{haconSarkisovProgram2012}给出了一种新方法不通过2-ray game实现Sarkisov纲领。
+利用Shokurov的多面体方法 \citet{Sho96}, \citet{cs11}, Hacon 和 M\textsuperscript{c}Kernan \citet{haconSarkisovProgram2012}给出了一种新方法不通过2-ray game实现Sarkisov纲领。
 令 $W$ 为 $(X,B)\to S$ 和 $(X',B')\to S'$ 的公共算术解消，则在 $W$ 上有两个除子 $D$ 和 $D'$，使得 $S$ 和 $S'$ 是 $W$ 相对于 $K_W+D$ 和 $K_W+D'$的丰沛模型(ample model)。进一步，$W$的除子的多面体的边界上有其他除子 $D_{i}$，每个除子对应一个森纤维空间 $X_i\to S_i$ 和 $W$的丰沛模型$S_i$。于是在多面体边界上有一条路径连接这些除子 $D_{i}$，并且将$\Phi$分解为对应的Sarkisov连接。
-Miyamoto \cite{miyamoto2019TheSP} 将这种方法应用到了任意特征代数闭域上的lc算术曲面或 $\mathbb{Q}$-分解算术曲面。
+Miyamoto \citet{miyamoto2019TheSP} 将这种方法应用到了任意特征代数闭域上的lc算术曲面或 $\mathbb{Q}$-分解算术曲面。
 本文将这种方法成为有限模型法，并且在第三章第三节介绍。
 
-在第三章第四节，本文给出三种方法的具体例子。 Sarkisov 纲领有许多应用，例如2阶Cremona群的经典结果。即每一个射影平面的双有理自同构都是由自同构和标准二次映射复合生成。 (见 \cite[Chapter 2]{ksc04} )。 Takahashi \cite{tak95} 对算术曲面建立了特殊的Sarkisov纲领，并得到了另一个经典代数结论的几何证明：每一个仿射平面的自同构都由仿射自同构和上三角变换复合。(见 \cite[Chpter 13]{mat02}, Chapter 13)。Lamy\cite{lam22}给出了更多其他应用。
+在第三章第四节，本文给出三种方法的具体例子。 Sarkisov 纲领有许多应用，例如2阶Cremona群的经典结果。即每一个射影平面的双有理自同构都是由自同构和标准二次映射复合生成。 (见 \citet[Chapter 2]{ksc04} )。 Takahashi \citet{tak95} 对算术曲面建立了特殊的Sarkisov纲领，并得到了另一个经典代数结论的几何证明：每一个仿射平面的自同构都由仿射自同构和上三角变换复合。(见 \citet[Chpter 13]{mat02}, Chapter 13)。Lamy\citet{lam22}给出了更多其他应用。
 
 foliation mmp
 
-叶状结构的代数簇(foliated varies)用子层$\mathcal{F} \subset \mathcal{T}_{X}$ 代替切丛，进而用叶状典范除子(foliated canonical divisor)$K_{\mathcal{F}}$代替典范除子$K_{X}$。等人发展了带叶状结构的极小模型纲领，尤其是高维情况的带代数可积的叶状结构的代数簇。于是可以考虑这种情况下的Sarkisov纲领。将在第四章介绍。
+叶状结构的代数簇(foliated varies)用子层$\mathcal{F} \subset \mathcal{T}_{X}$ 代替切丛，进而用叶状典范除子(foliated canonical divisor)$K_{\mathcal{F}}$代替典范除子$K_{X}$。等人发展了带叶状结构的极小模型纲领，尤其是高维情况的带代数可积的叶状结构的代数簇。在第四章介绍在这种情况下的Sarkisov纲领。
 

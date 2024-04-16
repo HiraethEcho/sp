@@ -12,12 +12,6 @@
 %->> Document class declaration
 %---------------------------------------------------------------------------%
 \documentclass[twoside]{Style/ucasthesis}%
-%- Multiple optional arguments:
-%- [<oneside|twoside|print>]% oneside eprint, twoside eprint, or paper print
-%- [fontset=<adobe|none|...>]% specify font set instead of automatic detection
-%- [scheme=plain]% thesis writing of international students
-%- [draftversion]% show draft version information
-%- [standard options for ctex book class: draft|paper size|font size|...]%
 %---------------------------------------------------------------------------%
 %->> Document settings
 %---------------------------------------------------------------------------%
@@ -53,16 +47,15 @@
 %-
 %-> Titlepage information
 %-
-
-\input{tex/cover}%
+% comment
+% \input{tex/cover}%
 \begin{document}
 %-
 %-> Frontmatter: title page, abstract, content list, symbol list, preface
 %-
-
-\frontmatter% initialize the environment
-
-\input{tex/abstract}% title page, abstract
+% comment
+% \frontmatter% initialize the environment
+% \input{tex/abstract}% title page, abstract
 
 {% content list region
 	\linespread{1.2}% local line space
@@ -70,31 +63,24 @@
 	\newpage
 
 	\tableofcontents% content catalog
-	\intobmk*{\cleardoublepage}{图表目录}
-	\pagestyle{figureheader}
-	\input{tex/figuretable}
-
+	% \intobmk*{\cleardoublepage}{图表目录}
+	% \pagestyle{figureheader}
+	% \input{tex/figuretable}
 }
+
 \thispagestyle{figureheader}
-\input{tex/notation}% symbol list, preface content
-%-
+% \input{tex/notation}% symbol list, preface content
+
 %-> Mainmatter
-%-
 \mainmatter% initialize the environment
 
-\input{tex/intro}
+% \input{tex/intro}
 \input{tex/pre}
 \input{tex/sarkisov}
-\input{tex/foliation}
-\input{tex/applications}
-\input{tex/result}
+% \input{tex/foliation}
+% \input{tex/applications}
+% \input{tex/result}
 
-%-> Appendix
-%-
-
-%-
-%-> Backmatter: bibliography, glossary, index
-%-
 
 \intotoc*{\cleardoublepage}{\bibname}% add link to toc
 \artxifstreq{\artxbib}{bibtex}{% enable bibtex
@@ -104,11 +90,12 @@
 }
 \cleardoublepage%
 % \appendix% initialize the environment
-\input{tex/appendix}% appendix content
 
-\thispagestyle{appendixheader}
+% \input{tex/appendix}% appendix content
+
+% \thispagestyle{appendixheader}
 \backmatter% initialize the environment
-\input{tex/acknowledgement}% other information
+% \input{tex/acknowledgement}% other information
 \end{document}
 %---------------------------------------------------------------------------%
 
