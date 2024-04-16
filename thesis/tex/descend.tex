@@ -1,0 +1,250 @@
+\section{下降法}
+首先回顾Corti \cite{cortiFactoringBirationalMaps} 给出的三维终端奇点的Sarkisov纲领。令 $f: X\to S$ 和 $f':X'\to S'$ 是双有理等价的两个有终端奇点的三维森纤维空间。
+ $S'$上的丰沛除子 $A'$ 使得 对某个 $\mu'>0$有 $X'$ 上的一般的 丰沛除子 $H'$满足$H'\sim -\mu'K_{X'}+f'^*A'$，并令 $H$是  $H'$ 在 $X$上的双有理变换(birational transform)。 取一个公共解消$p: W\to X$ 和 $q:W \to X'$。
+\begin{enumerate}
+  \item 令 $\mu= \max \{c \in \mathbb{R} : K_{X}+\frac{1}{c}H \text{在} S \text{上数值有效} \}$；
+  \item 令 $\lambda = \min \{c\in \mathbb{R}: (X,\frac{1}{c}H) \text{有典范奇点}  \}$；
+  \item 令 $e =  (X,\frac{1}{\lambda}H)\text{的无差异的例外除子的个数} $。
+\end{enumerate}
+如果 $\lambda \leqslant \mu$，在 $X$运行相对于恰当基底的 $(K_X+\frac{1}{\mu}H)$-MMP ；如果 $\lambda > \mu$ 则构造一个除子解压(divisorial extraction) $ p:Z \to X$，并运行相对于 $ S$ 的 $(K_Z+\frac{1}{\lambda}H_Z)$-MMP，这样得到第一个 Sarkisov 连接 $\psi_1: X\dashrightarrow  X_{1}$。这两种情况都是 $2$-ray games。用 $X_{1}$ 和$\Phi_{1}=\Phi\circ\psi_1^{-1}: X_1\dashrightarrow X'$替换 $X$ 和 $\Phi$ ，并重复这个过程，这样递归地构造一系列Sarkisov 连接。在这个过程中不变量$(\mu,\lambda,e)$将按 字典序下降，最终得到 $\Psi_{N}:X_{N-1} \dashrightarrow X_{N}$，且 $X_{N}\cong X'$。 这就是三维终端奇点代数簇的Sarkisov纲领。
+
+对于 $\mathbb{Q}$-分解的有klt奇点的代数簇对，考虑MMP-相关的森纤维空间$(X,B)$ 和 $(X',B')$ 。一个自然的想法是按如下定义 $\mu$ 和 $\lambda$：
+\begin{enumerate}
+  \item 令 $\mu= \max \{c \in \mathbb{R} : K_{X}+B+\frac{1}{c}H \text{在} S \text{上数值有效} \}$；
+  \item 令 $\lambda = \min \{c\in \mathbb{R}: (X,B+\frac{1}{c}H) \text{有典范奇点}  \}$；
+  \item 令 $e =  (X,B+\frac{1}{\lambda}H)\text{的无差异的例外除子的个数} $。
+\end{enumerate}
+
+对 $\lambda$ 的定义将导致一些困难。当 $\lambda > \mu$时，为了构造 Sarkisov连接需要在一个除子解压 $p:Z \to X$上运行 $(K_Z+B_Z+\frac{1}{\lambda}H_Z)$-MMP。这个除子解压会解压出一个素除子$E$，这个素除子 $E$ 在 $Z$ 的边界  $B_Z$中的系数是 $1$。如果 $E$ 是 $(X',B')$的边界 $B'$的一项，那么 $E$ 在 $B'$中的系数小于 $1$，这两者不匹配。另一方面，这是需要在具有lc奇点的代数簇对上运行MMP，这比在具有klt奇点的代数簇对上的MMP有技术上的困难。除此之外，由于具有klt奇点的Fano代数簇对的有界性失效，在证明 Sarkisov 纲领的终结性也有困难。
+
+Bruno 和 Matsuki给出了$\lambda$的另一种定义(见\ref{sarkisovdegree} ) ，且取决于特定的一个包含 $(X,B)$ 和 $(X',B')$ 的代数簇对的集合 $\mathcal{C}_{\theta}$ ，这个集合满足：
+\begin{itemize}
+  \item
+   对任意两个  $\mathcal{C}_{\theta}$中的代数簇对 $(X,B),(X',B')$ ，存在$\mathcal{C}_\theta$中的代数簇对 $(W,B_W)$和算术公共解消 $p:W\to (X,B)$ 和 $q:W\to (X',B')$，使得 $(W,B_W)$具有klt奇点且 $p_*B_W=B,q_*B_W=B'$。
+% (By the construction of $Z$, the condition $q_*B_W = B'$ implies that the coefficients of $B_Z$ are compatible with $B'$.)
+  \item  在集合中的任意代数簇对$(X,B)$ 和 $(Z,B_Z)$上可以运行  $(K_X+B+cH)$-MMP 和 $(K_Z+B_Z+cH_Z)$-MMP，并且所有结果都任然在集合 $\mathcal{C}_{\theta}$中；
+  \item 所有$\mathcal{C}_{\theta}$ 中的代数簇对都具有 $\delta$-lc 奇点，其中$\delta$ 是取决于 $\mathcal{C}_{\theta}$的正实数。 
+\end{itemize}
+
+\subsection{前置知识}
+令 $ K=K(X) $ 是双有理等价类的有理函数域(注意到双有理等价的代数簇有相同的有理函数域)令 $ \Sigma=\{\nu\} $是有理函数域的离散赋值的集合。
+\begin{definition}\label{thetacategory}
+  \cite[Definition 3.5]{brunoLogSarkisovProgram1995}
+  取一个函数$\theta:\Sigma\to [0,1)_\mathbb{Q}$， 那么 可以定义关于  $\thera$的集合$ \mathcal{C}_\theta $，包含满足下列条件的具有klt奇点的代数簇对$ (X,B=\sum a_{i}B_{i}) $：
+  \begin{enumerate}
+    \item $ a_i=\theta(B_i) $；
+    \item 对所有 $ X $上的例外除子 $E $ 有$ a(E;X,B)>-\theta(E) $。
+  \end{enumerate}
+\end{definition}
+\begin{remark}
+例如取 $\theta \equiv 0$为常值函数，那么 $\mathcal{C}_{\theta}$ 是所有和$X$双有理等价的具有终端奇点的代数簇 $Y$ (不带有边界)。
+\end{remark}
+  根据这个集合可以定义 $\theta$-差异数 ( $\theta$-discrepancy )：
+\begin{definition}[$\theta$-差异数]
+  令 $\mathcal{C}_{\theta}$ 为上述代数簇对的集合，且$(X, B)$ 是有理函数域满足 $K(X)=K$的代数簇对。令  $f: Y\to X$是$(X, B)$的一个算术奇点解消，有分歧等式：
+  \[
+    K_{Y}+B_{Y}+C=f^*(K_{X}+B)
+  \]
+  其中 $B_{Y}=f^{-1}_*B+ \sum_{E_{i}\text{ exc}} \theta(E_{i})E_{i}$。则 $X$ 的例外除子 $E_{i}$的 $\theta$-差异数定义为
+  \[
+    a_{\theta}(E_{i};X,B)=-\operatorname{mult}_{E_{i}}C.
+  \]
+  或等价的，可以定义为
+  \[
+    a_{\theta}(E_{i};X,B)=a(E_{i};X,B)+\theta(E_{i}).
+  \]
+  如果 $(X,B)$ 上的所有 例外除子 $E$ 满足   $a_{\theta}(E;X,B)\geqslant 0$ (对应的， $a_{\theta}(E;X,B)> 0$)，则称代数簇对 $(X,B)$ 具有$\theta$-典范奇点 (对应的 ，$\theta$-终端奇点)  。
+\end{definition}
+\begin{remark}
+ $\theta$-典范 代数簇对并不总在集合 $\mathcal{C}_{\theta}$中。
+\end{remark}
+
+ Bruno 和 Matsuki的\cite[Lemma 3.6]{brunoLogSarkisovProgram1995} 构造了运行Sarkisov纲领所需要的集合 $\mathcal{C}_{\theta} $：
+\begin{proposition}\label{cat}
+  令 $ f:(X,B)\to S$ 和 $f':(X',B')\to S' $ 是两个 MMP-相关的具有klt奇点的 $ \mathbb{Q} $-分解森纤维空间，有双有理映射 $\Phi$:
+  \[ \xymatrix{
+      (X,B)\ar[d]_f\ar@{.>}[r]^\Phi&(X',B')\ar[d]^{f'}\\
+      S&S'} \]
+假设 $ B=\sum_ib_iB_i+\sum_jd_jD_j $ 和 $ B'=\sum_jd_j'D_j+\sum_kb_k'B_k' $，其中 $ B_{i} $ 是在 $ X $上但不在 $ X' $上的除子， $ B_k' $ 是在 $ X' $上但不在  $ X $上的除子，而 $ D_j $ 是在 $ X $ 和 $ X' $上的除子。由引理\ref{MMPrelatedConditation}，有 $ d_j=d_j' $。取一个有理数 $\epsilon$满足 
+\[
+  -\operatorname{totdiscrep}(X,B),-\operatorname{totdiscrep}(X',B')  <\epsilon <1 
+\]
+并按如下定义函数 $ \theta:\{\nu\}\to [0,1)_\mathbb{Q} $ ：
+  \begin{itemize}
+    \item 对于边界  $B,B'$的除子，有$ \theta(B_i)=b_i, \theta(D_j)=d_j,\theta(B_k')=b_k'$；
+    \item  如果 $E$ 是 $X$ 和 $X'$ 上的例外除子，则    $ \theta(E)=\epsilon $；
+    \item   如果 $ D $ 是 $ X $ 和 $ X' $上的除子，但不是$ B $ 或 $ B' $的部分，则$ \theta(D)=0 $。
+  \end{itemize}
+  那么定义\ref{thetacategory} 构造的集合$ \mathcal{C}_\theta $ 满足：
+  \begin{enumerate}
+    \item $ (X,B) $ 和 $ (X',B') $在集合 $ \mathcal{C}_\theta $中；
+    \item   对 $ \mathcal{C}_\theta $中任意有限多个具有klt奇点的代数簇对$ \{(X_l,B_l)\} $，有$ (Z,B_Z)\in \mathcal{C}_\theta $ 射影双有理态射 $ Z\to X_l $使得 $X_{l}$ 是 相对于$X_{l}$的   $ (K_{Z}+B_{Z}) $-MMP的输出，因此也是相对于 $ \mathrm{Spec}\,\mathbb{C} $的$(K_Z+B_Z)$-MMP 结果；
+    \item 任何从  $ \mathcal{C}_\theta $中一个元素出发的 $ (K+B) $-MMP ，其结果依然落入 $ \mathcal{C}_\theta $。如果 对任何$ c\in \mathbb{Q}_{>0} $和无基点的除子 $H$ 给出的$ (K+B+cH) $-MMP也成立。
+  \end{enumerate}
+\end{proposition}
+\begin{remark}\label{delta-lc}
+  令 $\delta=1-\epsilon$，那么所有$\mathcal{C}_{\theta}$ 中的代数簇对都是具有$\delta$-lc。
+\end{remark}
+
+使用命题 \ref{cat}中的假设和记号，可以定义Sarkisov 次数 ( Sarkisov degree )。取 $S'$ 上的非常丰沛的除子$ A'  $和足够大和可除的整数 $ \mu'>1 $使得
+\[ \mathcal{H}'=|-\mu' (K_{X'}+B') +f'^*A'| \]
+是 $ X' $ 在 $ \mathrm{Spec}\,\mathbb{C}$上的非常丰沛的完全线性系 。 令 $ (W,B_W) $ 是 $ X $ 和 $ X' $ 在 $ \mathcal{C}_\theta $ 中的公共算术解消，有射影态射 $ \sigma:W\to X$和   $\sigma':W\to X' $ 满足 $\sigma_*B_W=B, \sigma'_*B_W=B' $。令 Let $\mathcal{H}_W:=\sigma'^*\mathcal{H}'$，那么  $\mathcal{H}:=\Phi^{-1}_*\mathcal{H}'=\sigma_*\mathcal{H}_W$。进一步，如果 $ \mathcal{H} $ 不是无基点的，那么
+\[ \sigma^*\mathcal{H}=\mathcal{H}_W+F \]
+其中 $ F=\sum f_lF_l\geqslant0 $ 是固定部分(fixed part)。 取线性系 $ \mathcal{H}' $中的一个一般除子 $H'$使得 $ H_W:=\sigma'^*H'=\sigma'^{-1}_*H'\in \mathcal{H}_W $，并记 $ H:=\Phi^{-1}_*H'=\sigma_*H_{W} $。那么 $H$ 是 $f$-丰沛的，且$ \sigma^*H=H_W+F $。 通过取进一步的解消，不妨设 $H_{W}$ 与$\sigma$ 和 $\sigma'$的例外除子各部分光滑且互相横截相交(即$(W,H_{W}+ \operatorname{Exc}\sigma+ \operatorname{Exc}\sigma')$是算术光滑的)。
+
+
+接下来定义在 $\mathcal{C}_{\theta}$中关于 $H'$ (或 $\mathcal{H}'$)的Sarkisov次数：
+\begin{definition}\label{sarkisovdegree}
+  \cite[Definition 3.8]{brunoLogSarkisovProgram1995}
+ $\mathcal{C}_{\theta}$中关于 $H'$ (或 $\mathcal{H}'$)的Sarkisov次数是一个按字典序排序的三元组$ (\mu,\lambda,e) $，其中：
+  \begin{itemize}
+    \item \textbf{ 数值有效阈值$ \mu $}：令 $ C\subset X  $ 是被$ f $压缩的曲线，那么
+          \[ \mu:=-\frac{H.C}{(K_X+B).C} \]
+          即 $ K_X+B+\frac{1}{\mu} H \equiv_S0$；
+    \item \textbf{$ \theta $-典范 阈值  $ \frac{1}{\lambda} $}：  若$ \mathcal{H} $无基点则定义 $\lambda=0$；否则定义
+          \[ \frac{1}{\lambda}:=\max\{t:a_{\theta}(E;X,B+tH)\geqslant 0,  \forall \ X\text{上例外除子}E \}\]
+    \item \textbf{ $(K_{X}+B_{X}+\frac{1}{\mu}H)$-无差别除子 个数}:  $ e=0 $ 若 $ \mathcal{H} $ 无基点 (此时 $ \lambda=0 $)则定义  $e=0$；否则定义
+          \[ e=\#\{E; E \text{ 是 }\sigma\text{-例外除子，且 } a_{\theta}(E;X,B+\frac{1}{\lambda} H)=0 \} \]
+  \end{itemize}
+\end{definition}
+
+\begin{remark}
+  \begin{enumerate}
+    \item  Sarkisov次数取决于  $A', H'$ 和  $\theta$的选取。
+    \item   取公共算术解消$ (W,B_W)\in \mathcal{C}_\theta $，其中 $ B_W=\sum \theta(E)E $ ，并且有射影双有理态射 $ \sigma:W\to X , \sigma':W\to X' $。 由于 $\sigma^*\mathcal{H}=\mathcal{H}_W+\sum f_{l}F_{l}$，所以有分歧等式：
+          \[ K_W+B_W+tH_W=\sigma^*(K_X+B+tH)+\sum(a_l-tf_l)E_l \]
+          其中 $ \sum a_lE_l $ 是有效除子且支撑在 $ \mathrm{Exc}\,\sigma $上。那么 $\lambda:=\max\{ \frac{f_l}{a_l}\}$。如果$ \mathcal{H} $是无基点的，那么 $ \sum f_lF_l=0 $ 且$\lambda=0  $。
+    \item   $ e $ 是公式
+          \[ K_W+B_W+\frac{1}{\lambda} H_W=\sigma^*(K_X+B+\frac{1}{\lambda} H)+\sum(a_l-\frac{1}{\lambda} f_l)E_l .\]
+      中系数$\sum(a_l-\frac{1}{\lambda}f_l)E_l$ 为 $ 0 $的部分的个数。
+          这样的素除子 $E_{1},\ldots, E_{e}$ 称作 $(K_{X}+B+\frac{1}{\lambda}H)$-$\theta$-无差别的。
+  \end{enumerate}
+\end{remark}
+需要构造在集合 $\mathcal{C}_{\theta}$中的解压态射：
+\begin{lemma}\label{thetaextraction}
+  使用定义\ref{sarkisovdegree}中的记号，并假设 $\lambda \neq 0$，那么存在压缩态射  $f: Z\to X$ 满足：
+  \begin{itemize}
+    \item $(Z,B_{Z})\in \mathcal{C}_{\theta}$ and $(Z,B_{Z}+\frac{1}{\lambda}H_{Z})$ is $\theta$-terminal and $\mathbb{Q}$-factorial;
+    \item  $\rho(Z)=\rho(X)+1$;
+    \item $f$ is $(K_{X}+B+\frac{1}{\lambda}H)$-crepant, that is
+          \[
+            K_{Z}+B_{Z}+\frac{1}{\lambda}H_{Z}=f^*(K_{X}+B+\frac{1}{\lambda}H)
+            .\]
+  \end{itemize}
+\end{lemma}
+\begin{proof}
+  We follow the idea of the proof in \cite[Proposition 1.6]{brunoLogSarkisovProgram1995}.  Let $(W,B_{W})\in \mathcal{C}_{\theta}$ and $\sigma:W\to X,\sigma':W \to X'$ be the common resolution as in Definition \ref{sarkisovdegree}, and suppose  $E_{1},\ldots ,E_{e}$ are   $(K_{X}+B+\frac{1}{\lambda}H)$-$\theta$-crepant divisors after renumbering. Then we have
+
+  \[ K_W+B_W+\frac{1}{\lambda} H_W=\sigma^*(K_X+B+\frac{1}{\lambda} H)+\sum_{l=1}^{e} 0\cdot E_{l}+\sum_{l>e}(a_l-\frac{1}{\lambda} f_l)E_l .\]
+  We run the $(K_{W}+B_{W}+\frac{1}{\lambda}H_{W})$-MMP over $X$ with scaling of some ample divisor, then the MMP ends with a minimal model $p:(Y, B_{Y}+\frac{1}{\lambda}H_{Y})\to X$  for $(W, B_{W}+\frac{1}{\lambda}H_{W})$ over $X$ and the exceptional locus of $p$ is exactly $\cup_{i=1}^{e}E_{i}$ and $p$ is crepant:
+  \[
+    K_{Y}+B_{Y}+\frac{1}{\lambda}H_{Y}=p^*(K_{X}+B+\frac{1}{\lambda}H)
+    .\]
+  Then we run the $(K_{Y}+B_{Y})$-MMP over $X$ with scaling of some ample divisor. This ends with the minimal model  $(X,B)$ of $(Y,B_{Y})$ over $X$. Let $f: Z\to X$ be the last contraction in the MMP, and $f$ is the required extraction map.
+\end{proof}
+\subsection{Flowchart for the Sarkisov program}
+We follow \cite[\S1]{brunoLogSarkisovProgram1995} in this subsection.
+
+If $ \lambda\leqslant\mu $ and $ K_X+B+\frac{1}{\mu}H $ is nef, the two Mori fibre spaces are isomorphic by following Theorem and the program stops:
+
+\begin{theorem}\label{nfi}
+  (Noether-Fano-Iskovskikh Criterion): Notations as in the definition of Sarkisov degree, then
+  \begin{enumerate}
+    \item $ \mu\geqslant \mu' $;
+    \item If $ \mu \geqslant \lambda $ and $ (K_X+B+\frac{1}{\mu} H) $ is nef, then $\Phi$ is an isomorphism of Mori fibre spaces. That is, we have a commutative diagram:
+          \[ \xymatrix{
+              X\ar[r]^\sim_\Phi\ar[d]_f&X'\ar[d]^{f'}\\
+              S\ar[r]^\sim& S' } \]
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  We follow the ideas of the proofs in \cite[Claim 13.20]{haconMinimalModelProgram2012}, \cite[Theorem 5.1]{liuSarkisovProgramGeneralized2021} and \cite[Theorem 4.2]{cortiFactoringBirationalMaps}:
+  \begin{enumerate}
+    \item We only need to show $ (K_X+B+\frac{1}{\mu'}H) $ is $ f $-nef.   Let $\sigma:W\to X$ and $\sigma':W\to X'$ be a common resolution. Consider the ramification formulas:
+          \[
+            \begin{aligned}
+              K_W+B_W+\frac{1}{\mu'}H_W= & \sigma'^*(K_{X'}+B'+\frac{1}{\mu'}H')+\sum e'_jE_j+ \sum g_k'G_k' \\
+              =                          & \sigma^*(K_{X}+B+\frac{1}{\mu'}H)+\sum g_iG_i+\sum e_jE_j
+            \end{aligned}
+          \]
+          Here $ \{G_i\}, \{E_j\} $ are $ \sigma $-exceptional divisors, and $ \{E_j\}, \{G'_k\} $ are $ \sigma' $-exceptional divisors. Since $H_W=\sigma'^*H' $, $ g_k'>0 $ or there is no such $ G'_k $. Then take a general curve $ C\subset X $ contracted by $ f $, such that its strict transform $ \tilde{C} $ on $ W $ is disjoint from $ G_i, E_j $, and is not contained in $ G'_k $. Then we have:
+          \[
+            \begin{aligned}
+              C.\left(K_X+B+\frac{1}{\mu'}H\right)= & \tilde{C}.\left(\sigma^*\left(K_X+B+\frac{1}{\mu'}H\right)+\sum g_iG_i+\sum e_jE_j\right)           \\
+              =                                     & \tilde{C}.\left(\sigma'^*\left(K_{X'}+B'+\frac{1}{\mu'}H'\right)+\sum e'_jE_j+ \sum g_k'G_k'\right) \\
+              =                                     & \tilde{C}.\sigma'^*f'^*A'+\tilde{C}.\left(\sum g_k'G_k'\right) \geqslant0 .
+            \end{aligned}
+          \]
+          This implies $ (K_X+B+\frac{1}{\mu'}H) $ is $ f $-nef and $ \mu\geqslant \mu' $;
+    \item First we show that $ \mu=\mu' $. By (1), we only need to show $ (K_{X'}+B'+\frac{1}{\mu}H') $ is $ f' $-nef. Indeed,  same as (1), we can take a general curve $ C' $ on $X'$ contracted by $f'$, such that its strict transform $\tilde{C}'$ on $W$ is disjoint from  $ G'_k, E_j $, and is not contained in $ G_i $ and $C'.\left(K_{X'}+B'+\frac{1}{\mu}H'\right)\geqslant 0$.
+
+          Then we show they are isomorphic. Take a very ample divisor $ D $ on $ X $ and let $ D'  $ be its strict transform on $ X' $. Then $ D' $ is $ f' $-ample, thus there exists $ 0<d\ll1 $ such that the following holds:
+          \begin{itemize}
+            \item $ K_X+B+\frac{1}{\mu }H+dD $ is ample;
+            \item $ K_{X'}+B'+\frac{1}{\mu }H'+dD' $ is ample.
+          \end{itemize}
+          Therefore, $X$ and $X'$ are both log canonical models of $(W,B_{W}+\frac{1}{\mu}H_{W}+dD_{W})$, hence $X\cong X'$. Furthermore, $f$ and  $f'$ are contractions of the same numerical curve class, thus the two log Mori fibre spaces are isomorphic.
+  \end{enumerate}
+\end{proof}
+
+Otherwise, if the condition of the Noether-Fano-Iskovskikh Criterion does not hold:
+\begin{claim}
+  \begin{enumerate}
+    \item If $ \lambda\leqslant\mu $ and $ K_X+B+\frac{1}{\mu}H $ is not nef, then there is a contraction $f:X \to T$ and a Sarkisov link $\psi_{1}:X\dashrightarrow X_{1}$ of type III or IV;
+    \item  If $ \lambda>\mu $, then there is a divisorial extraction $p:Z\to X$ and a Sarkisov link $ \psi_{1}:X\dashrightarrow X_{1}$ of type I or II.
+  \end{enumerate}
+\end{claim}
+\begin{proof}
+  \begin{enumerate}
+    \item\label{a} By assumption,  $\lambda\leqslant \mu$ and   $ K_X+B+\frac{1}{\mu}H $ is not nef. Suppose $ f $ is the contraction of a $ (K_X+B) $-negative extremal ray $ R= \overline{\operatorname{ NE }}(X/S) $, then $ (K_X+B+\frac{1}{\mu}H).R=0 $ by definition of $ \mu $. There is an extremal ray $ P \subset \overline{\operatorname{ NE }}(X) $ such that $ (K_X+B+\frac{1}{\mu}H).P<0 $ and $ F:=P+R $ is an extremal face  (see \cite[5.4.2]{cortiFactoringBirationalMaps} for the details). Take  $ 0<\delta\ll 1 $ such that $ (K_X+B+(\frac{1}{\mu}-\delta)H).P<0 $, then $  (K_X+B+(\frac{1}{\mu}-\delta)H).R<0 $ since $H$ is $f$-ample. Therefore, $ F $ is a $  (K_X+B+(\frac{1}{\mu}-\delta)H) $-negative extremal face. Since $ (X,B+(\frac{1}{\mu}-\delta)H) $ is klt, there is  a contraction $ g:X\to T $ with respect to $F$ factoring through $ f:X\to S $. Since  $ (X,B+\frac{1}{\mu}H) $ is klt, and $ \rho(X/T)=2 $,  we can  run the  $ (K_X+B+\frac{1}{\mu}H) $-MMP over $T$ with scaling of some ample divisor.  Since $ B+\frac{1}{\mu}H $ is relatively big,  the MMP terminates. There are the following cases:
+    \begin{enumerate}
+      \item\label{a1}
+      After finitely many flips $ X\dashrightarrow Z $, the first non-flip contraction is a divisorial contraction $ p:Z\to X_1 $, which is then followed by a log Mori fibre space $f_{1}:(X_{1},B_{1}+\frac{1}{\mu}H_{1})\to S_1$. The contraction $f_1$ is also a log Mori fibre space of $(X_{1},B_{1})$.
+      This is a link of type III.
+      \item\label{a2}
+      After finitely many flips $ X\dashrightarrow X_1 $, the first non-flip contraction is a log Mori fibre space $ f_1:(X_1,B_1+\frac{1}{\mu}H_1)\to S_{1} $. The contraction $f_1$ is also a log Mori fibre space of $(X_{1},B_{1})$. This is a link of type IV.
+      \item \label{a3}
+            After finitely many flips $ X\dashrightarrow Z $, the first non-flip contraction is a divisorial contraction $ p:Z\to X_1$ with
+            \[ K_Z+B_Z+\frac{1}{\mu}H_Z=p^*(K_{X_1}+B_1+\frac{1}{\mu}H_1)+eE \]
+            where $ e>0 $ and  $E=\operatorname{Exc}\,p$ and  $f_{1}: (X_1,B_1+\frac{1}{\mu}H_1) \to T$ is a log minimal model of $(X,B+\frac{1}{\mu}H)$ over $T$. In fact the only ray of $ \overline{\operatorname{NE}}(X_1/T) $ is $ (K_{X_1}+B_1+\frac{1}{\mu}H_1) $-trivial and hence is $ (K_{X_1}+B_1) $-negative. Therefore, $ f_1:(X_1, B_1)\to T $ is a log Mori fibre space. Take $ S_1=T $. This is a link of type III.
+      \item \label{a4}After finitely many flips $ X\dashrightarrow X_1 $, the $(K_{X}+B+\frac{1}{\mu}H)$-MMP ends with a log minimal model $ (X_1,B_1+\frac{1}{\mu}H_1) $ over $T $. Then there is an extremal ray $R$ of $ \overline{\operatorname{NE}}(X_1/T) $, which is $ (K_{X_1}+B_1+\frac{1}{\mu}H_1) $-trivial and $ (K_{X_1}+B_1) $-negative. Let $ f_1:X_1\to S_1 $ be the contraction with respect to $R$. This is a link of type IV.
+    \end{enumerate}
+    \item\label{b}By assumption, $\lambda>\mu$. Take  an extraction $ p:(Z,B_Z+\frac{1}{\lambda}H_Z)\to (X,B+\frac{1}{\lambda}H) $ as in Lemma \ref{thetaextraction}. That is,  $ (Z,B_Z) $ is $ \theta $-terminal and $ p^*(K_X+B+\frac{1}{\lambda}H)=K_Z+B_Z+\frac{1}{\lambda}H_Z $ where $ B_Z=\sum\theta(E_\nu)E_\nu $.
+    Then we run the $ (K_Z+B_Z+\frac{1}{\lambda}H_Z) $-MMP over $ S $ with scaling of some ample divisor. Since $Z$ is covered by $ (K_Z+B_Z+\frac{1}{\lambda}H_Z) $-negative curves, $ (K_Z+B_Z+\frac{1}{\lambda}H_Z) $ is not relatively pseudo-effective. Hence, this MMP ends with a log Mori fibre space by Theorem \ref{notpseudoeffmfs}. There are two cases:
+    \begin{enumerate}
+      \item \label{b1}After finitely many flips $ Z\dashrightarrow Z' $, the first non-flip contraction is a divisorial contraction $ q:Z'\to X_1 $, which is then followed by a log Mori fibre space   $f_1:(X_1,B_1+\frac{1}{\lambda}H_1)\to S$. Let $ S_1=S $, then the contraction  $f_1$ is also a log Mori fibre space of $(X_1, B_1)$. This is a link of type II.
+            \item\label{b2}After finitely many flips $ Z\dashrightarrow X_1 $, the first non-flip contraction is a log Mori fibre space  $f_1:(X_1,B_1+\frac{1}{\lambda}H_1)\to S_1$. Since $ (K_{X_1}+B_1+\frac{1}{\lambda}H_1) $ is anti-ample over $S_1$ and $ H_1 $ is $ f_1 $-ample, $(K_{X_1}+B_1) $ is anti-ample over $S_1$. Therefore, $ f_1:(X_1, B_1)\to S_1 $ is a log Mori fibre space. This is a link of type I.
+    \end{enumerate}
+  \end{enumerate}
+\end{proof}
+We replace $(X,B)$ with $(X_1,B_1)$ and $\Phi$ with $\Phi\circ\psi_1^{-1}$, and repeat the above process. 
+\begin{remark} \label{R-Sarkisovdeg}
+  The Sarkisov degree decreases in the flowchart of the Sarkisov program:
+  \begin{enumerate}
+    \item
+          \begin{enumerate}
+            \item For the case \ref{a1} and \ref{a2},  since $ K_{X_1}+B_1+\frac{1}{\mu}H_1 $ is anti-ample over $S_1$, we have    $\mu_1<\mu$.
+            \item For the case \ref{a3} and \ref{a4}, since $ (K_{X_1}+B_1+\frac{1}{\mu}H_1) $ is trivial on the ray $ R=\overline{\operatorname{NE}}(X_1/S_1) $ for both cases, we have $\mu_1=\mu$.
+                  Notice that $ (X_1,B_1+\frac{1}{\mu}H_1) $ stays $ \theta $-canonical, we have $\lambda_1\leqslant \mu=\mu_1$, thus next link stays in the case \ref{a}. Furthermore,   for case \ref{a3} we have $\rho(X_1)=\rho(X)-1$.
+          \end{enumerate}
+    \item For the case \ref{b}, we have  $\mu_1\leqslant \mu$ and $\lambda_1\leqslant \lambda$ and if $ \lambda_1=\lambda $, then   $e_1<e$.
+  \end{enumerate}
+\end{remark}
+
+\subsection{Termination}\label{termination1}
+The original method  needs the following to prove the termination:
+\begin{enumerate}
+  \item the discreteness of nef thresholds $\mu$;
+  \item the termination of flips;
+  \item the ascending chain condition of log canonical thresholds;
+  \item the finiteness of local log canonical thresholds for the Sarkisov program for terminal varieties, and the finiteness of local $\theta$-canonical thresholds for the Sarkisov program for the klt pairs.
+\end{enumerate}
+Suppose there is an infinite sequence, that is,  there are infinitely many $ X_i $ and birational maps obtained from the program:
+\[ X=X_0\dashrightarrow X_1\dashrightarrow \cdots\dashrightarrow X_i \dashrightarrow\cdots\dashrightarrow X'\]
+\begin{enumerate}
+  \item Discreteness of nef thresholds holds for all dimensions, by the boundedness of $\delta$-lc Fano varieties (\cite[Theorem 1.1]{birkarSingularitiesLinearSystems2020}). Therefore, we may assume $\mu_{i}$ is constant, that is, $\mu=\mu_{0}=\mu_{i}$ for all $i$.
+  \item We can now suppose $\mu_i$ is constant. If there is a Sarkisov link $\psi_i$ of type III or IV in the sequence, then any the Sarkisov link $\psi_j, j>i$ is of type III or IV by Remark \ref{R-Sarkisovdeg}. There are only finitely many Sarkisov links of type III since the Picard numbers drop. The case of $\psi_j,$ $j\gg 0$ being of type IV contradicts the termination of flips. But the termination of flips only holds for threefolds and pesudo-effective fourfolds.
+  \item Suppose all the links are of type I and II. The ascending chain condition of log canonical thresholds holds for all dimensions \cite{HMX14}. Therefore, there is a positive number $\alpha$ such that $(X_i,B_i+\alpha H_i)$ are klt for $i\gg 0$, and every Sarkisov link $\psi_i,i\gg 0$ comes from the $(K_{Z_i}+B_{Z_i}+\alpha H_{Z_i})$-MMP over $S_i$. This is a contradiction to  the finiteness of local $\theta$-canonical thresholds (\cite[Claim 2.2]{brunoLogSarkisovProgram1995}).
+\end{enumerate}
+
