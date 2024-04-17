@@ -196,8 +196,9 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree} )
   \end{enumerate}
 \end{lemma}
 \begin{proof}
+  分两种情况考虑：
   \begin{enumerate}
-    \item假设 $\lambda\leqslant \mu$ 和  $ K_X+B+\frac{1}{\mu}H $ 不是数值有效的。记 $ f $ 是 $ (K_X+B) $-负性的极端射线$ R= \overline{\operatorname{ NE }}(X/S) $的压缩态射，那么由 $\mu$ 的定义有$ (K_X+B+\frac{1}{\mu}H).R=0 $ 。存在极端射线 $ P \subset \overline{\operatorname{ NE }}(X) $使得$ (K_X+B+\frac{1}{\mu}H).P<0 $ 且 $ F:=P+R $是极端面  (细节见 \citet [5.4.2]{cortiFactoringBirationalMaps} )。取  $ 0<\delta\ll 1 $ 使得 $ (K_X+B+(\frac{1}{\mu}-\delta)H).P<0 $，由于  $H$ 是 $f$-丰沛的，有 $  (K_X+B+(\frac{1}{\mu}-\delta)H).R<0 $。因此 $ F $ 是 $  (K_X+B+(\frac{1}{\mu}-\delta)H) $-负性的极端面。由于 $ (X,B+(\frac{1}{\mu}-\delta)H) $有 klt奇点，由压缩定理，存在关于 $F$ 的压缩态射 $ g:X\to T $  穿过 $ f:X\to S $。由于  $ (X,B+\frac{1}{\mu}H) $具有klt奇点，且 $ \rho(X/T)=2 $，可以运行 相对于$T$ 的 关于某丰沛除子标量的 $ (K_X+B+\frac{1}{\mu}H) $-MMP。由于 $ B+\frac{1}{\mu}H $是相对于 $T$的大除子，这个 MMP终结。有下列情况：
+    \item 假设 $\lambda\leqslant \mu$ 和  $ K_X+B+\frac{1}{\mu}H $ 不是数值有效的。记 $ f $ 是 $ (K_X+B) $-负性的极端射线$ R= \overline{\operatorname{ NE }}(X/S) $的压缩态射，那么由 $\mu$ 的定义有$ (K_X+B+\frac{1}{\mu}H).R=0 $ 。存在极端射线 $ P \subset \overline{\operatorname{ NE }}(X) $使得$ (K_X+B+\frac{1}{\mu}H).P<0 $ 且 $ F:=P+R $是极端面  (细节见 \citet [5.4.2]{cortiFactoringBirationalMaps} )。取  $ 0<\delta\ll 1 $ 使得 $ (K_X+B+(\frac{1}{\mu}-\delta)H).P<0 $，由于  $H$ 是 $f$-丰沛的，有 $  (K_X+B+(\frac{1}{\mu}-\delta)H).R<0 $。因此 $ F $ 是 $  (K_X+B+(\frac{1}{\mu}-\delta)H) $-负性的极端面。由于 $ (X,B+(\frac{1}{\mu}-\delta)H) $有 klt奇点，由压缩定理，存在关于 $F$ 的压缩态射 $ g:X\to T $  穿过 $ f:X\to S $。由于  $ (X,B+\frac{1}{\mu}H) $具有klt奇点，且 $ \rho(X/T)=2 $，可以运行 相对于$T$ 的 关于某丰沛除子标量的 $ (K_X+B+\frac{1}{\mu}H) $-MMP。由于 $ B+\frac{1}{\mu}H $是相对于 $T$的大除子，这个 MMP终结。有下列情况：
     \begin{enumerate}
       \item 在有限多步翻转复合 $ X\dashrightarrow Z $后，第一个非翻转的压缩态射是一个除子压缩 $ p:Z\to X_1 $，之后是一个森纤维空间的压缩态射 $f_{1}:(X_{1},B_{1}+\frac{1}{\mu}H_{1})\to S_1$。这个压缩态射$f_1$也是关于$(X_{1},B_{1})$的森纤维空间。
       这是第三型的Sarkisov连接。
@@ -207,7 +208,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree} )
             其中 $ e>0 ,E=\operatorname{Exc}\,p$ 且  $f_{1}: (X_1,B_1+\frac{1}{\mu}H_1) \to T$ 是关于 $(X,B+\frac{1}{\mu}H)$ 在 $T$ 上的极小模型。事实上  $ \overline{\operatorname{NE}}(X_1/T) $ 唯一的极端射线是$ (K_{X_1}+B_1+\frac{1}{\mu}H_1) $-平凡的，所以是 $ (K_{X_1}+B_1) $-负性的。所以 $ f_1:(X_1, B_1)\to T $ 是森纤维空间。取 $ S_1=T $，这是III型Sarkisov连接。
       \item 在有限多步翻转复合 $ X\dashrightarrow Z $后，  $(K_{X}+B+\frac{1}{\mu}H)$-MMP 终结于 $T$ 上的极小模型 $ (X_1,B_1+\frac{1}{\mu}H_1) $。那么存在$ \overline{\operatorname{NE}}(X_1/T) $的极端射线 $R$ ，并且是 $ (K_{X_1}+B_1+\frac{1}{\mu}H_1) $-平凡的和 $ (K_{X_1}+B_1) $-负性的。令$ f_1:X_1\to S_1 $ 为 关于$R$的压缩态射，这是第四型的Sarkisov连接。
     \end{enumerate}
-  \item假设 $\lambda>\mu$。取引理\ref{thetaextraction}构造的除子解压 $ p:(Z,B_Z+\frac{1}{\lambda}H_Z)\to (X,B+\frac{1}{\lambda}H) $，即   $ (Z,B_Z) $ 具有$ \theta $-终端奇点 且 $ p^*(K_X+B+\frac{1}{\lambda}H)=K_Z+B_Z+\frac{1}{\lambda}H_Z $，其中 $ B_Z=\sum\theta(E_\nu)E_\nu $。
+  \item 假设 $\lambda>\mu$。取引理\ref{thetaextraction}构造的除子解压 $ p:(Z,B_Z+\frac{1}{\lambda}H_Z)\to (X,B+\frac{1}{\lambda}H) $，即   $ (Z,B_Z) $ 具有$ \theta $-终端奇点 且 $ p^*(K_X+B+\frac{1}{\lambda}H)=K_Z+B_Z+\frac{1}{\lambda}H_Z $，其中 $ B_Z=\sum\theta(E_\nu)E_\nu $。
     运行相对于 $S$ 的对某丰沛除子标量的 $ (K_Z+B_Z+\frac{1}{\lambda}H_Z) $-MMP ，由于 $Z$被 $ (K_Z+B_Z+\frac{1}{\lambda}H_Z) $-负性的曲线覆盖，$ (K_Z+B_Z+\frac{1}{\lambda}H_Z) $ 不是相对伪有效的。因此由\ref{notpseudoeffmfs}这个 MMP终结于森纤维空间 。有下列两种情况：
     \begin{enumerate}
       \item 在有限多步翻转复合 $ X\dashrightarrow X' $后，第一个非翻转的压缩态射是一个除子压缩 $ q:Z'\to X_1 $，接着是森纤维空间压缩态射$f_1:(X_1,B_1+\frac{1}{\lambda}H_1)\to S$。令$ S_1=S $，那么压缩态射$f_1$ 同时也是关于 $(X_1, B_1)$的森纤维空间。这是第二型的Sarkisov连接。
@@ -229,19 +230,21 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree} )
   \end{itemize}
 \end{remark}
 
-\section{Termination}\label{termination1}
-The original method  needs the following to prove the termination:
+\section{下降法的终结性}\label{termination1}
+Bruno和Matsuki给出的下降法的Sarkisov纲领的终结性需要下列条件：
 \begin{enumerate}
-  \item the discreteness of nef thresholds $\mu$;
-  \item the termination of flips;
-  \item the ascending chain condition of log canonical thresholds;
-  \item the finiteness of local log canonical thresholds for the Sarkisov program for terminal varieties, and the finiteness of local $\theta$-canonical thresholds for the Sarkisov program for the klt pairs.
+  \item 数值有效阈值$\mu$的离散性(或者DCC)。由于本章的代数簇对$(X,B)$的边界除子是$\mathbb{Q}$-除子，由$\delta$-lc Fano 代数簇对的有界性和相关定理 (\cite[Theorem 1.1]{birkarSingularitiesLinearSystems2020})，任意维数下此条件都成立(离散的正有理数集满足DCC)。
+  \item 翻转的终结性 (这对高维情况还没有完全证明)； 
+  \item lct的ACC()；he ascending chain condition of log canonical thresholds;
+  \item 对具有终端奇点的代数簇的Sarkisov纲领需要局部lct的有限性；对具有klt奇点的代数簇对的Sarkisov纲领需要局部$\theta$-ct($\theta$-canonical thresholds)的有限性终端奇点的代数簇对的局部lct的有限性。这些在四维及以上的情况还不清楚。
 \end{enumerate}
-Suppose there is an infinite sequence, that is,  there are infinitely many $ X_i $ and birational maps obtained from the program:
+\textbf{用反证法部分证明证明： }
+
+如果上一节中构造的Sarkisov连接构成无限长的序列，即有无限多个 $ X_i $ 和构造的映射：
 \[ X=X_0\dashrightarrow X_1\dashrightarrow \cdots\dashrightarrow X_i \dashrightarrow\cdots\dashrightarrow X'\]
 \begin{enumerate}
-  \item Discreteness of nef thresholds holds for all dimensions, by the boundedness of $\delta$-lc Fano varieties (\cite[Theorem 1.1]{birkarSingularitiesLinearSystems2020}). Therefore, we may assume $\mu_{i}$ is constant, that is, $\mu=\mu_{0}=\mu_{i}$ for all $i$.
-  \item We can now suppose $\mu_i$ is constant. If there is a Sarkisov link $\psi_i$ of type III or IV in the sequence, then any the Sarkisov link $\psi_j, j>i$ is of type III or IV by Remark \ref{R-Sarkisovdeg}. There are only finitely many Sarkisov links of type III since the Picard numbers drop. The case of $\psi_j,$ $j\gg 0$ being of type IV contradicts the termination of flips. But the termination of flips only holds for threefolds and pesudo-effective fourfolds.
-  \item Suppose all the links are of type I and II. The ascending chain condition of log canonical thresholds holds for all dimensions \cite{HMX14}. Therefore, there is a positive number $\alpha$ such that $(X_i,B_i+\alpha H_i)$ are klt for $i\gg 0$, and every Sarkisov link $\psi_i,i\gg 0$ comes from the $(K_{Z_i}+B_{Z_i}+\alpha H_{Z_i})$-MMP over $S_i$. This is a contradiction to  the finiteness of local $\theta$-canonical thresholds (\cite[Claim 2.2]{brunoLogSarkisovProgram1995}).
+  \item 由 $\mu_{i}$的离散性(DCC)，不妨设在有限步后 $\mu_{i}$ 是常值，不再下降。或者不妨试 $\mu=\mu_{0}=\mu_{i}$ 对所有 $i$成立。
+  \item 如果序列中有一个第三型或第四型的 Sarkisov连接 $\psi_i$ ，那么后续每一个 Sarkisov 连接 $\psi_j, j>i$都是第三型或第四型(见注 \ref{R-Sarkisovdeg})。由于第三型 Sarkisov 连接的 Picard数严格下降，所以只有有限多个。于是在$j\gg 0$时 $\psi_j$ 全部为第四型Sarkisov连接，同时也是无限多个翻转的复合。对于三维代数簇对和四维伪有效的代数簇对，这样的翻转只有有限多步，这是一个矛盾。
+  \item 假设所有Sarkisov连接都是第一型或者第二型的。lct的ACC对所有维数都成立 \cite{HMX14}，素以存在整数 $\alpha$使得 对 $i\gg 0$ 有$(X_i,B_i+\alpha H_i)$ 具有klt奇点，并且每个Sarkisov 连接 $\psi_i,i\gg 0$ 都 同时是 相对于$S_{i}$的  $(K_{Z_i}+B_{Z_i}+\alpha H_{Z_i})$-MMP 结果。在具有终端奇点的三维代数簇的情况，这和 $\theta$-典范阈值的有限性矛盾(具体见\cite[Claim 2.2]{brunoLogSarkisovProgram1995})。
 \end{enumerate}
 

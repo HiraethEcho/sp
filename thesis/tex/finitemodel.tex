@@ -1,1 +1,180 @@
-\chapter{有限模型法}
+\chapter{有限模型法}\label{thirdmethod}
+In this section, we follow \cite{haconSarkisovProgram2012}.
+The approach is different from the previous two approaches as it does not rely explicitly on 2-ray games. We briefly explain the ideas of the method.
+
+Let $W$ be a common log resolution of two MMP-related Mori fibre spaces $X\to S$ and $Y\to T$. Take a finite dimensional affine subspace $V$ of $\operatorname{WDiv}_{\mathbb{R}}(W)$ and an ample $\mathbb{Q}$-divisor $A$. Then $\{\mathcal{A}_{i} =\mathcal{A}_{A,f_{i}}\} $ is a partition of $\mathcal{E}_{A}(V)$, and each $\mathcal{A}_{i}$ corresponds to an ample model of $W$.    There are morphisms connecting certain ample models (Theorem \ref{mapbetweenAM}).
+
+We can find a special $2$-dimensional rational affine subspace  $V$ (by Lemma \ref{keylemma}) such that
+\begin{enumerate}
+  \item $S,T$ are ample models of $W$ for some $D_{S},D_{T} \in \mathcal{L}_{A}(V) $;
+    \item $D_{S}$ and $D_{T}$ are two points that divide the boundary $\partial \mathcal{L}_{A}(V)$ into two parts. On one of the parts, there are finitely many segments connecting $D_{S}$ and $D_{T}$, and let $D_{i}$ be the endpoints of the segments. Each $D_{i}$ corresponds to a Sarkisov link.
+    (See Figure \ref{pic}, where $D_S=D_0$ and $D_T=D_1$)
+    
+\end{enumerate}
+
+Then  $X\dashrightarrow Y$ is the composition of these Sarkisov links, and  Theorem \ref{main} follows.
+
+\section{Construction of Sarkisov links}
+In this section, we construct one Sarkisov link. The following theorems show the partition of $\mathcal{E}_{A}(V)$  corresponding to ample models and morphisms between these ample models.
+\begin{theorem}\label{finitemodel}
+  \cite[Corollary 1.1.5]{BCHM10} Let $\pi:X\to U$ be a projective morphism of normal quasi-projective varieties,  and $V \subset \operatorname{WDiv}_{\mathbb{R}}(X)$ be a finite dimensional rational subspace. Suppose that there is a divisor $\Delta_{0} \in V$ such that $(X,\Delta_{0})$ is klt. Let $A$ be a general ample $\mathbb{Q}$-divisor over $U$ which has no components common with any element of $V$.
+  \begin{enumerate}
+    \item   There are finitely many birational maps $f_{i}:X \dashrightarrow   X_{i}$ over $U$ such that
+          \[
+            \mathcal{E}_{A,\pi}(V) =\bigcup_{i}\mathcal{W}_{i}
+          \]
+          where  $\mathcal{W}_{i}=\mathcal{W}_{A,f_{i}}(V)$ is a rational polytope. Moreover, if  $f:X \dashrightarrow  Y$ is a  log terminal model of $K_{X}+D$ over $U$ for some $D \in \mathcal{E}_{A,\pi}(V)$, then  $f=f_{i}$ for some $i$.
+
+    \item   There are finitely many rational maps $g_{j}:X \dashrightarrow  Z_{j}$ over $U$ such that
+          \[
+            \mathcal{E}_{A,\pi}(V) =\coprod_{j}\mathcal{A}_{j}
+          \]
+          $ \{\mathcal{A}_j=\mathcal{A}_{A,\pi,g_j}\} $ is a partition of $ \mathcal{E}_{A}(V) $. Let $\mathcal{C}_{j}$ be the closure of $\mathcal{A}_{j}$ in $\mathcal{L}_{A,\pi}(V)$;
+    \item  For every  $f_{i}$ there is a $g_{j}$ and a morphism $h_{ij}:Y_{i}\to Z_{j}$ such that $\mathcal{W}_{i} \subset \mathcal{C}_{j}$.
+  \end{enumerate}
+\end{theorem}
+\begin{theorem}\label{mapbetweenAM}
+  \cite[Theorem 3.3]{haconSarkisovProgram2012} Let $W$ be a smooth projective   variety, and  $ V $ be a finite dimensional affine subspace of $ \operatorname{WDiv}_{\mathbb{R}}(W) $ defined over the rational numbers and fix an ample effective $\mathbb{Q}$-divisor $A$. Suppose that there is an element $D_{0}$ of $\mathcal{L}_{A}(V)$ such that $K_{W}+D_{0}$ is big and klt. Then there are finitely many rational contractions $ f_i:W\dashrightarrow X_i $ such that
+  \begin{enumerate}
+    \item $ \{\mathcal{A}_i=\mathcal{A}_{A,f_i}\} $ is a partition of $ \mathcal{E}_{A}(V) $. $ \mathcal{A}_{i} $ is a finite union of interiors of rational polytopes.  Let $\mathcal{C}_{i}$ be the closure of $\mathcal{A}_{i}$ in $\mathcal{L}_{A}(V)$. If $ f_i $ is birational then $ \mathcal{C}_i$ is a rational polytope;
+    \item If $ i,j $ are two indices such that $ \mathcal{A}_j\cap \mathcal{C}_i\neq \emptyset $ then there is a contraction $ f_{ij}:X_i\to X_j $ such that $ f_j=f_{ij}\circ f_i $;
+    \item Suppose in addition $ V $ spans the Neron-Severi group of $W$. Pick $ i $ such that a connected component $ \mathcal{C} $ of $ \mathcal{C}_i $ intersects the interior of $ \mathcal{L}_A(V) $, the following are equivalent:
+          \begin{enumerate}
+            \item $ \mathcal{C} $ spans $ V $;
+            \item If $ D\in \mathcal{A}_i\cap \mathcal{C} $ then $ f_i $ is a log terminal model of $ K_W+D $;
+            \item $ f_i $ is birational and $ X_i $ is $ \mathbb{Q} $-factorial.
+          \end{enumerate}
+    \item Suppose in addition $ V $ spans the Neron-Severi group of $W$. If $ i,j $ are two indices such that $ \mathcal{C}_i $ spans $ V $ and $ D $ is a general point of $ \mathcal{A}_j\cap \mathcal{C}_i $ which is also a point of interior of $ \mathcal{L}_A(V) $, then $ \mathcal{C}_i $ and $ \overline{\mathrm{NE}}(X_i/X_j)^*\times \mathbb{R}^k $ are locally isomorphic in a neighborhood of $D$,  for some $ k\geqslant 0 $. Furthermore, $ \rho(X_i/X_j)=\dim  \mathcal{C}_i-\dim \mathcal{C}_j\cap \mathcal{C}_i   $.
+  \end{enumerate}
+\end{theorem}
+
+\begin{lemma}\label{subspace}
+  \cite[Corollary 3.4]{haconSarkisovProgram2012} If $V$ spans the Neron-Severi group of $W$, then there is a Zariski dense open subset $U$ of the Grassmannian $G(r, V)$ of real affine subspaces of dimension $r$ such that any  $[V']\in U$ defined over the rational numbers satisfies (1-4) of Theorem \ref{mapbetweenAM}.
+\end{lemma}
+
+\begin{proof}
+  Let $U \subset G(r, V) $ be the set of real affine subspace  $V'$ of $V$ of dimension $r$, which contains no face of any $\mathcal{C}_{i}$ of $\mathcal{L}_A(V)$. In particular, the interior of  $\mathcal{L}_{A}(V')$ is contained in the interior of $\mathcal{L}_{A}(V)$. It is clear that any $V'\in U$ defined over the rationals satisfies (1-4) of Theorem \ref{mapbetweenAM}.
+\end{proof}
+
+By the above Lemma, from now on in this section, we always assume that $V$ has dimension $2$ and satisfies (1-4) of Theorem \ref{mapbetweenAM}. The following lemma classifies the morphisms in (2) of Theorem \ref{mapbetweenAM} into a divisorial contraction, a small contraction or a log Mori fibre space. In some cases (Lemma \ref{mapbetweenAM2} (2)), two small contractions form a flop.
+
+\begin{lemma}\label{mapbetweenAM2}
+  \cite[Lemma 3.5]{haconSarkisovProgram2012} Let $ f:W\dashrightarrow X $ and $ g:W\dashrightarrow  Y $ be two rational contractions such that $ \mathcal{C}_{A,f} $ is of dimension $ 2 $ and $ \mathcal{O}=\mathcal{C}_{A,f}\cap \mathcal{C}_{A,g} $ is of dimension $ 1 $. Assume $ \rho(X)\geqslant \rho(Y) $ and $ \mathcal{O} $ is not contained in the boundary of $ \mathcal{L}_{A}(V) $. Let $ D $ be an interior point of $ \mathcal{O} $ and $ B=f_*D $. Then there is a rational contraction $ \pi:X\dashrightarrow Y $ and $ g=\pi\circ f $ such that either
+  \begin{enumerate}
+    \item $ \rho(X)=\rho(Y)+1 $ and $ \pi  $ is $ (K_X+B) $-trivial, and either
+          \begin{enumerate}
+            \item $ \pi $ is birational and $ \mathcal{O} $ is not contained in the boundary of $ \mathcal{E}_A(V) $, and either
+                  \begin{enumerate}
+                    \item $ \pi $ is a divisorial contraction and $ \mathcal{O}\neq \mathcal{C}_{A,g} $, or
+                    \item $ \pi $ is a small contraction and $ \mathcal{O}= \mathcal{C}_{A,g} $, or
+                  \end{enumerate}
+            \item $ \pi $ is a log Mori fibre space, and $ \mathcal{O}=\mathcal{C}_{A,g} $ is contained in the boundary of $ \mathcal{E}_{A}(V) $, or
+          \end{enumerate}
+    \item $ \rho(X)=\rho(Y) $, and $ \pi $ is  a $ (K_X+B) $-flop and $ \mathcal{O}\neq\mathcal{C}_{A,g} $ is not contained in the boundary of $ \mathcal{E}_A(V) $.
+  \end{enumerate}
+\end{lemma}
+
+\begin{lemma}
+  \cite[Lemma 3.6]{haconSarkisovProgram2012} Let $f:W\dashrightarrow X $ be a birational contraction between $\mathbb{Q}$-factorial varieties. Suppose $(W,D)$ and $(W,D+A)$ are both klt. If $f$ is the ample model of $(W,D+A)$ and $A$ is ample, then $f$ is a result of the  $(K_{W}+D)$-MMP.
+\end{lemma}
+
+This lemma guarantees that every variety in the Sarkisov links constructed later is a result of the $(W, B_{W})$-MMP.
+
+Finally, we show that there is a Sarkisov link corresponding to certain $D \in \mathcal{E}_{A}(V)$. Let $ D=A+B $ be a point of the boundary of $ \mathcal{E}_A(V) $ in the interior of $ \mathcal{L}_A(V) $. Let $ \mathcal{T}_1, \ldots, \mathcal{T}_k $ be the polytopes $ \mathcal{C}_i $ of dimension $ 2 $ containing $ D $. Possibly re-ordering, we may assume that  the intersection  $ \mathcal{O}_0 $ and $ \mathcal{O}_k $ of $ \mathcal{T}_1 $ and $ \mathcal{T}_k $ with boundary of $ \mathcal{E}_A(V) $ and  $ \mathcal{O}_i=\mathcal{T}_i\cap\mathcal{T}_{i+1} $ are one dimensional. Let $ f_i:W\dashrightarrow  X_i $ be the birational contraction associated to $ \mathcal{T}_i $ and $ g_i:W\dashrightarrow  S_i $ be the rational contraction associated to $ \mathcal{O}_i $.
+\begin{center}
+  \begin{tikzpicture}
+    \draw (0,0)node[below]{$ D $}--(-6,4)node[above]{$ \mathcal{O}_0 $};
+    \draw (-2.5,2)node[right]{$ \mathcal{T}_1 $};
+    \draw (0,0)--(-1.5,2)node[right]{$ \mathcal{T}_{2} $}--(-3,4)node[above]{$ \mathcal{O}_{1} $};
+    \draw (0,0)--(-0.5,2)node[right]{$ \cdots $}--(-1,4);
+    \draw (0,0)--(0.5,2)node[right]{$ \mathcal{T}_{k-1} $}--(1,4);
+    \draw (0,0)--(3,4)node[above]{$ \mathcal{O}_{k-1} $};
+    \draw (2,2)node[right]{$ \mathcal{T}_{k} $};
+    \draw (0,0)--(6,4)node[above]{$ \mathcal{O}_{k} $};
+  \end{tikzpicture}
+\end{center}
+
+Set $ f=f_1:W\dashrightarrow X, g=f_k:W\dashrightarrow Y $ and $ \phi:X\to S=S_0,\psi:Y\to T=S_k $ and $ X'=X_2,Y'=X_{k-1} $ and let $ W\dashrightarrow R $ be the ample model of $ D $. Then
+\begin{theorem}\label{constructlink}
+  \cite[Theorem 3.7]{haconSarkisovProgram2012} Suppose $ B_W $ is any divisor such that $ (W,B_W) $ is a log smooth terminal pair and $ D-B_W $ is ample. Then $ \phi $ and $ \psi $ are log Mori fibre spaces, which are outputs of the $ (K_W+B_W) $-MMP. Moreover, $ D $ is contained in more than two polytopes, then $\phi$ and $\psi$ are connected by a Sarkisov link, where each $f_{i}$ is a result of running the $(K_{W}+B_{W})$-MMP.
+\end{theorem}
+\begin{proof}
+  We may assume $ k\geqslant 3 $, and we have
+  $$ \xymatrix{
+      X'\ar@{.>}[d]_p\ar@{.>}[rr]&&Y'\ar@{.>}[d]^q\\
+      X\ar[d]_{\phi}&&Y\ar[d]^\psi\\
+      S\ar[rd]^s&&T\ar[ld]_t\\
+      &R&} $$
+  Note that $ \rho(X_i/R)\leqslant 2 $ and $ \rho(X/S)=\rho(Y/T)=1 $. Thus,
+  \begin{enumerate}
+    \item $ s $ is the identity and $ p $ is a divisorial contraction (extraction), or
+    \item $ s $ is a contraction and $ p $ is a flop.
+  \end{enumerate}
+  The same holds for $ q $ and $ t $. The map $X'\dashrightarrow Y'$ is the composition of the flops. This gives 4 types of links.
+\end{proof}
+
+\section{Decomposition into Sarkisov links}
+We need a special resolution $W$ and a special affine subspace $V \subset \operatorname{WDiv}(W)$ as follows.
+
+\begin{lemma}\label{keylem}
+  \cite[Lemma 4.1]{haconSarkisovProgram2012} Let $ \phi: X \to S $ and $ \psi: Y\to T  $ be two MMP-related log Mori fibre spaces corresponding to two klt projective varieties $ (X, B_X) $ and $ (Y, B_Y) $. Then we may find a smooth projective variety $ W $, two birational morphisms $ f:W\to X $ and $ g:W\to Y $, a klt pair $ (W,B_{W}) $, an ample $ \mathbb{Q} $-divisor $ A $ on $ W $ and a two-dimensional rational affine subspace $ V $ of $ \mathrm{WDiv}_\mathbb{R}(W) $ such that
+  \begin{enumerate}
+    \item If $ D\in \mathcal{L}_A(V) $ then $ D-B_W $ is ample;
+    \item $ \mathcal{A}_{A,\phi\circ f} $ and $ \mathcal{A}_{A,\psi\circ g} $ are not contained in the boundary of $ \mathcal{L}_A(V) $;
+    \item $ V $ satisfies (1-4) of Theorem \ref{mapbetweenAM};
+    \item $ \mathcal{C}_{A,f} $ and $ \mathcal{C}_{A,g} $ are two-dimensional;
+    \item $ \mathcal{C}_{A,\phi\circ f} $ and $ \mathcal{C}_{A,\psi\circ g} $ are one dimensional.
+  \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+  By assumption there is a $\mathbb{Q}$-factorial klt pair $(W,B_{W})$ such that $f:W\dashrightarrow X$ and $g:W \dashrightarrow Y$ are the outputs of the $(K_{W}+B_{W})$-MMP. Let $p':W'\to W$ be any log resolution  that resolves the indeterminacy of $f$ and $g$, then we may write
+  \[
+    K_{W'}+B_{W'}=p'^*(K_{W}+B_{W})+E'
+  \]
+  where $E'\geqslant 0$ and $B_{W'}\geqslant 0$ have no common components, and $E'$ is exceptional and $p'_*B_{W'}=B_{W}$. Pick a divisor $-F$ which is ample over $W$ with $\operatorname{Supp}F=\operatorname{Exc}p'$ such that $K_{W'}+B_{W'}+F$ is klt. As $p'$ is $(K_{W'}+
+    B_{W'}+F)$-negative and $(K_{W}+B_{W})$ is klt and $W$ is $\mathbb{Q}$-factorial, the $(K_{W'}+B_{W'}+F)$-MMP over $W$ terminates with the pair $(W,B_{W})$. Replacing $(W,B_{W})$ by $(W',B_{W'} +F)$ we may assume that $(W,B_{W})$ is log smooth and $f,g$ are morphisms.
+
+  Pick general ample $\mathbb{Q}$-divisors $A, H_{1},H_{2},\ldots ,H_{k}$ on $W$ such that $H_{1},\ldots , H_{k}$ generate the Neron-Severi group of $W$. Let $H=A+H_{1}+\ldots+ H_{k}$. Pick sufficiently ample divisors $A_{S}$ on $S$ and $A_{T}$ on $T$ such that
+  \[
+    -(K_{X}+B_{X})+\phi^*A_{S} \text{ and } -(K_{Y}+B_{Y})+\psi^*A_{T}
+  \]
+  are both ample. Pick a rational number $0<\delta<1$ such that
+  \[
+    -(K_{X}+B_{X}+\delta f_*H)+\phi^*A_{S} \text{ and } -(K_{Y}+B_{Y}+\delta g_*H)+\psi^*A_{T}
+  \]
+  are both ample and  $f$ and  $g$ are both  $(K_{W}+B_{W}+\delta H)$-negative. Replacing $H$ by $\delta H$ we may assume that $\delta=1$. Now pick a $\mathbb{Q}$-divisor $B_{0}\leqslant B_{W}$ such that $A+(B_{0}-B_{W}), -(K_{X}+ f_*B_{0}+f_*H)+\phi^*A_{S}$ and $-(K_{Y}+ g_*B_{0}+f_*H)+\psi^*A_{T}$  are all ample and $f$ and  $g$ are both  $(K_{W}+B_{0}+\delta H)$-negative.
+
+  Pick general ample $\mathbb{Q}$-divisors $F_{1}\geqslant 0$ and $G_{1}\geqslant 0$  such that
+  \[
+    F_{1}\sim_{\mathbb{Q}} -(K_{X}+f_*B_{0}+ f_*H)+\phi^*A_{S} \text{ and } G_{1}\sim_{\mathbb{Q}} -(K_{Y}+g_*B_{0}+ g_*H)+\psi^*A_{T}
+  \]
+  and
+  \[
+    K_{W}+B_{0}+H+F+G
+  \]
+  is klt, where $F=f^*F_{1}$ and $G=g^*G_{1}$.
+  Let $V_{0}$ be the affine subspace of $\operatorname{WDiv}_{\mathbb{R}}(W)$ which is the translation by $B_{0}$ of the vector subspace  spanned by $H_{1},\ldots , H_{k},F,G$. Suppose that $D=A+B \in \mathcal{L}_{A}(V_{0})$. Then
+  \[
+    D-B_W=(A+B_{0}-B_{W})+(B-B_{0})
+  \]
+  is ample, as $B-B_{0}$ is nef by definition of $V_{0}$. Note that
+  \[
+    B_{0}+F+H \in \mathcal{A}_{A,\phi\circ f}(V_{0}), B_{0}+G+H \in \mathcal{A}_{\psi \circ g}(V_{0})
+  \]
+  and $f$, respectively $g$, is a weak log canonical model of $K_{W}+B_{0}+F+H$, respectively $K_{W}+B_{0}+G+H$. Thus, Theorem \ref{mapbetweenAM} implies that $V_{0}$ satisfies (1-4) of Theorem \ref{mapbetweenAM}.
+
+  Since $H_{1},\ldots ,H_{k}$ generated the Neron-Severi group of $W$ we may find constants $h_{1},\ldots ,h_{k}$ such that $G \equiv \sum^{k}_{i=1} h_{i}H_{i}$. Then there is $0< \delta\ll 1$ such that  $B_{0}+F+\delta G+H- \delta(\sum_{i=1}^{k} h_{i}H_{i}) \in \mathcal{L}_{A}(V_{0})$ and
+  \[
+    B_{0}+F+\delta G+H-\delta (\sum_i^k h_{i}H_{i}) \equiv B_{0}+F+H
+    .\]
+  Thus, $\mathcal{A}_{A,\phi\circ f}$ is not contained in the boundary of $\mathcal{L}_{A}(V_{0})$. Similarly, $\mathcal{A}_{A,\psi\circ g}$ is not contained in the boundary of $\mathcal{L}_{A}(V_{0})$. In particular $\mathcal{A}_{A,\phi\circ f}$ and   $\mathcal{A}_{A,\psi\circ g}$ span affine hyperplanes of $V_{0}$, since $\rho(X/S)=\rho(Y/T)=1$.
+
+  Let $V_{1}$ be the translation by $B_{0}$ of the two-dimensional vector space spanned by $F+H-A$ and $G+H-A$. Let $V$ be a small general perturbation of $V_{1}$ as in Lemma \ref{subspace}, which is defined over the rationals. This is the affine subspace we need.
+\end{proof}
+Then we can prove the main theorem
+
+\begin{proof}[Proof of Theorem \ref{main}]
+  Let $(W,B_{W}),A $ and $V$ as in the Lemma \ref{keylemma}.  Pick $ D_{0} \in \mathcal{A}_{A,\phi\circ f} $  and $ D_1\in \mathcal{C}_{A,g} $ belonging to the interior of $ \mathcal{L}_A(V) $. As $ V $ is two-dimensional, removing $ D_0 $ and $ D_1 $ divides the boundary of $ \mathcal{E}_A(V) $ into two parts. The part which consists entirely of divisors that are not big is contained in the interior of $ \mathcal{L}_A(V) $. Consider tracing this boundary from $ D_0 $ to $ D_1 $. Then there are finitely many $ 2\leqslant i\leqslant N $ points $ D_i $ which are contained in more than two polytopes $ \mathcal{C}_{A,f_i}(V) $. By Lemma \ref{constructlink},  each point $ D_i $ gives a Sarkisov link.  The birational map $X \dashrightarrow Y$ is the composition of such links.
+\end{proof}
+
