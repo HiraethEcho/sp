@@ -17,7 +17,7 @@
 %---------------------------------------------------------------------------%
 \usepackage{caption}
 \usepackage[all]{xy}
-\usepackage[numbers,table,math]{Style/artratex}
+\usepackage[numbers,list,table,math]{Style/artratex}
 %- usage: \usepackage[option1,option2,...,optionN]{artratex}
 %- Multiple optional arguments:
 %- [bibtex|biber]% set bibliography processor and package
@@ -48,14 +48,14 @@
 %-> Titlepage information
 %-
 % comment
-% \input{tex/cover}%
+\input{tex/cover}%
 \begin{document}
 %-
 %-> Frontmatter: title page, abstract, content list, symbol list, preface
 %-
 % comment
-% \frontmatter% initialize the environment
-% \input{tex/abstract}% title page, abstract
+\frontmatter% initialize the environment
+\input{tex/abstract}% title page, abstract
 
 {% content list region
 	\linespread{1.2}% local line space
@@ -74,14 +74,14 @@
 %-> Mainmatter
 \mainmatter% initialize the environment
 
-% \input{tex/intro}
-% \input{tex/pre}
+\input{tex/intro}
+\input{tex/pre}
 % \input{tex/sarkisov}
-\chapter{Sarksiov纲领}
 \input{tex/descend}
-% \input{tex/foliation}
-% \input{tex/applications}
-% \input{tex/result}
+\input{tex/doublescaling}
+\input{tex/finitemodel}
+\input{tex/foliation}
+\input{tex/result}
 
 
 \intotoc*{\cleardoublepage}{\bibname}% add link to toc

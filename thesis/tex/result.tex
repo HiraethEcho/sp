@@ -1,3 +1,139 @@
-\chaper{结论与展望}
-\section{结论}
+\chapter{结论与展望}
 
+\section{例子}
+首先给出一些具体的MMP-相关的森纤维空间的Sarkisov分解的例子。
+
+\subsection{Original method}\label{example1}
+Let $ X=\mathbb{P}^2 $ with coordinates $ (x_0:x_1:x_2) $ and $ X'=\mathbb{P}^2 $ with coordinates $ (y_0:y_1:y_2) $.
+Denote $ B=\{x_0=0\} $ and $B'=\{y_{0}=0\} $.
+Take a rational map $ \Phi:X\dashrightarrow X' $ defined by
+\[ \Phi:(x_0:x_1:x_2)\dashrightarrow (x_0^2:x_0x_1:x_1^2+x_0x_2) \]
+There is a  common resolution $\sigma: W\to X$ and $\sigma':W\to X'$, which are both compositions of three blow-ups at indeterminacy points.
+Precisely, $\pi_{1}:W_{1}\to X$ is the blow-up at the indeterminacy point $P_{0} \in B$ of $\Phi$. Identify $B$ with its strict transform on $W_{1}$ and let $E_{1}$ be the exceptional divisor of $\pi_{1}$.
+$\pi_{2}:W_{2}\to W_{1}$ is the blow-up at $P_{1}=E_{1} \cap B$. Identify $B$ and $E_{1}$ with their strict transforms on $W_{2}$ and let $E_{2}$ be the exceptional divisor of $\pi_{2}$.
+$\pi_{3}:W=W_{3}\to W_{2}$ is blow-ups at a point $P_{2} \in E_{2} \setminus (B\cup E_{1})$. Identify  $B, E_{1}$ and $E_{2}$ with their strict transforms   on $W_{3}$ and let $E_{3}$ be the exceptional divisor of $\pi_{3}$.
+Then $ \sigma=\pi_{3}\circ \pi_{2} \circ \pi_{1} $ and $ W=W_3 $ is a common resolution of $\Phi$. Moreover, $ \sigma':W\to X' $ is the composition of the blowing-down curves  $W=W'_{3}\xrightarrow{\pi'_{3}} W'_{2}\xrightarrow{\pi'_{2}} W'_{1} \xrightarrow{\pi'_{1}} X'$ in the order of $ B,E_2,E_1 $.
+
+We establish some notations of varieties:
+\begin{itemize}
+  \item Let $W_{2}\to Z_{0}$ be the contraction of $E_{1}$ on $W_{2}$, then $Z_{0} \to X_{1}$ is the contraction of $B$  and $Z_{0}\to X_{0}$ is the extraction of $E_{2}$ on $X$;
+  \item Let $W'_{2}\to Z_{1}$ be the contraction of $E_{1}$ on $W'_{2}$, then $Z_{1} \to X_{1}$ is the extraction of $E_{3}$ on $X_{1}$, and $Z_{1}\to X'$ is the contraction of $E_{2}$;
+  \item $W\to Z$ be the contraction of $E_{1}$ and $E_{2}$ on $W$, then $Z\to X$ is the extraction of $E_{3}$ and $Z\to X'$ is the contraction of $B$.
+\end{itemize}
+That is
+\[ \xymatrix{&&&W_3\ar[ld]\ar@{=}[r]&W\ar[ddd]\ar@{=}[r]&W_3'\ar[rd]\\
+    &&W_2\ar[ld]\ar[rd]&&&&W_2'\ar[rd]\ar[dl]\\
+    &W_1\ar[ld]&&Z_0\ar[llld]\ar[rd]&&Z_1\ar[ld]\ar[rrrd]&&W_1'\ar[rd]\\
+    X_0&&&&X_1&&&&X'
+  } \]
+and
+\[\xymatrix{
+    &W\ar[d]\ar[ddl]_{\sigma}\ar[ddr]^{\sigma'}&\\
+    &Z\ar[dl]\ar[dr]\\
+    X&&X' }  \]
+
+Consider the pairs $ (X,bB) $ and $ (X',b'B') $, and take the function $\theta$ such that:
+\begin{itemize}
+  \item $\theta(B)=b$ and $\theta(B')=b'$;
+  \item $\theta(E_{1})=\theta(E_{2})=\epsilon$ with $b,b'<\epsilon<1$.
+\end{itemize}
+Then we have the ramification formulas:
+\[ \begin{array}{rllllllllll}
+    K_W+B_W & = & \sigma^*(K_X+bB)       & + & (3-2b+b')E_3 & + & (1-b+\epsilon)E_1 & + & (2-2b+\epsilon)E_2  & \\
+            & = & \sigma'^*(K_{X'}+b'B') & + & (3-2b'+b)B   & + & (1-b'+e)E_1       & + & (2-2b'+\epsilon)E_2 &
+  \end{array} \]
+Let $ \mathcal{H}'=|\mathcal{O}_{X'}(1)| $ be the very ample complete linear system on $X'$, then $H\in |\mathcal{O}_{X}(2)|$. 
+
+Different choices of $\theta$ and  $\epsilon$ give different decompositions:
+\begin{enumerate}
+  \item\label{example1.1} If $ 2b+2b'\geqslant 3\epsilon>0 $, then $\Phi$ is the composition of two Sarkisov links $\psi_{0},\psi_{1}$ of type II:
+
+  \[
+    \xymatrix{
+    &Z_{0}\ar[rd]\ar[ld] & &Z_{1}\ar[rd]\ar[ld]\\
+    X\ar[d]\ar@{.>}[rr]^{\psi_{0}}& &X_{1}\ar@{.>}[rr]^{\psi_{1}}\ar[d]&&X'\ar[d]\\
+    \text{pt}&&\text{pt}&&\text{pt}
+    }
+  \]
+  \item If $ 2b+2b'< 3\epsilon $, then $\Phi$ is just one Sarkisov link  of type II:
+        \[
+          \xymatrix{
+            &Z\ar[rd]\ar[ld] & \\
+            X_{1}\ar@{.>}[rr]^{\Phi}\ar[d]& &X'\ar[d]\\
+            \text{pt}&&\text{pt}
+          }
+        \]
+  \item If $ \epsilon=b=b'=0 $, then $\Phi$ is the composition of four Sarkisov links $\psi_{i}$:
+        \[ \xymatrix{
+          &&W_2\ar[ld]\ar[rd]&&W_2'\ar[ld]\ar[rd]\\
+          &X_1=\mathbb{F}_1\ar@{.>}[rr]^{\psi_{1}}\ar[d]&&X_2=\mathbb{F}_2\ar@{.>}[rr]^{\psi_{2}}\ar[d]&&X_3=\mathbb{F}_1\ar[d]\ar[rd]^{\psi_{3}}\\
+          X=X_0=\mathbb{P}^2\ar[d]\ar@{.>}[ru]^{\psi_{0}}&\mathbb{P}^1\ar[ld]\ar@{=}[rr]&&\mathbb{P}^1\ar@{=}[rr]&&\mathbb{P}^1\ar[rd]&X_4=X'=\mathbb{P}^2\ar[d]\\
+          \text{pt}&&&&&&\text{pt} } \]
+\end{enumerate}
+
+\subsection{Double scaling method}
+Notations and assumptions as in Section \ref{example1}, let $B_{W}=\frac{1}{2}(B+E_{1}+E_{3})$ and consider pairs $(X,\frac{1}{2}B)$ and $(X',\frac{1}{2}B')$. Then we have $G=G_{0}\sim_{\mathbb{Q}}\frac{5}{2}B$ and $H'\sim_{\mathbb{Q}}\frac{5}{2}B'$.
+
+\begin{enumerate}
+  \item $r_{0}=2$ and $s_{0}=\frac{1}{5}$. $X_{1}$ is a weak log canonical model of $(W,B_{W}+\frac{3}{5}G_{W}+\frac{1}{5}H_{W})$;
+  \item  $r_{1}=1$ and $s_{1}=\frac{2}{5}$. $X_{2}= X'$ is a weak log canonical model of $(W,B_{W}+\frac{1}{5}G_{W}+\frac{3}{5}H_{W})$.
+\end{enumerate}
+
+This gives the same decomposition as in the case (\ref{example1.1}) in  Section \ref{example1}.
+
+\subsection{Polytope method}
+Let  $P,Q$ be two different points on $\mathbb{P}^{2}$ and let $L$ be the line passing through $P$ and $Q$. Let $p:X\to \mathbb{P}^{2}$ be the blow-up at $P$ and $E_{1}$ be the exceptional divisor. Let $q:Y\to \mathbb{P}^{2}$ be the blow-up at $Q$ and $E_{2}$ be the exceptional divisor. Let $W\to \mathbb{P}^{2}$ be the blow-up of $P$ and $Q$, then we have contractions $f:W\to X$ and $g:W\to Y$. Identify $L,E_{1}$ and $E_{2}$ with their strict transforms on  $W$. Let $h:W\to Z$ be the contraction of $L$, then $Z\cong \mathbb{P}^{1} \times \mathbb{P}^{1}=\mathbb{F}_{0}$.
+\[
+  \xymatrix{
+    S\cong \mathbb{P}^{1}&X\cong \mathbb{F}_{1}\ar[l]_{\phi}\ar[r]^{p} & \mathbb{P}^{2} \\
+    &W\ar[u]^{f}\ar[r]_{g}\ar[ld]_{h} & Y\cong \mathbb{F}_{1}\ar[u]_{q}\ar[d]^{\psi}\\
+    Z\cong \mathbb{F}_{0}\ar[uu]\ar[rr]&&T\cong \mathbb{P}^{1}
+  }
+\]
+
+Note that $X\cong \mathbb{F}_{1}$, there is a  Mori fibre space $\phi:X\to S \cong \mathbb{P}^{1}$. Similarly, there is another Mori fibre space $\psi: Y\to T\cong \mathbb{P}^{1}$. There is a birational map $\Phi: X\dashrightarrow  Y$ induced by $p$ and $q$. If we take $B_{W}=\frac{1}{4}L$ on $W$, then $f$ and $g$ are two log Mori fibre spaces given by the outputs of $(K_{W}+B_{W})$-MMPs.
+
+Take $A\sim_{\mathbb{Q}}-K_{W}+\frac{1}{4}L$, and let $V$ be the translation by  $\frac{1}{4}L$ of the 2-dimensional vector space spanned by $E_{1}$ and  $E_{2}$. Then we have $\mathcal{L}_{A}(V)=\mathcal{E}_{A}(V)$. Furthermore,  $K_{W}+D\sim_{\mathbb{Q}} \frac{1}{2}L+aE_{1}+bE_{2}$ for $0\leqslant a,b\leqslant 1$ if $D \in \mathcal{E}_{A}(V)$. The partition of $\mathcal{E}_{A}(V)$ is
+\begin{figure}
+\centering
+  \begin{tikzpicture}
+    \draw (0,0)--(6,0)--(6,6)--(0,6)--(0,0);
+    \draw (0,3)--(6,3);
+    \draw (3,0)--(3,6);
+    \draw (3,0)--(0,3);
+    \draw(4.5,4.5)node{$\mathbb{P}^{2} $};
+    \draw(0.9,0.9)node{$Z$};
+    \draw(2.1,2.1)node{$W$};
+    \draw(4.5,1.5)node{$Y$};
+    \draw(1.5,4.5)node{$X$};
+    \draw(-0.5,-0.5)node{pt};
+    \draw(-1,3)node{$\mathbb{P}^{1}$};
+    \draw(3,-1)node{$\mathbb{P}^{1}$};
+    \draw(4.5,0.3)node{$D_{1}$};
+    \filldraw (4.5,0) circle(0.05);
+    \filldraw (3,0) circle(0.05);
+    \draw(3.3,0.3)node{$D_{4}$};
+    \filldraw (0,0) circle(0.05);
+    \draw(0.3,0.3)node{$D_{3}$};
+    \filldraw (0,3) circle(0.05);
+    \draw(0.3,3.3)node{$D_{2}$};
+    \filldraw (0,4.5) circle(0.05);
+    \draw(0.5,4.5)node{$D_{0}$};
+  \end{tikzpicture}
+    \caption{Decomposition of $\mathcal{E}_A(V)$}
+    \label{pic}
+\end{figure}
+Then $D_{0}$ and $D_{1}$ correspond to log Mori fibre spaces $\phi:X\to S$ and $\psi:Y\to T$. $D_{2},D_{3}$ and $D_{4}$ correspond to three Sarkisov links. Therefore, we have a decomposition of $\Phi: X\dashrightarrow  Y$ as
+
+\[
+  \xymatrix{
+    &W\ar[ld]\ar[rd] &&&&W\ar[ld]\ar[rd] \\
+    X\ar[d]& &Z\ar[d]\ar@{=}[rr]&&Z\ar[d]&&Y\ar[d]\\
+    \mathbb{P}^{1}&&\mathbb{P}^{1}\ar[dr]&&\mathbb{P}^{1}\ar[dl]&&\mathbb{P}^{1}\\
+    &&&\text{pt}
+  }
+\]
+
+\section{应用}
+
+\section{展望}
