@@ -1,154 +1,189 @@
 \chapter{双标量法}
+ 本章介绍\cite[\S 13]{haconMinimalModelProgram2012} 和  \cite{liuSarkisovProgramGeneralized2021}中的双标量法构造(double scaling)的Sarkisov纲领。下降法用 $X'$上的除子 $H'$ 来作为标量，双标量法在  $X$ 和 $X'$ 上分别构造除子 $G$ 和 $H'$ ，作为双标量。
+% \textbf{初始设定：}
+令 $W$ 为 MMP-相关的森纤维空间 $f:(X,B)\to S$ 和 $f':(X',B')\to S'$  的公共解消，  取在 $S$ 上的$\mathbb{Q}$-除子 $A$ 使得 $G \sim_\mathbb{Q} -(K_{X}+B) +f^*A$ 是一般的丰沛 $\mathbb{Q}$-除子。类似的，取 $S'$ 上的丰沛$\mathbb{Q}$-除子，使得 $H' \sim_\mathbb{Q} -(K_{X'}+B') +f'^*A'$ 是一般的丰沛 $\mathbb{Q}$-除子。那么  $(X,B+G)$ 和 $(X',B'+H')$  是$W$ (关于 $B_{W}+G_{W}$ 和 $B_{W}+H_{W}$)的两个弱算术典范模型。双标量Sarkisov纲领将构造 $W$ 的有限多个弱算术典范模型 $(X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i})$，它们是分别关于 $(W,B_{W}+g_{i}G_{W}+h_{i}H_{W})$的模型，其中 $0\leqslant g_i,h_i\leqslant 1$。这些模型间的双有理映射 $\psi_{i}:X_{i}\dashrightarrow X_{i+1}$是通过$2$-ray game 构造的Sarkisov连接映射。
 
-We introduce the ideas of \cite[\S 13]{haconMinimalModelProgram2012} and  \cite{liuSarkisovProgramGeneralized2021}.
-Let $W$ be a common resolution of two MMP-related log Mori fibre spaces. Take an ample $\mathbb{Q}$-divisor $A$ on $S$ such that $G \sim_\mathbb{Q} -(K_{X}+B) +f^*A$  is a general ample $\mathbb{Q}$-divisor. Similarly, take an ample $\mathbb{Q}$-divisor $A'$ on $S'$ such that $H' \sim_\mathbb{Q} -(K_{X'}+B') +f'^*A'$  is a general ample $\mathbb{Q}$-divisor. Then  $(X,B+G)$ and $(X',B'+H')$ are two weak log canonical models of $W$ (for $K_{W}+B_{W}+G_{W}$ and $K_{W}+B_{W}+H_{W}$). There are finitely many weak log canonical models $(X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i})$ of $(W,B_{W}+g_{i}G_{W}+h_{i}H_{W})$, $0\leqslant g_i,h_i\leqslant 1$, and $\psi_{i}:X_{i}\dashrightarrow X_{i+1}$ is a Sarkisov link given by the $2$-ray game.
-
-In this method, we run the Sarkisov program in a smaller collection of varieties compared with the original method. That is, all pairs with a $(K_{W}+D)$-non-positive birational contraction $W\dashrightarrow X_{i}$, where $D$ varies in a compact subset $\mathcal{E}_{A}(V)$ of $\operatorname{WDiv}_{\mathbb{R}}(W)$. Using this collection, the termination of the Sarkisov program follows the finiteness of weak log canonical models.
-\section{Preliminaries}
-Let $(W, B_W)$ be a $\mathbb{Q}$-factorial klt pair and $f:(X, B)\to S$ and $f':(X', B')\to S'$ be two different log Mori fibre spaces which are outputs of $(K_{W}+B_{W})$-MMPs.  We will need to introduce some notations and lemmas.
+和下降法相比，这种方法在一个更小的集合内运行MMP和Sarkisov纲领。所有的 $X_{i}$都对应一个$(K_{W}+D_{i})$-非正性的双有理压缩映射 $W\dashrightarrow X_{i}$，其中 $D_{i}$是 $\operatorname{WDiv}_{\mathbb{R}}(W)$ 的一个紧子集 $\mathcal{E}_{A}(V)$。对于这个子集有弱算术典范模型的有限性性质，由此可以得到双标量法的Sarkisov纲领的终结性。
+\section{定义和引理}
+令 $(W, B_W)$ 是 $\mathbb{Q}$-分解具有 klt奇点的代数簇对，并且 $f:(X, B)\to S$ 和 $f':(X', B')\to S'$ 是两个不同的$(K_{W}+B_{W})$-MMP 的输出，且都是森纤维空间。接下来给出一些所需的记号和引理。 
 \begin{definition}
-  Let $f: X\dashrightarrow Y$ be a birational map of normal quasi-projective varieties. If
+  令 $f: X\dashrightarrow Y$ 是正规拟射影代数簇间的双有理映射，如果
   \begin{itemize}
-    \item $f$ does not extract divisors;
-    \item $a(E;X,B_{X})\leqslant a(E;Y,B_{Y})$ for all divisors  $E$  over $X$,
+    \item $f$ 不解压除子；
+    \item 对所有 在 $X$ 之上的(包括更高模型上的)除子 $E$ 都有  $a(E;X,B_{X})\leqslant a(E;Y,B_{Y})$，
   \end{itemize}
-  then we denote $(X,B)\geqslant (Y,B_{Y})$.
+  那么记 $(X,B)\geqslant (Y,B_{Y})$。
 \end{definition}
-In particular, for terminal pairs, we have the following lemma:
+对于具有终端奇点的代数簇对，有下面的引理：
 \begin{lemma}\label{terminalorder}
-  \cite[Lemma 13.8]{haconMinimalModelProgram2012} Let $f:W\dashrightarrow X$ be a birational map where $(W,B_W)$ is terminal. If
+  \cite[Lemma 13.8]{haconMinimalModelProgram2012} 令 $f:W\dashrightarrow X$ 是双有理映射且 $(W,B_W)$  具有终端奇点。如果
   \begin{itemize}
-    \item $f$ does not extract divisors;
-    \item $K_X+B$ is nef, where $B=f_*B_W$;
-    \item $a(E;X,B)\geqslant a(E;W,B_W)$ for all divisors $E \subset W$;
+    \item $f$不解压除子；
+    \item $K_X+B$ 是数值有效除子，其中$B=f_*B_W$；
+    \item  对所有$E \subset W$之上的除子 $E$ 都有 $a(E;X,B)\geqslant a(E;W,B_W)$。
   \end{itemize}
-  then
+  那么有
   \begin{itemize}
     \item $(W,B_W)\geqslant (X,B)$;
-    \item $(X,B)$ is klt;
-    \item If $Z\to X$ is a divisorial extraction of a divisor $E$ with $a(E;X,B)\leqslant 0$, then $E$ is a divisor on $W$;
-    \item If $Z\to X$ is a terminalization of $(X,B)$, then $W\dashrightarrow Z$ extracts no divisors.
+    \item $(X,B)$ 具有klt奇点；
+    \item 如果 $Z\to X$ 是 关于$E$的除子解压，其中$a(E;X,B)\leqslant 0$，那么 $E$是 $W$上的除子；
+    \item 如果 $Z\to X$是 $(X,B)$的终端化，那么 $W\dashrightarrow Z$ 不解压除子。
   \end{itemize}
 \end{lemma}
-Conversely, given a klt pair and a non-positive map, we have
+相反的，从非正性映射出发，可以构造这样的具有终端奇点的更高模型：
 \begin{lemma}\label{terminalresolution}
-  \cite[Lemma 3.5]{liuSarkisovProgramGeneralized2021} Let $\sigma:(W,B_W)\dashrightarrow (X,B)$ be a $(K_W+B_W)$-non-positive birational map such that $\sigma_*(K_W+B_W)=K_X+B$ and $(W,B_W)$ is a $\mathbb{Q}$-factorial klt pair. Then there is a resolution of indeterminacy $\pi:\tilde{W}\to W $ and $\tilde{\sigma}:\tilde{W}\to X$ such that
+  \cite[Lemma 3.5]{liuSarkisovProgramGeneralized2021} 令 $\sigma:(W,B_W)\dashrightarrow (X,B)$是 $(K_W+B_W)$-非正性双有理映射，使得 $\sigma_*(K_W+B_W)=K_X+B$ 且 $(W,B_W)$ 是 $\mathbb{Q}$-分解的具有 klt奇点的代数簇对，那么存在一个映射解消$\pi:\tilde{W}\to W $ 和 $\tilde{\sigma}:\tilde{W}\to X$使得 
   \begin{itemize}
-    \item $(\tilde{W},B_{\tilde{W}})$ is $\mathbb{Q}$-factorial terminal and $\tilde{\sigma}_*B_{\tilde{W}}=B$,
-    \item $\tilde{\sigma}$ is $(K_{\tilde{W}}+B_{\tilde{W}})$-non-positive and $(\tilde{W},B_{\tilde{W}})\geqslant (X,B)$.
+    \item $(\tilde{W},B_{\tilde{W}})$ 是 $\mathbb{Q}$-分解的具有终端奇点的代数簇对，且 $\tilde{\sigma}_*B_{\tilde{W}}=B$；
+    \item $\tilde{\sigma}$ 是 $(K_{\tilde{W}}+B_{\tilde{W}})$-非正性的且 $(\tilde{W},B_{\tilde{W}})\geqslant (X,B)$；
   \end{itemize}
+  \[
+    \xymatrix{
+    & \widetilde{W}\ar[ld]\ar[rd] & \\
+      (W,B_{W})\ar@{.>}[rr] & &(X,B)
+    }
+  \]
+  
 \end{lemma}
 
-By Lemma \ref{terminalresolution}, we  replace $(W,B_W)$ by a log resolution such that $(W,B_{W})$ is terminal and $\sigma:W\to X$ and $\sigma':W\to X'$ are $(K_W+B_W)$-non-positive morphisms, and $(W,B_W)\geqslant (X,B),(X',B')$.
+通过应用引理 \ref{terminalresolution}，可以调整双标量法Sarkisov纲领的初始设定。用 $(W,B_W)$ 的奇点解消代替它，使得 $(W,B_{W})$具有终端奇点，且$\sigma:W\to X$ 和$\sigma':W\to X'$ 是 $(K_W+B_W)$-非正性态射，并且 $(W,B_W)\geqslant (X,B),(X',B')$。
 
-Take  very general ample $\mathbb{Q}$-divisors $ A $ and $ A' $ on $ S $ and $ S' $ such that $ G\sim_{\mathbb{Q}}-(K_X+B)+f^*A $ and $ H\sim_{\mathbb{Q}}-(K_{X'}+B')+f^{'*}A' $ are two ample $\mathbb{Q}$-divisors. Moreover, we may assume $ G $ and $ H $ satisfy $G_{W}:= \sigma^*G=\sigma^{-1}_*G $ and $ H_{W}:=\sigma^{'*}H=\sigma^{'-1}_*H $. Therefore, $\sigma_{*}(K_{W}+B_{W}+G_{W})=K_{X}+B+G$ is nef, and Lemma \ref{terminalorder} holds.
-Furthermore, we may assume $(W, B_W+gG_W+hH_W)$ is log smooth and terminal for all $0\leqslant g,h\leqslant 2$ by taking further blow-ups if necessary.
-Then we have:
-\begin{theorem}[Sarkisov program with double scaling]\label{main2}
+  取 $ S $ 和 $ S' $ 上的极丰沛 $\mathbb{Q}$-除子 $ A $ 和 $ A' $使得 $ G\sim_{\mathbb{Q}}-(K_X+B)+f^*A $ 和 $ H\sim_{\mathbb{Q}}-(K_{X'}+B')+f^{'*}A' $ 是丰沛 $\mathbb{Q}$-除子。进一步，可以假设 $ G $ 和 $ H $ 满足 $G_{W}:= \sigma^*G=\sigma^{-1}_*G $ 和 $ H_{W}:=\sigma^{'*}H=\sigma^{'-1}_*H $。因此 $\sigma_{*}(K_{W}+B_{W}+G_{W})=K_{X}+B+G$ 是数值有效的，因此引理 \ref{terminalorder} 的结论满足。
+如果必要的话取进一步解消，可以假设
+ $(W, B_W+gG_W+hH_W)$ 算术光滑，并且对所有 $0\leqslant g,h\leqslant 2$都具有终端奇点。
+ 在这个设定下，有双标量的Sarkisov纲领：
+\begin{theorem}[双标量Sarkisov纲领]\label{main2}
   \cite[Claim 13.12]{haconMinimalModelProgram2012}
-  Notations as above, there is a finite sequence of Sarkisov links
+  沿用上述记号，有有限多个Sarkisov连接的序列
   \[
     \xymatrix{
     X=X_0\ar@{.>}[r]\ar[d]_{f=f_{0}}&X_{1}\ar@{.>}[r]\ar[d]_{f_{1}}& X_{2}\ar[d]_{f_{2}}\ar@{.>}[r] &\cdots\ar@{.>}[r]&X_N=X'\ar[d]_{f_{N}} \\
     S=S_{0}&S_{1} &S_{2}&&S_N=S'
     }
   \]
-  and rational numbers
+  和有理数
   \[
     \begin{aligned}
       1 & =g_0\geqslant g_1 \geqslant \cdots \geqslant g_N   & =0 \\
       0 & =h_0\leqslant h_{1} \leqslant \cdots \leqslant h_N & =1 \\
     \end{aligned}
   \]
-  such that
+  满足
   \begin{enumerate}
-    \item For each $i$, $\sigma_i:W\dashrightarrow  X_{i}$ is $(K_{W}+B_{W}+g_{i}G_{W}+h_{i}H_{W})$-non-positive, and $(K_{X_{i}}+B_{i}+g_{i}G_{i}+h_{i}H_{i})=\sigma_{i*}(K_{W}+B_{W}+g_{i}G_{W}+h_{i}H_{W})$ is nef and is relatively trivial over $S_{i}$;
-    \item $(W,B_{W}+g_{i}G_{W}+h_{i}H_{W})\geqslant (X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i})$;
-    \item Each Sarkisov link $X_{i}\dashrightarrow X_{i+1}$ is given by a sequence of $(K_{X_{i}}+B_{i}+g_{i}G_{i}+h_{i}H_{i})$-trivial maps;
-    \item  The last link $X_{N} \to S_{N}$ is isomorphic to $X'\to S'$.
+    \item 对每个 $i$，双有理压缩映射 $\sigma_i:W\dashrightarrow  X_{i}$都是 $(K_{W}+B_{W}+g_{i}G_{W}+h_{i}H_{W})$-非正性的，并且 $(K_{X_{i}}+B_{i}+g_{i}G_{i}+h_{i}H_{i})=\sigma_{i*}(K_{W}+B_{W}+g_{i}G_{W}+h_{i}H_{W})$ 是数值有效的，且相对于$S_{i}$数值平凡；
+    \item $(W,B_{W}+g_{i}G_{W}+h_{i}H_{W})\geqslant (X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i})$；
+    \item 每一个Sarkisov连接 $X_{i}\dashrightarrow X_{i+1}$ 都是一组 $(K_{X_{i}}+B_{i}+g_{i}G_{i}+h_{i}H_{i})$-平凡的映射的复合；
+    \item 最后一个森纤维空间 $X_{N} \to S_{N}$ 同构于 $X'\to S'$。
   \end{enumerate}
 \end{theorem}
-Here trivial map means:
+这里平凡映射指
 \begin{definition}\label{trivialmap}
-  \cite[\S 13.2]{haconMinimalModelProgram2012} Let $f:X\dashrightarrow Y$ be a rational map of normal quasi-projective varieties over $S$, and $D$ be an $\mathbb{R}$-Cartier $\mathbb{R}$-divisor  on $X$ with $f_*D=D_Y$. Then $f$ is called \textbf{$D$-trivial} if $D$ is pull back of an $\mathbb{R}$-Cartier divisor on $S$.
+  \cite[\S 13.2]{haconMinimalModelProgram2012} 令 $f:X\dashrightarrow Y$ 是 $S$ 正规拟射影代数簇间的有理映射，并且 $D$是 $X$  上  $\mathbb{R}$-Cartier $\mathbb{R}$-除子，且$f_*D=D_Y$。   如果 $D$ 是 $S$ 上 某个  $\mathbb{R}$-Cartier 除子的拉回，那么 称$f$ 为 \textbf{$D$-平凡}(\textbf{$D$-trivial })。
 \end{definition}
 
-\section{Construction of Sarkisov links}
-In this section, we construct the links inductively. Suppose we have $\sigma_{i}:W\dashrightarrow X_{i}$ as in Theorem  \ref{main2}, that is
+\section{用双标量法构造Sarkisov连接}
+这一节将归纳地构造Sarkisov连接。假设已经构造定理\ref{main2}中的映射$\sigma_{i}:W\dashrightarrow X_{i}$，即
 \begin{itemize}
-  \item $f_{i}:(X_{i},B_{i})\to S_{i}$ is a log Mori fibre space and $\sigma_{i*} B_{W}=B_{i}$;
-  \item $\sigma_{i}:W\dashrightarrow  X_{i}$ is $(K_{W}+B_{W}+g_{i}G_{W}+h_{i}H_{W})$-non-positive, and $(K_{X_{i}}+B_{i}+g_{i}G_{i}+h_{i}H)=\sigma_{i*}(K_{W}+B_{W}+g_{i}G_{W}+h_{i}H_{W})$ is nef and is numerically trivial over $S_{i}$;
-  \item $(W,B_{W}+g_{i}G_{W}+h_{i}H_{W})\geqslant (X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i})$;
-  \item $0\leqslant g_{i},h_{i}\leqslant 1$ are  rational numbers.
+  \item $f_{i}:(X_{i},B_{i})\to S_{i}$ 是森纤维空间，且 $\sigma_{i*} B_{W}=B_{i}$；
+  \item $\sigma_{i}:W\dashrightarrow  X_{i}$ 是 $(K_{W}+B_{W}+g_{i}G_{W}+h_{i}H_{W})$-非正性的，且
+    \[(K_{X_{i}}+B_{i}+g_{i}G_{i}+h_{i}H)=\sigma_{i*}(K_{W}+B_{W}+g_{i}G_{W}+h_{i}H_{W}) \]
+    是数值有效的，并且相对于 $S_{i}$ 数值平凡；
+  \item $(W,B_{W}+g_{i}G_{W}+h_{i}H_{W})\geqslant (X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i})$；
+  \item $0\leqslant g_{i},h_{i}\leqslant 1$ 是有理数。
 \end{itemize}
-Then we need to show that there is a Sarkisov link $X_{i}\dashrightarrow X_{i+1}$ satisfying  Theorem \ref{main2}. We introduce the following notations which are similar to the Sarkisov degree in the original method:
-\begin{definition}
-  Let $C_{i}$ be a general $f_{i}$-vertical curve on $X_{i}$, then
+那么构造下一个满足定理\ref{main2} 的 Sarkisov 连接 $X_{i}\dashrightarrow X_{i+1}$。类比下降法的Sarkisov次数，引入下列记号：
+\begin{definition}\label{doubledegree}
+  令 $C_{i}$ 是被 $f_{i}$ 压缩的(也称为 $f$-vertical  )  $X_{i}$ 上的曲线，那么
   \begin{itemize}
-    \item $r_{i}:=\frac{H_{i}.C_{i}}{G_{i}.C_{i}}$;
-    \item Let $\Gamma$ be the set of $t\in [0,\frac{g_{i}}{r_{i}}] $ such that
+    \item $r_{i}:=\frac{H_{i}.C_{i}}{G_{i}.C_{i}}$；
+    \item 令 $\Gamma$ 是满足下列条件的 $t\in [0,\frac{g_{i}}{r_{i}}] $的集合
       \begin{enumerate}
         \item\label{singularcondition} $\left(W,B_{W}+g_{i}G_{W}+h_{i}H_{W}+t(H_{W}-r_{i}G_{W})\right)\geqslant \left(X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i}+t\left(H_{i}-r_{i}G_{i}\right)\right)$;
-        \item$K_{X_{i}}+B_{i}+g_{i}G_i+h_{i}H+t(H_{i}-r_{i}G_{i})$ is nef.
+        \item $K_{X_{i}}+B_{i}+g_{i}G_i+h_{i}H+t(H_{i}-r_{i}G_{i})$  数值有效.
       \end{enumerate}
-          Let $s_{i}=\max\, \Gamma $;
-    \item Let $D_{W,i}=B_{W}+g_{i}G_{W}+h_{i}H_{W}$ and $D_{i}=B_{i}+g_{i}G_{i}+h_{i}H_{i}$. Let $D_{W,i}(t)=B_{W}+g_{i}G_{W}+h_{i}H_{W}+t(H_{W}-r_{i}G_{W})$ and $D_{i}(t)=B_{i}+g_{i}G_{i}+h_{i}H_{i}+t (H_{i}-r_{i}G_{i})$. Let $g_{i+1}=g_{i}-r_{i}s_{i}$ and $h_{i+1}=h_{i}+s_{i}$. Note that $D_{W,i+1}=D_{W,i}(s_{i})$.
+          令 $s_{i}=\max\, \Gamma $;
+    \item 记 $D_{W,i}=B_{W}+g_{i}G_{W}+h_{i}H_{W}$ 和 $D_{i}=B_{i}+g_{i}G_{i}+h_{i}H_{i}$，并记
+      \[D_{W,i}(t)=B_{W}+g_{i}G_{W}+h_{i}H_{W}+t(H_{W}-r_{i}G_{W})\]
+      和
+      \[D_{i}(t)=B_{i}+g_{i}G_{i}+h_{i}H_{i}+t (H_{i}-r_{i}G_{i})\]
+      令 $g_{i+1}=g_{i}-r_{i}s_{i}$ 和 $h_{i+1}=h_{i}+s_{i}$。注意到 $D_{W,i+1}=D_{W,i}(s_{i})$.
   \end{itemize}
 \end{definition}
-Then we have (see \cite[Lemma 4.4]{liuSarkisovProgramGeneralized2021} for details)
+那么有
 \begin{enumerate}
   \item $r_{i}>0$;
-  \item either $\Gamma=\{0\} $ or $\Gamma$ is a closed interval;
-  \item $g_{i+1}=g_{i} \Leftrightarrow h_{i+1}=h_{i} \Leftrightarrow s_{i}=0$;
+  \item  $\Gamma=\{0\} $ 或 $\Gamma$ 是闭区间
+  \item $g_{i+1}=g_{i} \Leftrightarrow h_{i+1}=h_{i} \Leftrightarrow s_{i}=0$；
 \end{enumerate}
+(细节见 \cite[Lemma 4.4]{liuSarkisovProgramGeneralized2021} )
 
-\textbf{Construction of Sarkisov links}\label{Construction}: If $s_{i}=\frac{g_{i}}{r_{i}}$, then $g_{i+1}=0$. Let $N=i+1$  and let $f_{N}:X_{N}=X_{i} \to S_{N}=S_{i}$, then $X_{N}\to S_{N}$ is isomorphic to $f':X'\to S'$ (see Proposition \ref{nfi2}) and  the Sarkisov program stops. Otherwise, if  $s_{i}<\frac{g_{i}}{r_{i}}$, then we construct the Sarkisov link $X_{i}\dashrightarrow X_{i+1}$ as follows:
+\textbf{构造 Sarkisov 连接：}\label{Construction}
+
+如果 $s_{i}=\frac{g_{i}}{r_{i}}$，此时 $g_{i+1}=0$。 令 $N=i+1$  且 $f_{N}:X_{N}=X_{i} \to S_{N}=S_{i}$，那么  $X_{N}\to S_{N}$ 与 $f':X'\to S'$同构 (见命题 \ref{nfi2})，这样双标量Sarkisov纲领停止。 如果$s_{i}<\frac{g_{i}}{r_{i}}$，那么如下构造Sarkisov 连接 $X_{i}\dashrightarrow X_{i+1}$ ：
 \begin{enumerate}
-  \item\label{2a} Suppose $s_{i}$ is not the threshold of  condition (\ref{singularcondition}) of $\Gamma$. That is, there exists $0<\epsilon\ll 1$, such that for any divisor $E$ on $W$, we have
+  \item\label{2a} 若 $s_{i}$ 不是集合 $\Gamma$ 的第一个条件\ref{singularcondition}的阈值，也就是说存在 $0<\epsilon\ll 1$，使得 $W$ 上任意除子$E$，都有
   \[
     a(E;X_{i},D_{i}(s_{i}+\epsilon))\geqslant a(E;W,D_{W,i}(s_{i}+\epsilon))
   \]
-  and $K_{X_{i}}+D_{i}(s_{i}+\epsilon)$ is not nef. Then there is a $2$-dimensional $(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta G_{i})$-negative extremal face $F$ for some $0< \delta \ll \epsilon $, spanned by $R=\mathbb{R}_{\geqslant 0}[C_{i}]$ and another extremal ray $P$. Hence, there is a contraction $X_{i}\to T_{i}$ corresponding to $F$ factoring through $f_{i}$. Then we run the $(K_{X_{i}}+D_{i}(s_{i}+\epsilon))$-MMP over $T_{i}$ with scaling. After finitely many flips, we either have a $(K_{X_{i}}+D_{i}(s_{i}+\epsilon))$-minimal model, a divisorial contraction, or a log Mori fibre space over $T_{i}$:
-  \begin{enumerate}
-    \item\label{2a1}After finitely many flips $X_{i}\dashrightarrow X_{i+1}$ there is a log Mori fibre space $X_{i+1}\to S_{i+1}$. This is a link of type IV.
-    \item\label{2a2} After finitely many flips $X_{i}\dashrightarrow Z_{i}$ there is a divisorial contraction $Z_{i}\to X_{i+1}$, then let $S_{i+1}=T_{i}$ and $X_{i+1}\to S_{i+1}$ is a log Mori fibre space. This is a link of type III.
-    \item \label{2a3}After finitely many flips $X_{i}\dashrightarrow X_{i+1}$,  the contraction $X_{i+1}\to T_{i}$ is a log minimal model of $\left(X_{i},D_{i}\left(s_{i}+\epsilon\right)\right)$ over $T_{i}$. Let  $C'$ be the strict transform of  $C_{i}$ on $X_{i+1}$, then $(K_{X_{i+1}}+D_{i+1}(\epsilon)).C'=0$ and $(K_{X_{i+1}}+B_{i+1}).C'<0$, therefore there is a contraction  $X_{i+1} \to S_{i+1}$ over $T_i$, which is a log Mori fibre space. This is a link of type IV.
-  \end{enumerate}
-  \item\label{2b} Suppose $s_{i}$ is the threshold of condition (\ref{singularcondition}) of $\Gamma$. That is, there exists  $0<\epsilon \ll 1$ and a $\sigma_{i}$-exceptional divisor $E_{i}$ on $W$ such that
+  进一步假设 $K_{X_{i}}+D_{i}(s_{i}+\epsilon)$ 不是数值有效。那么对某个 $0< \delta \ll \epsilon $，存在一个 $2$ 维的 $(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta G_{i})$-负性 极端面 $F$，由$R=\mathbb{R}_{\geqslant 0}[C_{i}]$ 和令一个极端射线  $P$张成 (spanned by)。于是存在关于 $F$   的压缩态射$X_{i}\to T_{i}$穿过 $f_{i}$。 
   \[
-    a(E_{i};X_{i},D_{i}(s_{i}+\epsilon))< a(E_{i};W,D_{W,i}(s_{i}+\epsilon))
-    .\]
-  In this case, we have
-  \[
-    a(E_{i};X_{i},D_{i}(s_{i}))= a(E_{i};W,D_{W,i}(s_{i}))=-\operatorname{mult}_{E_{i}}(D_{W,i}(s_{i}))\leqslant 0
-    .\]
-
-  Let $p_{i}:Z_{i}\to X_{i}$ be the divisorial extraction of the divisor $E_{i}$ as in Corollary \ref{extraction}, and suppose $K_{Z_{i}}+D_{Z_{i}}(s_{i})=K_{Z_{i}}+B_{Z_{i}}+g_{i+1}G_{Z_{i}}+h_{i+1}H_{Z_{i}}=p_{i}^*\left(K_{X_{i}}+D_{i}\left(s_{i}\right)\right)$.
-  Take a sufficiently small $\delta$ such that $0<\delta \ll \epsilon \ll 1$ and
-  \[
-    K_{Z_{i}}+\Delta_{i}=p_{i}^*(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta G_{i})
+    \xymatrix{
+      X_{i}\ar[d]\ar[rdd]& \\
+      S_{i}\ar[rd]&\\
+         &T_{i}
+    }
   \]
-  is klt. Then we run the $(K_{Z_{i}}+\Delta_{i})$-MMP  over $S_{i}$. Since $Z_{i}$ is covered by $(K_{Z_{i}}+\Delta_{i})$-negative curves, it follows that $(K_{Z_{i}}+\Delta_{i})$ is not pseudo-effective over $S_{i}$, and this MMP ends with a log Mori fibre space. Moreover, this is an MMP for $p_{i}^*(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta'G_{i})$ for all $0<\delta'\leqslant\delta$. After finitely many flips, we either have a $(K_{Z_{i}}+\Delta_{i})$ log Mori fibre space or a $(K_{Z_{i}}+\Delta_{i})$ divisorial contraction.
+  接着运行相对于 $T_{i}$ 的关于某丰沛除子标量的$(K_{X_{i}}+D_{i}(s_{i}+\epsilon))$-MMP，在有限多个翻转后，会接着一个关于$(K_{X_{i}}+D_{i}(s_{i}+\epsilon))$的森纤维空间，或一个除子压缩，或一个极小模型。
   \begin{enumerate}
-    \item\label{2b1} After finitely many flips $Z_{i}\dashrightarrow X_{i+1}$, there is a log Mori fibre space $X_{i+1}\to S_{i+1}$. This is a link of type I. In this case we have $\rho(X_{i+1})=\rho(X_{i})+1$.
-    \item\label{2b2} After finitely many flips $Z_{i}\dashrightarrow Z_{i+1}'$, there is a divisorial contraction $q_{i}:Z_{i+1}'\to X_{i+1}$ over $S_i$. Then $X_{i+1}\to S_{i}=:S_{i+1}$ is a log Mori fibre space. This is a link of type II.
+    \item  若记$X_{i}\dashrightarrow X_{i+1}$是翻转的复合，并且有森纤维空间 $X_{i+1}\to S_{i+1}$，那么这是第四型的Sarkisov连接；
+    \item 若记$X_{i}\dashrightarrow Z_{i}$是翻转的复合，并接着一个除子压缩态射 $Z_{i}\to X_{i+1}$，那么 令 $S_{i+1}=T_{i}$，则 $X_{i+1}\to S_{i+1}$是一个森纤维空间。这是第三型的Sarkisov连接。
+    \item 若记 $X_{i}\dashrightarrow X_{i+1}$是翻转的复合，且 $X_{i+1}\to T_{i}$是关于 $\left(X_{i},D_{i}\left(s_{i}+\epsilon\right)\right)$ over $T_{i}$的极小模型。 令  $C'$ 是  $C_{i}$ 在 $X_{i+1}$上的双有理变换，则有 $(K_{X_{i+1}}+D_{i+1}(\epsilon)).C'=0$ 和 $(K_{X_{i+1}}+B_{i+1}).C'<0$，因此有压缩态射$X_{i+1} \to S_{i+1}$ over $T_i$。这个态射是森纤维空间，并且这是第三型Sarkisov连接。
+  \end{enumerate}
+    \item 如果 $s_{i}$ 集合$\Gamma$的第一个条件\ref{singularcondition}的阈值，也就是说 存在  $0<\epsilon \ll 1$ 和 $W$ 上的  $\sigma_{i}$-例外除子 $E_{i}$ 使得
+  \[ a(E_{i};X_{i},D_{i}(s_{i}+\epsilon))< a(E_{i};W,D_{W,i}(s_{i}+\epsilon)) \]
+  此时有
+  \[ a(E_{i};X_{i},D_{i}(s_{i}))= a(E_{i};W,D_{W,i}(s_{i}))=-\operatorname{mult}_{E_{i}}(D_{W,i}(s_{i}))\leqslant 0 \]
+  令 $p_{i}:Z_{i}\to X_{i}$ 是推论 \ref{extraction} 中除子 $E_{i}$的除子解压，并且记
+  \[K_{Z_{i}}+D_{Z_{i}}(s_{i})=K_{Z_{i}}+B_{Z_{i}}+g_{i+1}G_{Z_{i}}+h_{i+1}H_{Z_{i}}=p_{i}^*\left(K_{X_{i}}+D_{i}\left(s_{i}\right)\right)\]
+  取充分小的 $\delta$ 使得 $0<\delta \ll \epsilon \ll 1$ 且
+  \[ K_{Z_{i}}+\Delta_{i}=p_{i}^*(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta G_{i}) \]
+  是klt奇点。接下来运行相对于$S_{i}$ 的 $(K_{Z_{i}}+\Delta_{i})$-MMP。由于$Z_{i}$被$(K_{Z_{i}}+\Delta_{i})$-负性的曲线覆盖，所以$(K_{Z_{i}}+\Delta_{i})$相对于$S_{i}$不是伪有效的，并且这个MMP终结于森纤维空间。同时，对一任意$0<\delta'\leqslant\delta$，这也是$p_{i}^*(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta'G_{i})$-MMP。在有限多步翻转之后，要么终结于$(K_{Z_{i}}+\Delta_{i})$的森纤维空间，要么$(K_{Z_{i}}+\Delta_{i})$的除子压缩。
+  \begin{enumerate}
+    \item 若记 $Z_{i}\dashrightarrow X_{i+1}$是有限步翻转的复合，并终结于森纤维空间
+      \[X_{i+1}\to S_{i+1}\]
+      那么是第一型的Sarkisov连接。 
+      在这种情况下有 $\rho(X_{i+1})=\rho(X_{i})+1$。
+    \item 若记$Z_{i}\dashrightarrow Z_{i+1}'$是有限步翻转的复合，并且接着相对于 $S_{i}$的 除子压缩
+      \[q_{i}:Z_{i+1}'\to X_{i+1}\]
+     那么$X_{i+1}\to S_{i}=:S_{i+1}$是森纤维空间，这是第二型Sarkisov连接。
   \end{enumerate}
 \end{enumerate}
+类似于下降法中的Sarkisov次数，定义\ref{doubledegree}中的不变量也有变化：
 \begin{assertion}\label{behavior2}
-  By \cite[Lemma 13.14-17]{haconMinimalModelProgram2012} and \cite[Lemma 4.2]{liuSarkisovProgramGeneralized2021}, we have:
-  \begin{enumerate}
-    \item $r_{i}\leqslant r_{i+1}$. Moreover, in the case \ref{2a1}, we have $r_{i}<r_{i+1}$.
-    \item Since the birational map $X_{i}\dashrightarrow X_{i+1}$ is over $T_{i}$ (respectively over $S_{i}$) and $(K_{X_{i}}+D_{i}(s_{i}))$ is numerically trivial over $T_{i}$ (respectively over $S_{i}$) in case \ref{2a} (respectively case \ref{2b}), it follows that $a(E;X_{i},D_{i}(s_{i}))= a(E;X_{i+1},D_{i+1})$ for any divisor $E$ over $W$ and so we have the inequality
-          \[
-            a(E;X_{i+1},D_{i+1})\geqslant a(E;W,D_{W,i+1}).
-          \]
-    \item\label{2adicrepancy}  In the case \ref{2a}, for any divisor $E \subset W$, we have $a(E;X_{i},D_{i}(s_{i}+\epsilon))\leqslant a(E;X_{i+1},D_{i+1}(\epsilon))$ for all $0<\epsilon\ll 1$. Moreover, since $X_{i} \not\cong X_{i+1}$, there is a divisor $F$ over $W$ such that  $a(F;X_{i},D_{i}(s_{i}+\epsilon))< a(F;X_{i+1},D_{i+1}(\epsilon))$.
-
-    \item\label{2bdiscrepancy}   In case \ref{2b}, for any divisor $E \subset W$, we have $a(E;X_{i},D_{i}(s_{i}+\epsilon)-\delta G_{i})\leqslant a(E;X_{i+1},D_{i+1}(\epsilon)-\delta G_{i+1})$ for all $0<\epsilon\ll 1$. Moreover, since $X_{i} \not\cong X_{i+1}$, there is a divisor $F$ over $W$ such that  $a(F;X_{i},D_{i}(s_{i}+\epsilon)-\delta G_{i})< a(F;X_{i+1},D_{i+1}(\epsilon)-\delta G_{i+1})$.
-    \item  $h_{i}\leqslant 1$, and $h_{i}=1$ if and only if $g_{i}=0$;
-  \end{enumerate}
+  由 \cite[Lemma 13.14-17]{haconMinimalModelProgram2012} 和 \cite[Lemma 4.2]{liuSarkisovProgramGeneralized2021}可以得到：
+  \begin{itemize}
+    \item $r_{i}\leqslant r_{i+1}$。在(1).1的情况，还有 $r_{i}<r_{i+1}$。
+    \item 在情况 (1) 中由于 $X_{i}\dashrightarrow X_{i+1}$ 是相对于 $T_{i}$的 $(K_{X_{i}}+D_{i}(s_{i}))$-平凡映射，所以对任意的$W$ 之上的除子$E$ ，都有
+      \[a(E;X_{i},D_{i}(s_{i}))= a(E;X_{i+1},D_{i+1})\]
+      和不等式
+      \[ a(E;X_{i+1},D_{i+1})\geqslant a(E;W,D_{W,i+1}) \]
+    \item 在情况 (2) 中由于 $X_{i}\dashrightarrow X_{i+1}$ 是相对于 $S_{i}$的 $(K_{X_{i}}+D_{i}(s_{i}))$-平凡映射，所以同样对任意的$W$ 之上的除子$E$ ，都有
+      \[a(E;X_{i},D_{i}(s_{i}))= a(E;X_{i+1},D_{i+1})\]
+      和不等式
+      \[ a(E;X_{i+1},D_{i+1})\geqslant a(E;W,D_{W,i+1}) \]
+    \item\label{2adicrepancy} 在情况 (1)中，任意除子$E \subset W$和 $0<\epsilon\ll 1$，都有
+      \[a(E;X_{i},D_{i}(s_{i}+\epsilon))\leqslant a(E;X_{i+1},D_{i+1}(\epsilon))\] 
+      并且因为 $X_{i} \not\cong X_{i+1}$，所以 有$W$ 之上的除子$F$使得 
+      \[a(F;X_{i},D_{i}(s_{i}+\epsilon))< a(F;X_{i+1},D_{i+1}(\epsilon))\]
+    \item\label{2bdiscrepancy} 在情况(2)中，任何除子 $E \subset W$，对所有$0<\epsilon\ll 1$都有
+      \[a(E;X_{i},D_{i}(s_{i}+\epsilon)-\delta G_{i})\leqslant a(E;X_{i+1},D_{i+1}(\epsilon)-\delta G_{i+1})\]
+      并且因为 $X_{i} \not\cong X_{i+1}$，所以 有$W$ 之上的除子$F$使得 
+      \[a(F;X_{i},D_{i}(s_{i}+\epsilon)-\delta G_{i})< a(F;X_{i+1},D_{i+1}(\epsilon)-\delta G_{i+1})$\]
+    \item  $h_{i}\leqslant 1$，且 $h_{i}=1$ 当且仅当 $g_{i}=0$；
+  \end{itemize}
 \end{assertion}
-\section{Termination}
+
+\section{双标量Sarkisov纲领的终结性}
 \begin{lemma}\label{termination2}
   \cite[Lemma 13.18-19]{haconMinimalModelProgram2012} (or \cite[Lemma 4.9]{liuSarkisovProgramGeneralized2021}) Suppose we construct a sequence of Sarkisov links:
   \[
@@ -168,11 +203,11 @@ Then we have (see \cite[Lemma 4.4]{liuSarkisovProgramGeneralized2021} for detail
   \begin{enumerate}
     \item This essentially follows the finiteness of weak log canonical models (Theorem \ref{finitewlcm}). We construct the subspace $V$ of $\operatorname{WDiv}_{\mathbb{R}}(W)$ as follows:
       \begin{enumerate}
-        \item If $h_{k}>0$ for some $k$. Since $H_{W}$ is nef and big,  there is an  ample $\mathbb{Q}$-divisor $A_{W}$ and an effective $\mathbb{Q}$-divisor $C_{W}$  such that $H_{W}\sim_{\mathbb{Q}}A_{W}+C_{W}$. Let $V$ be the affine space spanned by components of  $B_{W},G_{W},H_{W},C_{W}$, then for $i>k$:
+        \item If $h_{k}>0$ for some $k$. Since $H_{W}$ is 数值有效 and big,  there is an  ample $\mathbb{Q}$-divisor $A_{W}$ and an effective $\mathbb{Q}$-divisor $C_{W}$  such that $H_{W}\sim_{\mathbb{Q}}A_{W}+C_{W}$. 令 $V$ be the affine space spanned by components of  $B_{W},G_{W},H_{W},C_{W}$, then for $i>k$:
               \[
                   B_{W}+g_{i}G_{W}+h_{i}H_{W}\sim_{\mathbb{Q}} h_{k}A_{W}+B_{W}+g_{i}G_{W}+(h_{i}-h_{k})H_{W}+h_{k}C_{W}=:\Delta_{i} \in \mathcal{L}_{h_{k}A_{W}}(V)
               \]
-        \item If $h_{k}=0$ for all $k$, then $h_{i}\equiv 0$ and $g_{i}\equiv 1$.  Since $G_{W}$ is nef and big,  there is  an  ample $\mathbb{Q}$-divisor $A_{W}$ and an effective $\mathbb{Q}$-divisor $C_{W}$  such that $G_{W}\sim_{\mathbb{Q}}A_{W}+C_{W}$. Let $V$ be the affine space spanned by components of  $B_{W},C_{W}$, then
+        \item If $h_{k}=0$ for all $k$, then $h_{i}\equiv 0$ and $g_{i}\equiv 1$.  Since $G_{W}$ is 数值有效 and big,  there is  an  ample $\mathbb{Q}$-divisor $A_{W}$ and an effective $\mathbb{Q}$-divisor $C_{W}$  such that $G_{W}\sim_{\mathbb{Q}}A_{W}+C_{W}$. 令 $V$ be the affine space spanned by components of  $B_{W},C_{W}$, then
               \[
                   B_{W}+G_{W}\sim_{\mathbb{Q}} A_{W}+B_{W}+C_{W}=:\Delta_{i} \in \mathcal{L}_{A_{W}}(V)
               \]
@@ -185,7 +220,7 @@ Then we have (see \cite[Lemma 4.4]{liuSarkisovProgramGeneralized2021} for detail
           \begin{enumerate}
             \item If $h_{i}=0$ for all $i$, hence $g_{i}=1$ for all $i$.
 
-                  Since $G_{i}$ is big, we have $G_{k}=A_{k}+E_{k}$ for some ample $\mathbb{Q}$-divisor $A_{k}$ and effective $\mathbb{Q}$-divisor $E_{k}$. Let $B_{k}'=B_{k}+(1-\epsilon)G_{k}+\frac{\epsilon}{2} E_{k}$ for sufficiently small $\epsilon$ such that $(X_{k},B_{k}')$ is klt. Then $(K_{X_{k}}+B_{k}').R_{i}<0$ and $(K_{X_{k}}+B_{k}'+\frac{\epsilon}{2} A_{k}).R_{i}<0$ for all $i>k$. By the Cone theorem, we have
+                  Since $G_{i}$ is big, we have $G_{k}=A_{k}+E_{k}$ for some ample $\mathbb{Q}$-divisor $A_{k}$ and effective $\mathbb{Q}$-divisor $E_{k}$. 令 $B_{k}'=B_{k}+(1-\epsilon)G_{k}+\frac{\epsilon}{2} E_{k}$ for sufficiently small $\epsilon$ such that $(X_{k},B_{k}')$ is klt. Then $(K_{X_{k}}+B_{k}').R_{i}<0$ and $(K_{X_{k}}+B_{k}'+\frac{\epsilon}{2} A_{k}).R_{i}<0$ for all $i>k$. By the Cone theorem, we have
                   \[
                     \overline{\operatorname{NE}}(X_{k})=\overline{\operatorname{NE}}(X_{k})_{K_{X_{k}}+B_{k}'+\frac{\epsilon}{2}A_{k}\geqslant 0} +\sum_{\alpha \in\Lambda\text{ finite set}}R_{\alpha}.
                   \]
@@ -193,7 +228,7 @@ Then we have (see \cite[Lemma 4.4]{liuSarkisovProgramGeneralized2021} for detail
 
             \item If $h_i>0$ for some $i>k$, then we may assume $h_k>0$ after replacing $k$ by  $i$. In this case, we suppose $0<h_k<1$.
 
-                  Since $H_{k}$ is big, we have $h_{k}H_{k}=A_{k}+E_{k}$ for some ample $\mathbb{Q}$-divisor $H_{k}$ and effective $\mathbb{Q}$-divisor  $E_{k}$. Let $B_{k}'=B_{k}+(1-\epsilon)h_{k}H_{k}+\epsilon E_{k}$ for sufficiently small $\epsilon$ such that $(X_{k},B_{k}')$ is klt. Then $(K_{X_{k}}+B_{k}').R_{i}<0$ and $(K_{X_{k}}+B_{k}'+\epsilon A_{k}).R_{i}<0$ for all $i>k$. By the Cone theorem, we have
+                  Since $H_{k}$ is big, we have $h_{k}H_{k}=A_{k}+E_{k}$ for some ample $\mathbb{Q}$-divisor $H_{k}$ and effective $\mathbb{Q}$-divisor  $E_{k}$. 令 $B_{k}'=B_{k}+(1-\epsilon)h_{k}H_{k}+\epsilon E_{k}$ for sufficiently small $\epsilon$ such that $(X_{k},B_{k}')$ is klt. Then $(K_{X_{k}}+B_{k}').R_{i}<0$ and $(K_{X_{k}}+B_{k}'+\epsilon A_{k}).R_{i}<0$ for all $i>k$. By the Cone theorem, we have
                   \[
                     \overline{\operatorname{NE}}(X_{k})=\overline{\operatorname{NE}}(X_{k})_{K_{X_{k}}+B_{k}'+\epsilon A_{k}\geqslant 0} +\sum_{\alpha \in\Lambda\text{ finite set}}R_{\alpha}.
                   \]
