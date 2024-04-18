@@ -1,7 +1,7 @@
 \chapter{双标量法}
- 本章介绍\cite[\S 13]{haconMinimalModelProgram2012} 和  \cite{liuSarkisovProgramGeneralized2021}中的双标量法构造(double scaling)的Sarkisov纲领。下降法用 $X'$上的除子 $H'$ 来作为标量，双标量法在  $X$ 和 $X'$ 上分别构造除子 $G$ 和 $H'$ ，作为双标量。
+ 本章介绍\cite[\S 13]{haconMinimalModelProgram2012} 和  \cite{liuSarkisovProgramGeneralized2021}中的双标量法构造 (double scaling)的Sarkisov纲领。下降法用 $X'$上的除子 $H'$ 来作为标量，双标量法在  $X$ 和 $X'$ 上分别构造除子 $G$ 和 $H'$ ，作为双标量。
 % \textbf{初始设定：}
-令 $W$ 为 MMP-相关的森纤维空间 $f:(X,B)\to S$ 和 $f':(X',B')\to S'$  的公共解消，  取在 $S$ 上的$\mathbb{Q}$-除子 $A$ 使得 $G \sim_\mathbb{Q} -(K_{X}+B) +f^*A$ 是一般的丰沛 $\mathbb{Q}$-除子。类似的，取 $S'$ 上的丰沛$\mathbb{Q}$-除子，使得 $H' \sim_\mathbb{Q} -(K_{X'}+B') +f'^*A'$ 是一般的丰沛 $\mathbb{Q}$-除子。那么  $(X,B+G)$ 和 $(X',B'+H')$  是$W$ (关于 $B_{W}+G_{W}$ 和 $B_{W}+H_{W}$)的两个弱算术典范模型。双标量Sarkisov纲领将构造 $W$ 的有限多个弱算术典范模型 $(X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i})$，它们是分别关于 $(W,B_{W}+g_{i}G_{W}+h_{i}H_{W})$的模型，其中 $0\leqslant g_i,h_i\leqslant 1$。这些模型间的双有理映射 $\psi_{i}:X_{i}\dashrightarrow X_{i+1}$是通过$2$-ray game 构造的Sarkisov连接映射。
+令 $W$ 为 MMP-相关的森纤维空间 $f:(X,B)\to S$ 和 $f':(X',B')\to S'$  的公共解消，  取在$ S $ 上的$\mathbb{Q}$-除子 $A$ 使得 $G \sim_\mathbb{Q} -(K_{X}+B) +f^*A$ 是一般的丰沛 $\mathbb{Q}$-除子。类似的，取 $S'$ 上的丰沛$\mathbb{Q}$-除子，使得 $H' \sim_\mathbb{Q} -(K_{X'}+B') +f'^*A'$ 是一般的丰沛 $\mathbb{Q}$-除子。那么  $(X,B+G)$ 和 $(X',B'+H')$  是$W$ (关于 $B_{W}+G_{W}$ 和 $B_{W}+H_{W}$)的两个弱算术典范模型。双标量Sarkisov纲领将构造 $W$ 的有限多个弱算术典范模型 $(X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i})$，它们是分别关于 $(W,B_{W}+g_{i}G_{W}+h_{i}H_{W})$的模型，其中 $0\leqslant g_i,h_i\leqslant 1$。这些模型间的双有理映射 $\psi_{i}:X_{i}\dashrightarrow X_{i+1}$是通过$2$-ray game 构造的Sarkisov连接映射。
 
 和下降法相比，这种方法在一个更小的集合内运行MMP和Sarkisov纲领。所有的 $X_{i}$都对应一个$(K_{W}+D_{i})$-非正性的双有理压缩映射 $W\dashrightarrow X_{i}$，其中 $D_{i}$是 $\operatorname{WDiv}_{\mathbb{R}}(W)$ 的一个紧子集 $\mathcal{E}_{A}(V)$。对于这个子集有弱算术典范模型的有限性性质，由此可以得到双标量法的Sarkisov纲领的终结性。
 \section{定义和引理}
@@ -10,7 +10,7 @@
   令 $f: X\dashrightarrow Y$ 是正规拟射影代数簇间的双有理映射，如果
   \begin{itemize}
     \item $f$ 不解压除子；
-    \item 对所有 在 $X$ 之上的(包括更高模型上的)除子 $E$ 都有  $a(E;X,B_{X})\leqslant a(E;Y,B_{Y})$，
+    \item 对所有 在 $X$ 之上的 (包括更高模型上的)除子 $E$ 都有  $a(E;X,B_{X})\leqslant a(E;Y,B_{Y})$，
   \end{itemize}
   那么记 $(X,B)\geqslant (Y,B_{Y})$。
 \end{definition}
@@ -178,7 +178,7 @@
     \item\label{2bdiscrepancy} 在情况(2)中，任何除子 $E \subset W$，对所有$0<\epsilon\ll 1$都有
       \[a(E;X_{i},D_{i}(s_{i}+\epsilon)-\delta G_{i})\leqslant a(E;X_{i+1},D_{i+1}(\epsilon)-\delta G_{i+1})\]
       并且因为 $X_{i} \not\cong X_{i+1}$，所以 有$W$ 之上的除子$F$使得 
-      \[a(F;X_{i},D_{i}(s_{i}+\epsilon)-\delta G_{i})< a(F;X_{i+1},D_{i+1}(\epsilon)-\delta G_{i+1})$\]
+      \[a(F;X_{i},D_{i}(s_{i}+\epsilon)-\delta G_{i})< a(F;X_{i+1},D_{i+1}(\epsilon)-\delta G_{i+1}) \]
     \item  $h_{i}\leqslant 1$，且 $h_{i}=1$ 当且仅当 $g_{i}=0$；
   \end{itemize}
 \end{assertion}
@@ -241,9 +241,9 @@
           Since $\rho(X_{i})= \rho(X_{j})$, $X_{i}$  and $X_{j}$ are linked by  the Sarkisov links of type II. But this contracts  \ref{2bdiscrepancy} of  assertion \ref{behavior2}.
   \end{enumerate}
 \end{proof}
-\begin{prop}\label{nfi2}
+\begin{proposition}\label{nfi2}
   $X_{N}\to S_{N}$ is isomorphic to $X'\to S'$.
-\end{prop}
+\end{proposition}
 \begin{proof}
   Similarly to 2 of Theorem \ref{nfi}, we have $h_{N}=1$ and hence $X_{N}\to S_{N}$ is isomorphic to $X'\to S'$.
 \end{proof}
