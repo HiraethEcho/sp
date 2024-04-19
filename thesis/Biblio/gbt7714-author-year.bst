@@ -72,12 +72,12 @@ FUNCTION {load.config}
   #0 'terms.in.macro :=
   #1 'year.after.author :=
   #0 'period.after.author :=
-  #0 'italic.book.title :=
+  #1 'italic.book.title :=
   #1 'sentence.case.title :=
   #0 'link.title :=
   #1 'title.in.journal :=
   #0 'show.patent.country :=
-  #1 'show.mark :=
+  #0 'show.mark :=
   #0 'space.before.mark :=
   #1 'show.medium.type :=
   "slash" 'component.part.label :=
