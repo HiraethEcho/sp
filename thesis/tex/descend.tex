@@ -182,7 +182,8 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree} )
 接下来证明它们同构。 取 $X$ 上  极丰沛除子 $ D $，且$D'  $ 是在$ X' $上的严格双有理变换。那么  $ D' $ 是 $ f' $-丰沛的，所以存在$ 0<d\ll1 $使得：
           \begin{itemize}
             \item $ K_X+B+\frac{1}{\mu }H+dD $ 是丰沛除子；
-            \item $ K_{X'}+B'+\frac{1}{\mu }H'+dD' $ 是丰沛除子。
+            \item $ K_{X'}+B'+\frac{1}{\mu }H'+dD' $ 是丰沛除子；
+            \item $(W,B_{W}+\frac{1}{\mu}H_{W}+dD_{W})$具有klt奇点 (因为 $\mu \geqslant \lambda$，所以可以做到)。
           \end{itemize}
           因此 $X$ 和 $X'$ 都是 $(W,B_{W}+\frac{1}{\mu}H_{W}+dD_{W})$的算术典范模型，由算术典范模型的唯一性， $X\cong X'$。更进一步， $f$ 和  $f'$压缩相同的曲线数值等价类，所以两个森纤维空间同构。
   \end{enumerate}
@@ -198,7 +199,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree} )
 \begin{proof}
   分两种情况考虑：
   \begin{enumerate}
-    \item 假设 $\lambda\leqslant \mu$ 和  $ K_X+B+\frac{1}{\mu}H $ 不是数值有效的。记 $ f $ 是 $ (K_X+B) $-负性的极端射线$ R= \overline{\operatorname{ NE }}(X/S) $的压缩态射，那么由 $\mu$ 的定义有$ (K_X+B+\frac{1}{\mu}H).R=0 $ 。存在极端射线 $ P \subset \overline{\operatorname{ NE }}(X) $使得$ (K_X+B+\frac{1}{\mu}H).P<0 $ 且 $ F:=P+R $是极端面  (细节见 \citet [5.4.2]{cortiFactoringBirationalMaps} )。取  $ 0<\delta\ll 1 $ 使得 $ (K_X+B+(\frac{1}{\mu}-\delta)H).P<0 $，由于  $H$ 是 $f$-丰沛的，有 $  (K_X+B+(\frac{1}{\mu}-\delta)H).R<0 $。因此 $ F $ 是 $  (K_X+B+(\frac{1}{\mu}-\delta)H) $-负性的极端面。由于 $ (X,B+(\frac{1}{\mu}-\delta)H) $有 klt奇点，由压缩定理，存在关于 $F$ 的压缩态射 $ g:X\to T $  穿过 $ f:X\to S $。由于  $ (X,B+\frac{1}{\mu}H) $具有klt奇点，且 $ \rho(X/T)=2 $，可以运行 相对于$T$ 的 关于某丰沛除子标量的 $ (K_X+B+\frac{1}{\mu}H) $-MMP。由于 $ B+\frac{1}{\mu}H $是相对于 $T$的大除子，这个 MMP终结。有下列情况：
+    \item 假设 $\lambda\leqslant \mu$ 和  $ K_X+B+\frac{1}{\mu}H $ 不是数值有效的。记 $ f $ 是 $ (K_X+B) $-负性的极端射线$ R= \overline{\operatorname{ NE }}(X/S) $的压缩态射，那么由 $\mu$ 的定义有$ (K_X+B+\frac{1}{\mu}H).R=0 $ 。存在极端射线 $ P \subset \overline{\operatorname{ NE }}(X) $使得$ (K_X+B+\frac{1}{\mu}H).P<0 $ 且 $ F:=P+R $是极端面  (细节见 \cite [5.4.2]{cortiFactoringBirationalMaps} )。取  $ 0<\delta\ll 1 $ 使得 $ (K_X+B+(\frac{1}{\mu}-\delta)H).P<0 $，由于  $H$ 是 $f$-丰沛的，有 $  (K_X+B+(\frac{1}{\mu}-\delta)H).R<0 $。因此 $ F $ 是 $  (K_X+B+(\frac{1}{\mu}-\delta)H) $-负性的极端面。由于 $ (X,B+(\frac{1}{\mu}-\delta)H) $有 klt奇点，由压缩定理，存在关于 $F$ 的压缩态射 $ g:X\to T $  穿过 $ f:X\to S $。由于  $ (X,B+\frac{1}{\mu}H) $具有klt奇点，且 $ \rho(X/T)=2 $，可以运行 相对于$T$ 的 关于某丰沛除子标量的 $ (K_X+B+\frac{1}{\mu}H) $-MMP。由于 $ B+\frac{1}{\mu}H $是相对于 $T$的大除子，这个 MMP终结。有下列情况：
     \begin{enumerate}
       \item 在有限多步翻转复合 $ X\dashrightarrow Z $后，第一个非翻转的压缩态射是一个除子压缩 $ p:Z\to X_1 $，之后是一个森纤维空间的压缩态射 $f_{1}:(X_{1},B_{1}+\frac{1}{\mu}H_{1})\to S_1$。这个压缩态射$f_1$也是关于$(X_{1},B_{1})$的森纤维空间。
       这是第三型的Sarkisov连接。

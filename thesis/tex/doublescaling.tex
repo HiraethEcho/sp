@@ -7,27 +7,27 @@
 \section{定义和引理}
 令 $(W, B_W)$ 是 $\mathbb{Q}$-分解具有 klt奇点的代数簇对，并且 $f:(X, B)\to S$ 和 $f':(X', B')\to S'$ 是两个不同的$(K_{W}+B_{W})$-MMP 的输出，且都是森纤维空间。接下来给出一些所需的记号和引理。 
 \begin{definition}
-  令 $f: X\dashrightarrow Y$ 是正规拟射影代数簇间的双有理映射，如果
+  令 $f: W\dashrightarrow X$ 是正规拟射影代数簇间的双有理映射，如果
   \begin{itemize}
     \item $f$ 不解压除子；
-    \item 对所有 在 $X$ 之上的 (包括更高模型上的)除子 $E$ 都有  $a(E;X,B_{X})\leqslant a(E;Y,B_{Y})$，
+    \item 对所有 在 $W$ 之上的 (包括更高模型上的)除子 $E$ 都有  $a(E;X,B_{X})\geqslant a(E;W,B_{W})$，
   \end{itemize}
-  那么记 $(X,B)\geqslant (Y,B_{Y})$。
+  那么记 $(W,B_{W})\geqslant (X,B_{X})$。
 \end{definition}
 对于具有终端奇点的代数簇对，有下面的引理：
 \begin{lemma}\label{terminalorder}
-  \cite[Lemma 13.8]{haconMinimalModelProgram2012} 令 $f:W\dashrightarrow X$ 是双有理映射且 $(W,B_W)$  具有终端奇点。如果
+  \cite[Lemma 13.8]{haconMinimalModelProgram2012} 令 $f:W\dashrightarrow X$ 是双有理映射且 $(W,B_{W})$  具有终端奇点。如果
   \begin{itemize}
     \item $f$不解压除子；
     \item $K_X+B$ 是数值有效除子，其中$B=f_*B_W$；
-    \item  对所有$E \subset W$之上的除子 $E$ 都有 $a(E;X,B)\geqslant a(E;W,B_W)$。
+    \item  对所有$E \subset W$之上的除子 $E$ 都有 $a(E;X,B)\geqslant a(E;W,B_{W})$。
   \end{itemize}
   那么有
   \begin{itemize}
-    \item $(W,B_W)\geqslant (X,B)$;
-    \item $(X,B)$ 具有klt奇点；
-    \item 如果 $Z\to X$ 是 关于$E$的除子解压，其中$a(E;X,B)\leqslant 0$，那么 $E$是 $W$上的除子；
-    \item 如果 $Z\to X$是 $(X,B)$的终端化，那么 $W\dashrightarrow Z$ 不解压除子。
+    \item $(W,B_{W})\geqslant (X,B_{X})$;
+    \item $(X,B_{X})$ 具有klt奇点；
+    \item 如果 $Z\to X$ 是 关于$E$的除子解压，其中$a(E;X,B_{X})\leqslant 0$，那么 $E$是 $W$上的除子；
+    \item 如果 $Z\to X$是 $(X,B_{X})$的终端化，那么 $W\dashrightarrow Z$ 不解压除子。
   \end{itemize}
 \end{lemma}
 相反的，从非正性映射出发，可以构造这样的具有终端奇点的更高模型：
@@ -46,11 +46,14 @@
   
 \end{lemma}
 
-通过应用引理 \ref{terminalresolution}，可以调整双标量法Sarkisov纲领的初始设定。用 $(W,B_W)$ 的奇点解消代替它，使得 $(W,B_{W})$具有终端奇点，且$\sigma:W\to X$ 和$\sigma':W\to X'$ 是 $(K_W+B_W)$-非正性态射，并且 $(W,B_W)\geqslant (X,B),(X',B')$。
+通过应用引理 \ref{terminalresolution}，可以调整双标量法Sarkisov纲领的初始设定：
+\begin{assertion}\label{doublesetting}
+用 $(W,B_W)$ 的奇点解消代替它，使得 $(W,B_{W})$具有终端奇点，且$\sigma:W\to X$ 和$\sigma':W\to X'$ 是 $(K_W+B_W)$-非正性态射，并且 $(W,B_W)\geqslant (X,B),(X',B')$。
 
-  取 $ S $ 和 $ S' $ 上的极丰沛 $\mathbb{Q}$-除子 $ A $ 和 $ A' $使得 $ G\sim_{\mathbb{Q}}-(K_X+B)+f^*A $ 和 $ H\sim_{\mathbb{Q}}-(K_{X'}+B')+f^{'*}A' $ 是丰沛 $\mathbb{Q}$-除子。进一步，可以假设 $ G $ 和 $ H $ 满足 $G_{W}:= \sigma^*G=\sigma^{-1}_*G $ 和 $ H_{W}:=\sigma^{'*}H=\sigma^{'-1}_*H $。因此 $\sigma_{*}(K_{W}+B_{W}+G_{W})=K_{X}+B+G$ 是数值有效的，因此引理 \ref{terminalorder} 的结论满足。
+  取 $ S $ 和 $ S' $ 上的极丰沛 $\mathbb{Q}$-除子 $ A $ 和 $ A' $使得 $ G\sim_{\mathbb{Q}}-(K_X+B)+f^*A $ 和 $ H\sim_{\mathbb{Q}}-(K_{X'}+B')+f'^{*}A' $ 是丰沛 $\mathbb{Q}$-除子。进一步，可以假设 $ G $ 和 $ H $ 满足 $G_{W}:= \sigma^*G=\sigma^{-1}_*G $ 和 $ H_{W}:=\sigma'^{*}H=\sigma'^{-1}_*H $。因此 $\sigma_{*}(K_{W}+B_{W}+G_{W})=K_{X}+B+G$ 是数值有效的，因此引理 \ref{terminalorder} 的结论满足。
 如果必要的话取进一步解消，可以假设
  $(W, B_W+gG_W+hH_W)$ 算术光滑，并且对所有 $0\leqslant g,h\leqslant 2$都具有终端奇点。
+\end{assertion}
  在这个设定下，有双标量的Sarkisov纲领：
 \begin{theorem}[双标量Sarkisov纲领]\label{main2}
   \cite[Claim 13.12]{haconMinimalModelProgram2012}
@@ -65,6 +68,7 @@
   \[
     \begin{aligned}
       1 & =g_0\geqslant g_1 \geqslant \cdots \geqslant g_N   & =0 \\
+      % 0 & =h_0\leqslant h_{1} \leqslant \cdots \leqslant h_N &  \\
       0 & =h_0\leqslant h_{1} \leqslant \cdots \leqslant h_N & =1 \\
     \end{aligned}
   \]
@@ -78,18 +82,21 @@
 \end{theorem}
 这里平凡映射指
 \begin{definition}\label{trivialmap}
-  \cite[\S 13.2]{haconMinimalModelProgram2012} 令 $f:X\dashrightarrow Y$ 是 $S$ 正规拟射影代数簇间的有理映射，并且 $D$是 $X$  上  $\mathbb{R}$-Cartier $\mathbb{R}$-除子，且$f_*D=D_Y$。   如果 $D$ 是 $S$ 上 某个  $\mathbb{R}$-Cartier 除子的拉回，那么 称$f$ 为 \textbf{$D$-平凡}(\textbf{$D$-trivial })。
+  \cite[\S 13.2]{haconMinimalModelProgram2012} 令 $f:X\dashrightarrow Y$ 是相对于$S$ 正规拟射影代数簇间的有理映射，并且 $D$是 $X$  上  $\mathbb{R}$-Cartier $\mathbb{R}$-除子，且$f_*D=D_Y$。   如果 $D$ 是 $S$ 上 某个  $\mathbb{R}$-Cartier 除子的拉回，那么 称$f$ 为 \textbf{$D$-平凡}(\textbf{$D$-trivial })。
 \end{definition}
 
 \section{用双标量法构造Sarkisov连接}
-这一节将归纳地构造Sarkisov连接。假设已经构造定理\ref{main2}中的映射$\sigma_{i}:W\dashrightarrow X_{i}$，即
+这一节将归纳地构造Sarkisov连接。对于 森纤维空间$X=X_{0}\to S=S_{0}$，将$(X_{0},B_{0}+1\cdot G_{0}+0\cdot H_{0}) $看作$(W,B_{W}+1\cdot G_{W}+0\cdot H_{W}) $ 的弱算术典范模型，并把$(X‘,B’+0\cdot G'+1\cdot H') $看作$(W,B_{W}+0\cdot G_{W}+1\cdot H_{W}) $ 的弱算术典范模型。归纳地构造  $f_{i}:X_{i}\to S_{i}$，使得$(X_{i},B_{i}+g_{i}\cdot G_{i}+h_{i}\cdot H_{i}) $是$(W,B_{W}+g_{i}\cdot G_{W}+h_{i}\cdot H_{W}) $的弱算术典范模型。在这个过程中，$g_{i}$ 逐渐减少为$g_{N}=0$，而$h_{i}$逐渐增加为$h_{N}=1$，并且$X_{N}\to S_{N}$与$X'\to S'$同构。
+
+假设已经构造定理\ref{main2}中的映射$\sigma_{i}:W\dashrightarrow X_{i}$，即
 \begin{itemize}
   \item $f_{i}:(X_{i},B_{i})\to S_{i}$ 是森纤维空间，且 $\sigma_{i*} B_{W}=B_{i}$；
   \item $\sigma_{i}:W\dashrightarrow  X_{i}$ 是 $(K_{W}+B_{W}+g_{i}G_{W}+h_{i}H_{W})$-非正性的，且
     \[(K_{X_{i}}+B_{i}+g_{i}G_{i}+h_{i}H)=\sigma_{i*}(K_{W}+B_{W}+g_{i}G_{W}+h_{i}H_{W}) \]
     是数值有效的，并且相对于 $S_{i}$ 数值平凡；
   \item $(W,B_{W}+g_{i}G_{W}+h_{i}H_{W})\geqslant (X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i})$；
-  \item $0\leqslant g_{i},h_{i}\leqslant 1$ 是有理数。
+  % \item $0\leqslant g_{i},h_{i}\leqslant 1$ 是有理数。
+  \item $0\leqslant g_{i},h_{i}\leqslant 1$。
 \end{itemize}
 那么构造下一个满足定理\ref{main2} 的 Sarkisov 连接 $X_{i}\dashrightarrow X_{i+1}$。类比下降法的Sarkisov次数，引入下列记号：
 \begin{definition}\label{doubledegree}
@@ -97,10 +104,10 @@
   \begin{itemize}
     \item $r_{i}:=\frac{H_{i}.C_{i}}{G_{i}.C_{i}}$；
     \item 令 $\Gamma$ 是满足下列条件的 $t\in [0,\frac{g_{i}}{r_{i}}] $的集合
-      \begin{enumerate}
-        \item\label{singularcondition} $\left(W,B_{W}+g_{i}G_{W}+h_{i}H_{W}+t(H_{W}-r_{i}G_{W})\right)\geqslant \left(X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i}+t\left(H_{i}-r_{i}G_{i}\right)\right)$;
+      \begin{itemize}
+        \item\label{singularcondition} $\left(W,B_{W}+g_{i}G_{W}+h_{i}H_{W}+t(H_{W}-r_{i}G_{W})\right)\geqslant \left(X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i}+t\left(H_{i}-r_{i}G_{i}\right)\right)$；
         \item $K_{X_{i}}+B_{i}+g_{i}G_i+h_{i}H+t(H_{i}-r_{i}G_{i})$  数值有效.
-      \end{enumerate}
+      \end{itemize}
           令 $s_{i}=\max\, \Gamma $;
     \item 记 $D_{W,i}=B_{W}+g_{i}G_{W}+h_{i}H_{W}$ 和 $D_{i}=B_{i}+g_{i}G_{i}+h_{i}H_{i}$，并记
       \[D_{W,i}(t)=B_{W}+g_{i}G_{W}+h_{i}H_{W}+t(H_{W}-r_{i}G_{W})\]
@@ -117,15 +124,22 @@
 \end{enumerate}
 (细节见 \cite[Lemma 4.4]{liuSarkisovProgramGeneralized2021} )
 
-\textbf{构造 Sarkisov 连接：}\label{Construction}
+\textbf{终结判定：}
+如果 $s_{i}=\frac{g_{i}}{r_{i}}$，此时 $g_{i+1}=0$。 令 $N=i+1$ ，并令$f_{N}:X_{N}=X_{i} \to S_{N}=S_{i}$，那么 $h_{N}=1$ 且 $X_{N}\to S_{N}$ 与 $f':X'\to S'$同构 (见命题 \ref{nfi2})，这样双标量Sarkisov纲领停止。此时事实上$X_{i}\cong X_{N},S_{i}\cong S_{N}$，但是对二者的边界不同，而 $X_{N}$的边界$B_{N}$与$(X',B')$的边界$B'$相同。
 
-如果 $s_{i}=\frac{g_{i}}{r_{i}}$，此时 $g_{i+1}=0$。 令 $N=i+1$  且 $f_{N}:X_{N}=X_{i} \to S_{N}=S_{i}$，那么  $X_{N}\to S_{N}$ 与 $f':X'\to S'$同构 (见命题 \ref{nfi2})，这样双标量Sarkisov纲领停止。 如果$s_{i}<\frac{g_{i}}{r_{i}}$，那么如下构造Sarkisov 连接 $X_{i}\dashrightarrow X_{i+1}$ ：
-\begin{enumerate}
-  \item\label{2a} 若 $s_{i}$ 不是集合 $\Gamma$ 的第一个条件\ref{singularcondition}的阈值，也就是说存在 $0<\epsilon\ll 1$，使得 $W$ 上任意除子$E$，都有
+\begin{proposition}[构造Sarkisov 连接]\label{2Constructlink}
+ 如果$s_{i}<\frac{g_{i}}{r_{i}}$，那么可以构造Sarkisov 连接 $X_{i}\dashrightarrow X_{i+1}$ 。
+\end{proposition}
+\begin{proof}
+  分两种情况构造：
+  \begin{enumerate}
+  \item\label{2a} 若 $s_{i}$ 不是集合 $\Gamma$ 的第一个条件
+    \[\left(W,B_{W}+g_{i}G_{W}+h_{i}H_{W}+t(H_{W}-r_{i}G_{W})\right)\geqslant \left(X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i}+t\left(H_{i}-r_{i}G_{i}\right)\right)\]
+    的阈值，也就是说存在 $0<\epsilon\ll 1$，使得 $W$ 上任意除子$E$，都有
   \[
     a(E;X_{i},D_{i}(s_{i}+\epsilon))\geqslant a(E;W,D_{W,i}(s_{i}+\epsilon))
   \]
-  进一步假设 $K_{X_{i}}+D_{i}(s_{i}+\epsilon)$ 不是数值有效。那么对某个 $0< \delta \ll \epsilon $，存在一个 $2$ 维的 $(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta G_{i})$-负性 极端面 $F$，由$R=\mathbb{R}_{\geqslant 0}[C_{i}]$ 和令一个极端射线  $P$张成 (spanned by)。于是存在关于 $F$   的压缩态射$X_{i}\to T_{i}$穿过 $f_{i}$。 
+  并且 $K_{X_{i}}+D_{i}(s_{i}+\epsilon)$ 不是数值有效。那么对某个 $0< \delta \ll \epsilon $，存在一个 $2$ 维的 $(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta G_{i})$-负性 极端面 $F$，由$R=\mathbb{R}_{\geqslant 0}[C_{i}]$ 和令一个极端射线$P$张成 (spanned by)。于是存在关于 $F$   的压缩态射$X_{i}\to T_{i}$穿过 $f_{i}$。 
   \[
     \xymatrix{
       X_{i}\ar[d]\ar[rdd]& \\
@@ -135,10 +149,32 @@
   \]
   接着运行相对于 $T_{i}$ 的关于某丰沛除子标量的$(K_{X_{i}}+D_{i}(s_{i}+\epsilon))$-MMP，在有限多个翻转后，会接着一个关于$(K_{X_{i}}+D_{i}(s_{i}+\epsilon))$的森纤维空间，或一个除子压缩，或一个极小模型。
   \begin{enumerate}
-    \item  若记$X_{i}\dashrightarrow X_{i+1}$是翻转的复合，并且有森纤维空间 $X_{i+1}\to S_{i+1}$，那么这是第四型的Sarkisov连接；
+    \item  若记$X_{i}\dashrightarrow X_{i+1}$是翻转的复合，并且接着森纤维空间压缩 $X_{i+1}\to S_{i+1}$，那么这是第四型的Sarkisov连接；
+      \[
+        \xymatrix{
+          X_{i}\ar@{.>}[rr]\ar[d]& &X_{i+1}\ar[d] \\
+          S_{i}\ar[rd]& & S_{i+1}\ar[ld]\\
+             &T_{i}&
+        }
+      \]
     \item 若记$X_{i}\dashrightarrow Z_{i}$是翻转的复合，并接着一个除子压缩态射 $Z_{i}\to X_{i+1}$，那么 令 $S_{i+1}=T_{i}$，则 $X_{i+1}\to S_{i+1}$是一个森纤维空间。这是第三型的Sarkisov连接。
-    \item 若记 $X_{i}\dashrightarrow X_{i+1}$是翻转的复合，且 $X_{i+1}\to T_{i}$是关于 $\left(X_{i},D_{i}\left(s_{i}+\epsilon\right)\right)$ over $T_{i}$的极小模型。 令  $C'$ 是  $C_{i}$ 在 $X_{i+1}$上的双有理变换，则有 $(K_{X_{i+1}}+D_{i+1}(\epsilon)).C'=0$ 和 $(K_{X_{i+1}}+B_{i+1}).C'<0$，因此有压缩态射$X_{i+1} \to S_{i+1}$ over $T_i$。这个态射是森纤维空间，并且这是第三型Sarkisov连接。
+      \[
+        \xymatrix{
+          X_{i}\ar@{.>}[r]\ar[d]& Z_{i}\ar[rd] \\
+          S_{i}\ar[rd]& & X_{i+1}\ar[d]\\
+               &T_{i}\ar[r]^{\sim}& S_{i+1}
+        }
+      \]
+    \item 若记 $X_{i}\dashrightarrow X_{i+1}$是翻转的复合，且 $X_{i+1}\to T_{i}$是关于 $\left(X_{i},D_{i}\left(s_{i}+\epsilon\right)\right)$ 相对于 $T_{i}$的极小模型。 令  $C'$ 是  $C_{i}$ 在 $X_{i+1}$上的双有理变换，则有 $(K_{X_{i+1}}+D_{i+1}(\epsilon)).C'=0$ 和 $(K_{X_{i+1}}+B_{i+1}).C'<0$，因此有压缩态射$X_{i+1} \to S_{i+1}$ 相对于 $T_i$。这个态射是森纤维空间，并且这是第四型Sarkisov连接。
+      \[
+        \xymatrix{
+          X_{i}\ar@{.>}[rr]\ar[d]& &X_{i+1}\ar[d] \\
+          S_{i}\ar[rd]& & S_{i+1}\ar[ld]\\
+             &T_{i}&
+        }
+      \]
   \end{enumerate}
+  注意到$ (K_{X_{i}}+D_{i}(s_{i})) $及其严格双有理变换都是相对于 $S_{i}$上数值平凡的，由锥定理\ref{conethm}，此时的$X_{i}\dashrightarrow X_{i+1}$是一系列$ (K_{X_{i}}+D_{i}(s_{i}))$-平凡映射的复合。
     \item 如果 $s_{i}$ 集合$\Gamma$的第一个条件\ref{singularcondition}的阈值，也就是说 存在  $0<\epsilon \ll 1$ 和 $W$ 上的  $\sigma_{i}$-例外除子 $E_{i}$ 使得
   \[ a(E_{i};X_{i},D_{i}(s_{i}+\epsilon))< a(E_{i};W,D_{W,i}(s_{i}+\epsilon)) \]
   此时有
@@ -152,16 +188,32 @@
     \item 若记 $Z_{i}\dashrightarrow X_{i+1}$是有限步翻转的复合，并终结于森纤维空间
       \[X_{i+1}\to S_{i+1}\]
       那么是第一型的Sarkisov连接。 
+      \[
+        \xymatrix{
+        &Z_{i}\ar@{.>}[r]\ar[ld] &X_{i+1}\ar[d] \\
+          X_{i}\ar[d]& &S_{i+1}\ar[lld]\\
+          S_{i}   & &
+        }
+      \]
       在这种情况下有 $\rho(X_{i+1})=\rho(X_{i})+1$。
     \item 若记$Z_{i}\dashrightarrow Z_{i+1}'$是有限步翻转的复合，并且接着相对于 $S_{i}$的 除子压缩
-      \[q_{i}:Z_{i+1}'\to X_{i+1}\]
+      \[q_{i}:Z_{i}'\to X_{i+1}\]
      那么$X_{i+1}\to S_{i}=:S_{i+1}$是森纤维空间，这是第二型Sarkisov连接。
+      \[
+        \xymatrix{
+        &Z_{i}\ar@{.>}[r]\ar[ld] &Z_{i}'\ar[rd] \\
+          X_{i}\ar[d]& & &X_{i+1}\ar[d]\\
+          S_{i}\ar[rrr]^{\sim}   & & & S_{i+1}
+        }
+      \]
   \end{enumerate}
+  注意到$ (K_{X_{i}}+D_{i}(s_{i})) $及其严格双有理变换都是相对于 $T_{i}$上数值平凡的，由锥定理\ref{conethm}，此时的$X_{i}\dashrightarrow X_{i+1}$是一系列$ (K_{X_{i}}+D_{i}(s_{i}))$-平凡映射的复合。
 \end{enumerate}
+\end{proof}
 类似于下降法中的Sarkisov次数，定义\ref{doubledegree}中的不变量也有变化：
 \begin{assertion}\label{behavior2}
   由 \cite[Lemma 13.14-17]{haconMinimalModelProgram2012} 和 \cite[Lemma 4.2]{liuSarkisovProgramGeneralized2021}可以得到：
-  \begin{itemize}
+  \begin{enumerate}
     \item $r_{i}\leqslant r_{i+1}$。在(1).1的情况，还有 $r_{i}<r_{i+1}$。
     \item 在情况 (1) 中由于 $X_{i}\dashrightarrow X_{i+1}$ 是相对于 $T_{i}$的 $(K_{X_{i}}+D_{i}(s_{i}))$-平凡映射，所以对任意的$W$ 之上的除子$E$ ，都有
       \[a(E;X_{i},D_{i}(s_{i}))= a(E;X_{i+1},D_{i+1})\]
@@ -171,16 +223,17 @@
       \[a(E;X_{i},D_{i}(s_{i}))= a(E;X_{i+1},D_{i+1})\]
       和不等式
       \[ a(E;X_{i+1},D_{i+1})\geqslant a(E;W,D_{W,i+1}) \]
-    \item\label{2adicrepancy} 在情况 (1)中，任意除子$E \subset W$和 $0<\epsilon\ll 1$，都有
+    \item\label{2adicrepancy} 在情况 (1)中，任意 $W$之上的除子$E$ 和 $0<\epsilon\ll 1$，都有
       \[a(E;X_{i},D_{i}(s_{i}+\epsilon))\leqslant a(E;X_{i+1},D_{i+1}(\epsilon))\] 
       并且因为 $X_{i} \not\cong X_{i+1}$，所以 有$W$ 之上的除子$F$使得 
       \[a(F;X_{i},D_{i}(s_{i}+\epsilon))< a(F;X_{i+1},D_{i+1}(\epsilon))\]
-    \item\label{2bdiscrepancy} 在情况(2)中，任何除子 $E \subset W$，对所有$0<\epsilon\ll 1$都有
+    \item\label{2bdiscrepancy} 在情况(2)中，任何$ W$之上的除子$E$ ，对所有$0<\epsilon\ll 1$都有
       \[a(E;X_{i},D_{i}(s_{i}+\epsilon)-\delta G_{i})\leqslant a(E;X_{i+1},D_{i+1}(\epsilon)-\delta G_{i+1})\]
       并且因为 $X_{i} \not\cong X_{i+1}$，所以 有$W$ 之上的除子$F$使得 
       \[a(F;X_{i},D_{i}(s_{i}+\epsilon)-\delta G_{i})< a(F;X_{i+1},D_{i+1}(\epsilon)-\delta G_{i+1}) \]
     \item  $h_{i}\leqslant 1$，且 $h_{i}=1$ 当且仅当 $g_{i}=0$；
-  \end{itemize}
+  \end{enumerate}
+  
 \end{assertion}
 
 \section{双标量Sarkisov纲领的终结性}
@@ -192,58 +245,76 @@
     S=S_{0}&S_{1} &S_{2}&&S_{i}
     }
     ,\]
-  then
+  那么
   \begin{enumerate}
-    \item there are only finitely many possibilities for $f_{i}:X_{i}\to S_{i}$ up to isomorphism;
-    \item the Sarkisov program with double scaling of $(G_{W},H_{W})$ terminates. That is, there exists an integer $N>0$ such that $g_{N}=0$.
+    \item 在同构意义下，只有有限多种森纤维空间 $f_{i}:X_{i}\to S_{i}$；
+    \item 对$(G_{W},H_{W})$双标量的Sarkisov纲领终结，即存在整数 $N>0$ 使得 $g_{N}=0$。
   \end{enumerate}
 \end{lemma}
 
 \begin{proof}
   \begin{enumerate}
-    \item This essentially follows the finiteness of weak log canonical models (Theorem \ref{finitewlcm}). We construct the subspace $V$ of $\operatorname{WDiv}_{\mathbb{R}}(W)$ as follows:
+    \item 第一条本质上来自弱算术典范模型的有限性 (定理 \ref{finitewlcm})。  如下构造 $\operatorname{WDiv}_{\mathbb{R}}(W)$的子空间 $V$：
       \begin{enumerate}
-        \item If $h_{k}>0$ for some $k$. Since $H_{W}$ is 数值有效 and big,  there is an  ample $\mathbb{Q}$-divisor $A_{W}$ and an effective $\mathbb{Q}$-divisor $C_{W}$  such that $H_{W}\sim_{\mathbb{Q}}A_{W}+C_{W}$. 令 $V$ be the affine space spanned by components of  $B_{W},G_{W},H_{W},C_{W}$, then for $i>k$:
+        \item 假设对某个$k$ 有  $h_{k}>0$。 由于 $H_{W}$ 是 数值有效 且是大除子，那么存在丰沛 $\mathbb{Q}$-除子 $A_{W}$ 和有效 $\mathbb{Q}$-除子 $C_{W}$  使得 $H_{W}\sim_{\mathbb{Q}}A_{W}+C_{W}$。 此时取 $V$ 为  $B_{W},G_{W},H_{W},C_{W}$的组成成分的素除子张成的仿射空间。此时对于 $i>k$，定义$\Delta_{i}$为
               \[
                   B_{W}+g_{i}G_{W}+h_{i}H_{W}\sim_{\mathbb{Q}} h_{k}A_{W}+B_{W}+g_{i}G_{W}+(h_{i}-h_{k})H_{W}+h_{k}C_{W}=:\Delta_{i} \in \mathcal{L}_{h_{k}A_{W}}(V)
               \]
-        \item If $h_{k}=0$ for all $k$, then $h_{i}\equiv 0$ and $g_{i}\equiv 1$.  Since $G_{W}$ is 数值有效 and big,  there is  an  ample $\mathbb{Q}$-divisor $A_{W}$ and an effective $\mathbb{Q}$-divisor $C_{W}$  such that $G_{W}\sim_{\mathbb{Q}}A_{W}+C_{W}$. 令 $V$ be the affine space spanned by components of  $B_{W},C_{W}$, then
+        \item 假设对所有$k$ 都有$h_{k}=0$，那么  $h_{i}\equiv 0$ 且 $g_{i}\equiv 1$。由于  $G_{W}$ 是 数值有效 且是大除子，那么存在丰沛 $\mathbb{Q}$-除子 $A_{W}$和有效 $\mathbb{Q}$-除子 $C_{W}$ 使得 $G_{W}\sim_{\mathbb{Q}}A_{W}+C_{W}$。此时取 $V$ 为  $B_{W},C_{W}$的组成成分的素除子张成的仿射空间。此时定义 $\Delta_{i}$为
               \[
                   B_{W}+G_{W}\sim_{\mathbb{Q}} A_{W}+B_{W}+C_{W}=:\Delta_{i} \in \mathcal{L}_{A_{W}}(V)
               \]
       \end{enumerate}
-          Then all $X_{i}$ are weak log canonical models of $(W,\Delta_{i})$. By finiteness of weak log canonical models, there are finitely many $\sigma_{i}: W\dashrightarrow X_{i}$ up to isomorphism.
+          那么每一个 $X_{i}$ 都是$(W,\Delta_{i})$的弱算术典范模型。由弱算术典范模型的有限性，在同构意义下，存在有限多个 $\sigma_{i}: W\dashrightarrow X_{i}$。
 
-          From now on, we shall show that for a $\sigma_{i}: W\dashrightarrow X_{i}$ there are finitely many log Mori fibre spaces $X_i\to S_i$ in the sequence up to isomorphism.
-          Indeed, we may assume that there is a $k$ such that $X_{i} \cong X_{k}$ for all $i>k$, and  $f_{i}$ is the contraction corresponding to an extremal ray $R_{i} \subset \overline{\operatorname{NE}}(X_{k}) $. Then we have $(K_{X_{k}}+B_{k}).R_{i}<0  $ and $(K_{X_{k}}+B_{k}+g_{i}G_{k}+h_{i}H_{k}).R_{i}=0$. Furthermore, $H_{k}$ and $G_{k}$ are relatively ample over $S_{i}$ for all $i>k$. There are three cases.
+          这样只证明了 $X_{i}$ 的有限性，此时需要森纤维空间 $X_{i}\to S_{i}$的有限性。接下来证明 在构造的Sarkisov连接的序列中，出现的$X_{i}$的森纤维空间在同构意义下只有有限多个。
+          不妨设存在无穷子列 $\{i_{k}\}_{k=0}^{\infty} $使得 $X_{i_{k}}\cong X_{i_{0}}$。为简化记号，不妨设$X_{i_{0}}=X_{0}=X$ (注意，做此替换后$X_{0}$可能并不是Sarkisov纲领的初始起点，但为符号简便，仍将其记为$X$)。记$f_{i_{k}}$是关于极端射线 $R_{k} \subset \overline{\operatorname{NE}}(X_{i_{k}})= \overline{\operatorname{NE}}(X) $ 的森纤维空间压缩态射。 那么有
+          $(K_{X}+B).R_{i_{k}}<0  $ 且 $(K_{X}+B+g_{i_{k}}G+h_{i_{k}}H).R_{k}=0$， 并且 $H$ 和 $G$ 相对于 $S_{i_{k}}$ 是丰沛的。分三种情况证明：
+      \begin{enumerate}
 
-          \begin{enumerate}
-            \item If $h_{i}=0$ for all $i$, hence $g_{i}=1$ for all $i$.
+        \item 如果对某$k$ 有  $h_{i_{k}}=1$，那么Sarkisov纲领终结，原序列是有限序列，断言显然成立。
+        \item 假设$h_{i_{k}}=0$ 对所有 $i_{k}$ 成立，那么 $g_{i_{k}}=1$。 因为 $G_{i_{k}}$ 是大除子，所以存在丰沛$\mathbb{Q}$-除子 $A$ 和有效$\mathbb{Q}$-除子 $E$ 使得 $G=A+E$。  取充分小的 $\epsilon$ 使得$(X,D)$具有klt奇点，其中$D=B+(1-\epsilon)G+\frac{\epsilon}{2} E$，那么 $(K_{X}+D).R_{k}<0$且 $(K_{X}+D+\frac{\epsilon}{2} A).R_{k}<0$ 对所有$k$ 成立。由锥定理\ref{conethm}，有
+              \[
+                \overline{\operatorname{NE}}(X)=\overline{\operatorname{NE}}(X)_{K_{X}+D+\frac{\epsilon}{2}A_{k}\geqslant 0} +\sum_{\alpha \in\Lambda\text{有限集}}R_{\alpha}.
+              \]
+              由于 森纤维空间$X=X_{i_{k}}\to S_{i_{k}}$ 是关于极端射线 $R_{\alpha}$的压缩态射，这样的射线有限，所以弱算术典范模型 $X=X_{i_{0}}$ 在构造的Sarkisov连接的序列中出现的森纤维空间在同构意义下有限；
+            \item 假设对某个 $k>0$ 有  $h_{i_{k}}>0$，那么通过截短子列，不妨设$0<h_{i_{0}}=h_{0}<1$ (注意，做此替换后$X_{0}$并不是Sarkisov纲领的初始起点，并且$g_{0}\neq 1$，但为符号简便，仍将其记为$X$  )。 因为 $H$ 是大除子，所以存在丰沛$\mathbb{Q}$-除子 $A$ 和有效$\mathbb{Q}$-除子 $E$ 使得 $H=A+E$。  取充分小的 $\epsilon$ 使得$(X,D)$具有klt奇点，其中$D=B+(1-\epsilon)H+\epsilon E$。那么 $(K_{X}+D).R_{k}<0$ 且 $(K_{X}+D+\epsilon A).R_{k}<0$ 对所有 $k$成立。同样由锥定理\ref{conethm}，有
+              \[
+                \overline{\operatorname{NE}}(X)=\overline{\operatorname{NE}}(X)_{K_{X}+D+\epsilon A}\geqslant 0} +\sum_{\alpha \in\Lambda\text{有限集}}R_{\alpha}.
+              \]
+              同上，由于 森纤维空间$X=X_{i}_{k}\to S_{i_{k}}$ 是关于极端射线 $R_{\alpha}$的压缩态射，这样的射线有限，所以弱算术典范模型 $X=X_{i_{0}}$ 在构造的Sarkisov连接的序列中出现的森纤维空间在同构意义下有限；
+      \end{enumerate}
+    \item 若上述构造的 Sarkisov连接的序列是无限的，那么由(1) ，不妨设存在无穷子列 $\{i_{k}\}_{k=0}^{\infty} $使得 森纤维空间$X_{i_{k}}\to S_{i_{k}}$同构于$X_{i_{0}}\to S_{i_{0}}$。为简化记号，不妨设$X_{i_{0}}=X_{0}=X$ (同样的，做此替换后$X_{0}$可能并不是Sarkisov纲领的初始起点，并且可能有$g_{0}\neq 1,h_{0}\neq 0$，但为符号简便，仍将其记为$X$)。此时曲线$C_{i_{k}} \subset X$是相同的曲线，由$g_{i_{k}}$和$h_{i_{k}}$的构造可以得到 $g_{0}=g_{i_{k}}$ 和 $h_{0}=h_{i_{k}}$。由于序列 $h_{i}$ 和 $g_{i}$是单调的，所以 $h_{i}=h_{0}$ 和  $g_{i}=g_{0}$ 是常值，并且$r_{i}=r_{0},s_{i}=0$都是常值。
 
-                  Since $G_{i}$ is big, we have $G_{k}=A_{k}+E_{k}$ for some ample $\mathbb{Q}$-divisor $A_{k}$ and effective $\mathbb{Q}$-divisor $E_{k}$. 令 $B_{k}'=B_{k}+(1-\epsilon)G_{k}+\frac{\epsilon}{2} E_{k}$ for sufficiently small $\epsilon$ such that $(X_{k},B_{k}')$ is klt. Then $(K_{X_{k}}+B_{k}').R_{i}<0$ and $(K_{X_{k}}+B_{k}'+\frac{\epsilon}{2} A_{k}).R_{i}<0$ for all $i>k$. By the Cone theorem, we have
-                  \[
-                    \overline{\operatorname{NE}}(X_{k})=\overline{\operatorname{NE}}(X_{k})_{K_{X_{k}}+B_{k}'+\frac{\epsilon}{2}A_{k}\geqslant 0} +\sum_{\alpha \in\Lambda\text{ finite set}}R_{\alpha}.
-                  \]
-                  Again, there are finitely many log Mori fibre spaces $f_{i}:X_{i}\to S_{i}$ of $X_{k}$.
+      若序列中存在命题\ref{2Constructlink}中(1)构造的第三或第四型Sarkisov连接，不妨设为 $X\dashrightarrow X_{1}$，那么由断言\ref{behavior2}的(4)，下一个Sarkisov连接也是 按(1)的构造，继而之后所有连接都是如此。再考虑Picard数，由于$X\cong X_{i_{1}}$， 显然之后都是第四型Sarkisov连接。由断言\ref{behavior2}的(4)，对任意 $ W$上的除子 $E$， 存在不等式
+      \[ a(E;X,D(s_{0}+\epsilon))\leqslant a(E;X_{1},D_{1}(\epsilon))\] 
+      但是同样由断言\ref{behavior2}的(4)，还存在$W$ 之上的除子 $F$，使得 
+      \[a(F;X,D(s_{0}+\epsilon))< a(F;X_{1},D_{1}(\epsilon))\]
+      于是对$ X = X_{i_{0}}\cong X_{i_{1}} $ 有
+      \[a(F;X,D(\epsilon))< a(F;X_{i_{1}},D_{i_{1}}(\epsilon))\]
+      矛盾。
 
-            \item If $h_i>0$ for some $i>k$, then we may assume $h_k>0$ after replacing $k$ by  $i$. In this case, we suppose $0<h_k<1$.
+      假设Sarkisov连接的序列全是由命题\ref{2Constructlink}中(2)构造的第一第二型Sarkisov连接。同样由Picard数可以得到，所有Sarkisov连接都是第二型。类似的，由断言\ref{behavior2}的(5)可以推出矛盾。
 
-                  Since $H_{k}$ is big, we have $h_{k}H_{k}=A_{k}+E_{k}$ for some ample $\mathbb{Q}$-divisor $H_{k}$ and effective $\mathbb{Q}$-divisor  $E_{k}$. 令 $B_{k}'=B_{k}+(1-\epsilon)h_{k}H_{k}+\epsilon E_{k}$ for sufficiently small $\epsilon$ such that $(X_{k},B_{k}')$ is klt. Then $(K_{X_{k}}+B_{k}').R_{i}<0$ and $(K_{X_{k}}+B_{k}'+\epsilon A_{k}).R_{i}<0$ for all $i>k$. By the Cone theorem, we have
-                  \[
-                    \overline{\operatorname{NE}}(X_{k})=\overline{\operatorname{NE}}(X_{k})_{K_{X_{k}}+B_{k}'+\epsilon A_{k}\geqslant 0} +\sum_{\alpha \in\Lambda\text{ finite set}}R_{\alpha}.
-                  \]
-                  All extremal rays $R_{i}$ corresponding to $f_{i}$ for $i>k$ are in the finite set $\{R_{\alpha}\}_{\alpha \in \Lambda} $, thus there are finitely many log Mori fibre spaces $f_{i}:X_{i}\to S_{i}$ of $X_{k}$.
-
-            \item If $h_k=1$, then the sequence of $X_i$ is finite, and the assertion follows.
-          \end{enumerate}
-    \item Assume this sequence of Sarkisov links is infinite, then there exists an  $i$ such that there are infinitely many $j>i$ such that $f_{i}:X_{i}\to S_{i}  $ and $f_{j}:X_{j}\to S_{j}$ are isomorphic. Then we have $g_{i+1}=g_{j+1}$ and $h_{i+1}=h_{j+1}$. Since the sequences of $h_{k}$ and $g_{k}$ are monotone, we have $h_{i+1}=h_{k}$ and  $g_{i+1}=g_{k}$ for all $k>i$. Suppose $X_{i}\dashrightarrow X_{i+1}$ is a Sarkisov link in the case \ref{2a} of the Construction in \ref{Construction}, then the next Sarkisov link is also in case \ref{2a}, and all the Sarkisov links after are in the case \ref{2a}. Note that $X_{i}\cong X_{j}$ and therefore $\rho(X_{i})=\rho(X_{j})$, the Sarkisov links are all of the type IV. But this contradicts \ref{2adicrepancy} of assertion \ref{behavior2}. Therefore, there is no Sarkisov link of type III or IV after $X_{i}$. In other words, the Sarkisov links after $X_{i}$ are all type I or II in case \ref{2b}.
-
-          Since $\rho(X_{i})= \rho(X_{j})$, $X_{i}$  and $X_{j}$ are linked by  the Sarkisov links of type II. But this contracts  \ref{2bdiscrepancy} of  assertion \ref{behavior2}.
+      综上，命题\ref{2Constructlink}构造的Sarkisov序列是有限的。
   \end{enumerate}
 \end{proof}
+最后还要证明双标量Sarkisov纲领终结的森纤维空间$X_{N}\to S_{N}$与 $(X',B')\to S'$同构。这一部分与下降法Sarkisov纲领的判别法定理\ref{nfi}类似。
 \begin{proposition}\label{nfi2}
-  $X_{N}\to S_{N}$ is isomorphic to $X'\to S'$.
+  \begin{enumerate}
+    \item $h_{N}=1$。
+    \item $X_{N}\to S_{N}$ 同构于 $X'\to S'$。
+  \end{enumerate}
 \end{proposition}
 \begin{proof}
-  Similarly to 2 of Theorem \ref{nfi}, we have $h_{N}=1$ and hence $X_{N}\to S_{N}$ is isomorphic to $X'\to S'$.
+事实上此处 在$X'$上的$\mathbb{Q}$-除子 $h'H'=1\cdot H'$代替了定理\ref{nfi}中$X'$ 上的$\mathbb{Q}$-除子$ \frac{1}{\mu'}H'$，而$h_{N}H_{N}$对应定理\ref{nfi}中的$ \frac{1}{\mu}H$。用同样的方法可以证明$ h_{N}=h'=1 $。
+
+(2)也可以用同样的方法证明：
+ 取 $X_{N}$ 上  极丰沛除子 $ L $，且$L'  $ 是在$ X' $上的严格双有理变换。那么  $ L' $ 是 $ f' $-丰沛的，所以存在$ 0<d\ll1 $使得：
+          \begin{itemize}
+            \item $ K_{X_{N}}+B_{N}+H_{N}+dL $ 是丰沛除子；
+            \item $ K_{X'}+B'+H'+dL' $ 是丰沛除子；
+            \item $(W,B_{W}+H_{W}+dD_{W})$具有klt奇点 (由双标量Sarkisov纲领的初始设定断言\ref{doublesetting}可以得到)。
+          \end{itemize}
+          因此 $X_{N}$ 和 $X'$ 都是 $(W,B_{W}+H_{W}+dD_{W})$的算术典范模型，由算术典范模型的唯一性， $X_{N}\cong X'$。更进一步， $f_{N}$ 和  $f'$压缩相同的曲线数值等价类，所以两个森纤维空间同构。
 \end{proof}
