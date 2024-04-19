@@ -1,26 +1,45 @@
 \chapter{预备知识}
-\section{代数簇与奇点}
+\section{代数簇对与奇点}
 
 % TODO: contraction definition; resolution; snc; intersection?
-
+定义代数簇对和相关概念：
 \begin{definition}
+  \begin{itemize}
+    \item 一个代数簇对 $(X,B)$ 包括一个正规拟射影代数簇 $X$ 和一个 $\mathbb{R}$-除子 $B=\sum_{i}b_{i}B_{i}$，其中$B_{i}$是素除子，且$0<\leqslant b_{i} \leqslant 1$ ，并且满足
+  \[
+    K_{X}+B
+  \]
+ 是$\mathbb{R}$-Cartier 除子。 
+    \item 若双有理态射 $f:Y\to X$ 满足 $Y$是光滑代数簇，且$\operatorname{Exc}\,f \cup \bigcup_{i}B_{i \text{red}}} $ 是横截相交 (normal crossing)的除子，并且$f$ 在$\operatorname{Reg}(X,B)$上是同构 
+      那么称 $f$ 为 $(X,B)$的算术解消。  
+    \item 正规代数簇$X$ 的余维数1的不可约子簇$ E \subset X $ 称为 $X$ \textbf{上}的除子；如果 $f: Y \to X$ 是双有理射影态射，那么 $Y$ 上的除子 $E$ 称为 $X$ \textbf{之上}的除子。  
+  \end{itemize}
+\end{definition}
+定义除子的差异数：
+\begin{definition}
+  令 $(X, B)$ 为代数簇对， 且 $f: Y\to X$ 是它的算术解消，则有
+  \[
+    K_{Y}+C=f^*(K_{X}+B)
+    \]
+  那么除子 $E$ 的差异数 (discrepancy)$a(E;X,B) $定义为
+  \[
+    a(E;X,B)=-\operatorname{mult}_{E}C
+    \]
+  进一步，定义$(X,B) $的差异数：
+  \[
+    \operatorname{discrep}(X, B) := \inf\{a(E; X, B) : E \text{ 是 } X \text{之上的例外除子} \}
+  \]
+  和整体差异数
+  \[
+    \operatorname{totdiscrep}(X, B) :=\operatorname{inf}\{a(E; X, B) : E \text{是} X \text{之上的除子}\}.
+  \]
+\end{definition}
 
-	令 $(X, B)$ 为代数簇对， 且 $f: Y\to X$ 是它的算术解消，则有
-	\[
-		K_{Y}+C=f^*(K_{X}+B)
-		,\]
-	那么除子 $E$ 的差异数(discrepancy)$a(E;X,B) $定义为
-	\[
-		a(E;X,B)=-\operatorname{mult}_{E}C
-		.\]
-	进一步，定义$(X,B) $的差异数：
-	\[
-		\operatorname{discrep}(X, B) := \inf\{a(E; X, B) : E \text{ is an exceptional divisor over } X \}
-	\]
-	和整体差异数
-	\[
-		\operatorname{totdiscrep}(X, B) :=\operatorname{inf}\{a(E; X, B) : E \text{ is a divisor over } X\}.
-	\]
+通过差异数，定义代数簇对 $(X,B)$ 的奇点性质：
+\begin{definition}
+  \begin{itemize}
+    \item 
+  \end{itemize}
 \end{definition}
 
 \section{极小模型纲领}
@@ -29,119 +48,119 @@
   
 \end{theorem}
 
-我们将极小模型纲领中出现的代数簇对称为极小模型的\textbf{结果}，将MMP停止处的代数簇称为MMP的\textbf{输出}(要么是极小模型，要么是森纤维空间)。对于极小模型纲领，有如下结果。
+极小模型纲领 (MMP) 中出现的代数簇对被称为极小模型的\textbf{结果}，将MMP停止处的代数簇称为MMP的\textbf{输出} (要么是极小模型，要么是森纤维空间)。对于极小模型纲领，有如下结果。
 \begin{theorem}[标量MMP的终结定理]
-	\citet[Corollary 1.4.2]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $(X, B)$ 是  $\mathbb{Q}$-分解 klt 代数簇对，其中 $K_{X}+B$  $\mathbb{R}$-Cartier 除子， 且$B$ 是 $\pi$-big。若 $C\geqslant0$ 为 $\mathbb{R}$-除子，且$K_{X}+B+C$ 是 klt 和  $\pi$-数值有效(nef)，那么在 $U$ 上运行 $C$-标量的  $(K_{X}+B)$-MMP，那么这个极小模型纲领将终结。
+  \cite[Corollary 1.4.2]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $(X, B)$ 是  $\mathbb{Q}$-分解的具有 klt奇点的 代数簇对，其中 $K_{X}+B$  $\mathbb{R}$-Cartier 除子， 且$B$ 是 $\pi$-big。若 $C\geqslant0$ 为 $\mathbb{R}$-除子，且$K_{X}+B+C$ 具有 klt奇点 且  $\pi$-数值有效 (nef)，那么在 $U$ 上运行 $C$-标量的  $(K_{X}+B)$-MMP，那么这个极小模型纲领将终结。
 \end{theorem}
-
+如果$(K_{X}+B)$-MMP终结，那么其输出和$(K_{X}+B)$有下列关系：
 \begin{theorem}[极小模型输出]\label{notpseudoeffmfs}
-	\citet[Corollary 1.3.3]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $(X, B)$ 是 $\mathbb{Q}$-分解 klt 代数簇对，其中 $K_{X}+B$ 是$\mathbb{R}$-Cartier 除子。若 $K_{X}+B$ 不是 $\pi$-伪有效的，那么运行 $U$ 上的  $(K_{X}+B)$-MMP，将终结于森纤维空间$g:Y\to Z$。
+  \cite[Corollary 1.3.3]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $(X, B)$ 是 $\mathbb{Q}$-分解 klt 代数簇对，其中 $K_{X}+B$ 是$\mathbb{R}$-Cartier 除子。若 $K_{X}+B$ 不是 $\pi$-伪有效的，那么运行 $U$ 上的  $(K_{X}+B)$-MMP，将终结于森纤维空间$g:Y\to Z$。
 \end{theorem}
 
 \begin{corollary}\label{extraction}
-	\citet[Corollary 13.7]{haconMinimalModelProgram2012} 令 $ (X,B) $ 为 klt 代数簇对， $\mathfrak{C}$是任意差异数满足 $ a(E;X,B)\leqslant 0 $的例外除子 $E$ 的集合，那么有双有理态射 $ f:Z\to X $ 和 $ \mathbb{Q} $-除子 $ B_Z $ 使得：
-	\begin{enumerate}
-		\item $ (Z,B_Z) $ 是klt代数簇对：
-		\item $ E $ 是 $f$-例外除子当且仅当 $ E\in \mathfrak{C} $；
-		\item  若 $E \in \mathfrak{C}$则$ \operatorname{mult}_{E}B_Z=-a(E;X,B) $ ，且$ f_*B_Z=B $ 和 $ K_Z+B_Z=f^*(K_X+B) $。
-	\end{enumerate}
-	特别的，若却 $\mathfrak{C}$ 为所有差异数满足$a(E; X, B)\leqslant 0$的例外除子 $E$ 的集合，那么 $ Z $ 被称为 $X$ 的 \textbf{终端化}(terminalization) ；若取e $\mathfrak{C}$为仅包含一个差异数满足 $a(E; X, B)\leqslant 0$的例外除子，那么 $ f: Z\to X $ 被称为 \textbf{除子解压}( \textbf{divisorial extraction} ).
+  \cite[Corollary 13.7]{haconMinimalModelProgram2012} 令 $ (X,B) $ 为 klt 代数簇对， $\mathfrak{C}$是任意差异数满足 $ a(E;X,B)\leqslant 0 $的例外除子 $E$ 的集合，那么有双有理态射 $ f:Z\to X $ 和 $ \mathbb{Q} $-除子 $ B_Z $ 使得：
+  \begin{enumerate}
+    \item $ (Z,B_Z) $ 是klt代数簇对：
+    \item $ E $ 是 $f$-例外除子当且仅当 $ E\in \mathfrak{C} $；
+    \item  若 $E \in \mathfrak{C}$则$ \operatorname{mult}_{E}B_Z=-a(E;X,B) $ ，且$ f_*B_Z=B $ 和 $ K_Z+B_Z=f^*(K_X+B) $。
+  \end{enumerate}
+  特别的，若却 $\mathfrak{C}$ 为所有差异数满足$a(E; X, B)\leqslant 0$的例外除子 $E$ 的集合，那么 $ Z $ 被称为 $X$ 的 \textbf{终端化}(terminalization) ；若取e $\mathfrak{C}$为仅包含一个差异数满足 $a(E; X, B)\leqslant 0$的例外除子，那么 $ f: Z\to X $ 被称为 \textbf{除子解压}( \textbf{divisorial extraction} ).
 \end{corollary}
 
 \begin{definition}
-	\citet[Definition 3.3]{brunoLogSarkisovProgram1995}
-	如果多个代数簇对 $ \{(X_i,B_i)\} $是从算术光滑的代数簇对 $(W,B_{W})$的 $(K_{W}+B_{W}) $-MMP的不同结果，则称它们为MMP-相关的 ( \textbf{MMP-related} ) if they are results of $ (K_W+B_W) $-MMPs starting from a given log smooth pair $(W,B_{W})$.
+  \cite[Definition 3.3]{brunoLogSarkisovProgram1995}
+  如果多个代数簇对 $ \{(X_i,B_i)\} $是从算术光滑的代数簇对 $(W,B_{W})$的 $(K_{W}+B_{W}) $-MMP的不同结果，则称它们为MMP-相关的 ( \textbf{MMP-related} )。 
 \end{definition}
 
 \begin{lemma}\label{MMPrelatedConditation}
-	\citet[Proposition 3.4]{brunoLogSarkisovProgram1995}
-	令 $ \{(X_l,B_l)\} $ 为有限多个互相双有理等价的 $ \mathbb{Q} $-分解 klt 代数簇对，那么下列条件等价：
-	\begin{enumerate}
-		\item 它们是MMP-相关的；
-		\item 存在一个算术光滑代数簇对 $ (W,B_W) $和一组射影双有理态射  $ f_l:W\to  X_l $ 支配每个 $ X_l $，满足 $ f_{l*}B_W=B_l $ 和分歧等式
-		      \[ K_W+B_W=f_l^*(K_{X_l}+B_l)+\sum_{exceptional}{a_{li}E_{li}} \]
-		      其中对每个$ f_l $-例外除子$E_{li}$满足 $a_{li}>0$ 的不等式条件；
-		\item 对任意两个代数簇对 $ (X,B=\sum_ib_{i }B_i),(X',B'=\sum_{j}b_{j}'B_{j}') $ ， 有  $ a(B_i;X',B')\geqslant -b_i $ 且严格不等式成立当且仅当 $ B_i $ 是 $ X' $上的例外除子。同样的，有 $ a(B'_j;X,B)\geqslant -b'_j $ 且严格不等式成立当且仅当$ B'_j $ 是 $ X $上的例外除子。
-	\end{enumerate}
+  \cite[Proposition 3.4]{brunoLogSarkisovProgram1995}
+  令 $ \{(X_l,B_l)\} $ 为有限多个互相双有理等价的 $ \mathbb{Q} $-分解 klt 代数簇对，那么下列条件等价：
+  \begin{enumerate}
+    \item 它们是MMP-相关的；
+    \item 存在一个算术光滑代数簇对 $ (W,B_W) $和一组射影双有理态射  $ f_l:W\to  X_l $ 支配每个 $ X_l $，满足 $ f_{l*}B_W=B_l $ 和分歧等式
+      \[ K_W+B_W=f_l^*(K_{X_l}+B_l)+\sum_{\text{例外除子}E_{li}}{a_{li}E_{li}} \]
+          其中对每个$ f_l $-例外除子$E_{li}$满足 $a_{li}>0$ 的不等式条件；
+    \item 对任意两个代数簇对 $ (X,B=\sum_ib_{i }B_i),(X',B'=\sum_{j}b_{j}'B_{j}') $ ， 有  $ a(B_i;X',B')\geqslant -b_i $ 且严格不等式成立当且仅当 $ B_i $ 是 $ X' $上的例外除子。同样的，有 $ a(B'_j;X,B)\geqslant -b'_j $ 且严格不等式成立当且仅当$ B'_j $ 是 $ X $上的例外除子。
+  \end{enumerate}
 \end{lemma}
 \begin{proof}
   我们给出  $(3) \implies (2)$的简略证明：令 $W$ 为支配每个代数簇对 $(X_l,B_l=\sum b_{li}B_{li})$ 的算术光滑解消，并有射影双有理态射 $f_l:W\to X_l$，它们例外除子的并$f_{l*}^{-1}B_l\cup E_{li}$是一个横截相交的除子。令 $B_W=\sum_t d_tD_t $，其中  如果 $D_t$ 是$\cup_l f_{l*}^{-1}B_l$中的某个素除子则$d_t = b_{li}$，如果$B_{t}$是每个 $X_{l}$上的例外除子，则  $d_t=1$。由条件(3)， 这是定义良好的。那么 $(W,B_{W})$上的分歧等式(ramification formula)中的不等式条件也由(3)得到。
 \end{proof}
 
-\section{有限极小模型}
+\section{模型及其有限性}
 
 \begin{definition}
-	\citet[\S 2]{haconSarkisovProgram2012} 对有理映射 $f:X\dashrightarrow Y$  若有 $f$的解消$p:W\to X$ 和 $q:W\to Y$ 满足$p$  和 $q$ 都是压缩态射且 $p$ 双有理态射，则称 $f$ 为有理压缩映射( \textbf{rational contraction})  。若 $ q$也是双有理态射， 且每个 $p$-例外除子都是 $q$-例外除子，则称 $f$为双有理压缩映射 (\textbf{birational contraction})。如果 $f^{-1}$ 也是双有理压缩映射，则称 $f$ 为小双有理映射   ( \textbf{small birational map} )。
+  \cite[\S 2]{haconSarkisovProgram2012} 对有理映射 $f:X\dashrightarrow Y$  若有 $f$的解消$p:W\to X$ 和 $q:W\to Y$ 满足$p$  和 $q$ 都是压缩态射且 $p$ 双有理态射，则称 $f$ 为有理压缩映射( \textbf{rational contraction})  。若 $ q$也是双有理态射， 且每个 $p$-例外除子都是 $q$-例外除子，则称 $f$为双有理压缩映射 (\textbf{birational contraction})。如果 $f^{-1}$ 也是双有理压缩映射，则称 $f$ 为小双有理映射   ( \textbf{small birational map} )。
 \end{definition}
 
 \begin{definition}\label{negativemap}
-	\citet[Definition 3.6.1]{BCHM10}令 $f:X\dashrightarrow Y$为正规拟射影代数簇间的双有理映射，且 $p:W\to X$ 和 $q:W\to Y$是 $f$的解消。若 $D$是 $X$ 上的$\mathbb{R}$-Cartier 除子，满足  $D_{Y}=f_*D$ 也是 $\mathbb{R}$-Cartier除子，那么如果满足
-	\begin{itemize}
-		\item $f$ 不解压任何除子(即 $f$ 是双有理压缩 )；
-		\item $E=p^{*}D-q^*D_Y$ 是  $Y$上的有效除子 (对应的， $\operatorname{Supp}p_*E$ 包含全部 $f$-例外除子)。
-	\end{itemize}
+  \cite[Definition 3.6.1]{BCHM10}令 $f:X\dashrightarrow Y$为正规拟射影代数簇间的双有理映射，且 $p:W\to X$ 和 $q:W\to Y$是 $f$的解消。若 $D$是 $X$ 上的$\mathbb{R}$-Cartier 除子，满足  $D_{Y}=f_*D$ 也是 $\mathbb{R}$-Cartier除子，那么如果满足
+  \begin{itemize}
+    \item $f$ 不解压任何除子(即 $f$ 是双有理压缩 )；
+    \item $E=p^{*}D-q^*D_Y$ 是  $Y$上的有效除子 (对应的， $\operatorname{Supp}p_*E$ 包含全部 $f$-例外除子)。
+  \end{itemize}
  则称$f$为 $D$-非正性的  (\textbf{$D$-non-positive}) ，对应的， $D$-负性的 ( \textbf{$D$-negative)}。
 \end{definition}
 
-回顾双有理代数几何中关于模型的定义 \citet{BCHM10}：
+回顾双有理代数几何中关于模型的定义 \cite{BCHM10}：
 \begin{definition}
-	\citet[Definition 3.6.5]{BCHM10} 令 $ \pi:(X,D)\to U $为正规拟射影代数簇间的射影态射， $K_{X}+D$ 是 $X$ 上的$\mathbb{R}$-Cartier除子，且$ f: X\dashrightarrow Y $是 $U$ 上的双有理映射。  如果 $ f $ 是 $ (K_X+D) $-非正性的且 $ K_Y+f_*D $ 是 $ U $上半丰沛的，那么称 $Z$ 和 $f$ 为关于 $D$的\textbf{半丰沛模型}(\textbf{semiample model})。
+  \cite[Definition 3.6.5]{BCHM10} 令 $ \pi:(X,D)\to U $为正规拟射影代数簇间的射影态射， $K_{X}+D$ 是 $X$ 上的$\mathbb{R}$-Cartier除子，且$ f: X\dashrightarrow Y $是 $U$ 上的双有理映射。  如果 $ f $ 是 $ (K_X+D) $-非正性的且 $ K_Y+f_*D $ 是 $ U $上半丰沛的，那么称 $Z$ 和 $f$ 为关于 $D$的\textbf{半丰沛模型}(\textbf{semiample model})。
 
-	令 $ g:X\dashrightarrow Z $ 为$ U $上的有理映射，$p:W \to X $ 和 $q:W \to Z $是对 $g$ 的解消，其中 $q$ 是压缩态射 。 若$Z$ 上有 $U$ 上的丰沛除子 $H$ ，且 $p^*(K_{X}+D) \sim_{\mathbb{R},U} q^*H+E$ ，其中 $E$  满足    对 任意的 $B \in |p^*(K_{X}+D)/U|_{\mathbb{R}}$都有 $B\geqslant E$，则称 $Z$ 是 $X$ 关于$D$ 的\textbf{丰沛模型} (\textbf{ample model}) 。
+  令 $ g:X\dashrightarrow Z $ 为$ U $上的有理映射，$p:W \to X $ 和 $q:W \to Z $是对 $g$ 的解消，其中 $q$ 是压缩态射 。 若$Z$ 上有 $U$ 上的丰沛除子 $H$ ，且 $p^*(K_{X}+D) \sim_{\mathbb{R},U} q^*H+E$ ，其中 $E$  满足    对 任意的 $B \in |p^*(K_{X}+D)/U|_{\mathbb{R}}$都有 $B\geqslant E$，则称 $Z$ 是 $X$ 关于$D$ 的\textbf{丰沛模型} (\textbf{ample model}) 。
 \end{definition}
 \begin{definition}\label{models}
-	\citet[Definition 3.6.7]{BCHM10} 令 $ \pi:(X,D)\to U $为正规拟射影代数簇间的射影态射，若 $ K_X+D $ 是 lc且$ f:X\dashrightarrow Y $是双有理压缩映射，那么有如下定义：
-	\begin{enumerate}
-		\item 如果 $f$ 是  $ (K_X+D) $-非正性的且 $ K_Y+f_*D $ 是 $ U $上数值有效的，则  称$ Y $为关于 $D$ 在 $U$ 的  \textbf{弱算术典范模型}(\textbf{weak log canonical model})；
-		\item 如果 $f$ 是  $ (K_X+D) $-非正性的且 $ K_Y+f_*D $ 是 $ U $上丰沛的，则  称$ Y $为关于 $D$ 在 $U$ 的  \textbf{算术典范模型}(\textbf{ log canonical model})；
-		\item 如果 $f$ 是  $ (K_X+D) $-负性的且 $ K_Y+f_*D $ 是 $ U $上数值有效的和$\mathbb{Q}$-分解的，并且具有dlt奇点，则  称$ Y $为关于 $D$ 在 $U$ 的  \textbf{算术终端模型}(\textbf{log terminal model})。
-	\end{enumerate}
+  \cite[Definition 3.6.7]{BCHM10} 令 $ \pi:(X,D)\to U $为正规拟射影代数簇间的射影态射，若 $ K_X+D $ 是 lc且$ f:X\dashrightarrow Y $是双有理压缩映射，那么有如下定义：
+  \begin{enumerate}
+    \item 如果 $f$ 是  $ (K_X+D) $-非正性的且 $ K_Y+f_*D $ 是 $ U $上数值有效的，则  称$ Y $为关于 $D$ 在 $U$ 的  \textbf{弱算术典范模型}(\textbf{weak log canonical model})；
+    \item 如果 $f$ 是  $ (K_X+D) $-非正性的且 $ K_Y+f_*D $ 是 $ U $上丰沛的，则  称$ Y $为关于 $D$ 在 $U$ 的  \textbf{算术典范模型}(\textbf{ log canonical model})；
+    \item 如果 $f$ 是  $ (K_X+D) $-负性的且 $ K_Y+f_*D $ 是 $ U $上数值有效的和$\mathbb{Q}$-分解的，并且具有dlt奇点，则  称$ Y $为关于 $D$ 在 $U$ 的  \textbf{算术终端模型}(\textbf{log terminal model})。
+  \end{enumerate}
 \end{definition}
 
-\begin{lemma}\citet[lemma 3.6.6]{BCHM10}
-	令 $\pi:X \to U$ 是正规拟射影代数簇间的射影态射，且 $D$是 $X$ 上的 $\mathbb{R}$-Cartier除子。
+\begin{lemma}\cite[lemma 3.6.6]{BCHM10}
+  令 $\pi:X \to U$ 是正规拟射影代数簇间的射影态射，且 $D$是 $X$ 上的 $\mathbb{R}$-Cartier除子。
 
-	\begin{enumerate}
-		\item 如果 $g_{i}:X \dashrightarrow X_{i}, i=1,2$ 是 关于 $D$的  $U$上的两个丰沛模型，那么有同构态射 $h:X_{1}\to X_{2}$ 满足 $g_{2}=h \circ g_{1}$。即丰沛模型在同构意义下唯一。
-		\item 如果 $f:X \dashrightarrow Y$是 $U$ 上关于 $D$ 的 半丰沛模型，那么 $U$ 上关于 $D$ 的丰沛模型 $g:X \dashrightarrow  Z$存在，并且 $g=h \circ f$，其中 $h:Y \to Z$是压缩态射， $Z$ 上有对应丰沛除子 $H$  满足$f_*D \sim_{\mathbb{R},U}h^*H$。
-		\item  若 $f:X \dashrightarrow Y$  是$U$上双有理映射，那么 $f$是关于$D$ 在 $U$上的丰沛模型当且仅当$f$是关于 $D$ 在 $U$ 上的  半丰沛模型 且 $f_*D$ 在 $U$上丰沛。
-	\end{enumerate}
+  \begin{enumerate}
+    \item 如果 $g_{i}:X \dashrightarrow X_{i}, i=1,2$ 是 关于 $D$的  $U$上的两个丰沛模型，那么有同构态射 $h:X_{1}\to X_{2}$ 满足 $g_{2}=h \circ g_{1}$。即丰沛模型在同构意义下唯一。
+    \item 如果 $f:X \dashrightarrow Y$是 $U$ 上关于 $D$ 的 半丰沛模型，那么 $U$ 上关于 $D$ 的丰沛模型 $g:X \dashrightarrow  Z$存在，并且 $g=h \circ f$，其中 $h:Y \to Z$是压缩态射， $Z$ 上有对应丰沛除子 $H$  满足$f_*D \sim_{\mathbb{R},U}h^*H$。
+    \item  若 $f:X \dashrightarrow Y$  是$U$上双有理映射，那么 $f$是关于$D$ 在 $U$上的丰沛模型当且仅当$f$是关于 $D$ 在 $U$ 上的  半丰沛模型 且 $f_*D$ 在 $U$上丰沛。
+  \end{enumerate}
 \end{lemma}
 根据上述引理，有算术典范模型的等价定义：
 
 \begin{definition}
-	令 $ \pi:(X, D)\to U $是正规拟射影代数簇间的射影态射，$ K_X+D $ 有lc奇点且$ f: X\dashrightarrow Y $ 是不解压任何除子的双有理映射。 如果 $ Y $是 关于 $D$ 在 $U$ 上的丰沛模型，那么称之为\textbf{算术典范模型} ( \textbf{log canonical model} ) 。
+  令 $ \pi:(X, D)\to U $是正规拟射影代数簇间的射影态射，$ K_X+D $ 有lc奇点且$ f: X\dashrightarrow Y $ 是不解压任何除子的双有理映射。 如果 $ Y $是 关于 $D$ 在 $U$ 上的丰沛模型，那么称之为\textbf{算术典范模型} ( \textbf{log canonical model} ) 。
 \end{definition}
 
 进一步，对于边界是大除子的代数簇对，还有
-\begin{lemma}\citet[lemma 3.9.3]{BCHM10} 令 $ \pi:(X,B)\to U $是正规拟射影代数簇间的射影态射，且 $(X, B)$是具有klt 奇点的代数簇对，  $B$ 在 $U$上是大除子。如果哦 $f:X\dashrightarrow Y$是 $U$ 上 弱算术典范模型，那么
-	\begin{itemize}
-		\item $f$ 是$U$上半丰沛模型；
-		\item  $U$ 上的丰沛模型  $g:X \dashrightarrow Z$存在；
-		\item  存在压缩态射$h:Y\to Z$和 $Z$ 上在 $U$ 上丰沛的$\mathbb{R}$-除子，使得 $K_{Y}+f_*B\sim_{\mathbb{R},U} h^*H$。
-	\end{itemize}
+\begin{lemma}\cite[lemma 3.9.3]{BCHM10} 令 $ \pi:(X,B)\to U $是正规拟射影代数簇间的射影态射，且 $(X, B)$是具有klt 奇点的代数簇对，  $B$ 在 $U$上是大除子。如果哦 $f:X\dashrightarrow Y$是 $U$ 上 弱算术典范模型，那么
+  \begin{itemize}
+    \item $f$ 是$U$上半丰沛模型；
+    \item  $U$ 上的丰沛模型  $g:X \dashrightarrow Z$存在；
+    \item  存在压缩态射$h:Y\to Z$和 $Z$ 上在 $U$ 上丰沛的$\mathbb{R}$-除子，使得 $K_{Y}+f_*B\sim_{\mathbb{R},U} h^*H$。
+  \end{itemize}
 \end{lemma}
 下面给出除子的多面体相关的定义和定理：
 \begin{definition}\label{polytopeofdivisor}
-	\citet[Definition 1.1.4]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $ V $是 $ \operatorname{WDiv}_{\mathbb{R}}(X) $的定义在有理数上的优先为子射影空间。取定一个 $ \mathbb{R} $-除子 $ A\geqslant 0 $，定义：
-	\[
-		\begin{aligned}
-			\mathcal{L}_A(V)       & =\{D=A+B:B \in V,  K_X+D\, \text{有lc奇点且} B\geqslant0 \} \\
+  \cite[Definition 1.1.4]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $ V $是 $ \operatorname{WDiv}_{\mathbb{R}}(X) $的定义在有理数上的优先为子射影空间。取定一个 $ \mathbb{R} $-除子 $ A\geqslant 0 $，定义：
+  \[
+    \begin{aligned}
+      \mathcal{L}_A(V)       & =\{D=A+B:B \in V,  K_X+D\, \text{有lc奇点且} B\geqslant0 \} \\
     \mathcal{E}_{A,\pi}(V) & =\{D\in \mathcal{L}_A(V): K_X+D\, \text{ 是 } U \text{上的伪有效除子}\}  \\
-		\end{aligned}
-	\]
-	令 $ f:X \dashrightarrow Y$为 $U$ 上的 双有理压缩映射，定义
-	\[ \mathcal{W}_{A,\pi,f}(V)=\{D\in \mathcal{E}_{A}(V): f \text{是   } (X,D) \text{ 在 }U \text{上的弱算术典范模型}\} \]
-	令 $g:X\dashrightarrow Z  $ 是 $ U $上的有理压缩映射，定义
-	\[ \mathcal{A}_{A,\pi,g}(V)=\{D\in \mathcal{E}_{A}(V): g \text{是} (X,D) \text{ 在 }U \text{上的丰沛模型}\} \]
-	进一步，将 $ \mathcal{A}_{A,\pi,g}(V) $ 在 $\mathcal{L}_{A}(V)$中的闭包记作 $ \mathcal{C}_{A,\pi,g}(V) $。
+    \end{aligned}
+  \]
+  令 $ f:X \dashrightarrow Y$为 $U$ 上的 双有理压缩映射，定义
+  \[ \mathcal{W}_{A,\pi,f}(V)=\{D\in \mathcal{E}_{A}(V): f \text{是   } (X,D) \text{ 在 }U \text{上的弱算术典范模型}\} \]
+  令 $g:X\dashrightarrow Z  $ 是 $ U $上的有理压缩映射，定义
+  \[ \mathcal{A}_{A,\pi,g}(V)=\{D\in \mathcal{E}_{A}(V): g \text{是} (X,D) \text{ 在 }U \text{上的丰沛模型}\} \]
+  进一步，将 $ \mathcal{A}_{A,\pi,g}(V) $ 在 $\mathcal{L}_{A}(V)$中的闭包记作 $ \mathcal{C}_{A,\pi,g}(V) $。
 
-	如果基底 $U$是清楚的，或是一个点，那么我们省略 $\pi$，简单记作 $\mathcal{E}_{A}(V)$ 和 $\mathcal{A}_{A,f}$。
+  如果基底 $U$是清楚的，或是一个点，那么我们省略 $\pi$，简单记作 $\mathcal{E}_{A}(V)$ 和 $\mathcal{A}_{A,f}$。
 \end{definition}
 
 \begin{theorem}\label{finitewlcm}
-  (弱算术典范模型有限性, \citet[Theorem E]{BCHM10}).
-	令 $\pi: X\to U$是正规拟射影代数簇间的射影态射，且$A$是一个一般的 在 $U$ 上丰沛的$\mathbb{R}$-除子，且$V \subset \operatorname{WDiv}_{\mathbb{R}}(X)$是定义在有理数上的有限维线性子空间，假设存在具有klt奇点的代数簇对 $(X,\Delta_{0})$。那么存在有限多个 $U$ 上的 双有理映射 $f_{i}:X \dashrightarrow X_{i},1\leqslant i\leqslant l$ ，若某个 $D \in \mathcal{L}_{A}(V)$ 有关于 $D$ 的在 $U$ 上的  弱算术典范模型 $f:X \dashrightarrow  Y$，那么对某个$1\leqslant i\leqslant l$存在同构态射  $h_{i}:X_{i} \to Y$ 使得 $f=h_{i}\circ f_{i}$。
+  (弱算术典范模型有限性, \cite[Theorem E]{BCHM10}).
+  令 $\pi: X\to U$是正规拟射影代数簇间的射影态射，且$A$是一个一般的 在 $U$ 上丰沛的$\mathbb{R}$-除子，且$V \subset \operatorname{WDiv}_{\mathbb{R}}(X)$是定义在有理数上的有限维线性子空间，假设存在具有klt奇点的代数簇对 $(X,\Delta_{0})$。那么存在有限多个 $U$ 上的 双有理映射 $f_{i}:X \dashrightarrow X_{i},1\leqslant i\leqslant l$ ，若某个 $D \in \mathcal{L}_{A}(V)$ 有关于 $D$ 的在 $U$ 上的  弱算术典范模型 $f:X \dashrightarrow  Y$，那么对某个$1\leqslant i\leqslant l$存在同构态射  $h_{i}:X_{i} \to Y$ 使得 $f=h_{i}\circ f_{i}$。
 \end{theorem}
 
 \section{叶状结构}
