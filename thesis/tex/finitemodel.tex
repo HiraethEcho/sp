@@ -14,15 +14,8 @@
   有限模型法的Sarkisov纲领严格来说并不是一个纲领 (program)，和前两种方法不同，不是归纳地构造分解中的森纤维空间$X_{i}\to S_{i}$，而是先找出$W$ 关于$D \in \mathcal{L}_{A}(V)$的丰沛模型，然后选择其中的一些。
 \end{remark}
 
-\section{构造Sarkisov连接}
-这一节构造端点 $D$ 对应的Sarkisov连接。构造的任何一种Sarkisov连接
-\[
-  \xymatrix{
-             & Z=Z^{0}\ar[rd]\ar[ld]_{p}\ar@{.>}[rr]^{\text{关于}K+D \text{的平转}} &   & Z^{1}\ar[ld]\ar@{.>}[r] & \cdots\ar@{.>}[r] & Z^{k}=Z_{1}\ar[rd]^{q}\\
-    X\ar[d]  &                                 & Y^{1} & & & & X_{1}
-  }
-\]
-其中$p,q$ 可能是同构，且$X,X_{1},Z^{i},Z,Z_{1}$都是$W$ 关于$D$ 的某种模型。 
+
+\section{定义和引理}
 
 首先给出 $\mathcal{E}_{A}(V)$ 关于丰沛模型的划分定理：
 \begin{theorem}\label{finitemodel}
@@ -54,40 +47,57 @@
     \item 假设 $ V $ 张成 $W$的 Neron-Severi群。取两个指标 $ i,j $，使得 $ \mathcal{C}_i $ 张成 $ V $ 并且 $ D $ 是 $ \mathcal{A}_j\cap \mathcal{C}_i $ 的一般点，并且也是 $ \mathcal{L}_A(V) $的内点，那么 $ \mathcal{C}_i $ 在 $D$ 的一个邻域局部同构于$ \overline{\mathrm{NE}}(X_i/X_j)^*\times \mathbb{R}^k $，其中 $ k\geqslant 0 $。并且 $ \rho(X_i/X_j)=\dim  \mathcal{C}_i-\dim \mathcal{C}_j\cap \mathcal{C}_i   $。
   \end{enumerate}
 \end{theorem}
-
+对于上述定理后两条的子空间 $V$，需要张成$\operatorname{NS}(W)$，所以有$\dim V \geqslant \rho(W)$。但是通过下列引理，可以取其2维子空间，仍然满足结论；
 \begin{lemma}\label{subspace}
-  \cite[Corollary 3.4]{haconSarkisovProgram2012} If $V$ spans the Neron-Severi group of $W$, then there is a Zariski dense open subset $U$ of the Grassmannian $G(r, V)$ of real affine subspaces of dimension $r$ such that any  $[V']\in U$ defined over the rational numbers satisfies (1-4) of Theorem \ref{mapbetweenAM}.
+  \cite[Corollary 3.4]{haconSarkisovProgram2012} 假设 $V$ 张成$W$的Neron-Severi群。令 $G(r, V)$为$V$ 的 $r$ 维实子空间的 Grassmannian空间，那么存在一个  Zariski稠密的开子集  $U \subset G(r, V)$，使得任何定义在有理数上的子空间  $[V']\in U$，都满足定理 \ref{mapbetweenAM}的(1)-(4)。
 \end{lemma}
 
 \begin{proof}
-  Let $U \subset G(r, V) $ be the set of real affine subspace  $V'$ of $V$ of dimension $r$, which contains no face of any $\mathcal{C}_{i}$ of $\mathcal{L}_A(V)$. In particular, the interior of  $\mathcal{L}_{A}(V')$ is contained in the interior of $\mathcal{L}_{A}(V)$. It is clear that any $V'\in U$ defined over the rationals satisfies (1-4) of Theorem \ref{mapbetweenAM}.
+  令 $U \subset G(r, V) $ 是不包含任何多面体 $\mathcal{C}_{i} \subset\mathcal{L}_A(V)$的面(face)的$r$-维子空间  $V' \subsetV$的集合。特别的，  $\mathcal{L}_{A}(V')$的内部包含在 $\mathcal{L}_{A}(V)$的内部。显然任何定义在有理数上的子空间 $[V']\in U$ 都满足定理 \ref{mapbetweenAM}的 (1)-(4)。
 \end{proof}
+\begin{remark}
+  应用上述引理，本章从此开始，总假设$V$ 是满足定理\ref{mapbetweenAM}(1)-(4)的定义在有理数上的2-维空间。此时如果多面体$\mathcal{C}$是2维的，那么就张成Neron-Severi群，进而定理\ref{mapbetweenAM}.(3).1的条件就满足。
+\end{remark}
 
-By the above Lemma, from now on in this section, we always assume that $V$ has dimension $2$ and satisfies (1-4) of Theorem \ref{mapbetweenAM}. The following lemma classifies the morphisms in (2) of Theorem \ref{mapbetweenAM} into a divisorial contraction, a small contraction or a log Mori fibre space. In some cases (Lemma \ref{mapbetweenAM2} (2)), two small contractions form a flop.
 
+下面的引理用定理\ref{mapbetweenAM}.(2)的态射构造对应的除子压缩、小压缩或森纤维空间压缩。在一些情况下 ，两个小压缩组成了一个平转。 
 \begin{lemma}\label{mapbetweenAM2}
-  \cite[Lemma 3.5]{haconSarkisovProgram2012} Let $ f:W\dashrightarrow X $ and $ g:W\dashrightarrow  Y $ be two rational contractions such that $ \mathcal{C}_{A,f} $ is of dimension $ 2 $ and $ \mathcal{O}=\mathcal{C}_{A,f}\cap \mathcal{C}_{A,g} $ is of dimension $ 1 $. Assume $ \rho(X)\geqslant \rho(Y) $ and $ \mathcal{O} $ is not contained in the boundary of $ \mathcal{L}_{A}(V) $. Let $ D $ be an interior point of $ \mathcal{O} $ and $ B=f_*D $. Then there is a rational contraction $ \pi:X\dashrightarrow Y $ and $ g=\pi\circ f $ such that either
+  \cite[Lemma 3.5]{haconSarkisovProgram2012} 令 $ f:W\dashrightarrow X $和 $ g:W\dashrightarrow  Y $是两个有理压缩使得 $ \mathcal{C}_{A,f} $ 是2维空间 (张成2维线性空间) 且 $ \mathcal{O}=\mathcal{C}_{A,f}\cap \mathcal{C}_{A,g} $ 是 $ 1 $维空间。假设 $ \rho(X)\geqslant \rho(Y) $ 且 $ \mathcal{O} $ 不包含在 $ \mathcal{L}_{A}(V) $。 令 $ D $ 是 $ \mathcal{O} $ 的内点且 $ B=f_*D $。那么存在一个有理压缩态射 $ \pi:X\dashrightarrow Y $ 且 $ g=\pi\circ f $ 满足下列情况之一：
   \begin{enumerate}
-    \item $ \rho(X)=\rho(Y)+1 $ and $ \pi  $ is $ (K_X+B) $-trivial, and either
+    \item $ \rho(X)=\rho(Y)+1 $ 且 $ \pi  $ 是 $ (K_X+B) $-平凡映射。此时下列情况之一成立：
           \begin{enumerate}
-            \item $ \pi $ is birational and $ \mathcal{O} $ is not contained in the boundary of $ \mathcal{E}_A(V) $, and either
+            \item $ \pi $ 是双有理态射，并且 $ \mathcal{O} $ 不包含在 $ \mathcal{E}_A(V) $的边界里。此时有两种情况：
                   \begin{enumerate}
-                    \item $ \pi $ is a divisorial contraction and $ \mathcal{O}\neq \mathcal{C}_{A,g} $, or
-                    \item $ \pi $ is a small contraction and $ \mathcal{O}= \mathcal{C}_{A,g} $, or
+                    \item $ \pi $ 是除子压缩，并且 $ \mathcal{O}\neq \mathcal{C}_{A,g} $；
+                    \item $ \pi $ 是小压缩，并且 $ \mathcal{O}= \mathcal{C}_{A,g} $。
                   \end{enumerate}
-            \item $ \pi $ is a log Mori fibre space, and $ \mathcal{O}=\mathcal{C}_{A,g} $ is contained in the boundary of $ \mathcal{E}_{A}(V) $, or
+            \item $ \pi $ 是森纤维空间压缩，并且 $ \mathcal{O}=\mathcal{C}_{A,g} $ 包含在 $ \mathcal{E}_{A}(V) $的边界里。
           \end{enumerate}
-    \item $ \rho(X)=\rho(Y) $, and $ \pi $ is  a $ (K_X+B) $-flop and $ \mathcal{O}\neq\mathcal{C}_{A,g} $ is not contained in the boundary of $ \mathcal{E}_A(V) $.
+    \item $ \rho(X)=\rho(Y) $。此时  $ \pi $ 是 $ (K_X+B) $-平转， 并且 $ \mathcal{O}\neq\mathcal{C}_{A,g} $ 不包含在 $ \mathcal{E}_A(V) $的边界里。
+      \[ \xymatrix{
+          X\ar[rd]_{p} \ar@{.>}[rr]^{\pi} & & Y\ar[ld]^{q} \\
+        & S &
+        } \]
   \end{enumerate}
 \end{lemma}
+\begin{remark}
+  引理\ref{mapbetweenAM2}.(1)中，态射$\pi$由定理\ref{mapbetweenAM}.(2)给出。引理\ref{mapbetweenAM2}.(1).1对应定理\ref{mapbetweenAM}.(3)成立的情况，而引理\ref{mapbetweenAM2}.(1).2则对应定理\ref{mapbetweenAM}.(3)不成立的情况。
 
+  引理\ref{mapbetweenAM2}.(2)中两个态射$p,q$由定理\ref{mapbetweenAM}.(2)给出，并且都是引理\ref{mapbetweenAM2}.(1).1.2的小双有理态射。
+\end{remark}
+最后给出引理来保证后续构造的Sarkisov连接中的每一个代数簇，都是$(W, B_{W})$-MMP的结果。
 \begin{lemma}
-  \cite[Lemma 3.6]{haconSarkisovProgram2012} Let $f:W\dashrightarrow X $ be a birational contraction between $\mathbb{Q}$-factorial varieties. Suppose $(W,D)$ and $(W,D+A)$ are both klt. If $f$ is the ample model of $(W,D+A)$ and $A$ is ample, then $f$ is a result of the  $(K_{W}+D)$-MMP.
+  \cite[Lemma 3.6]{haconSarkisovProgram2012} 令 $f:W\dashrightarrow X $ 是 $\mathbb{Q}$-分解代数簇的双有理压缩，假设 $(W,D)$ 和 $(W,D+A)$ 都具有klt奇点。如果 $f$ 是关于 $(W,D+A)$的丰沛模型，且  $A$ 是丰沛的，那么 $f$是  $(K_{W}+D)$-MMP的结果。
 \end{lemma}
 
-This lemma guarantees that every variety in the Sarkisov links constructed later is a result of the $(W, B_{W})$-MMP.
+\section{构造Sarkisov连接}
+这一节构造Sarkisov连接。 对于某些端点 $D \in \mathcal{E}_{A}(V)$，如果$ D=A+B $ 在 $ \mathcal{E}_A(V) $的边界上，并且在 $ \mathcal{L}_A(V) $的内部，那么可以构造对应的Sarkisov连接
+\[ \xymatrix{
+             & Z=Z^{0}\ar[rd]\ar[ld]_{p}\ar@{.>}[rr]^{\text{关于}K+D \text{的平转}} &   & Z^{1}\ar[ld]\ar@{.>}[r] & \cdots\ar@{.>}[r] & Z^{k}=Z_{1}\ar[rd]^{q}\\
+    X  &                                 & Y^{1} & & & & X_{1} } \]
+其中$p,q$ 可能是同构，且$X,X_{1},Z^{i},Z,Z_{1}$都是$W$ 关于$D$ 的某种模型。 
 
-Finally, we show that there is a Sarkisov link corresponding to certain $D \in \mathcal{E}_{A}(V)$. Let $ D=A+B $ be a point of the boundary of $ \mathcal{E}_A(V) $ in the interior of $ \mathcal{L}_A(V) $. Let $ \mathcal{T}_1, \ldots, \mathcal{T}_k $ be the polytopes $ \mathcal{C}_i $ of dimension $ 2 $ containing $ D $. Possibly re-ordering, we may assume that  the intersection  $ \mathcal{O}_0 $ and $ \mathcal{O}_k $ of $ \mathcal{T}_1 $ and $ \mathcal{T}_k $ with boundary of $ \mathcal{E}_A(V) $ and  $ \mathcal{O}_i=\mathcal{T}_i\cap\mathcal{T}_{i+1} $ are one dimensional. Let $ f_i:W\dashrightarrow  X_i $ be the birational contraction associated to $ \mathcal{T}_i $ and $ g_i:W\dashrightarrow  S_i $ be the rational contraction associated to $ \mathcal{O}_i $.
+令 $ \mathcal{T}_1, \ldots, \mathcal{T}_k $ 是 包含$D$ 的多面体 $ \mathcal{C}_i $中2维的那些。通过重新排序，可以假设 $\mathcal{O}_{0}$是$\mathcal{T}_{1}$和 $ \mathcal{E}_{A}(V) $的边界的交 ( 即 $ \mathcal{T}_{1} \cap \partial \mathcal{E}_{A}(V) = \mathcal{O}_{0}  $)，类似的$\mathcal{O}_{k}$是$\mathcal{T}_{k}$和 $ \mathcal{E}_{A}(V) $的边界的交 ( 即 $ \mathcal{T}_{k} \cap \partial \mathcal{E}_{A}(V) = \mathcal{O}_{k}  $)，并且 $ \mathcal{O}_i=\mathcal{T}_i\cap\mathcal{T}_{i+1} $ 是1维的。如下图所示：
 \begin{center}
   \begin{tikzpicture}
     \draw (0,0)node[below]{$ D $}--(-6,4)node[above]{$ \mathcal{O}_0 $};
@@ -100,88 +110,90 @@ Finally, we show that there is a Sarkisov link corresponding to certain $D \in \
     \draw (0,0)--(6,4)node[above]{$ \mathcal{O}_{k} $};
   \end{tikzpicture}
 \end{center}
+令 $ f_i:W\dashrightarrow  X_i $ 是 $ \mathcal{T}_i $ 对应的双有理映射，且$ g_i:W\dashrightarrow  S_i $ 是$ \mathcal{O}_i $对应的有理映射。
 
-Set $ f=f_1:W\dashrightarrow X, g=f_k:W\dashrightarrow Y $ and $ \phi:X\to S=S_0,\psi:Y\to T=S_k $ and $ X'=X_2,Y'=X_{k-1} $ and let $ W\dashrightarrow R $ be the ample model of $ D $. Then
+记 
+\[ f=f_1:W\dashrightarrow X, g=f_k:W\dashrightarrow Y \]
+以及 
+\[ \phi:X\to S=S_0,\psi:Y\to T=S_k \]
+和 $ X'=X_2,Y'=X_{k-1}$。 令 $ W\dashrightarrow R $ 为 关于$ D $的丰沛模型。延续这些记号，构造Sarkisov连接：
 \begin{theorem}\label{constructlink}
-  \cite[Theorem 3.7]{haconSarkisovProgram2012} Suppose $ B_W $ is any divisor such that $ (W,B_W) $ is a log smooth terminal pair and $ D-B_W $ is ample. Then $ \phi $ and $ \psi $ are log Mori fibre spaces, which are outputs of the $ (K_W+B_W) $-MMP. Moreover, $ D $ is contained in more than two polytopes, then $\phi$ and $\psi$ are connected by a Sarkisov link, where each $f_{i}$ is a result of running the $(K_{W}+B_{W})$-MMP.
+  \cite[Theorem 3.7]{haconSarkisovProgram2012} 取边界 $ B_W $ 使得$ (W,B_W) $ 是算术光滑的算术终端奇点的代数簇对，且 $ D-B_W $ 是丰沛除子。那么 $ \phi $和 $ \psi $ 是森纤维空间，并且是 $ (K_W+B_W) $-MMP的输出。假设 $ D $ 包含在2个以上的多面体中，那么 $\phi$ 和 $\psi$ 由 Sarkisov连接相连，并且每个 $f_{i}:W \dashrightarrow  X_{i}$是  $(K_{W}+B_{W})$-MMP的结果。
 \end{theorem}
 \begin{proof}
-  We may assume $ k\geqslant 3 $, and we have
+  假设 $ k\geqslant 3 $，那么有
   $$ \xymatrix{
       X'\ar@{.>}[d]_p\ar@{.>}[rr]&&Y'\ar@{.>}[d]^q\\
       X\ar[d]_{\phi}&&Y\ar[d]^\psi\\
       S\ar[rd]^s&&T\ar[ld]_t\\
       &R&} $$
-  Note that $ \rho(X_i/R)\leqslant 2 $ and $ \rho(X/S)=\rho(Y/T)=1 $. Thus,
+  注意到 $ \rho(X_i/R)\leqslant 2 $ 且 $ \rho(X/S)=\rho(Y/T)=1 $，那么下列两种情况之一成立：
   \begin{enumerate}
-    \item $ s $ is the identity and $ p $ is a divisorial contraction (extraction), or
-    \item $ s $ is a contraction and $ p $ is a flop.
+    \item $ s $ 是一致态射 (identity)而 $ p $ 是除子压缩 (除子解压)；
+    \item $ s $ 是压缩态射而 $ p $ 是平转。
   \end{enumerate}
-  The same holds for $ q $ and $ t $. The map $X'\dashrightarrow Y'$ is the composition of the flops. This gives 4 types of links.
+  同样的情况对 $ q $ 和 $ t $成立。而映射 $X'\dashrightarrow Y'$ 是 $(K+D)$-平转。这样给出了四种Sarkisov连接。
 \end{proof}
 
-\section{Decomposition into Sarkisov links}
-We need a special resolution $W$ and a special affine subspace $V \subset \operatorname{WDiv}(W)$ as follows.
+\section{构造Sarkisov分解}
+首先需要如下特别的解消$W$和仿射子空间$V \subset \operatorname{WDiv}(W)$：
 
 \begin{lemma}\label{keylemma}
-  \cite[Lemma 4.1]{haconSarkisovProgram2012} Let $ \phi: X \to S $ and $ \psi: Y\to T  $ be two MMP-related log Mori fibre spaces corresponding to two klt projective varieties $ (X, B_X) $ and $ (Y, B_Y) $. Then we may find a smooth projective variety $ W $, two birational morphisms $ f:W\to X $ and $ g:W\to Y $, a klt pair $ (W,B_{W}) $, an ample $ \mathbb{Q} $-divisor $ A $ on $ W $ and a two-dimensional rational affine subspace $ V $ of $ \mathrm{WDiv}_{\mathbb{R}}(W) $ such that
+  \cite[Lemma 4.1]{haconSarkisovProgram2012} 令 $ \phi: (X,B_{X}) \to S $ 和 $ \psi: (Y,B_{Y})\to T  $ 是两个具有klt奇点的 MMP-相关森纤维空间。那么存在光滑射影代数簇 $ W $和两个双有理态射 $ f:W\to X $  和 $ g:W\to Y $，并且有边界除子$(B_{W})$是 $ (W,B_{W}) $具有klt奇点。同时还存在$W$ 上的丰沛 $ \mathbb{Q} $-除子 $ A $ 和2维有理仿射子空间 $ V \subset \mathrm{WDiv}_{\mathbb{R}}(W) $使得：
   \begin{enumerate}
-    \item If $ D\in \mathcal{L}_A(V) $ then $ D-B_W $ is ample;
-    \item $ \mathcal{A}_{A,\phi\circ f} $ and $ \mathcal{A}_{A,\psi\circ g} $ are not contained in the boundary of $ \mathcal{L}_A(V) $;
-    \item $ V $ satisfies (1-4) of Theorem \ref{mapbetweenAM};
-    \item $ \mathcal{C}_{A,f} $ and $ \mathcal{C}_{A,g} $ are two-dimensional;
-    \item $ \mathcal{C}_{A,\phi\circ f} $ and $ \mathcal{C}_{A,\psi\circ g} $ are one dimensional.
+    \item 如果 $ D\in \mathcal{L}_A(V) $， 那么 $ D-B_W $ 是丰沛除子；
+    \item $ \mathcal{A}_{A,\phi\circ f} $ 且 $ \mathcal{A}_{A,\psi\circ g} $ 不包含在 $ \mathcal{L}_A(V) $的边界里；
+    \item $ V $ 满足定理\ref{mapbetweenAM}.(1-4)；
+    \item $ \mathcal{C}_{A,f} $ 和 $ \mathcal{C}_{A,g} $是2维的； 
+    \item $ \mathcal{C}_{A,\phi\circ f} $ 和 $ \mathcal{C}_{A,\psi\circ g} $是1维的。 
   \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-  By assumption there is a $\mathbb{Q}$-factorial klt pair $(W,B_{W})$ such that $f:W\dashrightarrow X$ and $g:W \dashrightarrow Y$ are the outputs of the $(K_{W}+B_{W})$-MMP. Let $p':W'\to W$ be any log resolution  that resolves the indeterminacy of $f$ and $g$, then we may write
-  \[
-    K_{W'}+B_{W'}=p'^*(K_{W}+B_{W})+E'
-  \]
-  where $E'\geqslant 0$ and $B_{W'}\geqslant 0$ have no common components, and $E'$ is exceptional and $p'_*B_{W'}=B_{W}$. Pick a divisor $-F$ which is ample over $W$ with $\operatorname{Supp}F=\operatorname{Exc}p'$ such that $K_{W'}+B_{W'}+F$ is klt. As $p'$ is $(K_{W'}+
-    B_{W'}+F)$-negative and $(K_{W}+B_{W})$ is klt and $W$ is $\mathbb{Q}$-factorial, the $(K_{W'}+B_{W'}+F)$-MMP over $W$ terminates with the pair $(W,B_{W})$. Replacing $(W,B_{W})$ by $(W',B_{W'} +F)$ we may assume that $(W,B_{W})$ is log smooth and $f,g$ are morphisms.
+  由MMP-相关的假设，存在 $\mathbb{Q}$-faci分解的具有klt奇点的 代数簇对$(W,B_{W})$ 使得 $f:W\dashrightarrow X$ 和 $g:W \dashrightarrow Y$是 $(K_{W}+B_{W})$-MMP的输出。令 $p':W'\to W$ 是解消 $f$ 和 $g$的解消，记
+  \[ K_{W'}+B_{W'}=p'^*(K_{W}+B_{W})+E' \]
+  其中  $p'_*B_{W'}=B_{W}$，且$E'\geqslant 0$ 和 $B_{W'}\geqslant 0$ 没有公共组成成分， $E'$是例外除子。取 除子 $-F$满足：
+\begin{itemize}
+  \item 相对于$W$ 丰沛的；
+  \item $\operatorname{Supp}F=\operatorname{Exc}p'$；
+  \item  $K_{W'}+B_{W'}+F$ 具有klt奇点。 
+\end{itemize}
+  由于 $p'$ 是 $(K_{W'}+ B_{W'}+F)$-负性的，$(K_{W}+B_{W})$具有 klt奇点， $W$ 是 $\mathbb{Q}$-分解的，所以相对于$W$ 的 $(K_{W'}+B_{W'}+F)$-MMP终结于 $(W,B_{W})$。 用 $(W',B_{W'} +F)$替换 $(W,B_{W})$，可以假设 $(W,B_{W})$ 是算术光滑并且 $f,g$是双有理态射。 
 
-  Pick general ample $\mathbb{Q}$-divisors $A, H_{1},H_{2},\ldots ,H_{k}$ on $W$ such that $H_{1},\ldots , H_{k}$ generate the Neron-Severi group of $W$. Let $H=A+H_{1}+\ldots+ H_{k}$. Pick sufficiently ample divisors $A_{S}$ on $S$ and $A_{T}$ on $T$ such that
-  \[
-    -(K_{X}+B_{X})+\phi^*A_{S} \text{ and } -(K_{Y}+B_{Y})+\psi^*A_{T}
-  \]
-  are both ample. Pick a rational number $0<\delta<1$ such that
-  \[
-    -(K_{X}+B_{X}+\delta f_*H)+\phi^*A_{S} \text{ and } -(K_{Y}+B_{Y}+\delta g_*H)+\psi^*A_{T}
-  \]
-  are both ample and  $f$ and  $g$ are both  $(K_{W}+B_{W}+\delta H)$-negative. Replacing $H$ by $\delta H$ we may assume that $\delta=1$. Now pick a $\mathbb{Q}$-divisor $B_{0}\leqslant B_{W}$ such that $A+(B_{0}-B_{W}), -(K_{X}+ f_*B_{0}+f_*H)+\phi^*A_{S}$ and $-(K_{Y}+ g_*B_{0}+f_*H)+\psi^*A_{T}$  are all ample and $f$ and  $g$ are both  $(K_{W}+B_{0}+\delta H)$-negative.
+  取$W$ 上 一般的 丰沛$\mathbb{Q}$-除子 $A, H_{1},H_{2},\ldots ,H_{k}$ on $W$ 使得 $H_{1},\ldots , H_{k}$ 生成 $W$ 的 Neron-Severi 群。 记 $H=A+H_{1}+\ldots+ H_{k}$。取$S$ 和$T$ 上充分丰沛的除子 $A_{S}$ 和 $A_{T}$使得 
+  \[ -(K_{X}+B_{X})+\phi^*A_{S} \]
+  和
+  \[ -(K_{Y}+B_{Y})+\psi^*A_{T} \]
+  都是丰沛除子。取有理数 $0<\delta<1$使得 
+  \[ -(K_{X}+B_{X}+\delta f_*H)+\phi^*A_{S} \]
+  和
+  \[-(K_{Y}+B_{Y}+\delta g_*H)+\psi^*A_{T} \]
+  都是丰沛除子，并且  $f$ 和  $g$ 都是  $(K_{W}+B_{W}+\delta H)$-负性的。通过用 $\delta H$ 替换$H$可以假设 $\delta=1$。接着取 $\mathbb{Q}$-除子 $B_{0}\leqslant B_{W}$ 使得 $A+(B_{0}-B_{W}), -(K_{X}+ f_*B_{0}+f_*H)+\phi^*A_{S}$ 和 $-(K_{Y}+ g_*B_{0}+f_*H)+\psi^*A_{T}$ 都是丰沛除子，并且 $f$ 和  $g$都是  $(K_{W}+B_{0}+\delta H)$-负性的。
 
-  Pick general ample $\mathbb{Q}$-divisors $F_{1}\geqslant 0$ and $G_{1}\geqslant 0$  such that
-  \[
-    F_{1}\sim_{\mathbb{Q}} -(K_{X}+f_*B_{0}+ f_*H)+\phi^*A_{S} \text{ and } G_{1}\sim_{\mathbb{Q}} -(K_{Y}+g_*B_{0}+ g_*H)+\psi^*A_{T}
-  \]
-  and
-  \[
-    K_{W}+B_{0}+H+F+G
-  \]
-  is klt, where $F=f^*F_{1}$ and $G=g^*G_{1}$.
-  Let $V_{0}$ be the affine subspace of $\operatorname{WDiv}_{\mathbb{R}}(W)$ which is the translation by $B_{0}$ of the vector subspace  spanned by $H_{1},\ldots , H_{k},F,G$. Suppose that $D=A+B \in \mathcal{L}_{A}(V_{0})$. Then
-  \[
-    D-B_W=(A+B_{0}-B_{W})+(B-B_{0})
-  \]
-  is ample, as $B-B_{0}$ is nef by definition of $V_{0}$. Note that
-  \[
-    B_{0}+F+H \in \mathcal{A}_{A,\phi\circ f}(V_{0}), B_{0}+G+H \in \mathcal{A}_{\psi \circ g}(V_{0})
-  \]
-  and $f$, respectively $g$, is a weak log canonical model of $K_{W}+B_{0}+F+H$, respectively $K_{W}+B_{0}+G+H$. Thus, Theorem \ref{mapbetweenAM} implies that $V_{0}$ satisfies (1-4) of Theorem \ref{mapbetweenAM}.
+  取一般的丰沛 $\mathbb{Q}$-除子 $F_{1}\geqslant 0$ 和 $G_{1}\geqslant 0$ 使得 
+    \[ F_{1}\sim_{\mathbb{Q}} -(K_{X}+f_*B_{0}+ f_*H)+\phi^*A_{S} \]
+  且
+    \[G_{1}\sim_{\mathbb{Q}} -(K_{Y}+g_*B_{0}+ g_*H)+\psi^*A_{T} \]
+  并且
+  \[ K_{W}+B_{0}+H+F+G \]
+  具有klt奇点，其中 $F=f^*F_{1},G=g^*G_{1}$.
+  考虑由 $H_{1},\ldots , H_{k},F,G$张成的线性子空间，再被$B_{0}$平移，得到$\operatorname{WDiv}_{\mathbb{R}}(W)$的仿射子空间 $V_{0}$ (即 $V_{0}=B_{0}+ \langle H_{1},\ldots ,H_{k},F,G \rangle  $)。假设 $D=A+B \in \mathcal{L}_{A}(V_{0})$，那么
+  \[ D-B_W=(A+B_{0}-B_{W})+(B-B_{0}) \]
+  是丰沛除子 (由于 $B-B_{0}$是数值有效的，由$V_{0}$的定义可以得到)。注意到
+  \[ B_{0}+F+H \in \mathcal{A}_{A,\phi\circ f}(V_{0}), B_{0}+G+H \in \mathcal{A}_{\psi \circ g}(V_{0}) \]
+  且 $f$和 $g$分别是关于  $K_{W}+B_{0}+F+H$和 $K_{W}+B_{0}+G+H$的弱算术典范模型。因此由定理\ref{mapbetweenAM} 推出 $V_{0}$满足定理\ref{mapbetweenAM}.(1)-(4)。
 
-  Since $H_{1},\ldots ,H_{k}$ generated the Neron-Severi group of $W$ we may find constants $h_{1},\ldots ,h_{k}$ such that $G \equiv \sum^{k}_{i=1} h_{i}H_{i}$. Then there is $0< \delta\ll 1$ such that  $B_{0}+F+\delta G+H- \delta(\sum_{i=1}^{k} h_{i}H_{i}) \in \mathcal{L}_{A}(V_{0})$ and
-  \[
-    B_{0}+F+\delta G+H-\delta (\sum_i^k h_{i}H_{i}) \equiv B_{0}+F+H
-    .\]
-  Thus, $\mathcal{A}_{A,\phi\circ f}$ is not contained in the boundary of $\mathcal{L}_{A}(V_{0})$. Similarly, $\mathcal{A}_{A,\psi\circ g}$ is not contained in the boundary of $\mathcal{L}_{A}(V_{0})$. In particular $\mathcal{A}_{A,\phi\circ f}$ and   $\mathcal{A}_{A,\psi\circ g}$ span affine hyperplanes of $V_{0}$, since $\rho(X/S)=\rho(Y/T)=1$.
+  由于 $H_{1},\ldots ,H_{k}$ 生成$W$的 Neron-Severi群，可以可以找到常熟$h_{1},\ldots ,h_{k}$ 使得 $G \equiv \sum^{k}_{i=1} h_{i}H_{i}$。那么存在 $0< \delta\ll 1$使得 
+  \[B_{0}+F+\delta G+H- \delta(\sum_{i=1}^{k} h_{i}H_{i}) \in \mathcal{L}_{A}(V_{0})\]
+  且
+  \[ B_{0}+F+\delta G+H-\delta (\sum_i^k h_{i}H_{i}) \equiv B_{0}+F+H \]
+  因此, $\mathcal{A}_{A,\phi\circ f}$ 不含在 of $\mathcal{L}_{A}(V_{0})$的边界中。类似的， $\mathcal{A}_{A,\psi\circ g}$ 不包含在 $\mathcal{L}_{A}(V_{0})$的边界中。特别的，由于$\rho(X/S)=\rho(Y/T)=1$，所以$\mathcal{A}_{A,\phi\circ f}$ 和   $\mathcal{A}_{A,\psi\circ g}$ 张成 $V_{0}$中的仿射平面。
 
-  Let $V_{1}$ be the translation by $B_{0}$ of the two-dimensional vector space spanned by $F+H-A$ and $G+H-A$. Let $V$ be a small general perturbation of $V_{1}$ as in Lemma \ref{subspace}, which is defined over the rationals. This is the affine subspace we need.
+  考虑 $F+H-A$ 和 $G+H-A$张成的空间，再被 $B_{0}$平移，得到仿射空间 $V_{1}$。由引理\ref{subspace}，将 $V_{1}$扰动得到定义在有理数上的仿射空间 $V$，这个空间即满足此引理。
 \end{proof}
-Then we can prove the main theorem
 
-\begin{proof}[Proof of Theorem \ref{main}]
-  Let $(W,B_{W}),A $ and $V$ as in the Lemma \ref{keylemma}.  Pick $ D_{0} \in \mathcal{A}_{A,\phi\circ f} $  and $ D_1\in \mathcal{C}_{A,g} $ belonging to the interior of $ \mathcal{L}_A(V) $. As $ V $ is two-dimensional, removing $ D_0 $ and $ D_1 $ divides the boundary of $ \mathcal{E}_A(V) $ into two parts. The part which consists entirely of divisors that are not big is contained in the interior of $ \mathcal{L}_A(V) $. Consider tracing this boundary from $ D_0 $ to $ D_1 $. Then there are finitely many $ 2\leqslant i\leqslant N $ points $ D_i $ which are contained in more than two polytopes $ \mathcal{C}_{A,f_i}(V) $. By Lemma \ref{constructlink},  each point $ D_i $ gives a Sarkisov link.  The birational map $X \dashrightarrow Y$ is the composition of such links.
+最后证明Sarkisov分解的存在性：
+\begin{proof}
+  令 $(W,B_{W}),A $ 和 $V$ 满足引理\ref{keylemma}。 取$ \mathcal{L}_A(V) $中的内点$ D_{0} \in \mathcal{A}_{A,\phi\circ f} $  和 $ D_1\in \mathcal{C}_{A,g} $。由于 $ V $是2维的，去掉 $ D_0 $ 和 $ D_1 $ 将把 $ \mathcal{E}_A(V) $的边界分成两个部分。其中一部分全部由不大的(not big)除子组成，并且包含在 $ \mathcal{L}_A(V) $的内部。考虑这一部分从 $ D_0 $ 到 $ D_1 $的过程，存在有点多个点 $ D_i , 2\leqslant i\leqslant N $ 包含在两个以上的多面体 $ \mathcal{C}_{A,f_{k}}(V) $中。由引理 \ref{constructlink}，每一个点 $ D_i $给出一个 Sarkisov 连接。那么双有理映射 $X \dashrightarrow Y$ 分解成这些连接的复合。
 \end{proof}
 
