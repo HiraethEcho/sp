@@ -1,50 +1,57 @@
 \chapter{有限模型法}\label{thirdmethod}
-In this section, we follow \cite{haconSarkisovProgram2012}.
-The approach is different from the previous two approaches as it does not rely explicitly on 2-ray games. We briefly explain the ideas of the method.
+这一章主要参考 \cite{haconSarkisovProgram2012}。 通过有限模型来构造Sarkisov分解和前两种方法不同，这种方法并不通过运行2-ray game来构造Sarkisov连接。下面简要介绍这种方法的思路：
 
-Let $W$ be a common log resolution of two MMP-related Mori fibre spaces $X\to S$ and $Y\to T$. Take a finite dimensional affine subspace $V$ of $\operatorname{WDiv}_{\mathbb{R}}(W)$ and an ample $\mathbb{Q}$-divisor $A$. Then $\{\mathcal{A}_{i} =\mathcal{A}_{A,f_{i}}\} $ is a partition of $\mathcal{E}_{A}(V)$, and each $\mathcal{A}_{i}$ corresponds to an ample model of $W$.    There are morphisms connecting certain ample models (Theorem \ref{mapbetweenAM}).
-
-We can find a special $2$-dimensional rational affine subspace  $V$ (by Lemma \ref{keylemma}) such that
+令 $W$为两个MMP-相关的森纤维空间 $X\to S$ 和 $Y\to T$公共奇点解消。 Take a finite dimensional affine subspace $V$ 取 $\operatorname{WDiv}_{\mathbb{R}}(W)$的有限维仿射子空间$V$和丰沛 $\mathbb{Q}$-除子 $A$，那么 $\{\mathcal{A}_{i} =\mathcal{A}_{A,f_{i}}\} $ 是 $\mathcal{E}_{A}(V)$的一个划分，且每个子集 $\mathcal{A}_{i}$ 对应 $W$的一个丰沛模型，相邻的子集对应的丰沛模型之间有压缩态射 (见 定理\ref{mapbetweenAM})。由引理\ref{keylemma}，可以取到一个特殊的子空间 $V$ ，使得 
 \begin{enumerate}
-  \item $S,T$ are ample models of $W$ for some $D_{S},D_{T} \in \mathcal{L}_{A}(V) $;
-    \item $D_{S}$ and $D_{T}$ are two points that divide the boundary $\partial \mathcal{L}_{A}(V)$ into two parts. On one of the parts, there are finitely many segments connecting $D_{S}$ and $D_{T}$, and let $D_{i}$ be the endpoints of the segments. Each $D_{i}$ corresponds to a Sarkisov link.
-    (See Figure \ref{pic}, where $D_S=D_0$ and $D_T=D_1$)
-    
+  \item $V$ 是2维的有理仿射空间(可以定义在有理数上)； 
+  \item $S,T$ 是 $W$ 关于 $D_{S},D_{T} \in \mathcal{L}_{A}(V) $的丰沛模型；
+  \item $D_{S}$ 和 $D_{T}$ 是$\mathcal{L}_{A}(V)$边界 $\partial \mathcal{L}_{A}(V)$上的两个点，并且将边界分为两个部分。在其中一个部分上，有有限多个线段连接 $D_{S}$ 和 $D_{T}$，并且$D_{i}$是线段的端点，此时每个端点 $ D_{i}$对应一个Sarkisov连接。
+
+    (图 \ref{pic}为一个示例图，其中$D_S=D_0,D_T=D_1$)
+  \item 双有理映射$X\dashrightarrow Y$是这些Sarkisov 连接的复合。这就是有限模型法构造的Sarkisov分解。
 \end{enumerate}
+\begin{remark}
+  有限模型法的Sarkisov纲领严格来说并不是一个纲领 (program)，和前两种方法不同，不是归纳地构造分解中的森纤维空间$X_{i}\to S_{i}$，而是先找出$W$ 关于$D \in \mathcal{L}_{A}(V)$的丰沛模型，然后选择其中的一些。
+\end{remark}
 
-Then  $X\dashrightarrow Y$ is the composition of these Sarkisov links, and  Theorem \ref{main} follows.
+\section{构造Sarkisov连接}
+这一节构造端点 $D$ 对应的Sarkisov连接。构造的任何一种Sarkisov连接
+\[
+  \xymatrix{
+             & Z=Z^{0}\ar[rd]\ar[ld]_{p}\ar@{.>}[rr]^{\text{关于}K+D \text{的平转}} &   & Z^{1}\ar[ld]\ar@{.>}[r] & \cdots\ar@{.>}[r] & Z^{k}=Z_{1}\ar[rd]^{q}\\
+    X\ar[d]  &                                 & Y^{1} & & & & X_{1}
+  }
+\]
+其中$p,q$ 可能是同构，且$X,X_{1},Z^{i},Z,Z_{1}$都是$W$ 关于$D$ 的某种模型。 
 
-\section{Construction of Sarkisov links}
-In this section, we construct one Sarkisov link. The following theorems show the partition of $\mathcal{E}_{A}(V)$  corresponding to ample models and morphisms between these ample models.
+首先给出 $\mathcal{E}_{A}(V)$ 关于丰沛模型的划分定理：
 \begin{theorem}\label{finitemodel}
-  \cite[Corollary 1.1.5]{BCHM10} Let $\pi:X\to U$ be a projective morphism of normal quasi-projective varieties,  and $V \subset \operatorname{WDiv}_{\mathbb{R}}(X)$ be a finite dimensional rational subspace. Suppose that there is a divisor $\Delta_{0} \in V$ such that $(X,\Delta_{0})$ is klt. Let $A$ be a general ample $\mathbb{Q}$-divisor over $U$ which has no components common with any element of $V$.
+  \cite[Corollary 1.1.5]{BCHM10} 令 $\pi:X\to U$ 是正规拟射影代数簇间的射影态射，并且 $V \subset \operatorname{WDiv}_{\mathbb{R}}(X)$是有限维有理子空间，假设存在一个除子 $\Delta_{0} \in V$ 使得 $(X,\Delta_{0})$ 具有klt奇点。令 $A$是 相对于 $U$ 的一般的丰沛 $\mathbb{Q}$-除子，并且它和任何$V$ 中的除子都没有共同的素除子作为组成成分。那么
   \begin{enumerate}
-    \item   There are finitely many birational maps $f_{i}:X \dashrightarrow   X_{i}$ over $U$ such that
-          \[
-            \mathcal{E}_{A,\pi}(V) =\bigcup_{i}\mathcal{W}_{i}
-          \]
-          where  $\mathcal{W}_{i}=\mathcal{W}_{A,f_{i}}(V)$ is a rational polytope. Moreover, if  $f:X \dashrightarrow  Y$ is a  log terminal model of $K_{X}+D$ over $U$ for some $D \in \mathcal{E}_{A,\pi}(V)$, then  $f=f_{i}$ for some $i$.
-
-    \item   There are finitely many rational maps $g_{j}:X \dashrightarrow  Z_{j}$ over $U$ such that
-          \[
-            \mathcal{E}_{A,\pi}(V) =\coprod_{j}\mathcal{A}_{j}
-          \]
-          $ \{\mathcal{A}_j=\mathcal{A}_{A,\pi,g_j}\} $ is a partition of $ \mathcal{E}_{A}(V) $. Let $\mathcal{C}_{j}$ be the closure of $\mathcal{A}_{j}$ in $\mathcal{L}_{A,\pi}(V)$;
-    \item  For every  $f_{i}$ there is a $g_{j}$ and a morphism $h_{ij}:Y_{i}\to Z_{j}$ such that $\mathcal{W}_{i} \subset \mathcal{C}_{j}$.
+    \item   存在有限多个相对于 $U$ 的双有理映射  $f_{i}:X \dashrightarrow   X_{i}$ 使得：
+          \[ \mathcal{E}_{A,\pi}(V) =\bigcup_{i}\mathcal{W}_{i} \]
+          其中  $\mathcal{W}_{i}=\mathcal{W}_{A,f_{i}}(V)$ 是定义在有理数上的多面体  (rational polytope)。且如果  $f:X \dashrightarrow  Y$ 是关于对某个 $D \in \mathcal{E}_{A,\pi}(V)$相对于 $U$ 的算术终端模型，那么对某个$i$ ，有  $f=f_{i}$ 。即 $X$ 关于$\mathcal{E}_{A,\pi}(V)$的算术终端模型一定是$f_{i}$中的一个。   
+    \item   存在有限多个相对于$U$ 的 有理映射 $g_{j}:X \dashrightarrow  Z_{j}$使得： 
+          \[ \mathcal{E}_{A,\pi}(V) =\coprod_{j}\mathcal{A}_{j} \]
+          其中$ \{\mathcal{A}_j=\mathcal{A}_{A,\pi,g_j}\} $ 是 $ \mathcal{E}_{A}(V) $的划分。 令 $\mathcal{C}_{j}$ 是 $\mathcal{A}_{j}$ 在$\mathcal{L}_{A,\pi}(V)$中的闭包；
+    \item  对每个  $f_{i}$ 都存在某个 $g_{j}$ 和态射 $h_{ij}:Y_{i}\to Z_{j}$ 使得 $\mathcal{W}_{i} \subset \mathcal{C}_{j}$。
   \end{enumerate}
 \end{theorem}
+如果模型对应的多面体相邻，那么模型之间有态射：
 \begin{theorem}\label{mapbetweenAM}
-  \cite[Theorem 3.3]{haconSarkisovProgram2012} Let $W$ be a smooth projective   variety, and  $ V $ be a finite dimensional affine subspace of $ \operatorname{WDiv}_{\mathbb{R}}(W) $ defined over the rational numbers and fix an ample effective $\mathbb{Q}$-divisor $A$. Suppose that there is an element $D_{0}$ of $\mathcal{L}_{A}(V)$ such that $K_{W}+D_{0}$ is big and klt. Then there are finitely many rational contractions $ f_i:W\dashrightarrow X_i $ such that
+  \cite[Theorem 3.3]{haconSarkisovProgram2012} 令 $W$ 是光滑射影代数簇，并且$ V $ 是 $ \operatorname{WDiv}_{\mathbb{R}}(W) $的有限维有理子空间。取定一个有效丰沛$\mathbb{Q}$-除子 $A$，假设$\mathcal{L}_{A}(V)$中有元素 $D_{0}$使得 $K_{W}+D_{0}$ 具有klt奇点并且是大除子。那么存在有限多个有理压缩映射 $ f_i:W\dashrightarrow X_i $使得 
   \begin{enumerate}
-    \item $ \{\mathcal{A}_i=\mathcal{A}_{A,f_i}\} $ is a partition of $ \mathcal{E}_{A}(V) $. $ \mathcal{A}_{i} $ is a finite union of interiors of rational polytopes.  Let $\mathcal{C}_{i}$ be the closure of $\mathcal{A}_{i}$ in $\mathcal{L}_{A}(V)$. If $ f_i $ is birational then $ \mathcal{C}_i$ is a rational polytope;
-    \item If $ i,j $ are two indices such that $ \mathcal{A}_j\cap \mathcal{C}_i\neq \emptyset $ then there is a contraction $ f_{ij}:X_i\to X_j $ such that $ f_j=f_{ij}\circ f_i $;
-    \item Suppose in addition $ V $ spans the Neron-Severi group of $W$. Pick $ i $ such that a connected component $ \mathcal{C} $ of $ \mathcal{C}_i $ intersects the interior of $ \mathcal{L}_A(V) $, the following are equivalent:
+    \item $ \{\mathcal{A}_i=\mathcal{A}_{A,f_i}\} $是 $ \mathcal{E}_{A}(V) $的划分。 $ \mathcal{A}_{i} $ 是有限多个有理多面体的内点的并。 令$\mathcal{C}_{i}$ 是 $\mathcal{A}_{i}$ 在 $\mathcal{L}_{A}(V)$中的闭包。如果 $ f_i $ 双有理映射，那么 $ \mathcal{C}_i$ 是有理多面体；
+    \item 如果 $ i,j $ 两个指标满足 $ \mathcal{A}_j\cap \mathcal{C}_i\neq \emptyset $ ，那么存在一个压缩态射 $ f_{ij}:X_i\to X_j $使得 $ f_j=f_{ij}\circ f_i $；
+    \item 进一步假设 $ V $ 张成 $W$的 Neron-Severi群，即
+          \[ V \to \operatorname{NS}(W) \]
+          是满射。 如果某个$ \mathcal{C}_i $的一个连通分支$ \mathcal{C} $ 与$ \mathcal{L}_A(V) $的内点有交，那么下列等价：
           \begin{enumerate}
-            \item $ \mathcal{C} $ spans $ V $;
-            \item If $ D\in \mathcal{A}_i\cap \mathcal{C} $ then $ f_i $ is a log terminal model of $ K_W+D $;
-            \item $ f_i $ is birational and $ X_i $ is $ \mathbb{Q} $-factorial.
+            \item $ \mathcal{C} $ 张成 $ V $；
+            \item 对除子 $ D\in \mathcal{A}_i\cap \mathcal{C} $，那么$ f_i $ 是关于$ D $的算术终端模型；
+            \item $ f_i $ 是双有理映射，且 $ X_i $ 是 $ \mathbb{Q} $-分解的。
           \end{enumerate}
-    \item Suppose in addition $ V $ spans the Neron-Severi group of $W$. If $ i,j $ are two indices such that $ \mathcal{C}_i $ spans $ V $ and $ D $ is a general point of $ \mathcal{A}_j\cap \mathcal{C}_i $ which is also a point of interior of $ \mathcal{L}_A(V) $, then $ \mathcal{C}_i $ and $ \overline{\mathrm{NE}}(X_i/X_j)^*\times \mathbb{R}^k $ are locally isomorphic in a neighborhood of $D$,  for some $ k\geqslant 0 $. Furthermore, $ \rho(X_i/X_j)=\dim  \mathcal{C}_i-\dim \mathcal{C}_j\cap \mathcal{C}_i   $.
+    \item 假设 $ V $ 张成 $W$的 Neron-Severi群。取两个指标 $ i,j $，使得 $ \mathcal{C}_i $ 张成 $ V $ 并且 $ D $ 是 $ \mathcal{A}_j\cap \mathcal{C}_i $ 的一般点，并且也是 $ \mathcal{L}_A(V) $的内点，那么 $ \mathcal{C}_i $ 在 $D$ 的一个邻域局部同构于$ \overline{\mathrm{NE}}(X_i/X_j)^*\times \mathbb{R}^k $，其中 $ k\geqslant 0 $。并且 $ \rho(X_i/X_j)=\dim  \mathcal{C}_i-\dim \mathcal{C}_j\cap \mathcal{C}_i   $。
   \end{enumerate}
 \end{theorem}
 
@@ -116,7 +123,7 @@ Set $ f=f_1:W\dashrightarrow X, g=f_k:W\dashrightarrow Y $ and $ \phi:X\to S=S_0
 \section{Decomposition into Sarkisov links}
 We need a special resolution $W$ and a special affine subspace $V \subset \operatorname{WDiv}(W)$ as follows.
 
-\begin{lemma}\label{keylem}
+\begin{lemma}\label{keylemma}
   \cite[Lemma 4.1]{haconSarkisovProgram2012} Let $ \phi: X \to S $ and $ \psi: Y\to T  $ be two MMP-related log Mori fibre spaces corresponding to two klt projective varieties $ (X, B_X) $ and $ (Y, B_Y) $. Then we may find a smooth projective variety $ W $, two birational morphisms $ f:W\to X $ and $ g:W\to Y $, a klt pair $ (W,B_{W}) $, an ample $ \mathbb{Q} $-divisor $ A $ on $ W $ and a two-dimensional rational affine subspace $ V $ of $ \mathrm{WDiv}_{\mathbb{R}}(W) $ such that
   \begin{enumerate}
     \item If $ D\in \mathcal{L}_A(V) $ then $ D-B_W $ is ample;
