@@ -133,12 +133,10 @@
 \begin{proof}
   分两种情况构造：
   \begin{enumerate}
-  \item\label{2a} 若 $s_{i}$ 不是集合 $\Gamma$ 的第一个条件
+  \item 若 $s_{i}$ 不是集合 $\Gamma$ 的第一个条件
     \[\left(W,B_{W}+g_{i}G_{W}+h_{i}H_{W}+t(H_{W}-r_{i}G_{W})\right)\geqslant \left(X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i}+t\left(H_{i}-r_{i}G_{i}\right)\right)\]
     的阈值，也就是说存在 $0<\epsilon\ll 1$，使得 $W$ 上任意除子$E$，都有
-  \[
-    a(E;X_{i},D_{i}(s_{i}+\epsilon))\geqslant a(E;W,D_{W,i}(s_{i}+\epsilon))
-  \]
+  \[ a(E;X_{i},D_{i}(s_{i}+\epsilon))\geqslant a(E;W,D_{W,i}(s_{i}+\epsilon)) \]
   并且 $K_{X_{i}}+D_{i}(s_{i}+\epsilon)$ 不是数值有效。那么对某个 $0< \delta \ll \epsilon $，存在一个 $2$ 维的 $(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta G_{i})$-负性 极端面 $F$，由$R=\mathbb{R}_{\geqslant 0}[C_{i}]$ 和令一个极端射线$P$张成 (spanned by)。于是存在关于 $F$   的压缩态射$X_{i}\to T_{i}$穿过 $f_{i}$。 
   \[
     \xymatrix{
@@ -233,18 +231,15 @@
       \[a(F;X_{i},D_{i}(s_{i}+\epsilon)-\delta G_{i})< a(F;X_{i+1},D_{i+1}(\epsilon)-\delta G_{i+1}) \]
     \item  $h_{i}\leqslant 1$，且 $h_{i}=1$ 当且仅当 $g_{i}=0$；
   \end{enumerate}
-  
 \end{assertion}
 
 \section{双标量Sarkisov纲领的终结性}
 \begin{lemma}\label{termination2}
   \cite[Lemma 13.18-19]{haconMinimalModelProgram2012} (或者 \cite[Lemma 4.9]{liuSarkisovProgramGeneralized2021}) 假设按上节所述构造了 Sarkisov 连接的序列：
-  \[
-    \xymatrix{
+  \[ \xymatrix{
     X=X_0\ar@{.>}[r]\ar[d]_{f_0}&X_{1}\ar@{.>}[r]\ar[d]_{f_1}& X_{2}\ar[d]_{f_2}\ar@{.>}[r] &\cdots\ar@{.>}[r]&X_{i}\ar[d]_{f_i}\ar@{.>}[r] &\cdots\\
     S=S_{0}&S_{1} &S_{2}&&S_{i}
-    }
-    ,\]
+    } \]
   那么
   \begin{enumerate}
     \item 在同构意义下，只有有限多种森纤维空间 $f_{i}:X_{i}\to S_{i}$；
@@ -280,9 +275,9 @@
               由于 森纤维空间$X=X_{i_{k}}\to S_{i_{k}}$ 是关于极端射线 $R_{\alpha}$的压缩态射，这样的射线有限，所以弱算术典范模型 $X=X_{i_{0}}$ 在构造的Sarkisov连接的序列中出现的森纤维空间在同构意义下有限；
             \item 假设对某个 $k>0$ 有  $h_{i_{k}}>0$，那么通过截短子列，不妨设$0<h_{i_{0}}=h_{0}<1$ (注意，做此替换后$X_{0}$并不是Sarkisov纲领的初始起点，并且$g_{0}\neq 1$，但为符号简便，仍将其记为$X$  )。 因为 $H$ 是大除子，所以存在丰沛$\mathbb{Q}$-除子 $A$ 和有效$\mathbb{Q}$-除子 $E$ 使得 $H=A+E$。  取充分小的 $\epsilon$ 使得$(X,D)$具有klt奇点，其中$D=B+(1-\epsilon)H+\epsilon E$。那么 $(K_{X}+D).R_{k}<0$ 且 $(K_{X}+D+\epsilon A).R_{k}<0$ 对所有 $k$成立。同样由锥定理\ref{conethm}，有
               \[
-                \overline{\operatorname{NE}}(X)=\overline{\operatorname{NE}}(X)_{K_{X}+D+\epsilon A}\geqslant 0} +\sum_{\alpha \in\Lambda\text{有限集}}R_{\alpha}.
+                \overline{\operatorname{NE}}(X)=\overline{\operatorname{NE}}(X)_{K_{X}+D+\epsilon A}\geqslant 0 +\sum_{\alpha \in\Lambda\text{有限集}}R_{\alpha}.
               \]
-              同上，由于 森纤维空间$X=X_{i}_{k}\to S_{i_{k}}$ 是关于极端射线 $R_{\alpha}$的压缩态射，这样的射线有限，所以弱算术典范模型 $X=X_{i_{0}}$ 在构造的Sarkisov连接的序列中出现的森纤维空间在同构意义下有限；
+              同上，由于 森纤维空间$X=X_{i_{k}}\to S_{i_{k}}$ 是关于极端射线 $R_{\alpha}$的压缩态射，这样的射线有限，所以弱算术典范模型 $X=X_{i_{0}}$ 在构造的Sarkisov连接的序列中出现的森纤维空间在同构意义下有限；
       \end{enumerate}
     \item 若上述构造的 Sarkisov连接的序列是无限的，那么由(1) ，不妨设存在无穷子列 $\{i_{k}\}_{k=0}^{\infty} $使得 森纤维空间$X_{i_{k}}\to S_{i_{k}}$同构于$X_{i_{0}}\to S_{i_{0}}$。为简化记号，不妨设$X_{i_{0}}=X_{0}=X$ (同样的，做此替换后$X_{0}$可能并不是Sarkisov纲领的初始起点，并且可能有$g_{0}\neq 1,h_{0}\neq 0$，但为符号简便，仍将其记为$X$)。此时曲线$C_{i_{k}} \subset X$是相同的曲线，由$g_{i_{k}}$和$h_{i_{k}}$的构造可以得到 $g_{0}=g_{i_{k}}$ 和 $h_{0}=h_{i_{k}}$。由于序列 $h_{i}$ 和 $g_{i}$是单调的，所以 $h_{i}=h_{0}$ 和  $g_{i}=g_{0}$ 是常值，并且$r_{i}=r_{0},s_{i}=0$都是常值。
 

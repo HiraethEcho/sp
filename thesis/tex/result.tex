@@ -26,54 +26,48 @@
 \end{remark}
 下面给出一些代数簇的符号：
 \begin{itemize}
-  \item 令 $W_{2}\to Z_{0}$ 是  $W_{2}$压缩曲线 $E_{1}$的态射，且 $Z_{0} \to X_{1}$ 是压缩曲线 $B$的态射，那么 $Z_{0}\to X_{0}$ 是  $X$上解压 $E_{2}$除子解压；
-  \item Let $W'_{2}\to Z_{1}$ be the contraction of $E_{1}$ on $W'_{2}$, then $Z_{1} \to X_{1}$ is the extraction of $E_{3}$ on $X_{1}$, and $Z_{1}\to X'$ is the contraction of $E_{2}$;
-  \item $W\to Z$ be the contraction of $E_{1}$ and $E_{2}$ on $W$, then $Z\to X$ is the extraction of $E_{3}$ and $Z\to X'$ is the contraction of $B$.
+  \item 令 $W_{2}\to Z_{0}$ 是  $W_{2}$压缩曲线 $E_{1}$的态射，且 $Z_{0} \to X_{1}$ 是压缩曲线 $B$的除子压缩，那么 $Z_{0}\to X_{0}$ 是  $X$上解压 $E_{2}$的除子解压；
+  \item 令 $W'_{2}\to Z_{1}$   是 $W'_{2}$上压缩 $E_{1}$的态射，那么 $Z_{1} \to X_{1}$ 是$X_{1}$上解压除子 $E_{3}$ 的除子解压，并且 $Z_{1}\to X'$ 是压缩 $E_{2}$的除子压缩；
+  \item 令$W\to Z$ 是$W$ 上压缩  $E_{1}$ 和 $E_{2}$ 的两个压缩曲线态射的复合，那么 $Z\to X$ 是解压 $E_{3}$的除子解压，而 $Z\to X'$ 是解压 $B$的除子解压
 \end{itemize}
-That is
+对应的映射的交换图表：
 \[ \xymatrix{&&&W_3\ar[ld]\ar@{=}[r]&W\ar[ddd]\ar@{=}[r]&W_3'\ar[rd]\\
     &&W_2\ar[ld]\ar[rd]&&&&W_2'\ar[rd]\ar[dl]\\
     &W_1\ar[ld]&&Z_0\ar[llld]\ar[rd]&&Z_1\ar[ld]\ar[rrrd]&&W_1'\ar[rd]\\
     X_0&&&&X_1&&&&X'
   } \]
-and
+  和
 \[\xymatrix{
     &W\ar[d]\ar[ddl]_{\sigma}\ar[ddr]^{\sigma'}&\\
     &Z\ar[dl]\ar[dr]\\
     X&&X' }  \]
 
-Consider the pairs $ (X,bB) $ and $ (X',b'B') $, and take the function $\theta$ such that:
+考虑代数簇对 $ (X,bB) $ 和 $ (X',b'B') $，因为是算术光滑的，所以显然是具有klt奇点的。取函数 $\theta$ 使得：
 \begin{itemize}
-  \item $\theta(B)=b$ and $\theta(B')=b'$;
-  \item $\theta(E_{1})=\theta(E_{2})=\epsilon$ with $b,b'<\epsilon<1$.
+  \item $\theta(B)=b$ 且 $\theta(B')=b'$;
+  \item $\theta(E_{1})=\theta(E_{2})=\epsilon$，其中 $b,b'<\epsilon<1$.
 \end{itemize}
-Then we have the ramification formulas:
-\[ \begin{array}{rllllllllll}
-    K_W+B_W & = & \sigma^*(K_X+bB)       & + & (3-2b+b')E_3 & + & (1-b+\epsilon)E_1 & + & (2-2b+\epsilon)E_2  & \\
-            & = & \sigma'^*(K_{X'}+b'B') & + & (3-2b'+b)B   & + & (1-b'+e)E_1       & + & (2-2b'+\epsilon)E_2 &
+那么有分歧公式：
+\[ \begin{array}{rllllllll}
+      & K_W+B_W \\
+    = & \sigma^*(K_X+bB)       & + & (3-2b+b')E_3 & + & (1-b+\epsilon)E_1 & + & (2-2b+\epsilon)E_2  & \\
+    = & \sigma'^*(K_{X'}+b'B') & + & (3-2b'+b)B   & + & (1-b'+e)E_1       & + & (2-2b'+\epsilon)E_2 &
   \end{array} \]
-Let $ \mathcal{H}'=|\mathcal{O}_{X'}(1)| $ be the very ample complete linear system on $X'$, then $H\in |\mathcal{O}_{X}(2)|$. 
+取 $ \mathcal{H}'=|\mathcal{O}_{X'}(1)| $为 $X'$上极丰沛的完全线性系，那么 $H\in |\mathcal{O}_{X}(2)|$。
 
-Different choices of $\theta$ and  $\epsilon$ give different decompositions:
+不同的 $\theta$ 和  $\epsilon$ 的选取给出不同的分解：
 \begin{enumerate}
-  \item\label{example1.1} If $ 2b+2b'\geqslant 3\epsilon>0 $, then $\Phi$ is the composition of two Sarkisov links $\psi_{0},\psi_{1}$ of type II:
-
-  \[
-    \xymatrix{
-    &Z_{0}\ar[rd]\ar[ld] & &Z_{1}\ar[rd]\ar[ld]\\
-    X\ar[d]\ar@{.>}[rr]^{\psi_{0}}& &X_{1}\ar@{.>}[rr]^{\psi_{1}}\ar[d]&&X'\ar[d]\\
-    \text{pt}&&\text{pt}&&\text{pt}
-    }
-  \]
-  \item If $ 2b+2b'< 3\epsilon $, then $\Phi$ is just one Sarkisov link  of type II:
-        \[
-          \xymatrix{
+  \item\label{example1.1} 如果$ 2b+2b'\geqslant 3\epsilon>0 $，那么  $\Phi$ 是两个第二型 Sarkisov 连接 $\psi_{0},\psi_{1}$的复合： 
+    \[ \xymatrix{
+        &Z_{0}\ar[rd]\ar[ld] & &Z_{1}\ar[rd]\ar[ld]\\
+        X\ar[d]\ar@{.>}[rr]^{\psi_{0}}& &X_{1}\ar@{.>}[rr]^{\psi_{1}}\ar[d]&&X'\ar[d]\\
+        \text{pt}&&\text{pt}&&\text{pt} } \]
+  \item 如果 $ 2b+2b'< 3\epsilon $，那么 $\Phi$ 是一个第二型Sarkisov连接的复合：
+        \[ \xymatrix{
             &Z\ar[rd]\ar[ld] & \\
             X_{1}\ar@{.>}[rr]^{\Phi}\ar[d]& &X'\ar[d]\\
-            \text{pt}&&\text{pt}
-          }
-        \]
-  \item If $ \epsilon=b=b'=0 $, then $\Phi$ is the composition of four Sarkisov links $\psi_{i}$:
+            \text{pt}&&\text{pt} } \]
+  \item 如果 $ \epsilon=b=b'=0 $，那么 $\Phi$是四个 Sarkisov 连接 $\psi_{i}$的复合：
         \[ \xymatrix{
           &&W_2\ar[ld]\ar[rd]&&W_2'\ar[ld]\ar[rd]\\
           &X_1=\mathbb{F}_1\ar@{.>}[rr]^{\psi_{1}}\ar[d]&&X_2=\mathbb{F}_2\ar@{.>}[rr]^{\psi_{2}}\ar[d]&&X_3=\mathbb{F}_1\ar[d]\ar[rd]^{\psi_{3}}\\
@@ -81,32 +75,60 @@ Different choices of $\theta$ and  $\epsilon$ give different decompositions:
           \text{pt}&&&&&&\text{pt} } \]
 \end{enumerate}
 
-\subsection{Double scaling method}
-Notations and assumptions as in Section \ref{example1}, let $B_{W}=\frac{1}{2}(B+E_{1}+E_{3})$ and consider pairs $(X,\frac{1}{2}B)$ and $(X',\frac{1}{2}B')$. Then we have $G=G_{0}\sim_{\mathbb{Q}}\frac{5}{2}B$ and $H'\sim_{\mathbb{Q}}\frac{5}{2}B'$.
-
+\subsection{双标量法}
+沿用上一小节 \ref{example1}的记号，令 $B_{W}=\frac{1}{2}(B+E_{1}+E_{3})$ 并考虑代数簇对 $(X,\frac{1}{2}B)$ 和 $(X',\frac{1}{2}B')$。那么有 $G=G_{0}\sim_{\mathbb{Q}}\frac{5}{2}B$ 和 $H'\sim_{\mathbb{Q}}\frac{5}{2}B'$。对$G$和$H'$运行双标量Sarkisov纲领：
 \begin{enumerate}
-  \item $r_{0}=2$ and $s_{0}=\frac{1}{5}$. $X_{1}$ is a weak log canonical model of $(W,B_{W}+\frac{3}{5}G_{W}+\frac{1}{5}H_{W})$;
-  \item  $r_{1}=1$ and $s_{1}=\frac{2}{5}$. $X_{2}= X'$ is a weak log canonical model of $(W,B_{W}+\frac{1}{5}G_{W}+\frac{3}{5}H_{W})$.
+  \item 第一个连接：$r_{0}=2$ 且 $s_{0}=\frac{1}{5}$。于是 $X_{1}$ 是$W$  关于 $(W,B_{W}+\frac{3}{5}G_{W}+\frac{1}{5}H_{W})$的弱算术典范模型；
+  \item 第二个连接： $r_{1}=1$ 且 $s_{1}=\frac{2}{5}$。于是 $X_{2}= X'$ 是$W$ 关于  $(W,B_{W}+\frac{1}{5}G_{W}+\frac{3}{5}H_{W})$的弱算术典范模型。
 \end{enumerate}
+\begin{remark}
+严格按照命题\ref{2Constructlink}和引理\ref{termination2}来说，$N=3 $，且还有一个恒同的连接$X_{2}=X_{3}=X' $，不过这里我们省去它。
+\end{remark}
+\begin{remark}
+  这给出了上一小节\ref{example1} 中情况 (\ref{example1.1})相同的分解。
+\end{remark}
 
-This gives the same decomposition as in the case (\ref{example1.1}) in  Section \ref{example1}.
-
-\subsection{Polytope method}
-Let  $P,Q$ be two different points on $\mathbb{P}^{2}$ and let $L$ be the line passing through $P$ and $Q$. Let $p:X\to \mathbb{P}^{2}$ be the blow-up at $P$ and $E_{1}$ be the exceptional divisor. Let $q:Y\to \mathbb{P}^{2}$ be the blow-up at $Q$ and $E_{2}$ be the exceptional divisor. Let $W\to \mathbb{P}^{2}$ be the blow-up of $P$ and $Q$, then we have contractions $f:W\to X$ and $g:W\to Y$. Identify $L,E_{1}$ and $E_{2}$ with their strict transforms on  $W$. Let $h:W\to Z$ be the contraction of $L$, then $Z\cong \mathbb{P}^{1} \times \mathbb{P}^{1}=\mathbb{F}_{0}$.
+\subsection{有限模型法}
+令  $P,Q$ 是射影平面 $\mathbb{P}^{2}$上两个不同的点，且 $L$是经过 $P$ 和 $Q$的射影直线。令 $p:X\to \mathbb{P}^{2}$ 是在 $P$处的胀开，并且记 $E_{1}$是例外除子。令 $q:Y\to \mathbb{P}^{2}$ 是在 $Q$处的胀开，并且记 $E_{2}$ 是例外除子。 令 $W\to \mathbb{P}^{2}$ 是在  $P$ 和$Q$两点的胀开。那么有压缩态射 $f:W\to X$ 和 $g:W\to Y$。用相同的记号 $L,E_{1}$ 和 $E_{2}$表示它们在$W$ 上的严格双有理变换。 那么$W$ 上有
 \[
-  \xymatrix{
+  K_{W}\sim -3L-2E_{1}-2E_{2}
+\]
+和相交数关系： 
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{cccc}
+        \hline
+        %\cline{2-9}% partial hline from column i to column j
+                 & $L$  & $E_{1}$ & $E_{2}$ \\
+        \hline
+        $L$      & $-1$ & $1$     & $1$ \\
+        $E_{1}$  & $1$  & $-1$    & $0$ \\
+        $E_{2}$  & $1$  & $0$     & $-1$ \\
+        \hline
+    \end{tabular}
+\end{table}
+令  $h:W\to Z$ 是压缩曲线 $L$的压缩态射，那么 $Z\cong \mathbb{P}^{1} \times \mathbb{P}^{1}=\mathbb{F}_{0}$。 注意到 $X\cong \mathbb{F}_{1}$，那么 $\phi:X\to S \cong \mathbb{P}^{1}$是森纤维空间。类似的，还有令一个森纤维空间 $\psi: Y\to T\cong \mathbb{P}^{1}$。 用交换图表表示是：
+\[ \xymatrix{
     S\cong \mathbb{P}^{1}&X\cong \mathbb{F}_{1}\ar[l]_{\phi}\ar[r]^{p} & \mathbb{P}^{2} \\
     &W\ar[u]^{f}\ar[r]_{g}\ar[ld]_{h} & Y\cong \mathbb{F}_{1}\ar[u]_{q}\ar[d]^{\psi}\\
-    Z\cong \mathbb{F}_{0}\ar[uu]\ar[rr]&&T\cong \mathbb{P}^{1}
-  }
-\]
+    Z\cong \mathbb{F}_{0}\ar[uu]\ar[rr]&&T\cong \mathbb{P}^{1} } \]
 
-Note that $X\cong \mathbb{F}_{1}$, there is a  Mori fibre space $\phi:X\to S \cong \mathbb{P}^{1}$. Similarly, there is another Mori fibre space $\psi: Y\to T\cong \mathbb{P}^{1}$. There is a birational map $\Phi: X\dashrightarrow  Y$ induced by $p$ and $q$. If we take $B_{W}=\frac{1}{4}L$ on $W$, then $f$ and $g$ are two log Mori fibre spaces given by the outputs of $(K_{W}+B_{W})$-MMPs.
+由$p$和$q$诱导双有理映射 $\Phi: X\dashrightarrow  Y$，如果取$W$ 上边界除子 $B_{W}=\frac{1}{4}L$，那么$f$ 和 $g$ 是 $(K_{W}+B_{W})$-MMP输出的两个森纤维空间，即它们是MMP-相关的森纤维空间。
 
-Take $A\sim_{\mathbb{Q}}-K_{W}+\frac{1}{4}L$, and let $V$ be the translation by  $\frac{1}{4}L$ of the 2-dimensional vector space spanned by $E_{1}$ and  $E_{2}$. Then we have $\mathcal{L}_{A}(V)=\mathcal{E}_{A}(V)$. Furthermore,  $K_{W}+D\sim_{\mathbb{Q}} \frac{1}{2}L+aE_{1}+bE_{2}$ for $0\leqslant a,b\leqslant 1$ if $D \in \mathcal{E}_{A}(V)$. The partition of $\mathcal{E}_{A}(V)$ is
-\begin{figure}
-\centering
-  \begin{tikzpicture}
+取 $A\sim_{\mathbb{Q}}-K_{W}+\frac{1}{4}L$。将$E_{1}$和$E_{2}$张成的线性空间用  $\frac{1}{4}L$平移，得到仿射子空间，记为$V$，那么有$\mathcal{L}_{A}(V)=\mathcal{E}_{A}(V)$。对
+\[ D=A+ \frac{1}{4}L +aE_{1}+bE_{2},0\leqslant a,b\leqslant 1 \]
+有 $D \in \mathcal{E}_{A}(V)$，且$K_{W}+D\sim_{\mathbb{Q}} \frac{1}{2}L+aE_{1}+bE_{2}$成立。取下列除子：
+\[ \begin{array}{rllllllll}
+  D_{0}&=&A& +& \frac{1}{4}L& + &0\cdot E_{1}            &+& \frac{3}{4}\cdot E_{2} \\
+  D_{1}&=&A& +& \frac{1}{4}L& + & \frac{3}{4}\cdot E_{1} &+& 0 \cdot E_{2} \\
+  D_{2}&=&A& +& \frac{1}{4}L& + &0\cdot E_{1}            &+& \frac{1}{2}\cdot E_{2} \\
+  D_{3}&=&A& +& \frac{1}{4}L& + & 0\cdot  E_{1}          &+& 0 \cdot E_{2} \\
+  D_{4}&=&A& +& \frac{1}{4}L& + & \frac{1}{2}\cdot E_{1} &+& 0 \cdot E_{2}
+  \end{array} \]
+于是 $\mathcal{E}_{A}(V)$ 有下图所示的划分：
+
+     \centering
+\begin{tikzpicture}
     \draw (0,0)--(6,0)--(6,6)--(0,6)--(0,0);
     \draw (0,3)--(6,3);
     \draw (3,0)--(3,6);
@@ -117,9 +139,10 @@ Take $A\sim_{\mathbb{Q}}-K_{W}+\frac{1}{4}L$, and let $V$ be the translation by 
     \draw(4.5,1.5)node{$Y$};
     \draw(1.5,4.5)node{$X$};
     \draw(-0.5,-0.5)node{pt};
-    \draw(-1,3)node{$\mathbb{P}^{1}$};
-    \draw(3,-1)node{$\mathbb{P}^{1}$};
+    \draw(-1,3)node{$\mathbb{P}^{1}=S$};
+    \draw(3,-1)node{$\mathbb{P}^{1}=T$};
     \draw(4.5,0.3)node{$D_{1}$};
+    \draw(7,0)node{$aE_{1}$};
     \filldraw (4.5,0) circle(0.05);
     \filldraw (3,0) circle(0.05);
     \draw(3.3,0.3)node{$D_{4}$};
@@ -129,20 +152,44 @@ Take $A\sim_{\mathbb{Q}}-K_{W}+\frac{1}{4}L$, and let $V$ be the translation by 
     \draw(0.3,3.3)node{$D_{2}$};
     \filldraw (0,4.5) circle(0.05);
     \draw(0.5,4.5)node{$D_{0}$};
-  \end{tikzpicture}
-    \caption{Decomposition of $\mathcal{E}_A(V)$}
-    \label{pic}
-\end{figure}
-Then $D_{0}$ and $D_{1}$ correspond to log Mori fibre spaces $\phi:X\to S$ and $\psi:Y\to T$. $D_{2},D_{3}$ and $D_{4}$ correspond to three Sarkisov links. Therefore, we have a decomposition of $\Phi: X\dashrightarrow  Y$ as
+    \draw(0,7)node{$bE_{2}$};
+\end{tikzpicture}
 
-\[
-  \xymatrix{
-    &W\ar[ld]\ar[rd] &&&&W\ar[ld]\ar[rd] \\
-    X\ar[d]& &Z\ar[d]\ar@{=}[rr]&&Z\ar[d]&&Y\ar[d]\\
-    \mathbb{P}^{1}&&\mathbb{P}^{1}\ar[dr]&&\mathbb{P}^{1}\ar[dl]&&\mathbb{P}^{1}\\
-    &&&\text{pt}
-  }
-\]
+% \begin{figure}[!htbp]
+%     \centering
+%
+% \bicaption{\enspace $\mathcal{E}_{A}(V)$的划分}{partation of $\mathcal{E}_{A}(V)$ }
+%     \label{pic}
+% \end{figure}
 
+其中 $ W,X,Y,Z,\mathbb{P}^{2}$ 是$W$ 关于某些边界除子$D$ (对应图中符号所在多面体) 的弱算术典范模型 ，同时也是某些除子的丰沛模型和算术典范模型；另外$S,T,pt $是$W$ 关于某些边界除子的丰沛模型 (但不是算术典范模型)。   
+$D_{0}$对应弱算术典范模型$X$ 和丰沛模型$S$，并且压缩态射$\phi:X\to S$ (定理\ref{mapbetweenAM}.(2)给出)是森纤维空间；类似的$D_{1}$ 对应森纤维空间 $\psi:Y\to T$。点 $D_{2},D_{3},D_{4}$对应三个Sarkisov连接 (按定理\ref{2Constructlink})；
+\begin{itemize}
+  \item $D_{2}$对应
+\[ \xymatrix{
+                         & W\ar[ld]\ar[rd]          & \\
+    X\ar[d]              &                          & Z\ar[d]\\
+\mathbb{P}^{1}\ar@{=}[r] & \mathbb{P}^{1}\ar@{=}[r] & \mathbb{P}^{1} } \]
+  \item $D_{3}$对应
+\[ \xymatrix{
+    Z\ar[d]\ar@{=}[rr]    &           & Z\ar[d] \\
+    \mathbb{P}^{1}\ar[dr] &           & \mathbb{P}^{1}\ar[dl] \\
+                          & \text{pt} & } \]
+  \item $D_{4}$对应
+\[ \xymatrix{
+                         & W\ar[ld]\ar[rd]          & \\
+    Z\ar[d]              &                          & Y\ar[d]\\
+\mathbb{P}^{1}\ar@{=}[r] & \mathbb{P}^{1}\ar@{=}[r] & \mathbb{P}^{1} } \]
+\end{itemize}
+
+于是，有 $\Phi: X\dashrightarrow  Y$ 的分解：
+\[ \xymatrix{
+                                   & W\ar[ld]\ar[rd]          &                       &           &                                 & W\ar[ld]\ar[rd] \\
+    X\ar[d]                        &                          & Z\ar[d]\ar@{=}[rr]    &           & Z\ar[d]                         &                           & Y\ar[d]\\
+    \mathbb{P}^{1}\ar@{=}[r]       & \mathbb{P}^{1}\ar@{=}[r] & \mathbb{P}^{1}\ar[dr] &           & \mathbb{P}^{1}\ar[dl]\ar@{=}[r] & \mathbb{P}^{1}\ar@{=}[r] & \mathbb{P}^{1} \\
+                                   &                          &                       & \text{pt} &                                 &                           & }\]
+\begin{remark}
+此例中对$V$ 和$A$ 的选取并不是严格按照引理\ref{keylemma}构造的，但是相对简单一些，并且可以看出模型在Sarkisov分解中的位置。
+\end{remark}
 \section{应用}
 
