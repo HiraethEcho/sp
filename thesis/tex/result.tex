@@ -6,19 +6,27 @@
 首先给出一些具体的MMP-相关的森纤维空间的Sarkisov分解的例子。
 
 \subsection{下降法}\label{example1}
-Let $ X=\mathbb{P}^2 $ with coordinates $ (x_0:x_1:x_2) $ and $ X'=\mathbb{P}^2 $ with coordinates $ (y_0:y_1:y_2) $.
-Denote $ B=\{x_0=0\} $ and $B'=\{y_{0}=0\} $.
-Take a rational map $ \Phi:X\dashrightarrow X' $ defined by
-\[ \Phi:(x_0:x_1:x_2)\dashrightarrow (x_0^2:x_0x_1:x_1^2+x_0x_2) \]
-There is a  common resolution $\sigma: W\to X$ and $\sigma':W\to X'$, which are both compositions of three blow-ups at indeterminacy points.
-Precisely, $\pi_{1}:W_{1}\to X$ is the blow-up at the indeterminacy point $P_{0} \in B$ of $\Phi$. Identify $B$ with its strict transform on $W_{1}$ and let $E_{1}$ be the exceptional divisor of $\pi_{1}$.
-$\pi_{2}:W_{2}\to W_{1}$ is the blow-up at $P_{1}=E_{1} \cap B$. Identify $B$ and $E_{1}$ with their strict transforms on $W_{2}$ and let $E_{2}$ be the exceptional divisor of $\pi_{2}$.
-$\pi_{3}:W=W_{3}\to W_{2}$ is blow-ups at a point $P_{2} \in E_{2} \setminus (B\cup E_{1})$. Identify  $B, E_{1}$ and $E_{2}$ with their strict transforms   on $W_{3}$ and let $E_{3}$ be the exceptional divisor of $\pi_{3}$.
-Then $ \sigma=\pi_{3}\circ \pi_{2} \circ \pi_{1} $ and $ W=W_3 $ is a common resolution of $\Phi$. Moreover, $ \sigma':W\to X' $ is the composition of the blowing-down curves  $W=W'_{3}\xrightarrow{\pi'_{3}} W'_{2}\xrightarrow{\pi'_{2}} W'_{1} \xrightarrow{\pi'_{1}} X'$ in the order of $ B,E_2,E_1 $.
-
-We establish some notations of varieties:
+记 $ X=\mathbb{P}^2 $ 为射影平面，坐标记为 $ [ x_0:x_1:x_2 ] $ ，记 $ X'=\mathbb{P}^2 $ 为另一个射影平面，坐标为 $ [ y_0:y_1:y_2 ] $。
+记 $ B=\{x_0=0\} $ 和 $B'=\{y_{0}=0\} $。
+取双有理映射 $ \Phi:X\dashrightarrow X' $ ，按如下定义：
+\[ \Phi:[x_0:x_1:x_2]\dashrightarrow [x_0^2:x_0x_1:x_1^2+x_0x_2] \]
+那么存在一个公共解消 $\sigma: W\to X$ 和 $\sigma':W\to X'$，两个态射都是三个对点的胀开的复合。
+三个胀开如下所示：
+\begin{enumerate}
+  \item $\pi_{1}:W_{1}\to X$ 是对点 $P_{0} \in B$ 的胀开，点 $P_{0}$是双有理映射  $\Phi$不定义的点。 用相同的符号 $B$ 表示它在  $W_{1}$上的严格双有理变换。将$\pi_{1}$的例外除子记为 $E_{1}$。此时$\Phi$提升到 双有理映射 $W_{1}\dashrightarrow X'$，但仍然不是态射。
+  \item $\pi_{2}:W_{2}\to W_{1}$ 是对点 $P_{1}=E_{1} \cap B$的胀开，点 $P_{1}$是双有理映射 $  W_{1}\dashrightarrow X' $
+的不定义的点。将$\pi_{2}$的例外除子记为 $E_{2}$，仍然用同样的符号 $B$ 和 $E_{1}$ 表示它们在 $W_{2}$ 上的严格双有理变换。此时$\Phi$提升到 双有理映射 $W_{2}\dashrightarrow X'$，但仍然不是态射。
+  \item $\pi_{3}:W=W_{3}\to W_{2}$ 是对点 $P_{2} \in E_{2} \setminus (B\cup E_{1})$的胀开。将$\pi_{3}$的例外除子记为 $E_{3}$，仍然用同样的符号 $B,E_{1},E_{2}$ 表示它们在 $W_{3}$ 上的严格双有理变换。此时$\Phi$提升到 双有理映射 $W_{3}\to  X'$是一个态射。
+\end{enumerate}
+那么 $ \sigma=\pi_{3}\circ \pi_{2} \circ \pi_{1} $ 和 $ W=W_3 $ 是 $\Phi$的公共解消。对称的， $ \sigma':W\to X' $ 是三个压缩曲线的态射的复合  $W=W'_{3}\xrightarrow{\pi'_{3}} W'_{2}\xrightarrow{\pi'_{2}} W'_{1} \xrightarrow{\pi'_{1}} X'$。双有理态射$\pi'_{3},\pi'_{2},\pi'_{1}$ 依次压缩曲线 $ B,E_2,E_1 $。
+\begin{remark}
+  显然双有理映射$\Phi$有逆映射
+\[ \Phi^{-1}:[y_0:y_1:y_2]\dashrightarrow [y_0^2:y_0y_1:y_1^2-y_0y_2] \]
+与$\Phi $只差一个符号。于是$\sigma' $是解消 $\Phi^{-1}$的三个胀开的复合，例外曲线依次是$E_{1},E_{2},B$。可以看到，$B' \subset X'$是例外除子$E_{3} \subset W$在$X'$上的严格双有理变换。在$W$ 上，如果用相同的符号$B'$记它在 $W$ 上的严格双有理变换，那么 除子$E_{3}$和$B$ 是地位相等的。
+\end{remark}
+下面给出一些代数簇的符号：
 \begin{itemize}
-  \item Let $W_{2}\to Z_{0}$ be the contraction of $E_{1}$ on $W_{2}$, then $Z_{0} \to X_{1}$ is the contraction of $B$  and $Z_{0}\to X_{0}$ is the extraction of $E_{2}$ on $X$;
+  \item 令 $W_{2}\to Z_{0}$ 是  $W_{2}$压缩曲线 $E_{1}$的态射，且 $Z_{0} \to X_{1}$ 是压缩曲线 $B$的态射，那么 $Z_{0}\to X_{0}$ 是  $X$上解压 $E_{2}$除子解压；
   \item Let $W'_{2}\to Z_{1}$ be the contraction of $E_{1}$ on $W'_{2}$, then $Z_{1} \to X_{1}$ is the extraction of $E_{3}$ on $X_{1}$, and $Z_{1}\to X'$ is the contraction of $E_{2}$;
   \item $W\to Z$ be the contraction of $E_{1}$ and $E_{2}$ on $W$, then $Z\to X$ is the extraction of $E_{3}$ and $Z\to X'$ is the contraction of $B$.
 \end{itemize}
