@@ -16,21 +16,13 @@
 定义除子的差异数：
 \begin{definition}
   令 $(X, B)$ 为代数簇对， 且 $f: Y\to X$ 是它的算术解消，则有
-  \[
-    K_{Y}+C=f^*(K_{X}+B)
-    \]
+  \[ K_{Y}+C=f^*(K_{X}+B) \]
   那么除子 $E$ 的差异数 (discrepancy)$a(E;X,B) $定义为
-  \[
-    a(E;X,B)=-\operatorname{mult}_{E}C
-    \]
+  \[ a(E;X,B)=-\operatorname{mult}_{E}C \]
   进一步，定义$(X,B) $的差异数：
-  \[
-    \operatorname{discrep}(X, B) := \inf\{a(E; X, B) : E \text{ 是 } X \text{之上的例外除子} \}
-  \]
+  \[ \operatorname{discrep}(X, B) := \inf\{a(E; X, B) : E \text{ 是 } X \text{之上的例外除子} \} \]
   和整体差异数
-  \[
-    \operatorname{totdiscrep}(X, B) :=\inf \{a(E; X, B) : E \text{是} X \text{之上的除子}\}.
-  \]
+  \[ \operatorname{totdiscrep}(X, B) :=\inf \{a(E; X, B) : E \text{是} X \text{之上的除子}\}. \]
 \end{definition}
 对于代数簇对之间的态射，可以定义
 \begin{definition}
@@ -216,5 +208,15 @@ MMP中出现的代数簇对被称为极小模型的\textbf{结果}，将MMP停�
 \end{theorem}
 
 \section{叶状结构}
+这一节介绍\textbf{叶层化代数簇对} (或 \textbf{带叶状结构爱的代数簇对})的基本知识。
 
-这一节介绍带叶状结构的代数簇对的基本知识。
+\begin{definition}\cite[Definition 2.3-6]{acc_foliation}
+ 令 $X$ 为正规代数簇。$X$ 上的一个叶状结构 (folation)是一个凝聚层 $\mathcal{F} \subset \mathcal{T}_{X}$，满足
+ \begin{enumerate}
+   \item $\mathcal{T}_{X}/\mathcal{F}$是无扭的 (torsion free)；
+   \item $\mathcal{F}$在李括号下封闭。 
+ \end{enumerate}
+令$f:X \dashrightarrow Y$为支配有理映射，将$X$ 上的叶状结构$\mathcal{F}$的在$f$ 的拉回记作  $ f^{-1}(F) $ (叶状结构的拉回的定义，参考\cite[3.1]{acss} 或\cite[3.2]{cs21})，并且称其为$\mathcal{F}$诱导的 $\mathcal{Y}$ 上的叶状结构。令$g:X \dashrightarrow X' $为双有理映射，则将$(g^{-1})^{-1}(\mathcal{F})$记为 $g_{*}\mathcal{F}$，并称为$\mathcal{F}$的推出。
+
+如果存在支配有理映射$h:X \dashrightarrow  Z$和$Y$ 上的由点定义的叶状结构$\mathcal{F}_{Z}$ (即$\mathcal{F}_{Z}=0$，此时此叶状结构的叶子 (leaves)是单点，所以称为由点定义的叶状结构) ，使得  $\mathcal{F}=h^{-1}(\mathcal{F}_{Z})$，则称$\mathcal{F}$为代数可积 (algebraically integrable)的叶状结构，并且称$\mathcal{F}$由$h$ 诱导。 
+\end{definition}

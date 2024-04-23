@@ -7,11 +7,11 @@
 \end{theorem}
 
 对于森纤维空间，由Sarkisov纲领可知
-\begin{theorem}[主定理]\label{main}
+\begin{theorem}[Sarkisov分解]\label{main}
 	令 $ f:(X, B)\to S$ 和 $f':(X', B')\to S' $ 为两个 MMP-连接的$ \mathbb{Q} $-分解 klt 算术森纤维空间，则有双有理映射 $\Phi$：
 	\[
 		\xymatrix{
-			(X,B){\ar[d]}_{f}{\ar@{.>}[r]}^\Phi & (X',B'){\ar[d]}^{f'}\\
+			(X,B)\ar[d]_{f}\ar@{.>}[r]^\Phi & (X',B')\ar[d]^{f'}\\
 			S & S'}
 	\]
 	可以分解为Sarkisov连接映射的复合，即
@@ -22,24 +22,24 @@
 
   \textbf{第一型Sarkisov连接：}
   \[\xymatrix{
-			Z{\ar[d]}_{p}\ar@{.>}[r]&X_{1}{\ar[d]}^{f_1}\\
-			X{\ar[d]}_{f}&S_1{\ar[dl]}^{t}\\
+			Z\ar[d]_{p}\ar@{.>}[r]&X_{1}\ar[d]^{f_1}\\
+			X\ar[d]_{f}&S_1\ar[dl]^{t}\\
   S &}\]
   \textbf{第二型Sarkisov连接：}
   \[\xymatrix{
-			Z{\ar[d]}_{p}\ar@{.>}[r]&Z'{\ar[d]}^{q}&\\
-			X{\ar[d]}_{f}&X_1{\ar[d]}^{f_1}\\
-  S{\ar[r]}^{\sim}&S_1}\]
+			Z\ar[d]_{p}\ar@{.>}[r]&Z'\ar[d]^{q}&\\
+			X\ar[d]_{f}&X_1\ar[d]^{f_1}\\
+  S\ar[r]^{\sim}&S_1}\]
   \textbf{第三型Sarkisov连接：}
 \[ \xymatrix{
-		X\ar@{.>}[r]{\ar[d]}_{f}& Z{\ar[d]}^q& \\
-		S{\ar[rd]}_{s}         & X_{1}{\ar[d]}^{f_{1}}&\\
+		X\ar@{.>}[r]\ar[d]_{f}& Z\ar[d]^q& \\
+		S\ar[rd]_{s}         & X_{1}\ar[d]^{f_{1}}&\\
 		&S_{1}
 		} \]
   \textbf{第四型Sarkisov连接：}
 \[ \xymatrix{
-			X{\ar[d]}_{f}\ar@{.>}[rr]&&X_{1}{\ar[d]}^{f_1}\\
-			S{\ar[dr]}_{s}&&S_{1}{\ar[dl]}^{t}\\
+			X \ar[d]_f\ar@{.>}[rr]&&X_{1}\ar[d]^{f_1}\\
+			S \ar[dr]_{s}&&S_{1} \ar[dl]^{t}\\
 			&T &} \]
 	其中所有$ f:(X, B)\to S $ and $ f_1:(X_1, B_1)\to S_1 $ 都是算术森纤维空间，所有$p,q$ 都是除子压缩，所有虚线的映射都是翻转 (flip)、平转 (flop)或反向翻转 (inverse flip)的复合。
 \end{theorem}
