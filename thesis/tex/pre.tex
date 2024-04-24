@@ -1,9 +1,8 @@
 \chapter{预备知识}
 \section{代数簇对与奇点}
-
-% TODO: contraction definition; resolution; snc; intersection?
 定义代数簇对和相关概念：
 \begin{definition}
+  定义代数簇对和除子的记号：
   \begin{itemize}
     \item 一个代数簇对 $(X,B)$ 包括一个正规拟射影代数簇 $X$ 和一个 $\mathbb{R}$-除子 $B=\sum_{i}b_{i}B_{i}$，其中$B_{i}$是素除子，且$0<\leqslant b_{i} \leqslant 1$ ，并且满足
     \[ K_{X}+B \]
@@ -206,55 +205,3 @@ MMP中出现的代数簇对被称为极小模型的\textbf{结果}，将MMP停�
   (弱算术典范模型有限性, \cite[Theorem E]{BCHM10}).
   令 $\pi: X\to U$是正规拟射影代数簇间的射影态射，且$A$是一个一般的 在 $U$ 上丰沛的$\mathbb{R}$-除子，且$V \subset \operatorname{WDiv}_{\mathbb{R}}(X)$是定义在有理数上的有限维线性子空间，假设存在具有klt奇点的代数簇对 $(X,\Delta_{0})$。那么存在有限多个 $U$ 上的 双有理映射 $f_{i}:X \dashrightarrow X_{i},1\leqslant i\leqslant l$ ，若某个 $D \in \mathcal{L}_{A}(V)$ 有关于 $D$ 的在 $U$ 上的  弱算术典范模型 $f:X \dashrightarrow  Y$，那么对某个$1\leqslant i\leqslant l$存在同构态射  $h_{i}:X_{i} \to Y$ 使得 $f=h_{i}\circ f_{i}$。
 \end{theorem}
-
-\section{叶状结构}
-这一节介绍\textbf{叶层化代数簇对} (或 \textbf{带叶状结构爱的代数簇对})的基本知识。
-
-\begin{definition}\cite[Definition 2.3-6]{acc_foliation}
-  \begin{enumerate}
-    \item 令 $X$ 为正规代数簇。$X$ 上的一个叶状结构 (folation)是一个凝聚层 $\mathcal{F} \subset \mathcal{T}_{X}$，满足
-          \begin{enumerate}
-            \item $\mathcal{T}_{X}/\mathcal{F}$是无扭的 (torsion free)；
-            \item $\mathcal{F}$在李括号下封闭。 
-          \end{enumerate}
-          如果$\mathcal{F}=0$，称之为由点定义的叶状结构 (此时此叶状结构的叶子 (leaves)是单点)。
-    \item 对$X$ 上素除子 $D$，若$D$ 不是 $\mathcal{F}$-不变的，则定义$\epsilon_{\mathcal{F}}(D)=1 $；反之，如果$D$ 是$\mathcal{F}$-不变的，则定义$\epsilon_{\mathcal{F}}(D)=0$。
-    \item 如果除子$K_{\mathcal{F}}$满足$\det \mathcal{F} = \mathcal{O}_{X}(-K_{\mathcal{F}})$，则称之为$\mathcal{F}$的典范除子。
-    \item 令$f:X \dashrightarrow Y$为支配有理映射，将$X$ 上的叶状结构$\mathcal{F}$的在$f$ 的拉回记作  $ f^{-1}(F) $ (叶状结构的拉回的定义，参考\cite[3.1]{acss} 或\cite[3.2]{cs21})，并且称其为$\mathcal{F}$诱导的 $\mathcal{Y}$ 上的叶状结构。令$g:X \dashrightarrow X' $为双有理映射，则将$(g^{-1})^{-1}(\mathcal{F})$记为 $g_{*}\mathcal{F}$，并称为$\mathcal{F}$的推出。
-    \item 如果存在支配有理映射$h:X \dashrightarrow  Z$和$Y$ 上的由点定义的叶状结构$\mathcal{F}_{Z}=0$  ，使得  $\mathcal{F}=h^{-1}(\mathcal{F}_{Z})$，则称$\mathcal{F}$为代数可积 (algebraically integrable)的叶状结构，并且称$\mathcal{F}$由$h$ 诱导。 
-  \end{enumerate}
-\end{definition}
-用$K_{\mathcal{F}}$代替$K_{X}$，可以定义相应的概念
-\begin{definition}
-使用\cite[3.4.5,6.2.1]{chlx}、\cite[3.2]{acss}的定义：
-  \begin{enumerate}
-    \item 叶层化代数对 $(X,\mathcal{F},B)$包括一个正规射影代数簇$X$ ，叶状结构$\mathcal{F}$和边界除子$B$，使得叶层化算术典范除子
-  \[ K_{\mathcal{F}}+B \]
-  是$\mathbb{R}$-Cartier除子。
-    \item 如果$f:Y\to X$是双有理态射，且$\mathcal{F}_{Y} $是$\mathcal{F} $诱导的 $Y$ 上的叶状结构，且$E \subset Y$是$Y$ 上的除子，那么分歧公式
-  \[ K_{\mathcal{F}_{Y}}+C=f^{*}(K_{\mathcal{F}}+B) \]
-  定义了例外除子$E$的叶层化差异数
-  \[ a(E;X,\mathcal{F},B)=- \operatorname{mult}_{E}C \]
-    \item 用叶层化差异数可以定义奇点性质：
-      \begin{enumerate}
-        \item 如果对所有除子$E$，有 $a(E;X,\mathcal{F},B)>-\epsilon(E)$，则称$(X,\mathcal{F},B) $具有klt奇点；
-        \item 如果对所有除子$E$，有 $a(E;X,\mathcal{F},B)\geqslant -\epsilon(E)$，则称$(X,B) $具有lc奇点 ；
-      \end{enumerate}
-    \item 代数可积的叶层化代数对$(X,\mathcal{F},B)$如果满足：
-      \begin{enumerate}
-        \item $X$最多有商奇点 (quotient singularities);
-        \item 存在压缩态射$f:X\to Z$，使得$\mathcal{F}$是由$f$ 诱导的叶状结构； 
-        \item 存在一个约化除子$\Sigma$使得$\operatorname{Supp}B \subset \operatorname{Supp} \Sigma $，且 $(X,\Sigma)$是环形的 (toroidal)，特别的，$X$是$\mathbb{Q}$-分解的具有klt奇点的代数簇；
-        \item 存在约化除子$\Sigma_{Z}$使得$ (Z,\Sigma_{Z})$是算术光滑的，并且
-          \[ (X,\Sigma)\to (Z,\Sigma_{Z}) \]
-          是等维数环形态射 (equidimensional toroidal morphism)
-      \end{enumerate}
-      则称为叶层化算术光滑代数对。
-    \item 对代数可积叶层化代数簇对$(X,\mathcal{F},B)$，如果有双有理态射$f:Y\to X$，使得
-      \[ (Y,\mathcal{F}_{Y}=f^{-1}\mathcal{F},B_{Y}=f^{-1}_{*}B+ \operatorname{Exc}f) \]
-      是叶层化算术光滑代数簇对，那么称$f$为叶层化算术解消 (foliated log resolution)。
-    \item 对具有lc奇点的代数可积叶层化代数簇对$(X,\mathcal{F},B)$，如果有叶层化算术解消$f:Y\to X$，使得任意$X$ 上例外除子$E \subset Y$，都有
-      \[ a(E;X,\mathcal{F},B)>-\epsilon_{\mathcal{F}}(E) \]
-      那么称其具有$F$-dlt奇点。
-  \end{enumerate}
-\end{definition}

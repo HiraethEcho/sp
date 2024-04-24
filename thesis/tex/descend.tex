@@ -8,7 +8,7 @@
   \item 令 $\lambda = \min \{c\in \mathbb{R}: (X,\frac{1}{c}H) \text{有典范奇点}  \}$；
   \item 令 令 $p:(W, \frac{1}{\lambda} H_{W})\to (X,\frac{1}{\lambda}H)$的解消，且$p^{-1}_{*}H=p^{*}H=H_{W}$，则$e$是$f$-无差异的例外除子的个数。
 \end{enumerate}
-如果 $\lambda \leqslant \mu$，在 $X$运行相对于恰当基底的 $(K_X+\frac{1}{\mu}H)$-MMP ；如果 $\lambda > \mu$ 则构造一个除子解压(divisorial extraction) $ p:Z \to X$，并运行相对于 $ S$ 的 $(K_Z+\frac{1}{\lambda}H_Z)$-MMP，这样得到第一个 Sarkisov 连接 $\psi_1: X\dashrightarrow  X_{1}$。这两种情况都是 $2$-ray games。用 $X_{1}$ 和$\Phi_{1}=\Phi\circ\psi_1^{-1}: X_1\dashrightarrow X'$替换 $X$ 和 $\Phi$ ，并重复这个过程，这样递归地构造一系列Sarkisov 连接。在这个过程中不变量$(\mu,\lambda,e)$将按 字典序下降，最终得到 $\Psi_{N}:X_{N-1} \dashrightarrow X_{N}$，且 $X_{N}\cong X'$。 这就是三维终端奇点代数簇的Sarkisov纲领。
+如果 $\lambda \leqslant \mu$，在 $X$运行相对于恰当基底的 $(K_X+\frac{1}{\mu}H)$-MMP ；如果 $\lambda > \mu$ 则构造一个除子解压(divisorial extraction) $ p:Z \to X$，并运行相对于 $ S$ 的 $ (K_Z+\frac{1}{\lambda}H_Z)$-MMP，这样得到第一个 Sarkisov 连接 $\psi_1: X\dashrightarrow  X_{1}$。这两种情况都是 $2$-ray games。用 $X_{1}$ 和$\Phi_{1}=\Phi\circ\psi_1^{-1}: X_1\dashrightarrow X'$替换 $X$ 和 $\Phi$ ，并重复这个过程，这样递归地构造一系列Sarkisov 连接。在这个过程中不变量$(\mu,\lambda,e)$将按 字典序下降，最终得到 $\Psi_{N}:X_{N-1} \dashrightarrow X_{N}$，且 $X_{N}\cong X'$。 这就是三维终端奇点代数簇的Sarkisov纲领。
 
 对于 $\mathbb{Q}$-分解的有klt奇点的代数簇对，考虑MMP-相关的森纤维空间$(X,B)$ 和 $(X',B')$ 。一个自然的想法是按如下定义 $\mu$ 和 $\lambda$：
 \begin{enumerate}
@@ -19,7 +19,7 @@
 
 对 $\lambda$ 的定义将导致一些困难。当 $\lambda > \mu$时，为了构造 Sarkisov连接需要在一个除子解压 $p:Z \to X$上运行 $(K_Z+B_Z+\frac{1}{\lambda}H_Z)$-MMP。这个除子解压会解压出一个素除子$E$，这个素除子 $E$ 在 $Z$ 的边界  $B_Z$中的系数是 $1$。如果 $E$ 是 $(X',B')$的边界 $B'$的一项，那么 $E$ 在 $B'$中的系数小于 $1$，这两者不匹配。另一方面，这是需要在具有lc奇点的代数簇对上运行MMP，这比在具有klt奇点的代数簇对上的MMP有技术上的困难。除此之外，由于具有klt奇点的Fano代数簇对的有界性失效，在证明 Sarkisov 纲领的终结性也有困难。
 
-Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree} ) ，且取决于特定的一个包含 $(X,B)$ 和 $(X',B')$ 的代数簇对的集合 $\mathcal{C}_{\theta}$ ，这个集合满足：
+Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree}) ，且取决于特定的一个包含$(X,B)$和$(X',B')$ 的代数簇对的集合 $\mathcal{C}_{\theta}$ ，这个集合满足：
 \begin{itemize}
   \item
    对任意两个  $\mathcal{C}_{\theta}$中的代数簇对 $(X,B),(X',B')$ ，存在$\mathcal{C}_{\theta}$中的代数簇对 $(W,B_W)$和算术公共解消 $p:W\to (X,B)$ 和 $q:W\to (X',B')$，使得 $(W,B_W)$具有klt奇点且 $p_*B_W=B,q_*B_W=B'$。
@@ -29,7 +29,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree} )
 \end{itemize}
 
 \section{定义与引理}
-令 $ K=K(X) $ 是双有理等价类的有理函数域(注意到双有理等价的代数簇有相同的有理函数域)令 $ \Sigma=\{\nu\} $是有理函数域的离散赋值的集合。
+令 $ K=K(X) $ 是双有理等价类的有理函数域 (注意到双有理等价的代数簇有相同的有理函数域)令 $ \Sigma=\{\nu\} $是有理函数域的离散赋值的集合。
 \begin{definition}\label{thetacategory}
   \cite[Definition 3.5]{brunoLogSarkisovProgram1995}
   取一个函数$\theta:\Sigma\to [0,1)_{\mathbb{Q}}$， 那么 可以定义关于  $\theta$的集合$ \mathcal{C}_{\theta} $，包含满足下列条件的具有klt奇点的代数簇对$ (X,B=\sum a_{i}B_{i}) $：
@@ -41,7 +41,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree} )
 \begin{remark}
 例如取 $\theta \equiv 0$为常值函数，那么 $\mathcal{C}_{\theta}$ 是所有和$X$双有理等价的具有终端奇点的代数簇 $Y$ (不带有边界)。
 \end{remark}
-  根据这个集合可以定义 $\theta$-差异数 ( $\theta$-discrepancy )：
+  根据这个集合可以定义 $\theta$-差异数 ($\theta$-discrepancy )：
 \begin{definition}[$\theta$-差异数]
   令 $\mathcal{C}_{\theta}$ 为上述代数簇对的集合，且$(X, B)$ 是有理函数域满足 $K(X)=K$的代数簇对。令  $f: Y\to X$是$(X, B)$的一个算术奇点解消，有分歧等式：
   \[
@@ -67,13 +67,11 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree} )
   \[ \xymatrix{
       {(X,B)}\ar[d]_{f}\ar@{.>}[r]^\Phi&(X',B')\ar[d]^{f'}\\
       S&S'} \]
-假设 $ B=\sum_{i}b_{i}B_{i}+\sum_{j}d_{j}D_j $ 和 $ B'=\sum_jd_j'D_j+\sum_kb_k'B_k' $，其中 $ B_{i} $ 是在 $ X $上但不在 $ X' $上的除子， $ B_k' $ 是在 $ X' $上但不在  $ X $上的除子，而 $ D_j $ 是在 $ X $ 和 $ X' $上的除子。由引理\ref{MMPrelatedConditation}，有 $ d_j=d_j' $。取一个有理数 $\epsilon$满足 
-\[
-  -\operatorname{totdiscrep}(X,B),-\operatorname{totdiscrep}(X',B')  <\epsilon <1 
-\]
+假设 $ B=\sum_{i}b_{i}B_{i}+\sum_{j}d_{j}D_j $ 和 $ B'=\sum_{j}d_{j}'D_{j}+\sum_{k}b_{k}'B_{k}' $，其中 $ B_{i} $ 是在 $ X $上但不在 $ X' $上的除子， $ B_k' $ 是在 $ X' $上但不在  $ X $上的除子，而 $ D_j $ 是在 $ X $ 和 $ X' $上的除子。由引理\ref{MMPrelatedConditation}，有 $ d_{j}=d_{j}' $。取一个有理数 $\epsilon$满足 
+\[ -\operatorname{totdiscrep}(X,B),-\operatorname{totdiscrep}(X',B')  <\epsilon <1 \]
 并按如下定义函数 $ \theta: \{ \nu \} \to [0,1)_{\mathbb{Q}} $ ：
   \begin{itemize}
-    \item 对于边界  $B,B'$的除子，有$ \theta(B_i)=b_i, \theta(D_j)=d_j,\theta(B_k')=b_k'$；
+    \item 对于边界  $B,B'$的除子，有$ \theta(B_i)=b_i, \theta(D_{j})=d_{j},\theta(B_{k}')=b_{k}'$；
     \item  如果 $E$ 是 $X$ 和 $X'$ 上的例外除子，则    $ \theta(E)=\epsilon $；
     \item   如果 $ D $ 是 $ X $ 和 $ X' $上的除子，但不是$ B $ 或 $ B' $的部分，则$ \theta(D)=0 $。
   \end{itemize}
@@ -88,11 +86,11 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree} )
   令 $\delta=1-\epsilon$，那么所有$\mathcal{C}_{\theta}$ 中的代数簇对都是具有$\delta$-lc。
 \end{remark}
 
-使用命题 \ref{cat}中的假设和记号，可以定义Sarkisov 次数 ( Sarkisov degree )。取 $S'$ 上的极丰沛的除子$ A'  $和足够大和可除的整数 $ \mu'>1 $使得
+使用命题 \ref{cat}中的假设和记号，可以定义Sarkisov 次数 ( Sarkisov degree )。取 $S'$ 上的极丰沛的除子 $A'$和足够大和可除的整数 $\mu'>1 $使得
 \[ \mathcal{H}'=|-\mu' (K_{X'}+B') +f'^*A'| \]
 是 $ X' $ 在 $ \mathrm{Spec}\,\mathbb{C}$上的极丰沛的完全线性系 。 令 $ (W,B_W) $ 是 $ X $ 和 $ X' $ 在 $ \mathcal{C}_{\theta} $ 中的公共算术解消，有射影态射 $ \sigma:W\to X$和   $\sigma':W\to X' $ 满足 $\sigma_*B_W=B, \sigma'_*B_W=B' $。令 Let $\mathcal{H}_W:=\sigma'^*\mathcal{H}'$，那么  $\mathcal{H}:=\Phi^{-1}_*\mathcal{H}'=\sigma_*\mathcal{H}_W$。进一步，如果 $ \mathcal{H} $ 不是无基点的，那么
 \[ \sigma^*\mathcal{H}=\mathcal{H}_W+F \]
-其中 $ F=\sum f_lF_l\geqslant0 $ 是固定部分(fixed part)。 取线性系 $ \mathcal{H}' $中的一个一般除子 $H'$使得 $ H_W:=\sigma'^*H'=\sigma'^{-1}_*H'\in \mathcal{H}_W $，并记 $ H:=\Phi^{-1}_*H'=\sigma_*H_{W} $。那么 $H$ 是 $f$-丰沛的，且$ \sigma^*H=H_W+F $。 通过取进一步的解消，不妨设 $H_{W}$ 与$\sigma$ 和 $\sigma'$的例外除子各部分光滑且互相横截相交(即$(W,H_{W}+ \operatorname{Exc}\sigma+ \operatorname{Exc}\sigma')$是算术光滑的)。
+其中 $ F=\sum f_{l}F_{l}\geqslant0 $ 是固定部分(fixed part)。线性系 $ \mathcal{H}' $中的一个一般除子 $H'$使得 $ H_W:=\sigma'^*H'=\sigma'^{-1}_*H'\in \mathcal{H}_W $，并记 $ H:=\Phi^{-1}_*H'=\sigma_*H_{W} $。那么 $H$ 是 $f$-丰沛的，且$ \sigma^*H=H_W+F $。 通过取进一步的解消，不妨设 $H_{W}$ 与$\sigma$ 和 $\sigma'$的例外除子各部分光滑且互相横截相交(即$(W,H_{W}+ \operatorname{Exc}\sigma+ \operatorname{Exc}\sigma')$是算术光滑的)。
 
 
 接下来定义在 $\mathcal{C}_{\theta}$中关于 $H'$ (或 $\mathcal{H}'$)的Sarkisov次数：
@@ -116,7 +114,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree} )
     \item  Sarkisov次数取决于  $A', H'$ 和  $\theta$的选取。
     \item   取公共算术解消$ (W,B_W)\in \mathcal{C}_{\theta} $，其中 $ B_W=\sum \theta(E)E $ ，并且有射影双有理态射 $ \sigma:W\to X , \sigma':W\to X' $。 由于 $\sigma^*\mathcal{H}=\mathcal{H}_W+\sum f_{l}F_{l}$，所以有分歧等式：
           \[ K_W+B_W+tH_W=\sigma^*(K_X+B+tH)+\sum(a_l-tf_l)E_l \]
-          其中 $ \sum a_lE_l $ 是有效除子且支撑在 $ \mathrm{Exc}\,\sigma $上。那么 $\lambda:=\max\{ \frac{f_l}{a_l}\}$。如果$ \mathcal{H} $是无基点的，那么 $ \sum f_lF_l=0 $ 且$\lambda=0  $。
+          其中 $ \sum a_l E_l $ 是有效除子且支撑在 $ \mathrm{Exc}\,\sigma $上。那么 $\lambda:=\max\{ \frac{f_l}{a_l}\}$。如果$ \mathcal{H} $是无基点的，那么 $ \sum f_lF_l=0 $ 且$\lambda=0  $。
     \item   $ e $ 是公式
           \[ K_W+B_W+\frac{1}{\lambda} H_W=\sigma^*(K_X+B+\frac{1}{\lambda} H)+\sum(a_l-\frac{1}{\lambda} f_l)E_l .\]
       中系数$\sum(a_l-\frac{1}{\lambda}f_l)E_l$ 为 $ 0 $的部分的个数。
@@ -170,7 +168,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree} )
               =                          & \sigma^*(K_{X}+B+\frac{1}{\mu'}H)+\sum g_iG_i+\sum e_jE_j
             \end{aligned}
           \]
-          其中 $ \{G_i\}, \{E_j\} $ 是 $ \sigma $-例外除子，  $ \{E_j\}, \{G'_k\} $ 是 $ \sigma' $-例外除子。即$ G_{i}$是只在 $\sigma$上例外的除子，$ G'_{k}$是只在 $\sigma'$上例外除子，$E_{j}$是在二者上都例外的除子。 由于  $H_W=\sigma'^*H' $，所以 $ g_k'>0 $ 或者没有这样的 $ G'_k $(这是由$B_{W}$的构造得到的)。取被 $f$ 压缩的的一般曲线 $ C\subset X $ ，且它在 $W$ 的双有理原像$ \tilde{C} $和 $ G_i, E_j $无交，并且不包含在$ G'_k $中。那么有
+          其中 $ \{G_i\}, \{E_j\} $ 是 $ \sigma $-例外除子，  $ \{E_j\}, \{G'_k\} $ 是 $ \sigma' $-例外除子。即$ G_{i}$是只在 $\sigma$上例外的除子，$ G'_{k}$是只在 $\sigma'$上例外除子，$E_{j}$是在二者上都例外的除子。 由于  $H_W=\sigma'^*H' $，所以 $ g_k'>0 $ 或者没有这样的 $ G'_k $ (这是由$B_{W}$的构造得到的)。取被 $f$ 压缩的的一般曲线 $ C\subset X $ ，且它在 $W$ 的双有理原像$ \tilde{C} $和 $ G_i, E_j $无交，并且不包含在$ G'_k $中。那么有
           \[
             \begin{aligned}
               C.\left(K_X+B+\frac{1}{\mu'}H\right)= & \tilde{C}.\left(\sigma^*\left(K_X+B+\frac{1}{\mu'}H\right)+\sum g_iG_i+\sum e_jE_j\right)           \\
@@ -195,7 +193,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree} )
 \begin{lemma}
   \begin{enumerate}
     \item 如果$ \lambda\leqslant\mu $ 且 $ K_X+B+\frac{1}{\mu}H $ 不是数值有效的，那么存在压缩态射 $f:X \to T$和 III或IV型 Sarkisov连接 $\psi_{1}:X\dashrightarrow X_{1}$ ；
-    \item  如果 $ \lambda>\mu $那么存在除子压缩(除子解压) $p:Z\to X$ 和I或II型 Sarkisov 连接 $ \psi_{1}:X\dashrightarrow X_{1}$。
+    \item  如果 $ \lambda>\mu $那么存在除子压缩 (除子解压) $p:Z\to X$ 和I或II型 Sarkisov 连接 $ \psi_{1}:X\dashrightarrow X_{1}$。
   \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -220,10 +218,10 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree} )
   \end{enumerate}
 \end{proof}
 用  $(X_1,B_1)$ 和$\Phi_{1}=\Phi\circ\psi_1^{-1}$替换 $(X,B)$ 和 $\Phi$，并重复上述引理内容。 
-\begin{remark} \label{R-Sarkisovdeg}
+\begin{remark}\label{R-Sarkisovdeg}
   Sarkisov次数在此过程中按字典序下降：
   \begin{itemize}
-    \item 对于(1):
+    \item 对于(1)：
       \begin{itemize}
             \item  (1).1 和 (1).2的情况下，由于 $ K_{X_1}+B_1+\frac{1}{\mu}H_1 $ 在 $S_1$上反丰沛，所以有 $\mu_1<\mu$。
             \item (1).3 和(1).4 的情况下，由于$ (K_{X_1}+B_1+\frac{1}{\mu}H_1) $ 在射线 $ R=\overline{\operatorname{NE}}(X_1/S_1) $，所以有 $\mu_1=\mu$。
