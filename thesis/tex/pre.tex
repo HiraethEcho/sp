@@ -66,7 +66,7 @@
     \[ f^{*}L_{Z} = D \]
 \end{enumerate}
 \end{theorem}
-当$F=R$是极端射线时，有$\rho(X)=\rho(Z)+1$。压缩态射$f$有三种情况：
+在锥定理的(4)中，当$F=R$是极端射线时，有$\rho(X)=\rho(Z)+1$，并且对应的压缩态射$f$有三种情况：
 \begin{enumerate}
   \item $\operatorname{Exc}\,f=E$是素除子，此时称为除子压缩；
   \item $\operatorname{codim }(\operatorname{Exc}\,f) \geqslant 2$，则称为小双有理态射 (small birational morphism)；
@@ -83,14 +83,14 @@
 如果在森纤维空间$(X_{i},B_{i})\to Z$停止，那么MMP终结于这个森纤维空间。
 
 
-MMP中出现的代数簇对被称为极小模型的\textbf{结果}，将MMP停止处的代数簇称为MMP的\textbf{输出} (要么是极小模型，要么是森纤维空间)。对于极小模型纲领，有如下结果。
+上述过程成为$(K_{X}+B)$-MMP，其中出现的代数簇对被称为MMP的\textbf{结果}，将MMP停止处的代数簇称为MMP的\textbf{输出} (要么是极小模型，要么是森纤维空间)。对于极小模型纲领，有如下结果。
 \begin{theorem}[标量MMP的终结定理]
-  \cite[Corollary 1.4.2]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $(X, B)$ 是  $\mathbb{Q}$-分解的具有 klt奇点的 代数簇对，其中 $K_{X}+B$  $\mathbb{R}$-Cartier 除子， 且$B$ 是 $\pi$-big。若 $C\geqslant0$ 为 $\mathbb{R}$-除子，且$K_{X}+B+C$ 具有 klt奇点 且  $\pi$-数值有效 (nef)，那么在 $U$ 上运行 $C$-标量的  $(K_{X}+B)$-MMP，那么这个极小模型纲领将终结。
+  \cite[Corollary 1.4.2]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $(X, B)$ 是  $\mathbb{Q}$-分解的具有 klt奇点的 代数簇对，其中 $K_{X}+B$ 是 $\mathbb{R}$-Cartier 除子， 且$B$ 是相对于$U$ 的大除子 (big divisor)。若 $C\geqslant0$ 为 $\mathbb{R}$-除子，且$K_{X}+B+C$ 具有 klt奇点 且 相对于$U$ 数值有效 (nef)，那么在 $U$ 上运行 $C$-标量的  $(K_{X}+B)$-MMP，这个极小模型纲领将终结。
 \end{theorem}
 
 如果$(K_{X}+B)$-MMP终结，那么其输出和$(K_{X}+B)$有下列关系：
 \begin{theorem}[极小模型输出]\label{notpseudoeffmfs}
-  \cite[Corollary 1.3.3]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $(X, B)$ 是 $\mathbb{Q}$-分解 klt 代数簇对，其中 $K_{X}+B$ 是$\mathbb{R}$-Cartier 除子。若 $K_{X}+B$ 不是 $\pi$-伪有效的，那么运行 $U$ 上的  $(K_{X}+B)$-MMP，将终结于森纤维空间$g:Y\to Z$。
+  \cite[Corollary 1.3.3]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $(X, B)$ 是 $\mathbb{Q}$-分解 klt 代数簇对，其中 $K_{X}+B$ 是$\mathbb{R}$-Cartier 除子。若 $K_{X}+B$ 不是 相对于$U$ 伪有效的，那么可以运行某个$U$ 上的  $(K_{X}+B)$-MMP，并且终结于森纤维空间$g:Y\to Z$。
 \end{theorem}
 注意到如果$ \pi:X \to Y$是双有理射影态射，那么$X$ 上所有除子都是相对于$Y$ 的大除子，于是有以下推论：   
 \begin{corollary}\label{extraction}
@@ -105,7 +105,7 @@ MMP中出现的代数簇对被称为极小模型的\textbf{结果}，将MMP停�
 对相同的代数簇对$(X,B)$和算术典范除子$K_{X}+B$，对应的$(K_{X}+B)$-MMP可能有不同的输出，它们之间有下列关系：
 \begin{definition}
   \cite[Definition 3.3]{brunoLogSarkisovProgram1995}
-  如果多个代数簇对 $ \{(X_i,B_i)\} $是从算术光滑的代数簇对 $(W,B_{W})$的 $(K_{W}+B_{W}) $-MMP的不同结果，则称它们为MMP-相关的 ( \textbf{MMP-related} )。 
+  如果多个代数簇对 $ \{(X_i,B_i)\} $是从算术光滑的代数簇对 $(W,B_{W})$的 $(K_{W}+B_{W}) $-MMP的不同结果，则称它们为MMP-相关的 ( MMP-related)。 
 \end{definition}
 
 \begin{lemma}\label{MMPrelatedConditation}
@@ -200,7 +200,7 @@ MMP中出现的代数簇对被称为极小模型的\textbf{结果}，将MMP停�
 
   如果基底 $U$是清楚的，或是一个点，那么我们省略 $\pi$，简单记作 $\mathcal{E}_{A}(V)$ 和 $\mathcal{A}_{A,f}$。
 \end{definition}
-
+固定边界除子的范围，则一些模型具有有限性。
 \begin{theorem}\label{finitewlcm}
   (弱算术典范模型有限性, \cite[Theorem E]{BCHM10}).
   令 $\pi: X\to U$是正规拟射影代数簇间的射影态射，且$A$是一个一般的 在 $U$ 上丰沛的$\mathbb{R}$-除子，且$V \subset \operatorname{WDiv}_{\mathbb{R}}(X)$是定义在有理数上的有限维线性子空间，假设存在具有klt奇点的代数簇对 $(X,\Delta_{0})$。那么存在有限多个 $U$ 上的 双有理映射 $f_{i}:X \dashrightarrow X_{i},1\leqslant i\leqslant l$ ，若某个 $D \in \mathcal{L}_{A}(V)$ 有关于 $D$ 的在 $U$ 上的  弱算术典范模型 $f:X \dashrightarrow  Y$，那么对某个$1\leqslant i\leqslant l$存在同构态射  $h_{i}:X_{i} \to Y$ 使得 $f=h_{i}\circ f_{i}$。
