@@ -7,7 +7,7 @@
 
 本文主要关注森纤维空间之间的关系：
 \begin{theorem}[Sarkisov分解]\label{main}
-	令 $ f:(X, B)\to S$ 和 $f':(X', B')\to S' $ 为两个 MMP-连接的$ \mathbb{Q} $-分解 klt 算术森纤维空间，则有双有理映射 $\Phi$：
+	令 $ f:(X, B)\to S$ 和 $f':(X', B')\to S' $ 为两个 MMP-连接的$ \mathbb{Q} $-分解 klt 对数森纤维空间，则有双有理映射 $\Phi$：
 	\[ \xymatrix{
 			(X,B)\ar[d]_{f}\ar@{.>}[r]^\Phi & (X',B')\ar[d]^{f'}\\
 			S & S'} \]
@@ -36,11 +36,11 @@
 			X \ar[d]_f\ar@{.>}[rr]&&X_{1}\ar[d]^{f_1}\\
 			S \ar[dr]_{s}&&S_{1} \ar[dl]^{t}\\
 			&T &} \]
-	其中所有$ f:(X, B)\to S $ and $ f_1:(X_1, B_1)\to S_1 $ 都是算术森纤维空间，所有$p,q$ 都是除子压缩，所有虚线的映射都是翻转 (flip)、平转 (flop)或反向翻转 (inverse flip)的复合。
+	其中所有$ f:(X, B)\to S $ and $ f_1:(X_1, B_1)\to S_1 $ 都是对数森纤维空间，所有$p,q$ 都是除子压缩，所有虚线的映射都是翻转 (flip)、平转 (flop)或反向翻转 (inverse flip)的复合。
 \end{theorem}
 这样的分解称为Sarkisov分解，构造这样Sarkisov分解的方法称为Sarkisov纲领。
 
-在具有叶状结构的代数簇对 (foliated pair)上有较弱的结果：
+在叶层化代数簇对 (foliated pair)上有较弱的结果：
 \begin{theorem}[弱Sarkisov分解]\label{mainf}
   令$(W,\mathcal{F}_{W},B_{W})$是具有$F$-dlt奇点的$\mathbb{Q}$-分解的叶层化代数簇对，且$\rho:W\dashrightarrow X$ 和$\rho':W \dashrightarrow X'$是两个不同的$(K_{\mathcal{F}_{W}}+B_{W})$-MMP的输出，且$X \to S$和$X' \to S'$是两个森纤维空间。那么双有理映射$\Phi:X \dashrightarrow X'$存在分解：
   \[ X=X_{0}\dashrightarrow X_{1}\dashrightarrow \cdots \dashrightarrow X' \]
@@ -50,17 +50,17 @@
 \section{问题的历史}
 Sarkisov纲领起源于对直纹曲面的分类 \cite{sarkisovBIRATIONALAUTOMORPHISMSCONIC1981,sarkisovCONICBUNDLESTRUCTURES1983}，Matsuki和Reid指出了最初的思路，具有终端奇点的三维代数簇 (terminal threefolds)上的Sarkisov纲领的完整证明由Corti\cite{cortiFactoringBirationalMaps}给出。 
 
-对于双有理同构的两个森纤维空间$X\to S$和 $X'\to S'$，选取$X$ 上一个定义双有理映射$\Phi:X \dashrightarrow X'$的线性系 $\mathcal{H}$ (或一个一般的除子 $H \in \mathcal{H}$)，那么第一个Sarkisov连接 $\psi_1:X\dashrightarrow X_1$ 由运行一种特殊的极小模型纲领得到，被称为双射线MMP ($2$-ray game)，并且取决于 $\mathcal{H}$ ($H$) 的选取。接着用 $\Phi_{1}=\Phi\circ \psi_1^{-1}: X_1 \dashrightarrow X'$替代 $\Phi:X\dashrightarrow X'$并重复这一过程。通过定义Sarkisov次数，并证明在归纳构造中Sarkisov次数下降来说明归纳终结。Bruno和Matsuki \cite{brunoLogSarkisovProgram1995} 将这种方法推广到 $\mathbb{Q}$-分解的klt奇点的三维代数簇的情形，并且对于任意维数的$\mathbb{Q}$-分解klt奇点代数簇对，给出了Sarkisov纲领的大纲和所需要的中间结论。近年来在极小模型纲领中有一些重要进展，例如标量极小模型纲领 (MMP with scaling) 的终结性 \cite{BCHM10}，算术典范阈值 (log canonica threshold, lct)的升链条件 (accending chain condition, ACC)\cite{HMX14}， $\delta$-lc Fano代数簇对的有界性 \cite{Bir19,birkarSingularitiesLinearSystems2020}，这些进展使得Bruno和Matsuki的大纲部分地可行，剩下的主要问题与算术翻转的终结性和局部算术典范阈值 (local log canonical thresholds)的ACC (或者有限性)有关。本文将这种方法称为下降法。
+对于双有理同构的两个森纤维空间$X\to S$和 $X'\to S'$，选取$X$ 上一个定义双有理映射$\Phi:X \dashrightarrow X'$的线性系 $\mathcal{H}$ (或一个一般的除子 $H \in \mathcal{H}$)，那么第一个Sarkisov连接 $\psi_1:X\dashrightarrow X_1$ 由运行一种特殊的极小模型纲领得到，被称为双射线MMP ($2$-ray game)，并且取决于 $\mathcal{H}$ ($H$) 的选取。接着用 $\Phi_{1}=\Phi\circ \psi_1^{-1}: X_1 \dashrightarrow X'$替代 $\Phi:X\dashrightarrow X'$并重复这一过程。通过定义Sarkisov次数，并证明在归纳构造中Sarkisov次数下降来说明归纳终结。Bruno和Matsuki \cite{brunoLogSarkisovProgram1995} 将这种方法推广到 $\mathbb{Q}$-分解的klt奇点的三维代数簇的情形，并且对于任意维数的$\mathbb{Q}$-分解klt奇点代数簇对，给出了Sarkisov纲领的大纲和所需要的中间结论。近年来在极小模型纲领中有一些重要进展，例如标量极小模型纲领 (MMP with scaling) 的终结性 \cite{BCHM10}，对数典范阈值 (log canonica threshold, lct)的升链条件 (accending chain condition, ACC)\cite{HMX14}， $\delta$-lc Fano代数簇对的有界性 \cite{Bir19,birkarSingularitiesLinearSystems2020}，这些进展使得Bruno和Matsuki的大纲部分地可行，剩下的主要问题与对数翻转的终结性和局部对数典范阈值 (local log canonical thresholds)的ACC (或者有限性)有关。本文将这种方法称为下降法。
 
 
 利用弱典范模型的有限性\cite{BCHM10} (finiteness of weak log canonical models)，Hacon \cite{haconMinimalModelProgram2012} 给出了另一种构造Sarkisov纲领的方法，对所有维数都成立。
-这种方法也通过双射线MMP来构造Sarkisov连接，但是固定了两个森纤维空间的公共算术解消 $(W,B_W)$ 作为Sarkisov纲领的``屋顶''，使得分解中的每一个森纤维空间都是$W$的某个弱算术典范模型。双标量法的Sarkisov纲领的终结性由弱算术典范模型的有限性推出，这与标量翻转 (flips with scaling)的终结性的证明类似。
+这种方法也通过双射线MMP来构造Sarkisov连接，但是固定了两个森纤维空间的公共对数解消 $(W,B_W)$ 作为Sarkisov纲领的``屋顶''，使得分解中的每一个森纤维空间都是$W$的某个弱对数典范模型。双标量法的Sarkisov纲领的终结性由弱对数典范模型的有限性推出，这与标量翻转 (flips with scaling)的终结性的证明类似。
 刘继豪 \cite{liuSarkisovProgramGeneralized2021} 将这种方法推广到了一般化代数簇对 (generalized pairs)的情况。本文将这种方法称为双标量法。
 
 
 利用Shokurov的多面体方法 \cite{Sho96,cs11}, Hacon 和 M\textsuperscript{c}Kernan \cite{haconSarkisovProgram2012}给出了一种新方法,不通过2-ray game构造Sarkisov连接。
-令 $W$ 为 $(X,B)\to S$ 和 $(X',B')\to S'$ 的公共算术解消，则在 $W$ 上有两个除子 $D$ 和 $D'$，使得 $S$ 和 $S'$ 是 $W$ 相对于 $D$ 和 $D'$的丰沛模型 (ample model)。进一步，$W$的除子的多面体的边界上有其他除子 $D_{i}$，每个除子对应一个森纤维空间 $X_{i}\to S_{i}$ 和 $W$的丰沛模型$S_{i}$。在多面体边界上有一条路径连接这些除子 $D_{i}$，并且将$\Phi$分解为对应的Sarkisov连接。
-Miyamoto \cite{miyamoto2019TheSP} 将这种方法应用到了任意特征代数闭域上的lc算术曲面或 $\mathbb{Q}$-分解算术曲面。 本文将这种方法称为有限模型法。
+令 $W$ 为 $(X,B)\to S$ 和 $(X',B')\to S'$ 的公共对数解消，则在 $W$ 上有两个除子 $D$ 和 $D'$，使得 $S$ 和 $S'$ 是 $W$ 相对于 $D$ 和 $D'$的丰沛模型 (ample model)。进一步，$W$的除子的多面体的边界上有其他除子 $D_{i}$，每个除子对应一个森纤维空间 $X_{i}\to S_{i}$ 和 $W$的丰沛模型$S_{i}$。在多面体边界上有一条路径连接这些除子 $D_{i}$，并且将$\Phi$分解为对应的Sarkisov连接。
+Miyamoto \cite{miyamoto2019TheSP} 将这种方法应用到了任意特征代数闭域上的lc对数曲面或 $\mathbb{Q}$-分解对数曲面。 本文将这种方法称为有限模型法。
 
 \section{本文结构}
 第一节给出主要的定理，并介绍Sarkisov纲领的发展历史。第二节给出基本概念的定义，MMP相关的定理。

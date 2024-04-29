@@ -22,7 +22,7 @@
 Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree}) ，且取决于特定的一个包含$(X,B)$和$(X',B')$ 的代数簇对的集合 $\mathcal{C}_{\theta}$ ，这个集合满足：
 \begin{itemize}
   \item
-   对任意两个  $\mathcal{C}_{\theta}$中的代数簇对 $(X,B),(X',B')$ ，存在$\mathcal{C}_{\theta}$中的代数簇对 $(W,B_W)$和算术公共解消 $p:W\to (X,B)$ 和 $q:W\to (X',B')$，使得 $(W,B_W)$具有klt奇点且 $p_*B_W=B,q_*B_W=B'$。
+   对任意两个  $\mathcal{C}_{\theta}$中的代数簇对 $(X,B),(X',B')$ ，存在$\mathcal{C}_{\theta}$中的代数簇对 $(W,B_W)$和对数公共解消 $p:W\to (X,B)$ 和 $q:W\to (X',B')$，使得 $(W,B_W)$具有klt奇点且 $p_*B_W=B,q_*B_W=B'$。
 % (By the construction of $Z$, the condition $q_*B_W = B'$ implies that the coefficients of $B_Z$ are compatible with $B'$.)
   \item  在集合中的任意代数簇对$(X,B)$ 和 $(Z,B_Z)$上可以运行  $(K_X+B+cH)$-MMP 和 $(K_Z+B_Z+cH_Z)$-MMP，并且所有结果都仍然在集合 $\mathcal{C}_{\theta}$中；
   \item 所有$\mathcal{C}_{\theta}$ 中的代数簇对都具有 $\delta$-lc 奇点，其中$\delta$ 是取决于 $\mathcal{C}_{\theta}$的正数。 
@@ -43,7 +43,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree}) 
 \end{remark}
   根据这个集合可以定义 $\theta$-差异数 ($\theta$-discrepancy )：
 \begin{definition}[$\theta$-差异数]
-  令 $\mathcal{C}_{\theta}$ 为上述代数簇对的集合，且$(X, B)$ 是有理函数域满足 $K(X)=K$的代数簇对。令  $f: Y\to X$是$(X, B)$的一个算术奇点解消，有分歧公式：
+  令 $\mathcal{C}_{\theta}$ 为上述代数簇对的集合，且$(X, B)$ 是有理函数域满足 $K(X)=K$的代数簇对。令  $f: Y\to X$是$(X, B)$的一个对数奇点解消，有分歧公式：
   \[ K_{Y}+B_{Y}+C=f^*(K_{X}+B) \]
   其中 $B_{Y}=f^{-1}_*B+ \sum_{E_{i}\text{ 例外除子}} \theta(E_{i})E_{i}$。则 $X$ 的例外除子 $E_{i}$的 $\theta$-差异数定义为
   \[ a_{\theta}(E_{i};X,B)=-\operatorname{mult}_{E_{i}}C. \]
@@ -82,9 +82,9 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree}) 
 
 使用命题 \ref{cat}中的假设和记号，可以定义Sarkisov 次数 ( Sarkisov degree )。取 $S'$ 上的极丰沛的除子 $A'$和足够大和足够可除的整数 $\mu'>1 $使得
 \[ \mathcal{H}'=|-\mu' (K_{X'}+B') +f'^*A'| \]
-是 $ X' $ 在 $ \mathrm{Spec}\,\mathbb{C}$上的极丰沛的完全线性系 。 令 $ (W,B_W) $ 是 $ X $ 和 $ X' $ 在 $ \mathcal{C}_{\theta} $ 中的公共算术解消，有射影态射 $ \sigma:W\to X$和   $\sigma':W\to X' $ 满足 $\sigma_*B_W=B, \sigma'_*B_W=B' $。令$\mathcal{H}_W:=\sigma'^*\mathcal{H}'$，那么  $\mathcal{H}:=\Phi^{-1}_*\mathcal{H}'=\sigma_*\mathcal{H}_W$。进一步，如果 $ \mathcal{H} $ 不是无基点的，那么
+是 $ X' $ 在 $ \mathrm{Spec}\,\mathbb{C}$上的极丰沛的完全线性系 。 令 $ (W,B_W) $ 是 $ X $ 和 $ X' $ 在 $ \mathcal{C}_{\theta} $ 中的公共对数解消，有射影态射 $ \sigma:W\to X$和   $\sigma':W\to X' $ 满足 $\sigma_*B_W=B, \sigma'_*B_W=B' $。令$\mathcal{H}_W:=\sigma'^*\mathcal{H}'$，那么  $\mathcal{H}:=\Phi^{-1}_*\mathcal{H}'=\sigma_*\mathcal{H}_W$。进一步，如果 $ \mathcal{H} $ 不是无基点的，那么
 \[ \sigma^*\mathcal{H}=\mathcal{H}_W+F \]
-其中 $ F=\sum f_{l}F_{l}\geqslant0 $ 是固定部分(fixed part)。线性系 $ \mathcal{H}' $中的一个一般除子 $H'$使得 $ H_W:=\sigma'^*H'=\sigma'^{-1}_*H'\in \mathcal{H}_W $，并记 $ H:=\Phi^{-1}_*H'=\sigma_*H_{W} $。那么 $H$ 是 $f$-丰沛的，且$ \sigma^*H=H_W+F $。 通过取进一步的解消，不妨设 $H_{W}$ 与$\sigma$ 和 $\sigma'$的例外除子各部分光滑且互相横截相交(即$(W,H_{W}+ \operatorname{Exc}\sigma+ \operatorname{Exc}\sigma')$是算术光滑的)。
+其中 $ F=\sum f_{l}F_{l}\geqslant0 $ 是固定部分(fixed part)。线性系 $ \mathcal{H}' $中的一个一般除子 $H'$使得 $ H_W:=\sigma'^*H'=\sigma'^{-1}_*H'\in \mathcal{H}_W $，并记 $ H:=\Phi^{-1}_*H'=\sigma_*H_{W} $。那么 $H$ 是 $f$-丰沛的，且$ \sigma^*H=H_W+F $。 通过取进一步的解消，不妨设 $H_{W}$ 与$\sigma$ 和 $\sigma'$的例外除子各部分光滑且互相横截相交(即$(W,H_{W}+ \operatorname{Exc}\sigma+ \operatorname{Exc}\sigma')$是对数光滑的)。
 
 
 接下来定义在 $\mathcal{C}_{\theta}$中关于 $H'$ (或 $\mathcal{H}'$)的Sarkisov次数：
@@ -106,7 +106,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree}) 
   对于Sarkisov次数，有下列性质：
   \begin{enumerate}
     \item  Sarkisov次数取决于  $A', H'$ 和  $\theta$的选取。
-    \item   取公共算术解消$ (W,B_W)\in \mathcal{C}_{\theta} $，其中 $ B_W=\sum \theta(E)E $ ，并且有射影双有理态射 $ \sigma:W\to X , \sigma':W\to X' $。 由于 $\sigma^*\mathcal{H}=\mathcal{H}_W+\sum f_{l}F_{l}$，所以有分歧等式：
+    \item   取公共对数解消$ (W,B_W)\in \mathcal{C}_{\theta} $，其中 $ B_W=\sum \theta(E)E $ ，并且有射影双有理态射 $ \sigma:W\to X , \sigma':W\to X' $。 由于 $\sigma^*\mathcal{H}=\mathcal{H}_W+\sum f_{l}F_{l}$，所以有分歧等式：
           \[ K_W+B_W+tH_W=\sigma^*(K_X+B+tH)+\sum(a_l-tf_l)E_l \]
           其中 $ \sum a_l E_l $ 是有效除子且支撑在 $ \mathrm{Exc}\,\sigma $上。那么 $\lambda:=\max\{ \frac{f_l}{a_l}\}$。如果$ \mathcal{H} $是无基点的，那么 $ \sum f_lF_l=0 $ 且$\lambda=0  $。
     \item   $ e $ 是公式
@@ -128,7 +128,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree}) 
   \end{itemize}
 \end{lemma}
 \begin{proof}
-  按照\cite[Proposition 1.6]{brunoLogSarkisovProgram1995}的思路来证明。取 定义\ref{sarkisovdegree}中的$ (W,B_{W})\in \mathcal{C}_{\theta}$和公共算术解消  $\sigma:W\to X,\sigma':W \to X'$ 。将 $(K_{X}+B+\frac{1}{\lambda}H)$的$\theta$-无差别除子重新编号 $E_{1},\ldots ,E_{e}$ ，那么有
+  按照\cite[Proposition 1.6]{brunoLogSarkisovProgram1995}的思路来证明。取 定义\ref{sarkisovdegree}中的$ (W,B_{W})\in \mathcal{C}_{\theta}$和公共对数解消  $\sigma:W\to X,\sigma':W \to X'$ 。将 $(K_{X}+B+\frac{1}{\lambda}H)$的$\theta$-无差别除子重新编号 $E_{1},\ldots ,E_{e}$ ，那么有
   \[ K_W+B_W+\frac{1}{\lambda} H_W=\sigma^*(K_X+B+\frac{1}{\lambda} H)+\sum_{l=1}^{e} 0\cdot E_{l}+\sum_{l>e}(a_l-\frac{1}{\lambda} f_l)E_l .\]
   在 $W$ 上运行相对于 $X$的对某丰沛除子标量的  $(K_{W}+B_{W}+\frac{1}{\lambda}H_{W})$-MMP，将终结于 $(W, B_{W}+\frac{1}{\lambda}H_{W})$相对于 $X$ 极小模型 $p:(Y, B_{Y}+\frac{1}{\lambda}H_{Y})\to X$，且 $p$ 的例外除子恰好是 $\cup_{i=1}^{e}E_{i}$，并且$p$是无差别的：
   \[
@@ -255,7 +255,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见\ref{sarkisovdegree}) 
             \item $ K_{X'}+B'+\frac{1}{\mu }H'+dD' $ 是丰沛除子；
             \item $(W,B_{W}+\frac{1}{\mu}H_{W}+dD_{W})$具有klt奇点 (因为 $\mu \geqslant \lambda$，所以可以做到)。
           \end{itemize}
-          因此 $X$ 和 $X'$ 都是 $(W,B_{W}+\frac{1}{\mu}H_{W}+dD_{W})$的算术典范模型，由算术典范模型的唯一性， $X\cong X'$。更进一步， $f$ 和  $f'$压缩相同的曲线数值等价类，所以两个森纤维空间同构。
+          因此 $X$ 和 $X'$ 都是 $(W,B_{W}+\frac{1}{\mu}H_{W}+dD_{W})$的对数典范模型，由对数典范模型的唯一性， $X\cong X'$。更进一步， $f$ 和  $f'$压缩相同的曲线数值等价类，所以两个森纤维空间同构。
   \end{enumerate}
 \end{proof}
 

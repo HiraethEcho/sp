@@ -1,7 +1,7 @@
 \chapter{叶层化Sarkisov纲领}
 传统双有理代数几何用典范除子$K_{X}$描述代数簇$X$的性质。如果用子层$\mathcal{F} \subset \mathcal{T}_{X}$ 代替切丛，进而用叶层化典范除子 (foliated canonical divisor) $K_{\mathcal{F}}$代替典范除子$K_{X}$，就对应叶层化双有理代数几何。此时有对应的叶层化极小模型纲领，在高维情况下尤其对代数可积的叶层化代数簇对有一系列结果。本章尝试分析这种情况下的Sarkisov纲领。
 \section{定义和引理}
-首先给出\textbf{叶层化代数簇对} (或 \textbf{带叶状结构的代数簇对})的基本知识。
+首先给出\textbf{叶层化代数簇对}的基本知识。
 
 \begin{definition}[叶状结构]\cite[Definition 2.3-6]{acc_foliation}
   \begin{enumerate}
@@ -21,7 +21,7 @@
 \begin{definition}
 使用\cite[3.4.5,6.2.1]{chlx}、\cite[3.2]{acss}的定义：
   \begin{enumerate}
-    \item 叶层化代数对 $(X/U,\mathcal{F},B)$包括一个正规射影代数簇$X$ ，叶状结构$\mathcal{F}$和边界除子$B$，一个压缩态射$\pi:X\to U$，使得叶层化算术典范除子
+    \item 叶层化代数对 $(X/U,\mathcal{F},B)$包括一个正规射影代数簇$X$ ，叶状结构$\mathcal{F}$和边界除子$B$，一个压缩态射$\pi:X\to U$，使得叶层化对数典范除子
   \[ K_{\mathcal{F}}+B \]
   是$\mathbb{R}$-Cartier除子。当基底$U=pt$，或清楚时，常舍去$U$，简记为$(X,\mathcal{F},B)$。 
     \item 如果$f:Y\to X$是双有理态射，且$\mathcal{F}_{Y} $是$\mathcal{F} $诱导的 $Y$ 上的叶状结构，且$E \subset Y$是$Y$ 上的除子，那么分歧公式
@@ -38,15 +38,15 @@
         \item $X$最多有商奇点 (quotient singularities);
         \item 存在压缩态射$f:X\to Z$，使得$\mathcal{F}$是由$f$ 诱导的叶状结构； 
         \item 存在一个约化除子$\Sigma$使得$\operatorname{Supp}B \subset \operatorname{Supp} \Sigma $，且 $(X,\Sigma)$是环形的 (toroidal)，特别的，$X$是$\mathbb{Q}$-分解的具有klt奇点的代数簇；
-        \item 存在约化除子$\Sigma_{Z}$使得$ (Z,\Sigma_{Z})$是算术光滑的，并且
+        \item 存在约化除子$\Sigma_{Z}$使得$ (Z,\Sigma_{Z})$是对数光滑的，并且
           \[ (X,\Sigma)\to (Z,\Sigma_{Z}) \]
           是等维数环形态射 (equidimensional toroidal morphism)；
       \end{enumerate}
-      则称为叶层化算术光滑代数对。
+      则称为叶层化对数光滑代数对。
     \item 对代数可积叶层化代数簇对$(X,\mathcal{F},B)$，如果有双有理态射$f:Y\to X$，使得
       \[ (Y,\mathcal{F}_{Y}=f^{-1}\mathcal{F},B_{Y}=f^{-1}_{*}B+ \operatorname{Exc}f) \]
-      是叶层化算术光滑代数簇对，那么称$f$为叶层化算术解消 (foliated log resolution)。
-    \item 对具有lc奇点的代数可积叶层化代数簇对$(X,\mathcal{F},B)$，如果有叶层化算术解消$f:Y\to X$，使得任意$X$ 上例外除子$E \subset Y$，都有
+      是叶层化对数光滑代数簇对，那么称$f$为叶层化对数解消 (foliated log resolution)。
+    \item 对具有lc奇点的代数可积叶层化代数簇对$(X,\mathcal{F},B)$，如果有叶层化对数解消$f:Y\to X$，使得任意$X$ 上例外除子$E \subset Y$，都有
       \[ a(E;X,\mathcal{F},B)>-\epsilon_{\mathcal{F}}(E) \]
       那么称其具有$F$-dlt奇点。
   \end{enumerate}
@@ -57,8 +57,8 @@
 \begin{enumerate}
   \item 记$B^{v}$和$ B^{h}$分别为$B$ 在$Z$ 上垂直和水平的部分，即$B^{v}$ 的组成成分素除子$D$满足$f(D)\subsetneq Z $，而$B^{h}$  的组成成分素除子$D$满足$f(D)= Z$。如果满足下列性质：
         \begin{enumerate}
-          \item 存在$Z$ 上的约化除子$\Sigma_{Z}$，使得$(Z,\Sigma_{Z}) $是算术光滑代数簇对，且$f(B^{v}=\Sigma_{Z})$；
-          \item 对任意闭点$z \in Z$和约化除子$\Sigma \geqslant \Sigma_{Z}$，如果$(Z,\Sigma)$在$z \in Z$附近是算术光滑的，那么$(X,B+f^{*}(\Sigma-\Sigma_{Z}))$在$z \in Z$附近具有lc奇点。 
+          \item 存在$Z$ 上的约化除子$\Sigma_{Z}$，使得$(Z,\Sigma_{Z}) $是对数光滑代数簇对，且$f(B^{v}=\Sigma_{Z})$；
+          \item 对任意闭点$z \in Z$和约化除子$\Sigma \geqslant \Sigma_{Z}$，如果$(Z,\Sigma)$在$z \in Z$附近是对数光滑的，那么$(X,B+f^{*}(\Sigma-\Sigma_{Z}))$在$z \in Z$附近具有lc奇点。 
         \end{enumerate}
         那么称$(X/U,B)/Z$具有性质$*$。
   \item 对于代数可积的叶层化代数簇对$(X/U,\mathcal{F},B)=(X,\mathcal{F},B)$，如果存在压缩态射$f:X \to Z$和约化除子$G$，满足下列条件
@@ -76,7 +76,7 @@
           则称$(X/U,\mathcal{F},B;G)/Z$满足弱ACSS条件，或者具有弱ACSS奇点。
     \item 如果具有若ACSS奇点的$(X/U,\mathcal{F},B;G)/Z$还满足：
           \begin{enumerate}
-            \item 如果除子$\Sigma \subset Z$满足$\Sigma \geqslant f(G)$且$(Z,\Sigma)$是算术光滑代数簇对，那么
+            \item 如果除子$\Sigma \subset Z$满足$\Sigma \geqslant f(G)$且$(Z,\Sigma)$是对数光滑代数簇对，那么
               \[ (X/U,\mathcal{F},B+G+f^{*}(\Sigma - f(G ))) \]
             \item 如果$W$是lc中心，且$ \eta_{W}$是一般点 (generical point)，那么$(X,B+G)$在$\eta_{W}$附近是环形的，且$W$ 是$(X/U,\mathcal{F},\left\lfloor B \right\rfloor )$的lc中心。
           \end{enumerate}
@@ -115,7 +115,7 @@ $F$-dlt奇点的叶层化代数簇对具有ACSS性质：
 \textbf{下降法：}
 对于具有$F$-dlt奇点的代数可积叶层化代数簇对，有下列结果；
 \begin{lemma}\cite[Lemma 6.2.4]{chlx}
-  令$X$ 是正规拟射影代数簇， $f:X \dashrightarrow Z$是支配的有理映射，且$\mathcal{F}$是由$f$ 诱导的代数可积的叶状结构，$B$ 是有效$\mathbb{R}$-除子。那么叶层化代数簇对$(X,\mathcal{F},B)$的叶层化算术解消存在。
+  令$X$ 是正规拟射影代数簇， $f:X \dashrightarrow Z$是支配的有理映射，且$\mathcal{F}$是由$f$ 诱导的代数可积的叶状结构，$B$ 是有效$\mathbb{R}$-除子。那么叶层化代数簇对$(X,\mathcal{F},B)$的叶层化对数解消存在。
 \end{lemma}
 \begin{theorem}[压缩超例外除子]\cite[Theorem 9.4.1]{chlx}
  令$(X/U,\mathcal{F},B)$是$\mathbb{Q}$-分解的具有ACSS奇点的叶层化代数簇对，且
@@ -149,7 +149,7 @@ $F$-dlt奇点的叶层化代数簇对具有ACSS性质：
  并且$(X,D)$具有klt奇点。
 \end{lemma}
 \begin{proof}
-  令$f:Y\to X$为算术解消，考虑分歧公式
+  令$f:Y\to X$为对数解消，考虑分歧公式
   \[ K_{Y}+E_{K}=f^{*}K_{X} \]
   和
   \[ K_{Y}+f^{-1}_{*}B+E_{B}+E_{K}+f^{*}A=f^{*}(K_{X}+B+A) \]

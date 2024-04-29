@@ -20,7 +20,7 @@
   \begin{enumerate}
     \item   存在有限多个相对于 $U$ 的双有理映射  $f_{i}:X \dashrightarrow   X_{i}$ 使得：
           \[ \mathcal{E}_{A,\pi}(V) =\bigcup_{i}\mathcal{W}_{i} \]
-          其中  $\mathcal{W}_{i}=\mathcal{W}_{A,f_{i}}(V)$ 是定义在有理数上的多面体  (rational polytope)。且如果  $f:X \dashrightarrow  Y$ 是关于对某个 $D \in \mathcal{E}_{A,\pi}(V)$相对于 $U$ 的算术终端模型，那么对某个$i$ ，有  $f=f_{i}$ 。即 $X$ 关于$\mathcal{E}_{A,\pi}(V)$的算术终端模型一定是$f_{i}$中的一个。   
+          其中  $\mathcal{W}_{i}=\mathcal{W}_{A,f_{i}}(V)$ 是定义在有理数上的多面体  (rational polytope)。且如果  $f:X \dashrightarrow  Y$ 是关于对某个 $D \in \mathcal{E}_{A,\pi}(V)$相对于 $U$ 的对数终端模型，那么对某个$i$ ，有  $f=f_{i}$ 。即 $X$ 关于$\mathcal{E}_{A,\pi}(V)$的对数终端模型一定是$f_{i}$中的一个。   
     \item   存在有限多个相对于$U$ 的 有理映射 $g_{j}:X \dashrightarrow  Z_{j}$使得： 
           \[ \mathcal{E}_{A,\pi}(V) =\coprod_{j}\mathcal{A}_{j} \]
           其中$ \{\mathcal{A}_j=\mathcal{A}_{A,\pi,g_j}\} $ 是 $ \mathcal{E}_{A}(V) $的划分。 令 $\mathcal{C}_{j}$ 是 $\mathcal{A}_{j}$ 在$\mathcal{L}_{A,\pi}(V)$中的闭包；
@@ -38,7 +38,7 @@
           是满射。 如果某个$ \mathcal{C}_i $的一个连通分支$ \mathcal{C} $ 与$ \mathcal{L}_A(V) $的内点有交，那么下列等价：
           \begin{enumerate}
             \item $ \mathcal{C} $ 张成 $ V $；
-            \item 对除子 $ D\in \mathcal{A}_i\cap \mathcal{C} $，那么$ f_i $ 是关于$ D $的算术终端模型；
+            \item 对除子 $ D\in \mathcal{A}_i\cap \mathcal{C} $，那么$ f_i $ 是关于$ D $的对数终端模型；
             \item $ f_i $ 是双有理映射，且 $ X_i $ 是 $ \mathbb{Q} $-分解的。
           \end{enumerate}
     \item 假设 $ V $ 张成 $W$的 Neron-Severi群。取两个指标 $ i,j $，使得 $ \mathcal{C}_i $ 张成 $ V $ 并且 $ D $ 是 $ \mathcal{A}_j\cap \mathcal{C}_i $ 的一般点，并且也是 $ \mathcal{L}_A(V) $的内点，那么 $ \mathcal{C}_i $ 在 $D$ 的一个邻域局部同构于$ \overline{\mathrm{NE}}(X_i/X_j)^*\times \mathbb{R}^k $，其中 $ k\geqslant 0 $。并且 $ \rho(X_i/X_j)=\dim  \mathcal{C}_i-\dim \mathcal{C}_j\cap \mathcal{C}_i   $。
@@ -115,7 +115,7 @@
 \[ \phi:X\to S=S_0,\psi:Y\to T=S_k \]
 和 $ X'=X_2,Y'=X_{k-1}$。 令 $ W\dashrightarrow R $ 为 关于$ D $的丰沛模型。延续这些记号，构造Sarkisov连接：
 \begin{theorem}\label{constructlink}
-  \cite[Theorem 3.7]{haconSarkisovProgram2012} 取边界 $ B_W $ 使得$ (W,B_W) $ 是算术光滑的算术终端奇点的代数簇对，且 $ D-B_W $ 是丰沛除子。那么 $ \phi $和 $ \psi $ 是森纤维空间，并且是 $ (K_W+B_W) $-MMP的输出。假设 $ D $ 包含在2个以上的多面体中，那么 $\phi$ 和 $\psi$ 由 Sarkisov连接相连，并且每个 $f_{i}:W \dashrightarrow  X_{i}$是  $(K_{W}+B_{W})$-MMP的结果。
+  \cite[Theorem 3.7]{haconSarkisovProgram2012} 取边界 $ B_W $ 使得$ (W,B_W) $ 是对数光滑的对数终端奇点的代数簇对，且 $ D-B_W $ 是丰沛除子。那么 $ \phi $和 $ \psi $ 是森纤维空间，并且是 $ (K_W+B_W) $-MMP的输出。假设 $ D $ 包含在2个以上的多面体中，那么 $\phi$ 和 $\psi$ 由 Sarkisov连接相连，并且每个 $f_{i}:W \dashrightarrow  X_{i}$是  $(K_{W}+B_{W})$-MMP的结果。
 \end{theorem}
 \begin{proof}
   假设 $ k\geqslant 3 $，那么有
@@ -147,7 +147,7 @@
 \end{lemma}
 
 \begin{proof}
-  由MMP-相关的假设，存在 $\mathbb{Q}$-faci分解的具有klt奇点的 代数簇对$(W,B_{W})$ 使得 $f:W\dashrightarrow X$ 和 $g:W \dashrightarrow Y$是 $(K_{W}+B_{W})$-MMP的输出。令 $p':W'\to W$ 是解消 $f$ 和 $g$的解消，记
+  由MMP-相关的假设，存在 $\mathbb{Q}$-分解的具有klt奇点的 代数簇对$(W,B_{W})$ 使得 $f:W\dashrightarrow X$ 和 $g:W \dashrightarrow Y$是 $(K_{W}+B_{W})$-MMP的输出。令 $p':W'\to W$ 是解消 $f$ 和 $g$的解消，记
   \[ K_{W'}+B_{W'}=p'^*(K_{W}+B_{W})+E' \]
   其中  $p'_*B_{W'}=B_{W}$，且$E'\geqslant 0$ 和 $B_{W'}\geqslant 0$ 没有公共组成成分， $E'$是例外除子。取 除子 $-F$满足：
 \begin{itemize}
@@ -155,7 +155,7 @@
   \item $\operatorname{Supp}F=\operatorname{Exc}p'$；
   \item  $K_{W'}+B_{W'}+F$ 具有klt奇点。 
 \end{itemize}
-  由于 $p'$ 是 $(K_{W'}+ B_{W'}+F)$-负性的，$(K_{W}+B_{W})$具有 klt奇点， $W$ 是 $\mathbb{Q}$-分解的，所以相对于$W$ 的 $(K_{W'}+B_{W'}+F)$-MMP终结于 $(W,B_{W})$。 用 $(W',B_{W'} +F)$替换 $(W,B_{W})$，可以假设 $(W,B_{W})$ 是算术光滑并且 $f,g$是双有理态射。 
+  由于 $p'$ 是 $(K_{W'}+ B_{W'}+F)$-负性的，$(K_{W}+B_{W})$具有 klt奇点， $W$ 是 $\mathbb{Q}$-分解的，所以相对于$W$ 的 $(K_{W'}+B_{W'}+F)$-MMP终结于 $(W,B_{W})$。 用 $(W',B_{W'} +F)$替换 $(W,B_{W})$，可以假设 $(W,B_{W})$ 是对数光滑并且 $f,g$是双有理态射。 
 
   取$W$ 上 一般的 丰沛$\mathbb{Q}$-除子 $A, H_{1},H_{2},\ldots ,H_{k}$ on $W$ 使得 $H_{1},\ldots , H_{k}$ 生成 $W$ 的 Neron-Severi 群。 记 $H=A+H_{1}+\ldots+ H_{k}$。取$S$ 和$T$ 上充分丰沛的除子 $A_{S}$ 和 $A_{T}$使得 
   \[ -(K_{X}+B_{X})+\phi^*A_{S} \]
@@ -178,7 +178,7 @@
   \[ D-B_W=(A+B_{0}-B_{W})+(B-B_{0}) \]
   是丰沛除子 (由于 $B-B_{0}$是数值有效的，由$V_{0}$的定义可以得到)。注意到
   \[ B_{0}+F+H \in \mathcal{A}_{A,\phi\circ f}(V_{0}), B_{0}+G+H \in \mathcal{A}_{\psi \circ g}(V_{0}) \]
-  且 $f$和 $g$分别是关于  $K_{W}+B_{0}+F+H$和 $K_{W}+B_{0}+G+H$的弱算术典范模型。因此由定理\ref{mapbetweenAM} 推出 $V_{0}$满足定理\ref{mapbetweenAM}.(1)-(4)。
+  且 $f$和 $g$分别是关于  $K_{W}+B_{0}+F+H$和 $K_{W}+B_{0}+G+H$的弱对数典范模型。因此由定理\ref{mapbetweenAM} 推出 $V_{0}$满足定理\ref{mapbetweenAM}.(1)-(4)。
 
   由于 $H_{1},\ldots ,H_{k}$ 生成$W$的 Neron-Severi群，可以可以找到常熟$h_{1},\ldots ,h_{k}$ 使得 $G \equiv \sum^{k}_{i=1} h_{i}H_{i}$。那么存在 $0< \delta\ll 1$使得 
   \[B_{0}+F+\delta G+H- \delta(\sum_{i=1}^{k} h_{i}H_{i}) \in \mathcal{L}_{A}(V_{0})\]
