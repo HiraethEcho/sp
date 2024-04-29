@@ -1,13 +1,11 @@
 \chapter{有限模型法}\label{thirdmethod}
 这一章主要参考 \cite{haconSarkisovProgram2012}。 通过有限模型来构造Sarkisov分解和前两种方法不同，这种方法并不通过运行2-ray game来构造Sarkisov连接。下面简要介绍这种方法的思路：
 
-令 $W$为两个MMP-相关的森纤维空间 $X\to S$ 和 $Y\to T$公共奇点解消。 Take a finite dimensional affine subspace $V$ 取 $\operatorname{WDiv}_{\mathbb{R}}(W)$的有限维仿射子空间$V$和丰沛 $\mathbb{Q}$-除子 $A$，那么 $\{\mathcal{A}_{i} =\mathcal{A}_{A,f_{i}}\} $ 是 $\mathcal{E}_{A}(V)$的一个划分，且每个子集 $\mathcal{A}_{i}$ 对应 $W$的一个丰沛模型，相邻的子集对应的丰沛模型之间有压缩态射 (见 定理\ref{mapbetweenAM})。由引理\ref{keylemma}，可以取到一个特殊的子空间 $V$ ，使得 
+令 $W$为两个MMP-相关的森纤维空间 $X\to S$ 和 $Y\to T$公共奇点解消。取 $\operatorname{WDiv}_{\mathbb{R}}(W)$的有限维仿射子空间$V$和丰沛 $\mathbb{Q}$-除子 $A$，那么 $\{\mathcal{A}_{i} =\mathcal{A}_{A,f_{i}}\} $ 是 $\mathcal{E}_{A}(V)$的一个划分，且每个子集 $\mathcal{A}_{i}$ 对应 $W$的一个丰沛模型，相邻的子集对应的丰沛模型之间有压缩态射 (见 定理\ref{mapbetweenAM})。由引理\ref{keylemma}，可以取到一个特殊的子空间 $V$ ，使得 
 \begin{enumerate}
   \item $V$ 是2维的有理仿射空间(可以定义在有理数上)； 
   \item $S,T$ 是 $W$ 关于 $D_{S},D_{T} \in \mathcal{L}_{A}(V) $的丰沛模型；
-  \item $D_{S}$ 和 $D_{T}$ 是$\mathcal{L}_{A}(V)$边界 $\partial \mathcal{L}_{A}(V)$上的两个点，并且将边界分为两个部分。在其中一个部分上，有有限多个线段连接 $D_{S}$ 和 $D_{T}$，并且$D_{i}$是线段的端点，此时每个端点 $ D_{i}$对应一个Sarkisov连接。
-
-    (见6.2.3节的示意图，其中$D_S=D_0,D_T=D_1$)
+  \item $D_{S}$ 和 $D_{T}$ 是$\mathcal{L}_{A}(V)$边界 $\partial \mathcal{L}_{A}(V)$上的两个点，并且将边界分为两个部分。在其中一个部分上，有有限多个线段连接 $D_{S}$ 和 $D_{T}$，并且$D_{i}$是线段的端点，此时每个端点 $ D_{i}$对应一个Sarkisov连接。见6.2.3节的示意图，其中$D_S=D_0,D_T=D_1$。
   \item 双有理映射$X\dashrightarrow Y$是这些Sarkisov 连接的复合。这就是有限模型法构造的Sarkisov分解。
 \end{enumerate}
 \begin{remark}
@@ -16,7 +14,6 @@
 
 
 \section{定义和引理}
-
 首先给出 $\mathcal{E}_{A}(V)$ 关于丰沛模型的划分定理：
 \begin{theorem}\label{finitemodel}
   \cite[Corollary 1.1.5]{BCHM10} 令 $\pi:X\to U$ 是正规拟射影代数簇间的射影态射，并且 $V \subset \operatorname{WDiv}_{\mathbb{R}}(X)$是有限维有理子空间，假设存在一个除子 $\Delta_{0} \in V$ 使得 $(X,\Delta_{0})$ 具有klt奇点。令 $A$是 相对于 $U$ 的一般的丰沛 $\mathbb{Q}$-除子，并且它和任何$V$ 中的除子都没有共同的素除子作为组成成分。那么
@@ -60,7 +57,7 @@
 \end{remark}
 
 
-下面的引理用定理\ref{mapbetweenAM}.(2)的态射构造对应的除子压缩、小压缩或森纤维空间压缩。在一些情况下 ，两个小压缩组成了一个平转。 
+下面的引理用定理\ref{mapbetweenAM}.(2)的态射构造对应的除子压缩、小压缩或森纤维空间压缩。 
 \begin{lemma}\label{mapbetweenAM2}
   \cite[Lemma 3.5]{haconSarkisovProgram2012} 令 $ f:W\dashrightarrow X $和 $ g:W\dashrightarrow  Y $是两个有理压缩使得 $ \mathcal{C}_{A,f} $ 是2维空间 (张成2维线性空间) 且 $ \mathcal{O}=\mathcal{C}_{A,f}\cap \mathcal{C}_{A,g} $ 是 $ 1 $维空间。假设 $ \rho(X)\geqslant \rho(Y) $ 且 $ \mathcal{O} $ 不包含在 $ \mathcal{L}_{A}(V) $。 令 $ D $ 是 $ \mathcal{O} $ 的内点且 $ B=f_*D $。那么存在一个有理压缩态射 $ \pi:X\dashrightarrow Y $ 且 $ g=\pi\circ f $ 满足下列情况之一：
   \begin{enumerate}
@@ -83,7 +80,7 @@
 \begin{remark}
   引理\ref{mapbetweenAM2}.(1)中，态射$\pi$由定理\ref{mapbetweenAM}.(2)给出。引理\ref{mapbetweenAM2}.(1).1对应定理\ref{mapbetweenAM}.(3)成立的情况，而引理\ref{mapbetweenAM2}.(1).2则对应定理\ref{mapbetweenAM}.(3)不成立的情况。
 
-  引理\ref{mapbetweenAM2}.(2)中两个态射$p,q$由定理\ref{mapbetweenAM}.(2)给出，并且都是引理\ref{mapbetweenAM2}.(1).1.2的小双有理态射。
+  引理\ref{mapbetweenAM2}.(2)中两个态射$p,q$由定理\ref{mapbetweenAM}.(2)给出，并且都是引理\ref{mapbetweenAM2}.(1).1.2的小双有理态射。这两个小双有理态射构成了一个平转。
 \end{remark}
 最后给出引理来保证后续构造的Sarkisov连接中的每一个代数簇，都是$(W, B_{W})$-MMP的结果。
 \begin{lemma}
@@ -95,7 +92,7 @@
 \[ \xymatrix{
              & Z=Z^{0}\ar[rd]\ar[ld]_{p}\ar@{.>}[rr]^{\text{关于}K+D \text{的平转}} &   & Z^{1}\ar[ld]\ar@{.>}[r] & \cdots\ar@{.>}[r] & Z^{k}=Z_{1}\ar[rd]^{q}\\
     X  &                                 & Y^{1} & & & & X_{1} } \]
-其中$p,q$ 可能是同构，且$X,X_{1},Z^{i},Z,Z_{1}$都是$W$ 关于$D$ 的某种模型。 
+其中$p,q$ 可能是同构，且$X,X_{1},Z,Z_{1},Z^{i},Y^{i}$都是$W$ 关于$D$ 的某种模型。 
 
 令 $ \mathcal{T}_1, \ldots, \mathcal{T}_k $ 是 包含$D$ 的多面体 $ \mathcal{C}_i $中2维的那些。通过重新排序，可以假设 $\mathcal{O}_{0}$是$\mathcal{T}_{1}$和 $ \mathcal{E}_{A}(V) $的边界的交 ( 即 $ \mathcal{T}_{1} \cap \partial \mathcal{E}_{A}(V) = \mathcal{O}_{0}  $)，类似的$\mathcal{O}_{k}$是$\mathcal{T}_{k}$和 $ \mathcal{E}_{A}(V) $的边界的交 ( 即 $ \mathcal{T}_{k} \cap \partial \mathcal{E}_{A}(V) = \mathcal{O}_{k}  $)，并且 $ \mathcal{O}_i=\mathcal{T}_i\cap\mathcal{T}_{i+1} $ 是1维的。如下图所示：
 \begin{center}
@@ -194,6 +191,6 @@
 
 最后证明Sarkisov分解的存在性：
 \begin{proof}
-  令 $(W,B_{W}),A $ 和 $V$ 满足引理\ref{keylemma}。 取$ \mathcal{L}_A(V) $中的内点$ D_{0} \in \mathcal{A}_{A,\phi\circ f} $  和 $ D_1\in \mathcal{C}_{A,g} $。由于 $ V $是2维的，去掉 $ D_0 $ 和 $ D_1 $ 将把 $ \mathcal{E}_A(V) $的边界分成两个部分。其中一部分全部由不大的(not big)除子组成，并且包含在 $ \mathcal{L}_A(V) $的内部。考虑这一部分从 $ D_0 $ 到 $ D_1 $的过程，存在有点多个点 $ D_i , 2\leqslant i\leqslant N $ 包含在两个以上的多面体 $ \mathcal{C}_{A,f_{k}}(V) $中。由引理 \ref{constructlink}，每一个点 $ D_i $给出一个 Sarkisov 连接。那么双有理映射 $X \dashrightarrow Y$ 分解成这些连接的复合。
+  令 $(W,B_{W}),A $ 和 $V$ 满足引理\ref{keylemma}。 取$ \mathcal{L}_A(V) $中的内点$ D_{0} \in \mathcal{A}_{A,\phi\circ f} $  和 $ D_1\in \mathcal{C}_{A,g} $。由于 $ V $是2维的，去掉 $ D_0 $ 和 $ D_1 $ 将把 $ \mathcal{E}_A(V) $的边界分成两个部分。
+  其中一部分对应的除子都不是大除子，并且包含在 $ \mathcal{L}_A(V) $的内部。考虑这一部分从 $ D_0 $ 到 $ D_1 $的路径，存在有点多个点 $ D_i , 2\leqslant i\leqslant N $ 包含在两个以上的多面体 $ \mathcal{C}_{A,f_{k}}(V) $中。由引理 \ref{constructlink}，每一个点 $ D_i $给出一个 Sarkisov 连接。那么双有理映射 $X \dashrightarrow Y$ 分解成这些连接的复合。
 \end{proof}
-

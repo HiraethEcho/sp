@@ -1,20 +1,20 @@
 \chapter{预备知识}
 \section{代数簇对与奇点}
-定义代数簇对和相关概念：
+这一节定义代数簇对和相关概念：
 \begin{definition}
   定义代数簇对和除子的记号：
   \begin{itemize}
     \item 一个代数簇对 $(X,B)$ 包括一个正规拟射影代数簇 $X$ 和一个 $\mathbb{R}$-除子 $B=\sum_{i}b_{i}B_{i}$，其中$B_{i}$是素除子，且$0<\leqslant b_{i} \leqslant 1$ ，并且满足
     \[ K_{X}+B \]
-          是$\mathbb{R}$-Cartier 除子。 
-    \item 若双有理态射 $f:Y\to X$ 满足 $Y$是光滑代数簇，且$\operatorname{Exc}\,f \cup \bigcup_{i}B_{i \text{red}} $ 是横截相交 (normal crossing)的除子，并且$f$ 在$\operatorname{Reg}(X,B)$上是同构， 那么称 $f$ 为 $(X,B)$的算术解消。  
-    \item 正规代数簇$X$ 的余维数1的不可约子簇$ E \subset X $ 称为 $X$ \textbf{上}的除子；如果 $f: Y \to X$ 是双有理射影态射，那么 $Y$ 上的除子 $E$ 称为 $X$ \textbf{之上}的除子。  
+          是$\mathbb{R}$-Cartier 除子，$B_{i}$称为$B$的组成成分的素除子 。
+    \item 若双有理态射 $f:Y\to X$ 满足 $Y$是光滑代数簇，且$\operatorname{Exc}\,f \cup B_{\text{red}} $ 是横截相交 (normal crossing)的除子，并且$f$ 在$\operatorname{Reg}(X,B)$上是同构， 那么称 $f$ 为 $(X,B)$的算术解消。  
+    \item 正规代数簇$X$ 的余维数1的不可约子簇$ E \subset X $ 称为 $X$ \textbf{上}的除子；如果 $f: Y \to X$ 是双有理射影态射，那么 $Y$ 上的除子 $E$ 称为 $X$ \textbf{之上}的除子，或相对于$X$的除子。  
   \end{itemize}
 \end{definition}
 
 定义除子的差异数：
 \begin{definition}
-  令 $(X, B)$ 为代数簇对， 且 $f: Y\to X$ 是它的算术解消，则有
+  令 $(X, B)$ 为代数簇对， 且 $f: Y\to X$ 是它的算术解消，则有分歧公式 (ramification formula)
   \[ K_{Y}+C=f^*(K_{X}+B) \]
   那么除子 $E$ 的差异数 (discrepancy)$a(E;X,B) $定义为
   \[ a(E;X,B)=-\operatorname{mult}_{E}C \]
@@ -23,11 +23,11 @@
   和整体差异数
   \[ \operatorname{totdiscrep}(X, B) :=\inf \{a(E; X, B) : E \text{是} X \text{之上的除子}\}. \]
 \end{definition}
-对于代数簇对之间的态射，可以定义
+对于代数簇对之间的态射，可以定义无差别除子：
 \begin{definition}
  令$f:(Y,C)\to (X,B)$ 为代数簇对之间的态射，在分歧公式中，
  \[ K_{Y}+C + \sum_{i}e_{i}E_{i}=f^{*}(K_{X}+B) \]
- 如果$e_{i}=0$，那么除子$E_{i}$称为$f$-相容的。 如果
+ 如果$e_{i}=0$，那么除子$E_{i}$称为$f$-无差别的，或者$f$-相容的。 如果
  \[ K_{Y}+C=f^{*}(K_{X}+B) \]
 那么称$f$ 是\textbf{无差别的}，也称为\textbf{相容的}  (crepant)。
 如果考虑不含边界的代数簇对，即$B=C=0$ ，那么分歧公式
@@ -38,13 +38,13 @@
 通过差异数，定义代数簇对 $(X,B)$ 的奇点性质：
 \begin{definition}
   对于代数簇对$(X,B)$，定义奇点性质：
-  \begin{itemize}
+  \begin{enumerate}
     \item 如果 $\operatorname{discrep}(X,B)>0$，则称$(X,B) $具有终端奇点 (terminal)，也称 $K_{X}+B$具有终端奇点； 
     \item 如果 $\operatorname{discrep}(X,B)\geqslant 0$，则称$(X,B) $具有典范奇点 (canonical)，也称 $K_{X}+B$具有典范奇点； 
     \item 如果 $\operatorname{discrep}(X,B)>-1$，则称$(X,B) $具有klt奇点 (kawamata log terminal)，也称 $K_{X}+B$具有klt 奇点； 
     \item 如果 $\operatorname{discrep}(X,B)\geqslant -1$，则称$(X,B) $具有lc奇点 (log canonical)，也称 $K_{X}+B$具有lc奇点； 
     \item 如果 $\operatorname{discrep}(X,B)\geqslant -1+\delta$，则称$(X,B) $具有$\delta$-lc奇点，也称 $K_{X}+B$具有$\delta$-lc奇点； 
-  \end{itemize}
+  \end{enumerate}
 \end{definition}
 
 \section{极小模型纲领}
@@ -55,11 +55,11 @@
 \begin{enumerate}
   \item
     \[ \overline{\operatorname{NE}}(X)=\overline{\operatorname{NE}}(X)_{K_{X}+B\geqslant 0} +\sum_{\alpha \in\Lambda} R_{\alpha}\] 
-          其中$R_{\alpha}=\mathbb{R}_{\geqslant 0}[C_{\alpha}]$是由有理曲线$C_{\alpha}$生成的$(K_{X}+B) $-负性的极端射线，且$\Lambda$是可列集；
+          其中$R_{\alpha}=\mathbb{R}_{\geqslant 0}[C_{\alpha}]$是由有理曲线$C_{\alpha}$生成的$(K_{X}+B) $-负性的 ($(K_{X}+B)$-negative)极端射线 (extremal ray)，且$\Lambda$是可列集；
   \item 对任何丰沛除子$A$和$ \epsilon >0 $，有
         \[ \overline{\operatorname{NE}}(X)=\overline{\operatorname{NE}}(X)_{K_{X}+B+\epsilon A\geqslant 0} +\sum_{\alpha \in\Lambda'}R_{\alpha} \]
         其中$\Lambda' \subset \Lambda$是有限子集；
-  \item 令 $F \subset \overline{\operatorname{NE}}(X)$是 $(K_{X}+B)$-负性的极端面，那么同构意义下存在唯一的压缩态射
+  \item 令 $F \subset \overline{\operatorname{NE}}(X)$是 $(K_{X}+B)$-负性的极端面 (extremal face)，那么同构意义下存在唯一的压缩态射
     \[ f=cont_{F}:X \to Z \]
     使得$f_{*}\mathcal{O}_{X}=\mathcal{O}_{Z}$，并且曲线 $C \subset X$被$f$ 压缩当且仅当$[C] \in F$。 
   \item 如果$X$ 上除子 $D$，相对于$Z$ 是数值平凡的，即任意被$f$ 压缩的曲线$C \subset X$，都有$D.C=0$，那么存在$Z$上除子$L_{Z} $使得
@@ -68,7 +68,7 @@
 \end{theorem}
 在锥定理的(4)中，当$F=R$是极端射线时，有$\rho(X)=\rho(Z)+1$，并且对应的压缩态射$f$有三种情况：
 \begin{enumerate}
-  \item $\operatorname{Exc}\,f=E$是素除子，此时称为除子压缩；
+  \item $\operatorname{Exc}\,f=E$是素除子，此时称为除子压缩态射 (divisorial contraction morphism)；
   \item $\operatorname{codim }(\operatorname{Exc}\,f) \geqslant 2$，则称为小双有理态射 (small birational morphism)；
   \item $\dim Z < \dim X, \operatorname{Exc}\,f=X$，此时称$(X,B)\to Z$为森纤维空间 (关于$ (K_{X}+B) $的森纤维空间)，压缩态射$f$称为森纤维空间压缩态射。
 \end{enumerate}
@@ -83,7 +83,7 @@
 如果在森纤维空间$(X_{i},B_{i})\to Z$停止，那么MMP终结于这个森纤维空间。
 
 
-上述过程成为$(K_{X}+B)$-MMP，其中出现的代数簇对被称为MMP的\textbf{结果}，将MMP停止处的代数簇称为MMP的\textbf{输出} (要么是极小模型，要么是森纤维空间)。对于极小模型纲领，有如下结果。
+上述过程称为$(K_{X}+B)$-MMP，其中出现的代数簇对被称为MMP的\textbf{结果}，将MMP停止处的代数簇称为MMP的\textbf{输出} (要么是极小模型，要么是森纤维空间)。对于极小模型纲领，有如下结果。
 \begin{theorem}[标量MMP的终结定理]
   \cite[Corollary 1.4.2]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $(X, B)$ 是  $\mathbb{Q}$-分解的具有 klt奇点的 代数簇对，其中 $K_{X}+B$ 是 $\mathbb{R}$-Cartier 除子， 且$B$ 是相对于$U$ 的大除子 (big divisor)。若 $C\geqslant0$ 为 $\mathbb{R}$-除子，且$K_{X}+B+C$ 具有 klt奇点 且 相对于$U$ 数值有效 (nef)，那么在 $U$ 上运行 $C$-标量的  $(K_{X}+B)$-MMP，这个极小模型纲领将终结。
 \end{theorem}
@@ -120,13 +120,13 @@
   \end{enumerate}
 \end{lemma}
 \begin{proof}
-  我们给出  $(3) \implies (2)$的简略证明：令 $W$ 为支配每个代数簇对 $(X_l,B_l=\sum b_{li}B_{li})$ 的算术光滑解消，并有射影双有理态射 $f_l:W\to X_l$，它们例外除子的并$f_{l*}^{-1}B_l\cup E_{li}$是一个横截相交的除子。令 $B_W=\sum_t d_tD_t $，其中  如果 $D_t$ 是$\cup_l f_{l*}^{-1}B_l$中的某个素除子则$d_t = b_{li}$，如果$B_{t}$是每个 $X_{l}$上的例外除子，则  $d_t=1$。由条件(3)， 这是定义良好的。那么 $(W,B_{W})$上的分歧等式(ramification formula)中的不等式条件也由(3)得到。
+  我们给出  $(3) \implies (2)$的简略证明：令 $W$ 为支配每个代数簇对 $(X_l,B_l=\sum b_{li}B_{li})$ 的算术光滑解消，并有射影双有理态射 $f_l:W\to X_l$，它们例外除子的并$f_{l*}^{-1}B_l\cup E_{li}$是一个横截相交的除子。令 $B_W=\sum_t d_tD_t $，其中  如果 $D_t$ 是$\cup_l f_{l*}^{-1}B_l$中的某个素除子则$d_t = b_{li}$，如果$B_{t}$是每个 $X_{l}$上的例外除子，则  $d_t=1$。由条件(3)， 这是定义良好的。那么 $(W,B_{W})$上的分歧公式中的不等式条件也由(3)得到。
 \end{proof}
 
 \section{模型及其有限性}
 
 \begin{definition}
-  \cite[\S 2]{haconSarkisovProgram2012} 对有理映射 $f:X\dashrightarrow Y$  若有 $f$的解消$p:W\to X$ 和 $q:W\to Y$ 满足$p$  和 $q$ 都是压缩态射且 $p$ 双有理态射，则称 $f$ 为有理压缩映射( \textbf{rational contraction})  。若 $ q$也是双有理态射， 且每个 $p$-例外除子都是 $q$-例外除子，则称 $f$为双有理压缩映射 (\textbf{birational contraction})。如果 $f^{-1}$ 也是双有理压缩映射，则称 $f$ 为小双有理映射   ( \textbf{small birational map} )。
+  \cite[\S 2]{haconSarkisovProgram2012} 对有理映射 $f:X\dashrightarrow Y$  若有 $f$的解消$p:W\to X$ 和 $q:W\to Y$ 满足$p$  和 $q$ 都是压缩态射且 $p$ 是双有理态射，则称 $f$ 为有理压缩映射( \textbf{rational contraction})  。若 $ q$也是双有理态射， 且每个 $p$-例外除子都是 $q$-例外除子，则称 $f$为双有理压缩映射 (\textbf{birational contraction})。如果 $f^{-1}$ 也是双有理压缩映射，则称 $f$ 为小双有理映射   ( \textbf{small birational map} )。
 \end{definition}
 
 \begin{definition}\label{negativemap}
@@ -148,7 +148,7 @@
 \begin{remark}
   在原文献和其他文献中的常见定义如下：令 $ \pi:X\to U $为正规拟射影代数簇间的射影态射， $D$ 是 $X$ 上的$\mathbb{R}$-Cartier除子，且$ f: X\dashrightarrow Y $是 $U$ 上的双有理映射。  如果 $ f $ 是 $ D $-非正性的且 $ f_*D $ 相对于 $ U $是半丰沛的，那么称 $Z$ 和 $f$ 为关于 $D$的\textbf{半丰沛模型}(\textbf{semiample model})。
 
-  但本文中只考虑$D=K_{X}+B$是算术典范除子的情况，并且为记号简便做此修改。丰沛模型、弱算术典范模型等都做此修改。
+  但本文中只考虑$D=K_{X}+B$是算术典范除子的情况，所以为记号简便做此修改。丰沛模型、弱算术典范模型等都做此修改。
 \end{remark}
 \begin{definition}\label{models}
   \cite[Definition 3.6.7]{BCHM10} 令 $ \pi:(X,D)\to U $为正规拟射影代数簇间的射影态射，若 $ K_X+D $ 是 lc且$ f:X\dashrightarrow Y $是双有理压缩映射，那么有如下定义：
@@ -171,7 +171,7 @@
 根据上述引理，有算术典范模型的等价定义：
 
 \begin{definition}
-  令 $ \pi:(X, D)\to U $是正规拟射影代数簇间的射影态射，$ K_X+D $ 有lc奇点且$ f: X\dashrightarrow Y $ 是不解压任何除子的双有理映射。 如果 $ Y $是 关于 $D$ 在 $U$ 上的丰沛模型，那么称之为\textbf{算术典范模型} ( \textbf{log canonical model} ) 。
+  令 $ \pi:(X, D)\to U $是正规拟射影代数簇间的射影态射，$ K_X+D $ 有lc奇点且$ f: X\dashrightarrow Y $ 是不解压任何除子的双有理映射。 如果 $ Y $是 关于 $D$ 在 $U$ 上的丰沛模型，那么称之为关于$D$ 的 \textbf{算术典范模型} ( \textbf{log canonical model} ) 。
 \end{definition}
 
 进一步，对于边界是大除子的代数簇对，还有
@@ -203,5 +203,7 @@
 固定边界除子的范围，则一些模型具有有限性。
 \begin{theorem}\label{finitewlcm}
   (弱算术典范模型有限性, \cite[Theorem E]{BCHM10}).
-  令 $\pi: X\to U$是正规拟射影代数簇间的射影态射，且$A$是一个一般的 在 $U$ 上丰沛的$\mathbb{R}$-除子，且$V \subset \operatorname{WDiv}_{\mathbb{R}}(X)$是定义在有理数上的有限维线性子空间，假设存在具有klt奇点的代数簇对 $(X,\Delta_{0})$。那么存在有限多个 $U$ 上的 双有理映射 $f_{i}:X \dashrightarrow X_{i},1\leqslant i\leqslant l$ ，若某个 $D \in \mathcal{L}_{A}(V)$ 有关于 $D$ 的在 $U$ 上的  弱算术典范模型 $f:X \dashrightarrow  Y$，那么对某个$1\leqslant i\leqslant l$存在同构态射  $h_{i}:X_{i} \to Y$ 使得 $f=h_{i}\circ f_{i}$。
+  令 $\pi: X\to U$是正规拟射影代数簇间的射影态射，且$A$是一个一般的 在 $U$ 上丰沛的$\mathbb{R}$-除子，且
+    \[ V \subset \operatorname{WDiv}_{\mathbb{R}}(X) \]
+  是定义在有理数上的有限维线性子空间，假设存在具有klt奇点的代数簇对 $(X,\Delta_{0})$。那么存在有限多个 $U$ 上的 双有理映射 $f_{i}:X \dashrightarrow X_{i},1\leqslant i\leqslant l$ ，若某个 $D \in \mathcal{L}_{A}(V)$ 有关于 $D$ 的在 $U$ 上的  弱算术典范模型 $f:X \dashrightarrow  Y$，那么对某个$1\leqslant i\leqslant l$存在同构态射  $h_{i}:X_{i} \to Y$ 使得 $f=h_{i}\circ f_{i}$。
 \end{theorem}

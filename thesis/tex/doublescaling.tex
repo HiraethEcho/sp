@@ -1,20 +1,20 @@
 \chapter{双标量法}
- 本章介绍\cite[\S 13]{haconMinimalModelProgram2012} 和  \cite{liuSarkisovProgramGeneralized2021}中的双标量法构造 (double scaling)的Sarkisov纲领。下降法用 $X'$上的除子 $H'$ 来作为标量，双标量法在  $X$ 和 $X'$ 上分别构造除子 $G$ 和 $H'$ ，作为双标量。
+ 本章介绍\cite[\S 13]{haconMinimalModelProgram2012} 和  \cite{liuSarkisovProgramGeneralized2021}中的双标量法 (double scaling)构造的Sarkisov分解。下降法用 $X'$上的除子 $H'$ 来作为标量，双标量法在  $X$ 和 $X'$ 上分别构造除子 $G$ 和 $H'$ ，作为双标量。
 % \textbf{初始设定：}
 令 $W$ 为 MMP-相关的森纤维空间 $f:(X,B)\to S$ 和 $f':(X',B')\to S'$  的公共解消，  取在$ S $ 上丰沛的$\mathbb{Q}$-除子 $A$ 使得
 \[G \sim_{\mathbb{Q}} -(K_{X}+B) +f^*A\]
 是一般的丰沛 $\mathbb{Q}$-除子。类似的，取 $S'$ 上丰沛的$\mathbb{Q}$-除子$A'$ ，使得 
 \[H' \sim_{\mathbb{Q}} -(K_{X'}+B') +f'^*A'\]
-是一般的丰沛 $\mathbb{Q}$-除子。那么  $(X,B+G)$ 和 $(X',B'+H')$  是$W$ (关于 $B_{W}+G_{W}$ 和 $B_{W}+H_{W}$)的两个弱算术典范模型。双标量Sarkisov纲领将构造 $W$ 的有限多个弱算术典范模型 $(X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i})$，它们是分别关于 $(W,B_{W}+g_{i}G_{W}+h_{i}H_{W})$的模型，其中 $0\leqslant g_i,h_i\leqslant 1$。这些模型间的双有理映射 $\psi_{i}:X_{i}\dashrightarrow X_{i+1}$是通过$2$-ray game 构造的Sarkisov连接映射。
+是一般的丰沛 $\mathbb{Q}$-除子。那么  $(X,B+G)$ 和 $(X',B'+H')$  是$W$ (关于 $B_{W}+G_{W}$ 和 $B_{W}+H_{W}$)的两个弱算术典范模型。双标量Sarkisov纲领将构造 $W$ 的有限多个弱算术典范模型 $(X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i})$，它们是分别关于 $(W,B_{W}+g_{i}G_{W}+h_{i}H_{W})$的模型，其中 $0\leqslant g_i,h_i\leqslant 1$。这些模型间的双有理映射 $\psi_{i}:X_{i}\dashrightarrow X_{i+1}$是通过双射线MMP构造Sarkisov连接映射。
 
-和下降法相比，这种方法在一个更小的集合内运行MMP和Sarkisov纲领。所有的 $X_{i}$都对应一个$(K_{W}+D_{i})$-非正性的双有理压缩映射 $W\dashrightarrow X_{i}$，其中 $D_{i}$是 $\operatorname{WDiv}_{\mathbb{R}}(W)$ 的一个紧子集 $\mathcal{E}_{A}(V)$。对于这个子集有弱算术典范模型的有限性性质，由此可以得到双标量法的Sarkisov纲领的终结性。
+和下降法相比，这种方法在一个更小的集合内运行MMP和Sarkisov纲领。所有的 $X_{i}$都对应一个$(K_{W}+D_{i})$-非正性的双有理压缩映射 $W\dashrightarrow X_{i}$，其中 $D_{i}$是 $\operatorname{WDiv}_{\mathbb{R}}(W)$ 的一个有界子集 $\mathcal{E}_{A}(V)$。对于这个子集有弱算术典范模型的有限性性质，由此可以得到双标量法的Sarkisov纲领的终结性。
 \section{定义和引理}
 令 $(W, B_W)$ 是 $\mathbb{Q}$-分解具有 klt奇点的代数簇对，并且 $f:(X, B)\to S$ 和 $f':(X', B')\to S'$ 是两个不同的$(K_{W}+B_{W})$-MMP 的输出，且都是森纤维空间。接下来给出一些所需的记号和引理。 
-\begin{definition}
+\begin{definition}\label{doubleorder}
   令 $f: W\dashrightarrow X$ 是正规拟射影代数簇间的双有理映射，如果
   \begin{itemize}
     \item $f$ 不解压除子；
-    \item 对所有 在 $W$ 之上的 (包括更高模型上的)除子 $E$ 都有  $a(E;X,B_{X})\geqslant a(E;W,B_{W})$，
+    \item 对所有 在 $W$ 之上的除子 $E$ 都有  $a(E;X,B_{X})\geqslant a(E;W,B_{W})$，
   \end{itemize}
   那么记 $(W,B_{W})\geqslant (X,B_{X})$。
 \end{definition}
@@ -24,7 +24,7 @@
   \begin{itemize}
     \item $f$不解压除子；
     \item $K_X+B$ 是数值有效除子，其中$B=f_*B_W$；
-    \item  对所有$E \subset W$之上的除子 $E$ 都有 $a(E;X,B)\geqslant a(E;W,B_{W})$。
+    \item  对所有$ W$上的除子 $E \subset W$ 都有 $a(E;X,B)\geqslant a(E;W,B_{W})$。
   \end{itemize}
   那么有
   \begin{itemize}
@@ -41,41 +41,35 @@
     \item $(\tilde{W},B_{\tilde{W}})$ 是 $\mathbb{Q}$-分解的具有终端奇点的代数簇对，且 $\tilde{\sigma}_*B_{\tilde{W}}=B$；
     \item $\tilde{\sigma}$ 是 $(K_{\tilde{W}}+B_{\tilde{W}})$-非正性的且 $(\tilde{W},B_{\tilde{W}})\geqslant (X,B)$；
   \end{itemize}
-  \[
-    \xymatrix{
-    & \widetilde{W}\ar[ld]\ar[rd] & \\
-      (W,B_{W})\ar@{.>}[rr] & &(X,B)
-    }
-  \]
-  
+  \[ \xymatrix{
+    & \widetilde{W}\ar[ld]_{\pi}\ar[rd]^{\bar{\sigma}} & \\
+      (W,B_{W})\ar@{.>}[rr]^{\sigma} & &(X,B)
+    } \]
 \end{lemma}
 
 通过应用引理 \ref{terminalresolution}，可以调整双标量法Sarkisov纲领的初始设定：
 \begin{assertion}\label{doublesetting}
 用 $(W,B_W)$ 的奇点解消代替它，使得 $(W,B_{W})$具有终端奇点，且$\sigma:W\to X$ 和$\sigma':W\to X'$ 是 $(K_W+B_W)$-非正性态射，并且 $(W,B_W)\geqslant (X,B),(X',B')$。
 
-  取 $ S $ 和 $ S' $ 上的极丰沛 $\mathbb{Q}$-除子 $ A $ 和 $ A' $使得 $ G\sim_{\mathbb{Q}}-(K_X+B)+f^*A $ 和 $ H\sim_{\mathbb{Q}}-(K_{X'}+B')+f'^{*}A' $ 是丰沛 $\mathbb{Q}$-除子。进一步，可以假设 $ G $ 和 $ H $ 满足 $G_{W}:= \sigma^*G=\sigma^{-1}_*G $ 和 $ H_{W}:=\sigma'^{*}H=\sigma'^{-1}_*H $。因此 $\sigma_{*}(K_{W}+B_{W}+G_{W})=K_{X}+B+G$ 是数值有效的，因此引理 \ref{terminalorder} 的结论满足。
-如果必要的话取进一步解消，可以假设
+  取 $ S $ 和 $ S' $ 上的极丰沛 $\mathbb{Q}$-除子 $ A $ 和 $ A' $使得 $ G\sim_{\mathbb{Q}}-(K_X+B)+f^*A $ 和 $ H\sim_{\mathbb{Q}}-(K_{X'}+B')+f'^{*}A' $ 是丰沛 $\mathbb{Q}$-除子。进一步，可以假设 $ G $ 和 $ H $ 满足 $G_{W}:= \sigma^*G=\sigma^{-1}_*G $ 和 $ H_{W}:=\sigma'^{*}H=\sigma'^{-1}_*H $。因此 
+  \[ \sigma_{*}(K_{W}+B_{W}+G_{W})=K_{X}+B+G \]
+  是数值有效的，引理 \ref{terminalorder} 的结论满足。 如果必要的话取进一步解消，可以假设
  $(W, B_W+gG_W+hH_W)$ 算术光滑，并且对所有 $0\leqslant g,h\leqslant 2$都具有终端奇点。
 \end{assertion}
  在这个设定下，有双标量的Sarkisov纲领：
 \begin{theorem}[双标量Sarkisov纲领]\label{main2}
   \cite[Claim 13.12]{haconMinimalModelProgram2012}
   沿用上述记号，有有限多个Sarkisov连接的序列
-  \[
-    \xymatrix{
+  \[ \xymatrix{
     X=X_0\ar@{.>}[r]\ar[d]_{f=f_{0}}&X_{1}\ar@{.>}[r]\ar[d]_{f_{1}}& X_{2}\ar[d]_{f_{2}}\ar@{.>}[r] &\cdots\ar@{.>}[r]&X_N=X'\ar[d]_{f_{N}} \\
     S=S_{0}&S_{1} &S_{2}&&S_N=S'
-    }
-  \]
-  和有理数
-  \[
-    \begin{aligned}
+    } \]
+  和
+  \[ \begin{aligned}
       1 & =g_0\geqslant g_1 \geqslant \cdots \geqslant g_N   & =0 \\
       % 0 & =h_0\leqslant h_{1} \leqslant \cdots \leqslant h_N &  \\
       0 & =h_0\leqslant h_{1} \leqslant \cdots \leqslant h_N & =1 \\
-    \end{aligned}
-  \]
+    \end{aligned} \]
   满足
   \begin{enumerate}
     \item 对每个 $i$，双有理压缩映射 $\sigma_i:W\dashrightarrow  X_{i}$都是 $(K_{W}+B_{W}+g_{i}G_{W}+h_{i}H_{W})$-非正性的，并且 $(K_{X_{i}}+B_{i}+g_{i}G_{i}+h_{i}H_{i})=\sigma_{i*}(K_{W}+B_{W}+g_{i}G_{W}+h_{i}H_{W})$ 是数值有效的，且相对于$S_{i}$数值平凡；
@@ -104,7 +98,7 @@
 \end{itemize}
 那么构造下一个满足定理\ref{main2} 的 Sarkisov 连接 $X_{i}\dashrightarrow X_{i+1}$。类比下降法的Sarkisov次数，引入下列记号：
 \begin{definition}\label{doubledegree}
-  令 $C_{i}$ 是被 $f_{i}$ 压缩的 (也称为 $f$-vertical)  $X_{i}$ 上的曲线，那么
+  令 $C_{i}$ 是被 $f_{i}$ 压缩的 (也称为 $f$-垂直的，$f$-vertical )  $X_{i}$ 上的曲线，那么定义
   \begin{itemize}
     \item $r_{i}:=\frac{H_{i}.C_{i}}{G_{i}.C_{i}}$；
     \item 令 $\Gamma$ 是满足下列条件的 $t\in [0,\frac{g_{i}}{r_{i}}] $的集合
@@ -120,17 +114,19 @@
       令 $g_{i+1}=g_{i}-r_{i}s_{i}$ 和 $h_{i+1}=h_{i}+s_{i}$。注意到 $D_{W,i+1}=D_{W,i}(s_{i})$.
   \end{itemize}
 \end{definition}
-那么有
+\begin{remark}
+由定义容易得到：  
 \begin{enumerate}
   \item $r_{i}>0$;
   \item  $\Gamma=\{0\} $ 或 $\Gamma$ 是闭区间
   \item $g_{i+1}=g_{i} \Leftrightarrow h_{i+1}=h_{i} \Leftrightarrow s_{i}=0$；
 \end{enumerate}
-(细节见 \cite[Lemma 4.4]{liuSarkisovProgramGeneralized2021} )
+\end{remark}
 
 \textbf{终结判定：}
 如果 $s_{i}=\frac{g_{i}}{r_{i}}$，此时 $g_{i+1}=0$。 令 $N=i+1$ ，并令$f_{N}:X_{N}=X_{i} \to S_{N}=S_{i}$，那么 $h_{N}=1$ 且 $X_{N}\to S_{N}$ 与 $f':X'\to S'$同构 (见命题 \ref{nfi2})，这样双标量Sarkisov纲领停止。此时事实上$X_{i}\cong X_{N},S_{i}\cong S_{N}$，但是对二者的边界不同，而 $X_{N}$的边界$B_{N}$与$(X',B')$的边界$B'$相同。
 
+\textbf{构造Sarkisov连接：}
 \begin{proposition}[构造Sarkisov 连接]\label{2Constructlink}
  如果$s_{i}<\frac{g_{i}}{r_{i}}$，那么可以构造Sarkisov 连接 $X_{i}\dashrightarrow X_{i+1}$ 。
 \end{proposition}
@@ -142,39 +138,27 @@
     的阈值，也就是说存在 $0<\epsilon\ll 1$，使得 $W$ 上任意除子$E$，都有
   \[ a(E;X_{i},D_{i}(s_{i}+\epsilon))\geqslant a(E;W,D_{W,i}(s_{i}+\epsilon)) \]
   并且 $K_{X_{i}}+D_{i}(s_{i}+\epsilon)$ 不是数值有效。那么对某个 $0< \delta \ll \epsilon $，存在一个 $2$ 维的 $(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta G_{i})$-负性 极端面 $F$，由$R=\mathbb{R}_{\geqslant 0}[C_{i}]$ 和令一个极端射线$P$张成 (spanned by)。于是存在关于 $F$   的压缩态射$X_{i}\to T_{i}$穿过 $f_{i}$。 
-  \[
-    \xymatrix{
+  \[ \xymatrix{
       X_{i}\ar[d]\ar[rdd]& \\
       S_{i}\ar[rd]&\\
-         &T_{i}
-    }
-  \]
+         &T_{i} } \]
   接着运行相对于 $T_{i}$ 的关于某丰沛除子标量的$(K_{X_{i}}+D_{i}(s_{i}+\epsilon))$-MMP，在有限多个翻转后，会接着一个关于$(K_{X_{i}}+D_{i}(s_{i}+\epsilon))$的森纤维空间，或一个除子压缩，或一个极小模型。
   \begin{enumerate}
     \item  若记$X_{i}\dashrightarrow X_{i+1}$是翻转的复合，并且接着森纤维空间压缩 $X_{i+1}\to S_{i+1}$，那么这是第四型的Sarkisov连接；
-      \[
-        \xymatrix{
+      \[ \xymatrix{
           X_{i}\ar@{.>}[rr]\ar[d]& &X_{i+1}\ar[d] \\
           S_{i}\ar[rd]& & S_{i+1}\ar[ld]\\
-             &T_{i}&
-        }
-      \]
+             &T_{i}& } \]
     \item 若记$X_{i}\dashrightarrow Z_{i}$是翻转的复合，并接着一个除子压缩态射 $Z_{i}\to X_{i+1}$，那么 令 $S_{i+1}=T_{i}$，则 $X_{i+1}\to S_{i+1}$是一个森纤维空间。这是第三型的Sarkisov连接。
-      \[
-        \xymatrix{
+      \[ \xymatrix{
           X_{i}\ar@{.>}[r]\ar[d]& Z_{i}\ar[rd] \\
           S_{i}\ar[rd]& & X_{i+1}\ar[d]\\
-               &T_{i}\ar[r]^{\sim}& S_{i+1}
-        }
-      \]
+               &T_{i}\ar[r]^{\sim}& S_{i+1} } \]
     \item 若记 $X_{i}\dashrightarrow X_{i+1}$是翻转的复合，且 $X_{i+1}\to T_{i}$是关于 $\left(X_{i},D_{i}\left(s_{i}+\epsilon\right)\right)$ 相对于 $T_{i}$的极小模型。 令  $C'$ 是  $C_{i}$ 在 $X_{i+1}$上的双有理变换，则有 $(K_{X_{i+1}}+D_{i+1}(\epsilon)).C'=0$ 和 $(K_{X_{i+1}}+B_{i+1}).C'<0$，因此有压缩态射$X_{i+1} \to S_{i+1}$ 相对于 $T_i$。这个态射是森纤维空间，并且这是第四型Sarkisov连接。
-      \[
-        \xymatrix{
+      \[ \xymatrix{
           X_{i}\ar@{.>}[rr]\ar[d]& &X_{i+1}\ar[d] \\
           S_{i}\ar[rd]& & S_{i+1}\ar[ld]\\
-             &T_{i}&
-        }
-      \]
+             &T_{i}& } \]
   \end{enumerate}
   注意到$ (K_{X_{i}}+D_{i}(s_{i})) $及其严格双有理变换都是相对于 $S_{i}$上数值平凡的，由锥定理\ref{conethm}，此时的$X_{i}\dashrightarrow X_{i+1}$是一系列$ (K_{X_{i}}+D_{i}(s_{i}))$-平凡映射的复合。
     \item 如果 $s_{i}$ 集合$\Gamma$的第一个条件\ref{singularcondition}的阈值，也就是说 存在  $0<\epsilon \ll 1$ 和 $W$ 上的  $\sigma_{i}$-例外除子 $E_{i}$ 使得
@@ -185,29 +169,23 @@
   \[K_{Z_{i}}+D_{Z_{i}}(s_{i})=K_{Z_{i}}+B_{Z_{i}}+g_{i+1}G_{Z_{i}}+h_{i+1}H_{Z_{i}}=p_{i}^*\left(K_{X_{i}}+D_{i}\left(s_{i}\right)\right)\]
   取充分小的 $\delta$ 使得 $0<\delta \ll \epsilon \ll 1$ 且
   \[ K_{Z_{i}}+\Delta_{i}=p_{i}^*(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta G_{i}) \]
-  是klt奇点。接下来运行相对于$S_{i}$ 的 $(K_{Z_{i}}+\Delta_{i})$-MMP。由于$Z_{i}$被$(K_{Z_{i}}+\Delta_{i})$-负性的曲线覆盖，所以$(K_{Z_{i}}+\Delta_{i})$相对于$S_{i}$不是伪有效的，并且这个MMP终结于森纤维空间。同时，对一任意$0<\delta'\leqslant\delta$，这也是$p_{i}^*(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta'G_{i})$-MMP。在有限多步翻转之后，要么终结于$(K_{Z_{i}}+\Delta_{i})$的森纤维空间，要么$(K_{Z_{i}}+\Delta_{i})$的除子压缩。
+  具有klt奇点。接下来运行相对于$S_{i}$ 的 $(K_{Z_{i}}+\Delta_{i})$-MMP。由于$Z_{i}$被$(K_{Z_{i}}+\Delta_{i})$-负性的曲线覆盖，所以$(K_{Z_{i}}+\Delta_{i})$相对于$S_{i}$不是伪有效的，这个MMP终结于森纤维空间。同时，对一任意$0<\delta'\leqslant\delta$，这也是$p_{i}^*(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta'G_{i})$-MMP。在有限多步翻转之后，要么终结于$(K_{Z_{i}}+\Delta_{i})$的森纤维空间，要么接着一个$(K_{Z_{i}}+\Delta_{i})$的除子压缩态射。
   \begin{enumerate}
     \item 若记 $Z_{i}\dashrightarrow X_{i+1}$是有限步翻转的复合，并终结于森纤维空间
       \[X_{i+1}\to S_{i+1}\]
       那么是第一型的Sarkisov连接。 
-      \[
-        \xymatrix{
+      \[ \xymatrix{
         &Z_{i}\ar@{.>}[r]\ar[ld] &X_{i+1}\ar[d] \\
           X_{i}\ar[d]& &S_{i+1}\ar[lld]\\
-          S_{i}   & &
-        }
-      \]
+          S_{i}   & & } \]
       在这种情况下有 $\rho(X_{i+1})=\rho(X_{i})+1$。
     \item 若记$Z_{i}\dashrightarrow Z_{i+1}'$是有限步翻转的复合，并且接着相对于 $S_{i}$的 除子压缩
       \[q_{i}:Z_{i}'\to X_{i+1}\]
      那么$X_{i+1}\to S_{i}=:S_{i+1}$是森纤维空间，这是第二型Sarkisov连接。
-      \[
-        \xymatrix{
+      \[ \xymatrix{
         &Z_{i}\ar@{.>}[r]\ar[ld] &Z_{i}'\ar[rd] \\
           X_{i}\ar[d]& & &X_{i+1}\ar[d]\\
-          S_{i}\ar[rrr]^{\sim}   & & & S_{i+1}
-        }
-      \]
+          S_{i}\ar[rrr]^{\sim}   & & & S_{i+1} } \]
   \end{enumerate}
   注意到$ (K_{X_{i}}+D_{i}(s_{i})) $及其严格双有理变换都是相对于 $T_{i}$上数值平凡的，由锥定理\ref{conethm}，此时的$X_{i}\dashrightarrow X_{i+1}$是一系列$ (K_{X_{i}}+D_{i}(s_{i}))$-平凡映射的复合。
 \end{enumerate}

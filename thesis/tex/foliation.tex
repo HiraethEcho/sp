@@ -1,5 +1,5 @@
 \chapter{叶层化Sarkisov纲领}
-用子层$\mathcal{F} \subset \mathcal{T}_{X}$ 代替切丛，进而用叶层化典范除子 (foliated canonical divisor) $K_{\mathcal{F}}$代替典范除子$K_{X}$，并且有对应的叶层化极小模型纲领，在高维情况下尤其对代数可积的叶层化代数簇对有一系列结果。本章尝试分析这种情况下的Sarkisov纲领。
+传统双有理代数几何用典范除子$K_{X}$描述代数簇$X$的性质。如果用子层$\mathcal{F} \subset \mathcal{T}_{X}$ 代替切丛，进而用叶层化典范除子 (foliated canonical divisor) $K_{\mathcal{F}}$代替典范除子$K_{X}$，就对应叶层化双有理代数几何。此时有对应的叶层化极小模型纲领，在高维情况下尤其对代数可积的叶层化代数簇对有一系列结果。本章尝试分析这种情况下的Sarkisov纲领。
 \section{定义和引理}
 首先给出\textbf{叶层化代数簇对} (或 \textbf{带叶状结构的代数簇对})的基本知识。
 
@@ -12,9 +12,9 @@
           \end{enumerate}
           如果$\mathcal{F}=0$，称之为由点定义的叶状结构 (此时此叶状结构的叶子 (leaves)是单点)。
     \item 对$X$ 上素除子 $D$，若$D$ 不是 $\mathcal{F}$-不变的，则定义$\epsilon_{\mathcal{F}}(D)=1 $；反之，如果$D$ 是$\mathcal{F}$-不变的，则定义$\epsilon_{\mathcal{F}}(D)=0$。
-    \item 如果除子$K_{\mathcal{F}}$满足$\det \mathcal{F} = \mathcal{O}_{X}(-K_{\mathcal{F}})$，则称之为$\mathcal{F}$的典范除子。
-    \item 令$f:X \dashrightarrow Y$为支配有理映射，将$X$ 上的叶状结构$\mathcal{F}$的在$f$ 的拉回记作  $ f^{-1}(F) $ (叶状结构的拉回的定义，参考\cite[3.1]{acss} 或\cite[3.2]{cs21})，并且称其为$\mathcal{F}$诱导的 $\mathcal{Y}$ 上的叶状结构。令$g:X \dashrightarrow X' $为双有理映射，则将$(g^{-1})^{-1}(\mathcal{F})$记为 $g_{*}\mathcal{F}$，并称为$\mathcal{F}$的推出。
-    \item 如果存在支配有理映射$h:X \dashrightarrow  Z$和$Y$ 上的由点定义的叶状结构$\mathcal{F}_{Z}=0$  ，使得  $\mathcal{F}=h^{-1}(\mathcal{F}_{Z})$，则称$\mathcal{F}$为代数可积 (algebraically integrable)的叶状结构，并且称$\mathcal{F}$由$h$ 诱导。 
+    \item 如果除子$K_{\mathcal{F}}$满足$\det \mathcal{F} = \mathcal{O}_{X}(-K_{\mathcal{F}})$，则称$K_{\mathcal{F}}$为$\mathcal{F}$的典范除子。
+    \item 令$f:Y \dashrightarrow X$为支配有理映射，将$X$ 上的叶状结构$\mathcal{F}$在$f$ 的拉回记作  $ f^{-1}(F) $ (叶状结构的拉回的定义参考\cite[3.1]{acss} 或\cite[3.2]{cs21})，并且称其为$\mathcal{F}$诱导的 $Y$ 上的叶状结构。令$g:X \dashrightarrow X' $为双有理映射，则将$(g^{-1})^{-1}(\mathcal{F})$记为 $g_{*}\mathcal{F}$，并称为$\mathcal{F}$的推出。
+    \item 如果存在支配有理映射$h:X \dashrightarrow  Z$和$Z$ 上的由点定义的叶状结构$\mathcal{F}_{Z}=0$  ，使得  $\mathcal{F}=h^{-1}(\mathcal{F}_{Z})$，则称$\mathcal{F}$为代数可积 (algebraically integrable)的叶状结构，并且称$\mathcal{F}$由$h$ 诱导。 
   \end{enumerate}
 \end{definition}
 用$K_{\mathcal{F}}$代替$K_{X}$，可以定义相应的概念
@@ -40,7 +40,7 @@
         \item 存在一个约化除子$\Sigma$使得$\operatorname{Supp}B \subset \operatorname{Supp} \Sigma $，且 $(X,\Sigma)$是环形的 (toroidal)，特别的，$X$是$\mathbb{Q}$-分解的具有klt奇点的代数簇；
         \item 存在约化除子$\Sigma_{Z}$使得$ (Z,\Sigma_{Z})$是算术光滑的，并且
           \[ (X,\Sigma)\to (Z,\Sigma_{Z}) \]
-          是等维数环形态射 (equidimensional toroidal morphism)
+          是等维数环形态射 (equidimensional toroidal morphism)；
       \end{enumerate}
       则称为叶层化算术光滑代数对。
     \item 对代数可积叶层化代数簇对$(X,\mathcal{F},B)$，如果有双有理态射$f:Y\to X$，使得
@@ -53,34 +53,38 @@
 \end{definition}
 在叶层化代数簇对中，还有一种特殊的奇点性质，首先由Ambro, Cascini, Shokurov, Spicer在\cite{acss}中提出：
 \begin{definition}[ACSS奇点]\cite[Definition 4.1-3]{acc_foliation}
- 设$ (X/U,B) $为具有lc奇点的代数簇对，且$f: X\to Z$是压缩态射。记$B^{v}$和$ B^{h}$分别为$B$ 在$Z$ 上垂直和水平的部分，即$B^{v}$ 的组成成分素除子$D$满足$f(D)\subsetneq Z $，而$B^{h}$  的组成成分素除子$D$满足$f(D)= Z$。如果满足下列性质：
- \begin{enumerate}
-   \item 存在$Z$ 上的约化除子$\Sigma_{Z}$，使得$(Z,\Sigma_{Z}) $是算术光滑代数簇对，且$f(B^{v}=\Sigma_{Z})$；
-   \item 对任意闭点$z \in Z$和约化除子$\Sigma \geqslant \Sigma_{Z}$，如果$(Z,\Sigma)$在$z \in Z$附近是算术光滑的，那么$(X,B+f^{*}(\Sigma-\Sigma_{Z}))$在$z \in Z$附近具有lc奇点。 
- \end{enumerate}
- 那么称$(X/U,B)/Z$具有性质$*$。
-
- 对于代数可积的叶层化代数簇对$(X/U,\mathcal{F},B)=(X,\mathcal{F},B)$，如果存在压缩态射$f:X \to Z$和约化除子$G$，满足下列条件
- \begin{enumerate}
-   \item $(X/U,B+G)/Z$满足性质$*$；
-   \item $\mathcal{F}$由$ f$诱导；
-   \item $G$是$\mathcal{F}$-不变除子 (在这种情况下，等价于$G$在$Z$上垂直)
- \end{enumerate}
-那么称$(X/U,\mathcal{F},B;G)/Z$具有性质$*$。进一步，如果还满足
+ 设$ (X/U,B) $为具有lc奇点的代数簇对，且$f: X\to Z$是压缩态射。
 \begin{enumerate}
-  \item $(X/U,\mathcal{F},B)$具有lc奇点；
-  \item $f$是等维数压缩态射
+  \item 记$B^{v}$和$ B^{h}$分别为$B$ 在$Z$ 上垂直和水平的部分，即$B^{v}$ 的组成成分素除子$D$满足$f(D)\subsetneq Z $，而$B^{h}$  的组成成分素除子$D$满足$f(D)= Z$。如果满足下列性质：
+        \begin{enumerate}
+          \item 存在$Z$ 上的约化除子$\Sigma_{Z}$，使得$(Z,\Sigma_{Z}) $是算术光滑代数簇对，且$f(B^{v}=\Sigma_{Z})$；
+          \item 对任意闭点$z \in Z$和约化除子$\Sigma \geqslant \Sigma_{Z}$，如果$(Z,\Sigma)$在$z \in Z$附近是算术光滑的，那么$(X,B+f^{*}(\Sigma-\Sigma_{Z}))$在$z \in Z$附近具有lc奇点。 
+        \end{enumerate}
+        那么称$(X/U,B)/Z$具有性质$*$。
+  \item 对于代数可积的叶层化代数簇对$(X/U,\mathcal{F},B)=(X,\mathcal{F},B)$，如果存在压缩态射$f:X \to Z$和约化除子$G$，满足下列条件
+        \begin{enumerate}
+          \item $(X/U,B+G)/Z$满足性质$*$；
+          \item $\mathcal{F}$由$ f$诱导；
+          \item $G$是$\mathcal{F}$-不变除子 (在这种情况下，等价于$G$在$Z$上垂直)
+        \end{enumerate}
+      那么称$(X/U,\mathcal{F},B;G)/Z$具有性质$*$。
+    \item 如果满足性质$*$ 的$(X/U,\mathcal{F},B;G)/Z$还满足：
+          \begin{enumerate}
+            \item $(X/U,\mathcal{F},B)$具有lc奇点；
+            \item $f$是等维数压缩态射
+          \end{enumerate}
+          则称$(X/U,\mathcal{F},B;G)/Z$满足弱ACSS条件，或者具有弱ACSS奇点。
+    \item 如果具有若ACSS奇点的$(X/U,\mathcal{F},B;G)/Z$还满足：
+          \begin{enumerate}
+            \item 如果除子$\Sigma \subset Z$满足$\Sigma \geqslant f(G)$且$(Z,\Sigma)$是算术光滑代数簇对，那么
+              \[ (X/U,\mathcal{F},B+G+f^{*}(\Sigma - f(G ))) \]
+            \item 如果$W$是lc中心，且$ \eta_{W}$是一般点 (generical point)，那么$(X,B+G)$在$\eta_{W}$附近是环形的，且$W$ 是$(X/U,\mathcal{F},\left\lfloor B \right\rfloor )$的lc中心。
+          \end{enumerate}
+          那么称具有ACSS性质，或具有ACSS奇点。
 \end{enumerate}
-则称$(X/U,\mathcal{F},B;G)/Z$满足弱ACSS条件，或者具有弱ACSS奇点。如果还满足
-\begin{enumerate}
-  \item 如果除子$\Sigma \subset Z$满足$\Sigma \geqslant f(G)$且$(Z,\Sigma)$是算术光滑代数簇对，那么
-    \[ (X/U,\mathcal{F},B+G+f^{*}(\Sigma - f(G ))) \]
-  \item 如果$W$是lc中心，且$ \eta_{W}$是一般点 (generical point)，那么$(X,B+G)$在$\eta_{W}$附近是环形的，且$W$ 是$(X/U,\mathcal{F},\left\lfloor B \right\rfloor )$的lc中心。
-\end{enumerate}
-那么称具有ACSS性质，或具有ACSS奇点。
 \end{definition}
-这种奇点在叶层化MMP下保持：
-\begin{proposition}\cite[Lemma 4.8]{acc_foliation}\label{acssmmp }
+ACSS奇点在叶层化MMP下保持：
+\begin{proposition}\cite[Lemma 4.8]{acc_foliation}\label{acssmmp}
  设$(X/U,\mathcal{F},B;G)/Z$具有ACSS奇点，并且是$\mathbb{Q}$-分解的。那么 
  \begin{enumerate}
    \item 任何$(K_{\mathcal{F}}+B)$-负性的相对于$U$的极端射线都是 $(K_{X}+B+G)$-负性的相对于$Z$ 的极端射线，因此每一步相对于$U$ 的 $(K_{\mathcal{F}}+B)$-MMP都是相对于$Z$ 的$(K_{X}+B+G)$-MMP；
@@ -106,7 +110,7 @@ $F$-dlt奇点的叶层化代数簇对具有ACSS性质：
 \end{enumerate}
 \end{theorem}
 
-假设$(W/U,\mathcal{F}_{W},B_{W})$是代数可积的叶层化代数簇对，并且具有$F$-dlt奇点。运行相对于$U$ 的 $(K_{\mathcal{F}_{W}}+B_{W})$-MMP，并且假设有两个不同的叶层化森纤维空间$(X,\mathcal{F},B)\to S$和$(X',\mathcal{F}',B')\to S'$作为叶层化MMP的不同输出。此时有双有理映射$\Phi:X \dashrightarrow X'$，目标是构造这个映射的Sarkisov分解。接下来分析三种方法在叶层化代数簇对上能否推广。
+假设$(W/U,\mathcal{F}_{W},B_{W})$是代数可积的叶层化代数簇对，并且具有$F$-dlt奇点。运行相对于$U$ 的 $(K_{\mathcal{F}_{W}}+B_{W})$-MMP，并且假设有两个不同的叶层化森纤维空间$(X,\mathcal{F},B)\to S$和$(X',\mathcal{F}',B')\to S'$作为叶层化MMP的不同输出。此时有双有理映射$\Phi:X \dashrightarrow X'$，目标是构造这个映射的Sarkisov分解，并且其中每一个$X_{i}$，都有一个叶层化森纤维空间$(X_{i},\mathcal{F}_{i},B_{i})\to S_{i}$。接下来分析三种方法在叶层化代数簇对上能否推广。
 
 \textbf{下降法：}
 对于具有$F$-dlt奇点的代数可积叶层化代数簇对，有下列结果；
@@ -123,10 +127,9 @@ $F$-dlt奇点的叶层化代数簇对具有ACSS性质：
 但是，由于Fano型叶层化代数簇对的有界性暂时未知，所以这种方法的终结性仍未明确。
 
 \textbf{双标量法和有限模型法：}
-对于双标量法，需要构造公共解消$W$和边界除子$B_{W},G_{W},H_{W}$，使得$(W,B_{W}+2G_{W}+2H_{W})$具有终端型奇点，并且需要定义一个序关系。这对于叶层化代数簇的的情况是困难的。
+对于双标量法，需要构造公共解消$W$和边界除子$B_{W},G_{W},H_{W}$，使得$(W,B_{W}+2G_{W}+2H_{W})$具有终端型奇点，并且需要定义一个序关系 (定义\ref{doubleorder})。这对于叶层化代数簇的的情况是困难的。
 
 另外，这两种方法都依赖于模型的有限性，虽然有叶层化代数簇对的对应模型的定义，但其有限性暂时未知。因此这两种方法暂时难以推广。
-
 \section{弱化版结果}
 但是，通过将叶层化代数簇对约化为普通的代数簇对，可以得到较弱的结果。
 \begin{theorem}\cite[Proposition 3.6]{acss}或\cite[Proposition 7.3.6]{chlx}  
@@ -137,7 +140,9 @@ $F$-dlt奇点的叶层化代数簇对具有ACSS性质：
     \item $(X,0)$具有klt奇点，$(X,B+G)$具有lc奇点。
   \end{enumerate}
 \end{theorem}
-用上述结果，可以将叶层化森纤维空间$(X,\mathcal{F},B)\to S$和$(X',\mathcal{F}',B')\to S' $转化为普通的森纤维空间。为了应用Sarkisov分解，还需要将lc奇点的代数簇对约化为klt奇点：
+% 用上述结果，可以将叶层化森纤维空间$(X,\mathcal{F},B)\to S$和$(X',\mathcal{F}',B')\to S' $转化为普通的森纤维空间。
+用上述结果，可以将叶层化代数簇对$(W,\mathcal{F}_{W},B_{W})$转化为普通的森纤维空间，进而将$X\to S$和$X' \to S'$视作普通的森纤维空间。
+为了应用Sarkisov分解，还需要将lc奇点的代数簇对约化为klt奇点：
 \begin{lemma}\label{lctoklt}
  令$(X,B+A)$是具有lc奇点的$\mathbb{Q}$-分解的代数簇对，其中$A$是丰沛除子，并且$(X,0)$具有klt奇点。那么存在边界除子$D$，使得
  \[ K_{X}+B+A\sim_{\mathbb{R}}K_{X}+D \]
@@ -163,15 +168,6 @@ $F$-dlt奇点的叶层化代数簇对具有ACSS性质：
 令$A_{W}$是$W$ 上任意丰沛除子，且$0<\epsilon\ll 1$充分小，使得
 \[ (K_{\mathcal{F}_{i}}+B_{i}+\epsilon A_{i}).R<0 \]
 恒成立，并且$(W,\mathcal{F}_{W},B_{W}+\epsilon A_{W})$具有$F$-dlt奇点，那么$\rho,\rho'$也是$(K_{\mathcal{F}_{W}}+B+\epsilon A)$-MMP。用$\epsilon A$替换$A$，可以假设$(W,\mathcal{F}_{W},B_{W}+A_{W})$是 具有$F$-dlt奇点的$\mathbb{Q}$-分解的代数可积的叶层化代数簇。 
-
-最后，还需要``边界除子包含丰沛成分''的性质在MMP下保持：
-\begin{lemma}\cite[Lemma 4.3]{tx23}
- 令$(X,B+A)$是具有lc奇点的$\mathbb{Q}$-分解的代数簇对，其中$A$是丰沛除子，且不包含任何lc中心。设$\phi:X \dashrightarrow X' $ 是$(K_{X}+B+A)$-MMP的部分过程，那么存在$X'$上的除子$A',B'$，满足
- \begin{enumerate}
-   \item $(X',B'+A')$是具有lc奇点的$\mathbb{Q}$-分解的代数簇对，其中$A'$是丰沛除子，且不包含任何lc中心。
-   \item $\phi_{*}(B+A)=B'+A'$。
- \end{enumerate}
-\end{lemma}
 用上述结果可以证明定理\ref{mainf}
 \begin{proof}
   由于$(W,\mathcal{F}_{W},B_{W})$具有$F$-dlt奇点，所以存在除子$G_{W}$和压缩态射$W\to Z$，使得$(W,\mathcal{F}_{W},B_{W};G)/Z$ 具有ACSS奇点，并且有
@@ -189,13 +185,12 @@ $F$-dlt奇点的叶层化代数簇对具有ACSS性质：
 \end{proof}
 
 \begin{remark}
- 这个分解中的Sarkisov连接$X_{i}\dashrightarrow X_{i+1}$是根据上述构造的边界除子$D_{W}$得到的，即交换图表
+ 这个分解中的Sarkisov连接$X_{i}\dashrightarrow X_{i+1}$是根据上述构造的边界除子$D_{W}$得到的。即存在除子$D_{i}$和$D_{i}'$，使得交换图表
   \[ \xymatrix{
       Z_{i}\ar@{.>}[d]_p\ar@{.>}[rr]^{\tau}&&Z_{i}'\ar@{.>}[d]^q\\
       X_{i}\ar[d]_{\phi}&&X_{i+1}\ar[d]^\psi\\
       S_{i}\ar[rd]^s&&S_{i+1}\ar[ld]_t\\
       &T&} \]
-      中，根据构造方法的不同，$p,q,\tau$都是关于某个边界除子$D_{i}'$的翻转或平转或无差别除子解压等，且$(X_{i},D_{i})\to S_{i}$是普通代数簇对的森纤维空间，而不是叶层化森纤维空间。这与所期望的叶层化Sarkisov分解并不一致，因此将定理\ref{main2}称为弱化的结果。
-
+      中，$p,q,\tau$都是关于某个边界除子$D_{i}'$的翻转或平转或无差别除子解压，而$(X_{i},D_{i})\to S_{i}$是普通代数簇对的森纤维空间，不是叶层化森纤维空间。这与所期望的叶层化Sarkisov分解并不一致，因此将定理\ref{main2}称为弱化的结果。
 \end{remark}
 
