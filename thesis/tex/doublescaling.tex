@@ -1,15 +1,14 @@
 \chapter{双标量法}
  本章介绍\cite[\S 13]{haconMinimalModelProgram2012} 和  \cite{liuSarkisovProgramGeneralized2021}中的双标量法 (double scaling)构造的Sarkisov分解。下降法用 $X'$上的除子 $H'$ 来作为标量，双标量法在  $X$ 和 $X'$ 上分别构造除子 $G$ 和 $H'$ ，作为双标量。
-% \textbf{初始设定：}
-令 $W$ 为 MMP-相关的森纤维空间 $f:(X,B)\to S$ 和 $f':(X',B')\to S'$  的公共解消，  取在$ S $ 上丰沛的$\mathbb{Q}$-除子 $A$ 使得
-\[G \sim_{\mathbb{Q}} -(K_{X}+B) +f^*A\]
-是一般的丰沛 $\mathbb{Q}$-除子。类似的，取 $S'$ 上丰沛的$\mathbb{Q}$-除子$A'$ ，使得 
-\[H' \sim_{\mathbb{Q}} -(K_{X'}+B') +f'^*A'\]
-是一般的丰沛 $\mathbb{Q}$-除子。那么  $(X,B+G)$ 和 $(X',B'+H')$  是$W$ (关于 $B_{W}+G_{W}$ 和 $B_{W}+H_{W}$)的两个弱对数典范模型。双标量Sarkisov纲领将构造 $W$ 的有限多个弱对数典范模型 $(X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i})$，它们是分别关于 $(W,B_{W}+g_{i}G_{W}+h_{i}H_{W})$的模型，其中 $0\leqslant g_i,h_i\leqslant 1$。这些模型间的双有理映射 $\psi_{i}:X_{i}\dashrightarrow X_{i+1}$是通过双射线MMP构造Sarkisov连接映射。
+令 $W$ 为 MMP-相关的森纤维空间 $f:(X,B)\to S$ 和 $f':(X',B')\to S'$  的公共解消，  取在$ S $ 上的丰沛除子 $A$ 使得
+\[G \sim_{\mathbb{R}} -(K_{X}+B) +f^*A\]
+是一般的丰沛除子。类似的，取 $S'$ 上丰沛除子$A'$ ，使得 
+\[H' \sim_{\mathbb{R}} -(K_{X'}+B') +f'^*A'\]
+是一般的丰沛除子。那么  $(X,B+G)$ 和 $(X',B'+H')$  是$W$ (关于 $B_{W}+G_{W}$ 和 $B_{W}+H_{W}$)的两个弱对数典范模型。双标量Sarkisov纲领将构造 $W$ 的有限多个弱对数典范模型 $(X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i})$，它们是分别关于 $(W,B_{W}+g_{i}G_{W}+h_{i}H_{W})$的模型，其中 $0\leqslant g_i,h_i\leqslant 1$。这些模型间的双有理映射 $\psi_{i}:X_{i}\dashrightarrow X_{i+1}$是通过双射线MMP构造Sarkisov连接映射。
 
 和下降法相比，这种方法在一个更小的集合内运行MMP和Sarkisov纲领。所有的 $X_{i}$都对应一个$(K_{W}+D_{i})$-非正性的双有理压缩映射 $W\dashrightarrow X_{i}$，其中 $D_{i}$是 $\operatorname{WDiv}_{\mathbb{R}}(W)$ 的一个有界子集 $\mathcal{E}_{A}(V)$。对于这个子集有弱对数典范模型的有限性性质，由此可以得到双标量法的Sarkisov纲领的终结性。
 \section{定义和引理}
-令 $(W, B_W)$ 是 $\mathbb{Q}$-分解具有 klt奇点的代数簇对，并且 $f:(X, B)\to S$ 和 $f':(X', B')\to S'$ 是两个不同的$(K_{W}+B_{W})$-MMP 的输出，且都是森纤维空间。接下来给出一些所需的记号和引理。 
+令 $(W, B_W)$ 是klt奇点的 $\mathbb{Q}$-分解代数簇对，并且 $f:(X, B)\to S$ 和 $f':(X', B')\to S'$ 是两个不同的$(K_{W}+B_{W})$-MMP 的输出，且都是森纤维空间。接下来给出一些所需的记号和引理。 
 \begin{definition}\label{doubleorder}
   令 $f: W\dashrightarrow X$ 是正规拟射影代数簇间的双有理映射，如果
   \begin{itemize}
@@ -36,9 +35,9 @@
 \end{lemma}
 相反的，从非正性映射出发，可以构造这样的具有终端奇点的更高模型：
 \begin{lemma}\label{terminalresolution}
-  \cite[Lemma 3.5]{liuSarkisovProgramGeneralized2021} 令 $\sigma:(W,B_W)\dashrightarrow (X,B)$是 $(K_W+B_W)$-非正性双有理映射，使得 $\sigma_*(K_W+B_W)=K_X+B$ 且 $(W,B_W)$ 是 $\mathbb{Q}$-分解的具有 klt奇点的代数簇对，那么存在一个映射解消$\pi:\tilde{W}\to W $ 和 $\tilde{\sigma}:\tilde{W}\to X$使得 
+  \cite[Lemma 3.5]{liuSarkisovProgramGeneralized2021} 令 $\sigma:(W,B_W)\dashrightarrow (X,B)$是 $(K_W+B_W)$-非正性双有理映射，使得 $\sigma_*(K_W+B_W)=K_X+B$ 且 $(W,B_W)$ 是klt奇点的$\mathbb{Q}$-分解代数簇对，那么存在一个映射解消$\pi:\tilde{W}\to W $ 和 $\tilde{\sigma}:\tilde{W}\to X$使得 
   \begin{itemize}
-    \item $(\tilde{W},B_{\tilde{W}})$ 是 $\mathbb{Q}$-分解的具有终端奇点的代数簇对，且 $\tilde{\sigma}_*B_{\tilde{W}}=B$；
+    \item $(\tilde{W},B_{\tilde{W}})$ 是终端奇点的$\mathbb{Q}$-分解代数簇对，且 $\tilde{\sigma}_*B_{\tilde{W}}=B$；
     \item $\tilde{\sigma}$ 是 $(K_{\tilde{W}}+B_{\tilde{W}})$-非正性的且 $(\tilde{W},B_{\tilde{W}})\geqslant (X,B)$；
   \end{itemize}
   \[ \xymatrix{
@@ -51,7 +50,11 @@
 \begin{assertion}\label{doublesetting}
 用 $(W,B_W)$ 的奇点解消代替它，使得 $(W,B_{W})$具有终端奇点，且$\sigma:W\to X$ 和$\sigma':W\to X'$ 是 $(K_W+B_W)$-非正性态射，并且 $(W,B_W)\geqslant (X,B),(X',B')$。
 
-  取 $ S $ 和 $ S' $ 上的极丰沛 $\mathbb{Q}$-除子 $ A $ 和 $ A' $使得 $ G\sim_{\mathbb{Q}}-(K_X+B)+f^*A $ 和 $ H\sim_{\mathbb{Q}}-(K_{X'}+B')+f'^{*}A' $ 是丰沛 $\mathbb{Q}$-除子。进一步，可以假设 $ G $ 和 $ H $ 满足 $G_{W}:= \sigma^*G=\sigma^{-1}_*G $ 和 $ H_{W}:=\sigma'^{*}H=\sigma'^{-1}_*H $。因此 
+  取 $ S $ 和 $ S' $ 上的极丰沛除子 $ A $ 和 $ A' $使得 
+  \[ G\sim_{\mathbb{R}}-(K_X+B)+f^*A \]
+  和
+  \[ H\sim_{\mathbb{Q}}-(K_{X'}+B')+f'^{*}A'  \]
+  是丰沛除子。进一步，可以假设 $ G $ 和 $ H $ 满足 $G_{W}:= \sigma^*G=\sigma^{-1}_*G $ 和 $ H_{W}:=\sigma'^{*}H=\sigma'^{-1}_*H $。因此 
   \[ \sigma_{*}(K_{W}+B_{W}+G_{W})=K_{X}+B+G \]
   是数值有效的，引理 \ref{terminalorder} 的结论满足。 如果必要的话取进一步解消，可以假设
  $(W, B_W+gG_W+hH_W)$ 对数光滑，并且对所有 $0\leqslant g,h\leqslant 2$都具有终端奇点。
@@ -80,7 +83,7 @@
 \end{theorem}
 这里平凡映射指
 \begin{definition}\label{trivialmap}
-  \cite[\S 13.2]{haconMinimalModelProgram2012} 令 $f:X\dashrightarrow Y$ 是相对于$S$ 正规拟射影代数簇间的有理映射，并且 $D$是 $X$  上  $\mathbb{R}$-Cartier $\mathbb{R}$-除子，且$f_*D=D_Y$。   如果 $D$ 是 $S$ 上 某个  $\mathbb{R}$-Cartier 除子的拉回，那么 称$f$ 为 \textbf{$D$-平凡} (\textbf{$D$-trivial })。
+  \cite[\S 13.2]{haconMinimalModelProgram2012} 令 $f:X\dashrightarrow Y$ 是相对于$S$ 正规拟射影代数簇间的有理映射，并且 $D$是 $X$  上  $\mathbb{R}$-Cartier $\mathbb{R}$-除子，且$f_*D=D_Y$。   如果 $D$ 是 $S$ 上 某个  $\mathbb{R}$-Cartier 除子的拉回，那么 称$f$ 为 $D$-平凡 ($D$-trivial)。
 \end{definition}
 
 \section{用双标量法构造Sarkisov连接}
@@ -142,7 +145,7 @@
       X_{i}\ar[d]\ar[rdd]& \\
       S_{i}\ar[rd]&\\
          &T_{i} } \]
-  接着运行相对于 $T_{i}$ 的关于某丰沛除子标量的$(K_{X_{i}}+D_{i}(s_{i}+\epsilon))$-MMP，在有限多个翻转后，会接着一个关于$(K_{X_{i}}+D_{i}(s_{i}+\epsilon))$的森纤维空间，或一个除子压缩，或一个极小模型。
+  接着运行相对于 $T_{i}$ 的关于某丰沛除子标量的$(K_{X_{i}}+D_{i}(s_{i}+\epsilon))$-MMP，在有限多个翻转后，会接着一个关于$(K_{X_{i}}+D_{i}(s_{i}+\epsilon))$的森纤维空间压缩态射，或一个除子压缩态射，或已经成为极小模型。
   \begin{enumerate}
     \item  若记$X_{i}\dashrightarrow X_{i+1}$是翻转的复合，并且接着森纤维空间压缩 $X_{i+1}\to S_{i+1}$，那么这是第四型的Sarkisov连接；
       \[ \xymatrix{
@@ -190,7 +193,7 @@
   注意到$ (K_{X_{i}}+D_{i}(s_{i})) $及其严格双有理变换都是相对于 $T_{i}$上数值平凡的，由锥定理\ref{conethm}，此时的$X_{i}\dashrightarrow X_{i+1}$是一系列$ (K_{X_{i}}+D_{i}(s_{i}))$-平凡映射的复合。
 \end{enumerate}
 \end{proof}
-类似于下降法中的Sarkisov次数，定义\ref{doubledegree}中的不变量也有变化：
+类似于下降法中的Sarkisov次数，定义\ref{doubledegree}中的不变量也有规律：
 \begin{assertion}\label{behavior2}
   由 \cite[Lemma 13.14-17]{haconMinimalModelProgram2012} 和 \cite[Lemma 4.2]{liuSarkisovProgramGeneralized2021}可以得到：
   \begin{enumerate}
@@ -233,10 +236,10 @@
   \begin{enumerate}
     \item 第一条本质上来自弱对数典范模型的有限性 (定理 \ref{finitewlcm})。  如下构造 $\operatorname{WDiv}_{\mathbb{R}}(W)$的子空间 $V$：
       \begin{enumerate}
-        \item 假设对某个$k$ 有  $h_{k}>0$。 由于 $H_{W}$ 是 数值有效 且是大除子，那么存在丰沛 $\mathbb{Q}$-除子 $A_{W}$ 和有效 $\mathbb{Q}$-除子 $C_{W}$  使得 $H_{W}\sim_{\mathbb{Q}}A_{W}+C_{W}$。 此时取 $V$ 为  $B_{W},G_{W},H_{W},C_{W}$的组成成分的素除子张成的仿射空间。此时对于 $i>k$，定义$\Delta_{i}$为
-              \[ B_{W}+g_{i}G_{W}+h_{i}H_{W}\sim_{\mathbb{Q}} h_{k}A_{W}+B_{W}+g_{i}G_{W}+(h_{i}-h_{k})H_{W}+h_{k}C_{W}=:\Delta_{i} \in \mathcal{L}_{h_{k}A_{W}}(V) \]
-        \item 假设对所有$k$ 都有$h_{k}=0$，那么  $h_{i}\equiv 0$ 且 $g_{i}\equiv 1$。由于  $G_{W}$ 是 数值有效 且是大除子，那么存在丰沛 $\mathbb{Q}$-除子 $A_{W}$和有效 $\mathbb{Q}$-除子 $C_{W}$ 使得 $G_{W}\sim_{\mathbb{Q}}A_{W}+C_{W}$。此时取 $V$ 为  $B_{W},C_{W}$的组成成分的素除子张成的仿射空间。此时定义 $\Delta_{i}$为
-              \[ B_{W}+G_{W}\sim_{\mathbb{Q}} A_{W}+B_{W}+C_{W}=:\Delta_{i} \in \mathcal{L}_{A_{W}}(V) \]
+        \item 假设对某个$k$ 有  $h_{k}>0$。 由于 $H_{W}$ 是 数值有效 且是大除子，那么存在丰沛除子 $A_{W}$ 和有效除子 $C_{W}$  使得 $H_{W}\sim_{\mathbb{R}}A_{W}+C_{W}$。 此时取 $V$ 为  $B_{W},G_{W},H_{W},C_{W}$的组成成分的素除子张成的仿射空间。此时对于 $i>k$，定义$\Delta_{i}$为
+              \[ B_{W}+g_{i}G_{W}+h_{i}H_{W}\sim_{\mathbb{R}} h_{k}A_{W}+B_{W}+g_{i}G_{W}+(h_{i}-h_{k})H_{W}+h_{k}C_{W}=:\Delta_{i} \in \mathcal{L}_{h_{k}A_{W}}(V) \]
+        \item 假设对所有$k$ 都有$h_{k}=0$，那么  $h_{i}\equiv 0$ 且 $g_{i}\equiv 1$。由于  $G_{W}$ 是 数值有效 且是大除子，那么存在丰沛除子 $A_{W}$和有效除子 $C_{W}$ 使得 $G_{W}\sim_{\mathbb{R}}A_{W}+C_{W}$。此时取 $V$ 为  $B_{W},C_{W}$的组成成分的素除子张成的仿射空间。此时定义 $\Delta_{i}$为
+              \[ B_{W}+G_{W}\sim_{\mathbb{R}} A_{W}+B_{W}+C_{W}=:\Delta_{i} \in \mathcal{L}_{A_{W}}(V) \]
       \end{enumerate}
           那么每一个 $X_{i}$ 都是$(W,\Delta_{i})$的弱对数典范模型。由弱对数典范模型的有限性，在同构意义下，存在有限多个 $\sigma_{i}: W\dashrightarrow X_{i}$。
 
@@ -246,10 +249,10 @@
       \begin{enumerate}
 
         \item 如果对某$k$ 有  $h_{i_{k}}=1$，那么Sarkisov纲领终结，原序列是有限序列，断言显然成立。
-        \item 假设$h_{i_{k}}=0$ 对所有 $i_{k}$ 成立，那么 $g_{i_{k}}=1$。 因为 $G_{i_{k}}$ 是大除子，所以存在丰沛$\mathbb{Q}$-除子 $A$ 和有效$\mathbb{Q}$-除子 $E$ 使得 $G=A+E$。  取充分小的 $\epsilon$ 使得$(X,D)$具有klt奇点，其中$D=B+(1-\epsilon)G+\frac{\epsilon}{2} E$，那么 $(K_{X}+D).R_{k}<0$且 $(K_{X}+D+\frac{\epsilon}{2} A).R_{k}<0$ 对所有$k$ 成立。由锥定理\ref{conethm}，有
+        \item 假设$h_{i_{k}}=0$ 对所有 $i_{k}$ 成立，那么 $g_{i_{k}}=1$。 因为 $G_{i_{k}}$ 是大除子，所以存在丰沛除子$A$ 和有效除子 $E$ 使得 $G=A+E$。  取充分小的 $\epsilon$ 使得$(X,D)$具有klt奇点，其中$D=B+(1-\epsilon)G+\frac{\epsilon}{2} E$，那么 $(K_{X}+D).R_{k}<0$且 $(K_{X}+D+\frac{\epsilon}{2} A).R_{k}<0$ 对所有$k$ 成立。由锥定理\ref{conethm}，有
               \[ \overline{\operatorname{NE}}(X)=\overline{\operatorname{NE}}(X)_{K_{X}+D+\frac{\epsilon}{2}A_{k}\geqslant 0} +\sum_{\alpha \in\Lambda\text{有限集}}R_{\alpha}. \]
               由于 森纤维空间$X=X_{i_{k}}\to S_{i_{k}}$ 是关于极端射线 $R_{\alpha}$的压缩态射，这样的射线有限，所以弱对数典范模型 $X=X_{i_{0}}$ 在构造的Sarkisov连接的序列中出现的森纤维空间在同构意义下有限；
-            \item 假设对某个 $k>0$ 有  $h_{i_{k}}>0$，那么通过截短子列，不妨设$0<h_{i_{0}}=h_{0}<1$ (注意，做此替换后$X_{0}$并不是Sarkisov纲领的初始起点，并且$g_{0}\neq 1$，但为符号简便，仍将其记为$X$  )。 因为 $H$ 是大除子，所以存在丰沛$\mathbb{Q}$-除子 $A$ 和有效$\mathbb{Q}$-除子 $E$ 使得 $H=A+E$。  取充分小的 $\epsilon$ 使得$(X,D)$具有klt奇点，其中$D=B+(1-\epsilon)H+\epsilon E$。那么 $(K_{X}+D).R_{k}<0$ 且 $(K_{X}+D+\epsilon A).R_{k}<0$ 对所有 $k$成立。同样由锥定理\ref{conethm}，有
+            \item 假设对某个 $k>0$ 有  $h_{i_{k}}>0$，那么通过截短子列，不妨设$0<h_{i_{0}}=h_{0}<1$ (注意，做此替换后$X_{0}$并不是Sarkisov纲领的初始起点，并且$g_{0}\neq 1$，但为符号简便，仍将其记为$X$  )。 因为 $H$ 是大除子，所以存在丰沛除子 $A$ 和有效除子 $E$ 使得 $H=A+E$。  取充分小的 $\epsilon$ 使得$(X,D)$具有klt奇点，其中$D=B+(1-\epsilon)H+\epsilon E$。那么 $(K_{X}+D).R_{k}<0$ 且 $(K_{X}+D+\epsilon A).R_{k}<0$ 对所有 $k$成立。同样由锥定理\ref{conethm}，有
               \[ \overline{\operatorname{NE}}(X)=\overline{\operatorname{NE}}(X)_{K_{X}+D+\epsilon A}\geqslant 0 +\sum_{\alpha \in\Lambda\text{有限集}}R_{\alpha} \]
               同上，由于 森纤维空间$X=X_{i_{k}}\to S_{i_{k}}$ 是关于极端射线 $R_{\alpha}$的压缩态射，这样的射线有限，所以弱对数典范模型 $X=X_{i_{0}}$ 在构造的Sarkisov连接的序列中出现的森纤维空间在同构意义下有限；
       \end{enumerate}
@@ -276,7 +279,7 @@
   \end{enumerate}
 \end{proposition}
 \begin{proof}
-  事实上此处在$X'$上的$\mathbb{Q}$-除子 $h'H'=1\cdot H'$代替了定理\ref{nfi}中$X'$ 上的$\mathbb{Q}$-除子$ \frac{1}{\mu'}H'$，而$h_{N}H_{N}$对应定理\ref{nfi}中的$ \frac{1}{\mu}H$。用同样的方法可以证明$ h_{N}=h'=1 $。
+  事实上此处在$X'$上的除子 $h'H'=1\cdot H'$代替了定理\ref{nfi}中$X'$ 上的$\mathbb{Q}$-除子$ \frac{1}{\mu'}H'$，而$h_{N}H_{N}$对应定理\ref{nfi}中的$ \frac{1}{\mu}H$。用同样的方法可以证明$ h_{N}=h'=1 $。
 
   (2)也可以用同样的方法证明：
   取 $X_{N}$ 上  极丰沛除子 $ L $，且$L'  $ 是在$ X' $上的严格双有理变换。那么  $ L' $ 是 $ f' $-丰沛的，所以存在$ 0<d\ll1 $使得：
