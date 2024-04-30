@@ -88,7 +88,7 @@ ACSS奇点在叶层化MMP下保持：
  设$(X/U,\mathcal{F},B;G)/Z$具有ACSS奇点，并且是$\mathbb{Q}$-分解的。那么 
  \begin{enumerate}
    \item 任何$(K_{\mathcal{F}}+B)$-负性的相对于$U$的极端射线都是 $(K_{X}+B+G)$-负性的相对于$Z$ 的极端射线，因此每一步相对于$U$ 的 $(K_{\mathcal{F}}+B)$-MMP都是相对于$Z$ 的$(K_{X}+B+G)$-MMP；
-   \item 如果$\phi:(X,\mathcal{F},B;G) \dashrightarrow (X',\mathcal{F}',B';\phi_{*}G)$是一部$(K_{\mathcal{F}}+B)$-MMP，那么$(X',\mathcal{F}',B';\phi_{*}G)$也是具有ACSS奇点的$\mathbb{Q}$-分解代数可积叶层化代数簇对。
+   \item 如果$\phi:(X,\mathcal{F},B;G) \dashrightarrow (X',\mathcal{F}',B';\phi_{*}G)$是一步$(K_{\mathcal{F}}+B)$-MMP，那么$(X',\mathcal{F}',B';\phi_{*}G)$也是具有ACSS奇点的$\mathbb{Q}$-分解代数可积叶层化代数簇对。
  \end{enumerate}
 \end{proposition}
 $F$-dlt奇点的叶层化代数簇对具有ACSS性质：
@@ -161,8 +161,7 @@ $F$-dlt奇点的叶层化代数簇对具有ACSS性质：
   \[ K_{Y}+f^{-1}_{*}B+E_{B}+E_{K}+f^{*}A\sim_{\mathbb{R}} K_{Y}+D_{Y} \]
   令$D:=f_{*}D_{Y}$，则
   \[ K_{X}+B+A\sim_{\mathbb{R}} K_{X}+D \]
-  且$(X,D)$具有klt奇点。
-\end{proof}
+  且$(X,D)$具有klt奇点。 \end{proof}
 对两个$(K_{\mathcal{F}_{W}}+B_{W})$-MMP进行微扰，可以在边界除子$B_{W}$中添加丰沛成分。具体来说，令$\rho:W \dashrightarrow X$和$\rho': W \dashrightarrow X'$为两个不同的$(K_{\mathcal{F}_{W}}+B)$-MMP的过程，因为在有限步内结束，所以都之经过有限次关于某个极端射线$R$ 的 压缩态射或翻转，即每一步中都有
 \[ (K_{\mathcal{F}_{i}}+B_{i}).R<0 \]
 令$A_{W}$是$W$ 上任意丰沛除子，且$0<\epsilon\ll 1$充分小，使得
@@ -180,9 +179,8 @@ $F$-dlt奇点的叶层化代数簇对具有ACSS性质：
  \end{enumerate}
  由定理\ref{acssmmp}，$(K_{\mathcal{F}_{W}}+B_{W}+A_{W})$-MMP的输出$X,X'$也是相对于$Z$ 的$(K_{W}+B_{W}+G_{W}+A_{W})$-MMP的输出。由引理\ref{lctoklt}，存在除子
 \[ D_{W}\sim B_{W}+G_{W}+A_{W} \]
-使得$(W,D_{W})$是klt奇点的$\mathbb{Q}$-分解代数簇对，且$(X,D)\to S $和$(X',D')\to S' $是它相对于$Z$ 的两个森纤维空间。由定理\ref{main}，双有理映射$\Phi:X\to X'$由Sarkisov分解。 
-\[ X=X_{0}\dashrightarrow X_{1}\dashrightarrow \cdots \dashrightarrow X_{N}=X' \]
-\end{proof}
+使得$(W,D_{W})$是klt奇点的$\mathbb{Q}$-分解代数簇对，且$(X,D)\to S $和$(X',D')\to S' $是它相对于$Z$ 的两个森纤维空间。由定理\ref{main}，双有理映射$\Phi:X\to X'$有Sarkisov分解：
+\[ X=X_{0}\dashrightarrow X_{1}\dashrightarrow \cdots \dashrightarrow X_{N}=X' \] \end{proof}
 
 \begin{remark}
  这个分解中的Sarkisov连接$X_{i}\dashrightarrow X_{i+1}$是根据上述构造的边界除子$D_{W}$得到的。即存在除子$D_{i}$和$D_{i}'$，使得交换图表
@@ -191,6 +189,6 @@ $F$-dlt奇点的叶层化代数簇对具有ACSS性质：
       X_{i}\ar[d]_{\phi}&&X_{i+1}\ar[d]^\psi\\
       S_{i}\ar[rd]^s&&S_{i+1}\ar[ld]_t\\
       &T&} \]
-      中，$p,q,\tau$都是关于某个边界除子$D_{i}'$的翻转或平转或无差别除子解压，而$(X_{i},D_{i})\to S_{i}$是普通代数簇对的森纤维空间，不是叶层化森纤维空间。这与所期望的叶层化Sarkisov分解并不一致，因此将定理\ref{mainf}称为弱化的结果。
+      中，$p,q,\tau$都是关于某个边界除子$D_{i}'$的翻转或平转或无差除子解压，而$(X_{i},D_{i})\to S_{i}$是普通代数簇对的森纤维空间，不是叶层化森纤维空间。这与所期望的叶层化Sarkisov分解并不一致，因此将定理\ref{mainf}称为弱化的结果。
 \end{remark}
 

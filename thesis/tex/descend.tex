@@ -6,7 +6,7 @@
 \begin{enumerate}
   \item 令 $\mu= \max \{c \in \mathbb{R} : K_{X}+\frac{1}{c}H \text{在} S \text{上数值有效} \}$；
   \item 令 $\lambda = \min \{c\in \mathbb{R}: (X,\frac{1}{c}H) \text{有典范奇点}  \}$；
-  \item 令 $p:(W, \frac{1}{\lambda} H_{W})\to (X,\frac{1}{\lambda}H)$的解消，且$p^{-1}_{*}H=p^{*}H=H_{W}$，则$e$是$p$-无差别的例外除子的个数。
+  \item 令 $p:(W, \frac{1}{\lambda} H_{W})\to (X,\frac{1}{\lambda}H)$的解消，且$H_{W}$是$H'$ 在$W$ 上的严格双有理变换，则$e$是$p$-无差的例外除子的个数。
 \end{enumerate}
 如果 $\lambda \leqslant \mu$，在 $X$运行相对于恰当基底的 $(K_X+\frac{1}{\mu}H)$-MMP ；如果 $\lambda > \mu$ 则构造一个除子解压 (divisorial extraction) $ p:Z \to X$，并运行相对于 $ S$ 的 $ (K_Z+\frac{1}{\lambda}H_Z)$-MMP，这样得到第一个 Sarkisov 连接 $\psi_1: X\dashrightarrow  X_{1}$。这两种情况都是双射线MMP。用 $X_{1}$ 和$\Phi_{1}=\Phi\circ\psi_1^{-1}: X_1\dashrightarrow X'$替换 $X$ 和 $\Phi$ ，并重复这个过程，这样递归地构造一系列Sarkisov 连接。在这个过程中不变量$(\mu,\lambda,e)$将按 字典序下降，最终得到 $\Psi_{N}:X_{N-1} \dashrightarrow X_{N}$，且 $X_{N}\cong X'$。 这就是三维终端奇点代数簇的Sarkisov纲领。
 
@@ -14,7 +14,7 @@
 \begin{enumerate}
   \item 令 $\mu= \max \{c \in \mathbb{R} : K_{X}+B+\frac{1}{c}H \text{在} S \text{上数值有效} \}$；
   \item 令 $\lambda = \min \{c\in \mathbb{R}: (X,B+\frac{1}{c}H) \text{有典范奇点}  \}$；
-  \item 令 $e $为$  (X,B+\frac{1}{\lambda}H)$ 的无差异的例外除子的个数。
+  \item 令 $e $为$  (X,B+\frac{1}{\lambda}H)$ 的无差的例外除子的个数。
 \end{enumerate}
 
 对 $\lambda$ 的定义将导致一些困难。当 $\lambda > \mu$时，为了构造 Sarkisov连接需要构造除子解压 $p:Z \to X$，并在$Z$ 上运行 $(K_Z+B_Z+\frac{1}{\lambda}H_Z)$-MMP。这个除子解压会解压出一个素除子$E$，这个素除子 $E$ 在 $Z$ 的边界  $B_Z$中的系数是 $1$。如果 $E$ 是 $(X',B')$的边界 $B'$的一项，那么 $E$ 在 $B'$中的系数小于 $1$，这两者不匹配。另一方面，这是需要在具有lc奇点的代数簇对上运行MMP，这比在具有klt奇点的代数簇对上的MMP有技术上的困难。除此之外，由于具有klt奇点的Fano代数簇对的有界性失效，在证明 Sarkisov 纲领的终结性也有困难。
@@ -97,7 +97,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见定义\ref{sarkisovdeg
           即 $ K_X+B+\frac{1}{\mu} H \equiv_S0$；
     \item \textbf{$ \theta $-典范 阈值  $ \frac{1}{\lambda} $}：  若$ \mathcal{H} $无基点则定义 $\lambda=0$；否则定义
           \[ \frac{1}{\lambda}:=\max\{t:a_{\theta}(E;X,B+tH)\geqslant 0,  \forall \ X\text{上例外除子}E \}\]
-    \item \textbf{ $(K_{X}+B_{X}+\frac{1}{\mu}H)$的$\theta$-无差别除子个数}:  $ e=0 $ 若 $ \mathcal{H} $ 无基点 (此时 $ \lambda=0 $)则定义  $e=0$；否则定义
+    \item \textbf{ $(K_{X}+B_{X}+\frac{1}{\mu}H)$的$\theta$-无差除子个数}:  $ e=0 $ 若 $ \mathcal{H} $ 无基点 (此时 $ \lambda=0 $)则定义  $e=0$；否则定义
           \[ e=\#\{E; E \text{ 是 }\sigma\text{-例外除子，且 } a_{\theta}(E;X,B+\frac{1}{\lambda} H)=0 \} \]
   \end{itemize}
 \end{definition}
@@ -106,13 +106,13 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见定义\ref{sarkisovdeg
   对于Sarkisov次数，有下列性质：
   \begin{enumerate}
     \item  Sarkisov次数取决于  $A', H'$ 和  $\theta$的选取。
-    \item   取公共对数解消$ (W,B_W)\in \mathcal{C}_{\theta} $，其中 $ B_W=\sum \theta(E)E $ ，并且有射影双有理态射 $ \sigma:W\to X , \sigma':W\to X' $。 由于 $\sigma^*\mathcal{H}=\mathcal{H}_W+\sum f_{l}F_{l}$，所以有分歧等式：
+    \item   取公共对数解消$ (W,B_W)\in \mathcal{C}_{\theta} $，其中 $ B_W=\sum \theta(E)E $ ，并且有射影双有理态射 $ \sigma:W\to X , \sigma':W\to X' $。 由于 $\sigma^*\mathcal{H}=\mathcal{H}_W+\sum f_{l}F_{l}$，所以有分歧公式：
           \[ K_W+B_W+tH_W=\sigma^*(K_X+B+tH)+\sum(a_l-tf_l)E_l \]
           其中 $ \sum a_l E_l $ 是有效除子且支撑在 $ \mathrm{Exc}\,\sigma $上。那么 $\lambda:=\max\{ \frac{f_l}{a_l}\}$。如果$ \mathcal{H} $是无基点的，那么 $ \sum f_lF_l=0 $ 且$\lambda=0  $。
     \item   $ e $ 是公式
           \[ K_W+B_W+\frac{1}{\lambda} H_W=\sigma^*(K_X+B+\frac{1}{\lambda} H)+\sum(a_l-\frac{1}{\lambda} f_l)E_l .\]
       中系数$\sum(a_l-\frac{1}{\lambda}f_l)E_l$ 为 $ 0 $的部分的个数。
-          这样的素除子 $E_{1},\ldots, E_{e}$ 称作$\theta$-无差别的。
+          这样的素除子 $E_{1},\ldots, E_{e}$ 称作$\theta$-无差的。
   \end{enumerate}
 \end{remark}
 需要构造在集合 $\mathcal{C}_{\theta}$中的解压态射：
@@ -121,21 +121,20 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见定义\ref{sarkisovdeg
   \begin{itemize}
     \item $(Z,B_{Z})\in \mathcal{C}_{\theta}$ 且 $(Z,B_{Z}+\frac{1}{\lambda}H_{Z})$ 具有$\theta$-终端奇点的 $\mathbb{Q}$-分解代数簇对；
     \item  $\rho(Z)=\rho(X)+1$;
-    \item $(K_{X}+B+\frac{1}{\lambda}H)$是 $f$-无差别的，即
+    \item $(K_{X}+B+\frac{1}{\lambda}H)$是 $f$-无差的，即
           \[ K_{Z}+B_{Z}+\frac{1}{\lambda}H_{Z}=f^*(K_{X}+B+\frac{1}{\lambda}H) \]
   \end{itemize}
 \end{lemma}
 \begin{proof}
-  按照\cite[Proposition 1.6]{brunoLogSarkisovProgram1995}的思路来证明。取 定义\ref{sarkisovdegree}中的$ (W,B_{W})\in \mathcal{C}_{\theta}$和公共对数解消  $\sigma:W\to X,\sigma':W \to X'$ 。将 $(K_{X}+B+\frac{1}{\lambda}H)$的$\theta$-无差别除子重新编号 $E_{1},\ldots ,E_{e}$ ，那么有
+  按照\cite[Proposition 1.6]{brunoLogSarkisovProgram1995}的思路来证明。取 定义\ref{sarkisovdegree}中的$ (W,B_{W})\in \mathcal{C}_{\theta}$和公共对数解消  $\sigma:W\to X,\sigma':W \to X'$ 。将 $(K_{X}+B+\frac{1}{\lambda}H)$的$\theta$-无差除子重新编号 $E_{1},\ldots ,E_{e}$ ，那么有
   \[ K_W+B_W+\frac{1}{\lambda} H_W=\sigma^*(K_X+B+\frac{1}{\lambda} H)+\sum_{l=1}^{e} 0\cdot E_{l}+\sum_{l>e}(a_l-\frac{1}{\lambda} f_l)E_l .\]
-  在 $W$ 上运行相对于 $X$的对某丰沛除子标量的  $(K_{W}+B_{W}+\frac{1}{\lambda}H_{W})$-MMP，将终结于 $(W, B_{W}+\frac{1}{\lambda}H_{W})$相对于 $X$ 极小模型 $p:(Y, B_{Y}+\frac{1}{\lambda}H_{Y})\to X$，且 $p$ 的例外除子恰好是 $\cup_{i=1}^{e}E_{i}$，并且$p$是无差别的：
+  在 $W$ 上运行相对于 $X$的对某丰沛除子标量的  $(K_{W}+B_{W}+\frac{1}{\lambda}H_{W})$-MMP，将终结于 $(W, B_{W}+\frac{1}{\lambda}H_{W})$相对于 $X$ 极小模型 $p:(Y, B_{Y}+\frac{1}{\lambda}H_{Y})\to X$，且 $p$ 的例外除子恰好是 $\cup_{i=1}^{e}E_{i}$，并且$p$是无差的：
   \[
     K_{Y}+B_{Y}+\frac{1}{\lambda}H_{Y}=p^*(K_{X}+B+\frac{1}{\lambda}H)
     \]
-  接下来运行相对于 $X$ 的对某丰沛除子标量的  $(K_{Y}+B_{Y})$-MMP ，将终结于  $(Y,B_{Y})$ 相对于 $X$的极小模型，这个极小模型就是$(X,B)$。令 $f: Z\to X$ 是MMP中的最后一个除子压缩，那么$f$就是满足条件的除子解压态射。
-\end{proof}
+  接下来运行相对于 $X$ 的对某丰沛除子标量的  $(K_{Y}+B_{Y})$-MMP ，将终结于  $(Y,B_{Y})$ 相对于 $X$的极小模型，这个极小模型就是$(X,B)$。令 $f: Z\to X$ 是MMP中的最后一个除子压缩，那么$f$就是满足条件的除子解压态射。 \end{proof}
 
-\section{Sarkisov纲领的流程}
+\section{构造Sarkisov连接}
 这一节主要按照 \cite[\S1]{brunoLogSarkisovProgram1995}的内容。
 
 \textbf{终结判定：}如果 $ \lambda\leqslant\mu $ 且 $ K_X+B+\frac{1}{\mu}H $ 是数值有效的，那么两个森纤维空间是同构的 (见定理\ref{nfi})，Sarkisov纲领在此结束。
@@ -185,10 +184,10 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见定义\ref{sarkisovdeg
                 S\ar[rd]& & S_{1}\ar[ld]\\
                   &T& } \]
     \end{enumerate}
-  \item 假设 $\lambda>\mu$。取引理\ref{thetaextraction}构造的除子解压 $ p:(Z,B_Z+\frac{1}{\lambda}H_Z)\to (X,B+\frac{1}{\lambda}H) $，即   $ (Z,B_Z) $ 具有$ \theta $-终端奇点 且 $ p^*(K_X+B+\frac{1}{\lambda}H)=K_Z+B_Z+\frac{1}{\lambda}H_Z $，其中 $ B_Z=\sum\theta(E_{\nu})E_\nu $。
+  \item 假设 $\lambda>\mu$。取引理\ref{thetaextraction}构造的除子解压 $ p:(Z,B_Z+\frac{1}{\lambda}H_Z)\to (X,B+\frac{1}{\lambda}H) $，即   $ (Z,B_Z) $ 具有$ \theta $-终端奇点 且 $ p^*(K_X+B+\frac{1}{\lambda}H)=K_Z+B_Z+\frac{1}{\lambda}H_Z $，其中 $ B_Z=\sum\theta(E_{\nu})E_\nu $，$Z$ 上的除子$E_{\nu}$对应赋值$\nu$。
     运行相对于 $S$ 的对某丰沛除子标量的 $ (K_Z+B_Z+\frac{1}{\lambda}H_Z) $-MMP，由于 $Z$被 $ (K_Z+B_Z+\frac{1}{\lambda}H_Z) $-负性的曲线覆盖，$ (K_Z+B_Z+\frac{1}{\lambda}H_Z) $ 不是相对伪有效的。因此由定理\ref{notpseudoeffmfs}，这个 MMP终结于森纤维空间 。有下列两种情况：
     \begin{enumerate}
-      \item 在有限多步翻转复合 $ Z\dashrightarrow X_1 $后，第一个非翻转的压缩态射是森纤维空间$f_1:(X_1,B_1+\frac{1}{\lambda}H_1)\to S_1$ 由于 $ (K_{X_1}+B_1+\frac{1}{\lambda}H_1) $ 是在$S_1$上反丰沛(anti-ample)的除子，且 $ H_1 $  $ f_1 $-丰沛的所以 $(K_{X_1}+B_1) $在 $S_1$上反丰沛。
+      \item 在有限多步翻转复合 $ Z\dashrightarrow X_1 $后，第一个非翻转的压缩态射是森纤维空间$f_1:(X_1,B_1+\frac{1}{\lambda}H_1)\to S_1$ 由于 $ (K_{X_1}+B_1+\frac{1}{\lambda}H_1) $ 是在$S_1$上反丰沛(anti-ample)的除子，且 $ H_1 $ 是 $ f_1 $-丰沛的所以 $(K_{X_1}+B_1) $在 $S_1$上反丰沛。
       \[ \xymatrix{
         &Z\ar@{.>}[r]\ar[ld] &X_{1}\ar[d] \\
           X\ar[d]& &S_{1}\ar[lld]\\
@@ -256,7 +255,6 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见定义\ref{sarkisovdeg
           因此 $X$ 和 $X'$ 都是 $(W,B_{W}+\frac{1}{\mu}H_{W}+dD_{W})$的对数典范模型，由对数典范模型的唯一性， $X\cong X'$。更进一步， $f$ 和  $f'$压缩相同的曲线数值等价类，所以两个森纤维空间同构。
   \end{enumerate}
 \end{proof}
-
 
 Bruno和Matsuki\cite{brunoLogSarkisovProgram1995}给出的下降法的Sarkisov纲领的终结性需要下列条件：
 \begin{enumerate}
