@@ -1,11 +1,11 @@
 \chapter{绪论}
 \section{主要结果}
-双有理代数几何的目标之一是按双有理等价类分类代数簇，并选取选择恰当的代表元。极小模型纲领 (Minimal model program)是构造代表元的一种方法，并且猜想每一个代数簇都双有理等价于一个极小模型 (minimal model) 或一个森纤维空间 (Mori fibre space)，但这样的代表元有时并不唯一，于是自然的问题就是不同代表元之间的关系。对于极小模型的情形，我们有
-\begin{theorem}[平转连接极小模型]
+双有理代数几何的目标之一是按双有理等价类分类代数簇，并选取选择恰当的代表元。极小模型纲领 (Minimal model program)是构造代表元的一种方法，并且猜想每一个代数簇都双有理等价于一个极小模型 (minimal model) 或一个森纤维空间 (Mori fibre space)，但这样的代表元有时并不唯一，于是自然的问题就是不同代表元之间的关系。对于极小模型的情形，有以下事实：
+\begin{theorem}[平转连接极小模型]\cite[Theorem 1]{flopmin}
   令$(W,B_{W})$为一个终端奇点的$\mathbb{Q}$-分解代数簇对，且 $(X,B_{X}), (Y,B_{Y})$是它的两个极小模型。那么双有理映射$X \dashrightarrow Y$可以分解为一系列$(K_{X}+B_{X})$-平转 (也称为复络， flop)的复合。
 \end{theorem}
 
-本文主要关注森纤维空间之间的关系：
+对于本文主要关注森纤维空间，有以下事实：
 \begin{theorem}[Sarkisov分解]\label{main}
   令 $ f:(X, B)\to S$ 和 $f':(X', B')\to S' $ 为两个 MMP-连接的klt奇点的$ \mathbb{Q} $-分解森纤维空间，则有双有理映射 $\Phi$：
   \[ \xymatrix{
@@ -40,11 +40,11 @@
 \end{theorem}
 这样的分解称为Sarkisov分解，构造这样Sarkisov分解的方法称为Sarkisov纲领。
 
-在叶层化代数簇对 (foliated pair)上有较弱的结果：
+在叶层化代数簇对 (foliated pair)上有以下结果：
 \begin{theorem}[弱Sarkisov分解]\label{mainf}
   令$(W,\mathcal{F}_{W},B_{W})$是具有$F$-dlt奇点的$\mathbb{Q}$-分解叶层化代数簇对，且$\rho:W\dashrightarrow X$ 和$\rho':W \dashrightarrow X'$是两个不同的$(K_{\mathcal{F}_{W}}+B_{W})$-MMP的输出，且$X \to S$和$X' \to S'$是两个森纤维空间。那么双有理映射$\Phi:X \dashrightarrow X'$存在分解：
   \[ X=X_{0}\dashrightarrow X_{1}\dashrightarrow \cdots \dashrightarrow X' \]
-  每一个代数簇$X_{i}$上有边界除子$D_{i}$和压缩态射$f_{i}:X_{i}\to S_{i}$，使得$(X_{i},D_{i})\to S_{i}$是森纤维空间，并且$X_{i} \dashrightarrow X_{i+1}$是Sarkisov连接。
+  每一个代数簇$X_{i}$上有边界除子$D_{i}$和压缩态射$f_{i}:X_{i}\to S_{i}$，使得$(X_{i},D_{i})\to S_{i}$是森纤维空间，并且$X_{i} \dashrightarrow X_{i+1}$是定理\ref{main}中定义的Sarkisov连接。
 \end{theorem}
 
 \section{问题的历史}
@@ -63,11 +63,11 @@ Sarkisov纲领起源于对直纹曲面的分类 \cite{sarkisovBIRATIONALAUTOMORP
 Miyamoto \cite{miyamoto2019TheSP} 将这种方法应用到了任意特征代数闭域上的lc对数曲面或 $\mathbb{Q}$-分解对数曲面。 本文将这种方法称为有限模型法。
 
 \section{本文结构}
-第一节给出主要的定理，并介绍Sarkisov纲领的发展历史。第二节给出基本概念的定义，MMP相关的定理。
+第一章给出主要的定理，并介绍Sarkisov纲领的发展历史。第二章给出基本概念的定义，MMP相关的定理。
 
 第三、四、五章分别介绍下降法、双标量法和有限模型法的具体内容，每一章都先介绍这种方法需要的定义和引理，接着说明构造每一个Sarkisov连接的方法，最后说明Sarkisov分解的构造。
 
-在第六章，总结比较三种方法，并且每种方法给出一个具体例子。
+在第六章，总结比较三种方法，并且每种方法给出一个具体算例。
 % 最后介绍一些Sarkisov纲领的简单应用。
 
-第七章介绍了叶层化代数簇对 (foliated pairs)，并分析了三种方法在叶层化代数簇对的推广，最后给出弱化版结果。
+第七章介绍了叶层化代数簇对 (foliated pairs)，并分析了三种方法在叶层化代数簇对的推广，最后给出定理\ref{mainf}的证明。

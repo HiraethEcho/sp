@@ -21,9 +21,7 @@
 \begin{definition}
 使用\cite[3.4.5,6.2.1]{chlx}、\cite[3.2]{acss}的定义：
   \begin{enumerate}
-    \item 叶层化代数簇对 $(X/U,\mathcal{F},B)$包括一个正规射影代数簇$X$ ，叶状结构$\mathcal{F}$和边界除子$B$，一个压缩态射$\pi:X\to U$，使得叶层化对数典范除子
-  \[ K_{\mathcal{F}}+B \]
-  是$\mathbb{R}$-Cartier除子。叶层化代数簇对也简称叶层化对 (foliated pair)。如果$\mathcal{F}$是代数可积的，则称为代数可积叶层化代数簇对。当基底$U=pt$，或清楚时，常舍去$U$，简记为$(X,\mathcal{F},B)$。 
+    \item 叶层化代数簇对 $(X/U,\mathcal{F},B)$包括一个正规射影代数簇$X$ ，叶状结构$\mathcal{F}$和边界除子$B$，一个压缩态射$\pi:X\to U$，使得叶层化对数典范除子 $ K_{\mathcal{F}}+B $ 是$\mathbb{R}$-Cartier除子。叶层化代数簇对也简称叶层化对 (foliated pair)。如果$\mathcal{F}$是代数可积的，则称为代数可积叶层化代数簇对。当基底$U=pt$，或不是重要的性质 (例如定义奇点性质时)，常舍去$U$，简记为$(X,\mathcal{F},B)$。 
     \item 如果$f:Y\to X$是双有理态射，且$\mathcal{F}_{Y} $是$\mathcal{F} $诱导的 $Y$ 上的叶状结构，且$E \subset Y$是$Y$ 上的除子，那么分歧公式
   \[ K_{\mathcal{F}_{Y}}+C=f^{*}(K_{\mathcal{F}}+B) \]
   定义了例外除子$E$的叶层化差异数
@@ -162,15 +160,15 @@ $F$-dlt奇点的叶层化代数簇对具有ACSS性质：
   令$D:=f_{*}D_{Y}$，则
   \[ K_{X}+B+A\sim_{\mathbb{R}} K_{X}+D \]
   且$(X,D)$具有klt奇点。 \end{proof}
-对两个$(K_{\mathcal{F}_{W}}+B_{W})$-MMP进行微扰，可以在边界除子$B_{W}$中添加丰沛成分。具体来说，令$\rho:W \dashrightarrow X$和$\rho': W \dashrightarrow X'$为两个不同的$(K_{\mathcal{F}_{W}}+B)$-MMP的过程，因为在有限步内结束，所以都之经过有限次关于某个极端射线$R$ 的 压缩态射或翻转，即每一步中都有
-\[ (K_{\mathcal{F}_{i}}+B_{i}).R<0 \]
+对两个$(K_{\mathcal{F}_{W}}+B_{W})$-MMP进行微扰，可以在边界除子$B_{W}$中添加丰沛成分。具体来说，令$\rho:W \dashrightarrow X$和$\rho': W \dashrightarrow X'$为两个不同的$(K_{\mathcal{F}_{W}}+B)$-MMP的过程，因为在有限步内结束，所以都之经过有限次关于某个极端射线$R_{i}$ 的 压缩态射或翻转，即每一步中都有
+\[ (K_{\mathcal{F}_{i}}+B_{i}).R_{i}<0 \]
 令$A_{W}$是$W$ 上任意丰沛除子，且$0<\epsilon\ll 1$充分小，使得
-\[ (K_{\mathcal{F}_{i}}+B_{i}+\epsilon A_{i}).R<0 \]
-恒成立，并且$(W,\mathcal{F}_{W},B_{W}+\epsilon A_{W})$具有$F$-dlt奇点，那么$\rho,\rho'$也是$(K_{\mathcal{F}_{W}}+B+\epsilon A)$-MMP。用$\epsilon A$替换$A$，可以假设$(W,\mathcal{F}_{W},B_{W}+A_{W})$是 具有$F$-dlt奇点的$\mathbb{Q}$-分解的代数可积的叶层化代数簇。 
-用上述结果可以证明定理\ref{mainf}
+\[ (K_{\mathcal{F}_{i}}+B_{i}+\epsilon A_{i}).R_{i}<0 \]
+恒成立，并且$(W,\mathcal{F}_{W},B_{W}+\epsilon A_{W})$具有$F$-dlt奇点，那么$\rho,\rho'$也是$(K_{\mathcal{F}_{W}}+B+\epsilon A)$-MMP。用$\epsilon A$替换$A$，可以假设$(W,\mathcal{F}_{W},B_{W}+A_{W})$是 具有$F$-dlt奇点的$\mathbb{Q}$-分解代数可积叶层化代数簇。 
+用上述结果可以证明定理\ref{mainf}：
 \begin{proof}
   由于$(W,\mathcal{F}_{W},B_{W})$具有$F$-dlt奇点，所以存在除子$G_{W}$和压缩态射$W\to Z$，使得$(W,\mathcal{F}_{W},B_{W};G)/Z$ 具有ACSS奇点，并且有
-  \[ K_{\mathcal{F}}+B_{W} \sim_{Z} K_{X}+B+G \]
+  \[ K_{\mathcal{F}}+B_{W} \sim_{Z,\mathbb{R}} K_{X}+B+G. \]
  取$W$ 上的丰沛除子$A_{W}$，满足
  \begin{enumerate}
    \item $(W,B_{W}+G_{W}+A_{W}) $具有lc奇点；
@@ -189,6 +187,6 @@ $F$-dlt奇点的叶层化代数簇对具有ACSS性质：
       X_{i}\ar[d]_{\phi}&&X_{i+1}\ar[d]^\psi\\
       S_{i}\ar[rd]^s&&S_{i+1}\ar[ld]_t\\
       &T&} \]
-      中，$p,q,\tau$都是关于某个边界除子$D_{i}'$的翻转或平转或无差除子解压，而$(X_{i},D_{i})\to S_{i}$是普通代数簇对的森纤维空间，不是叶层化森纤维空间。这与所期望的叶层化Sarkisov分解并不一致，因此将定理\ref{mainf}称为弱化的结果。
+      中，$p,q,\tau$都是关于某个边界除子$D_{i}'$的翻转或平转或无差除子解压，而$(X_{i},D_{i})\to S_{i}$是普通代数簇对的森纤维空间，不是叶层化森纤维空间。我们期望的定理\ref{mainf}中的Sarkisov连接是叶层化Sarkisov分解得到的，而不仅仅是MMP中的Sarkisov连接。
 \end{remark}
 
