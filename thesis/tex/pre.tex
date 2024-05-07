@@ -15,9 +15,9 @@
 定义除子的差异数：
 \begin{definition}
   令 $(X, B)$ 为代数簇对， 且 $f: Y\to X$ 是它的对数解消，则有分歧公式 (ramification formula)
-  \[ K_{Y}+C=f^*(K_{X}+B) \]
+  \[ K_{Y}+C=f^*(K_{X}+B) .\]
   那么除子 $E$ 的差异数 (discrepancy)$a(E;X,B) $定义为
-  \[ a(E;X,B)=-\operatorname{mult}_{E}C \]
+  \[ a(E;X,B)=-\operatorname{mult}_{E}C .\]
   进一步，定义$(X,B) $的差异数：
   \[ \operatorname{discrep}(X, B) := \inf\{a(E; X, B) : E \text{ 是 } X \text{之上的例外除子} \} \]
   和整体差异数
@@ -26,10 +26,10 @@
 对于代数簇对之间的态射，可以定义无差除子：
 \begin{definition}
  令$f:(Y,C)\to (X,B)$ 为代数簇对之间的态射，在分歧公式中，
- \[ K_{Y}+C + \sum_{i}e_{i}E_{i}=f^{*}(K_{X}+B) \]
- 如果$e_{i}=0$，那么除子$E_{i}$称为$f$-无差的，或者$f$-相容的。 如果
- \[ K_{Y}+C=f^{*}(K_{X}+B) \]
-那么称$f$ 是无差的，或相容的 (crepant)。
+ \[ K_{Y}+C + \sum_{i}e_{i}E_{i}=f^{*}(K_{X}+B) .\]
+ 如果$e_{i}=0$，那么除子$E_{i}$称为$f$-无差的，或者$f$-相容的 (crepant)。 如果
+ \[ K_{Y}+C=f^{*}(K_{X}+B) ,\]
+那么称$f$ 是无差的，或相容的。
 如果考虑不含边界的代数簇对，即$B=C=0$ ，那么分歧公式
  \[ K_{Y} + \sum_{i}e_{i}E_{i}=f^{*}K_{X} \]
  中满足$e_{i}=0$的除子称为无差除子。
@@ -49,21 +49,21 @@
 
 \section{极小模型纲领}
 
-\begin{theorem}[锥定理]\label{conethm}
+\begin{theorem}[锥定理]\cite[Theorem 3.7]{km}\label{conethm}
 
 令$(X,B)$ 是具有klt奇点的$\mathbb{Q}$-分解代数簇对，且$(K_{X}+B)$不是数值有效的，那么有
 \begin{enumerate}
   \item
-    \[ \overline{\operatorname{NE}}(X)=\overline{\operatorname{NE}}(X)_{K_{X}+B\geqslant 0} +\sum_{\alpha \in\Lambda} R_{\alpha}\] 
+    \[ \overline{\operatorname{NE}}(X)=\overline{\operatorname{NE}}(X)_{K_{X}+B\geqslant 0} +\sum_{\alpha \in\Lambda} R_{\alpha},\] 
           其中$R_{\alpha}=\mathbb{R}_{\geqslant 0}[C_{\alpha}]$是由有理曲线$C_{\alpha}$生成的$(K_{X}+B) $-负性的 ($(K_{X}+B)$-negative)极端射线 (extremal ray)，且$\Lambda$是可列集；
   \item 对任何丰沛除子$A$和$ \epsilon >0 $，有
-        \[ \overline{\operatorname{NE}}(X)=\overline{\operatorname{NE}}(X)_{K_{X}+B+\epsilon A\geqslant 0} +\sum_{\alpha \in\Lambda'}R_{\alpha} \]
+        \[ \overline{\operatorname{NE}}(X)=\overline{\operatorname{NE}}(X)_{K_{X}+B+\epsilon A\geqslant 0} +\sum_{\alpha \in\Lambda'}R_{\alpha} ,\]
         其中$\Lambda' \subset \Lambda$是有限子集；
   \item 令 $F \subset \overline{\operatorname{NE}}(X)$是 $(K_{X}+B)$-负性的极端面 (extremal face)，那么同构意义下存在唯一的压缩态射
     \[ f=cont_{F}:X \to Z \]
     使得$f_{*}\mathcal{O}_{X}=\mathcal{O}_{Z}$，并且曲线 $C \subset X$被$f$ 压缩当且仅当$[C] \in F$。 
   \item 如果$X$ 上除子 $D$相对于$Z$ 是数值平凡的，即任意被$f$ 压缩的曲线$C \subset X$，都有$D.C=0$，那么存在$Z$上除子$L_{Z} $使得
-    \[ f^{*}L_{Z} = D \]
+    \[ f^{*}L_{Z} = D .\]
 \end{enumerate}
 \end{theorem}
 在锥定理的(4)中，当$F=R$是极端射线时，有$\rho(X)=\rho(Z)+1$ ($\rho(X)$表示$X$ 的Picard数)，并且对应的压缩态射$f$有三种情况：
@@ -72,7 +72,7 @@
   \item $\operatorname{codim }(\operatorname{Exc}\,f) \geqslant 2$，则称为小双有理态射 (small birational morphism)；
   \item $\dim Z < \dim X, \operatorname{Exc}\,f=X$，此时称$(X,B)\to Z$为森纤维空间 (关于$ (K_{X}+B) $的森纤维空间)，压缩态射$f$称为森纤维空间压缩态射。
 \end{enumerate}
-\textbf{极小模型纲领 (MMP)：}
+\textbf{极小模型纲领 (MMP)：}\cite{km}
 对于$(X,B)=(X_{0},B_{0})$，应用锥定理做关于极端射线的压缩态射$f_{1}:X\to Z$。
 \begin{enumerate}
   \item 如果是除子压缩，那么令$X_{1}=Z,B_{1}=f_{1*}B$。在$(X_{1},B_{1})$上重复此过程；
@@ -117,7 +117,7 @@
   \begin{enumerate}
     \item 它们是MMP-相关的；
     \item 存在一个对数光滑代数簇对 $ (W,B_W) $和一组射影双有理态射  $ f_l:W\to  X_l $ 支配每个 $ X_l $，满足 $ f_{l*}B_W=B_l $ 和分歧公式
-      \[ K_W+B_W=f_l^*(K_{X_l}+B_l)+\sum_{\text{例外除子}E_{li}}{a_{li}E_{li}} \]
+      \[ K_W+B_W=f_l^*(K_{X_l}+B_l)+\sum_{\text{例外除子}E_{li}}{a_{li}E_{li}} ,\]
           其中对每个$ f_l $-例外除子$E_{li}$满足 $a_{li}>0$ 的不等式条件；
     \item 对任意两个代数簇对 $ (X,B=\sum_ib_{i }B_i),(X',B'=\sum_{j}b_{j}'B_{j}') $ ， 有  $ a(B_i;X',B')\geqslant -b_i $ 且严格不等式成立当且仅当 $ B_i $ 是 $ X' $之上的例外除子。同样的，有 $ a(B'_j;X,B)\geqslant -b'_j $ 且严格不等式成立当且仅当$ B'_j $ 是 $ X $之上的例外除子。
   \end{enumerate}
@@ -182,22 +182,20 @@
     \item $f$ 是$U$上半丰沛模型；
     \item  $U$ 上的丰沛模型  $g:X \dashrightarrow Z$存在；
     \item  存在压缩态射$h:Y\to Z$和 $Z$ 上在 $U$ 上丰沛的$\mathbb{R}$-除子，使得 
-      \[ K_{Y}+f_*B\sim_{\mathbb{R},U} h^*H \]
+      \[ K_{Y}+f_*B\sim_{\mathbb{R},U} h^*H .\]
   \end{itemize}
 \end{lemma}
 下面给出除子的多面体相关的定义和定理：
 \begin{definition}\label{polytopeofdivisor}
   \cite[Definition 1.1.4]{BCHM10} 令 $ \pi: X\to U $ 为正规拟射影代数簇间的射影态射，且 $ V $是 $ \operatorname{WDiv}_{\mathbb{R}}(X) $的定义在有理数上的有限维仿射子空间。取定一个除子 $ A\geqslant 0 $，定义：
-  \[
-    \begin{aligned}
-      \mathcal{L}_A(V)       & =\{D=A+B:B \in V,  K_X+D\, \text{有lc奇点且} B\geqslant0 \} \\
-    \mathcal{E}_{A,\pi}(V) & =\{D\in \mathcal{L}_A(V): K_X+D\, \text{ 是 } U \text{上的伪有效除子}\}  \\
-    \end{aligned}
-  \]
+  \[ \begin{aligned}
+      \mathcal{L}_A(V)       & =\{D=A+B:B \in V,  K_X+D\, \text{有lc奇点且} B\geqslant0 \}, \\
+    \mathcal{E}_{A,\pi}(V) & =\{D\in \mathcal{L}_A(V): K_X+D\, \text{ 是 } U \text{上的伪有效除子}\}.  \\
+    \end{aligned} \]
   令 $ f:X \dashrightarrow Y$为 $U$ 上的 双有理压缩映射，定义
-  \[ \mathcal{W}_{A,\pi,f}(V)=\{D\in \mathcal{E}_{A}(V): f \text{是   } X \text{关于}D \text{ 在 }U \text{上的弱对数典范模型}\} \]
+  \[ \mathcal{W}_{A,\pi,f}(V)=\{D\in \mathcal{E}_{A}(V): f \text{是   } X \text{关于}D \text{ 在 }U \text{上的弱对数典范模型}\} .\]
   令 $g:X\dashrightarrow Z  $ 是 $ U $上的有理压缩映射，定义
-  \[ \mathcal{A}_{A,\pi,g}(V)=\{D\in \mathcal{E}_{A}(V): g \text{是} X \text{关于}D\text{ 在 }U \text{上的丰沛模型}\} \]
+  \[ \mathcal{A}_{A,\pi,g}(V)=\{D\in \mathcal{E}_{A}(V): g \text{是} X \text{关于}D\text{ 在 }U \text{上的丰沛模型}\} .\]
   进一步，将 $ \mathcal{A}_{A,\pi,g}(V) $ 在 $\mathcal{L}_{A}(V)$中的闭包记作 $ \mathcal{C}_{A,\pi,g}(V) $。
 
   如果基底 $U$是清楚的，或是一个点，那么我们省略 $\pi$，简单记作 $\mathcal{E}_{A}(V)$ 和 $\mathcal{A}_{A,f}$。

@@ -44,7 +44,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见定义\ref{sarkisovdeg
   根据这个集合可以定义 $\theta$-差异数 ($\theta$-discrepancy )：
 \begin{definition}[$\theta$-差异数]
   令 $\mathcal{C}_{\theta}$ 为上述代数簇对的集合，且$(X, B)$ 是有理函数域满足 $K(X)=K$的代数簇对。令  $f: Y\to X$是$(X, B)$的一个对数奇点解消，有分歧公式：
-  \[ K_{Y}+B_{Y}+C=f^*(K_{X}+B) \]
+  \[ K_{Y}+B_{Y}+C=f^*(K_{X}+B) ,\]
   其中 $B_{Y}=f^{-1}_*B+ \sum_{E_{i}\text{ 例外除子}} \theta(E_{i})E_{i}$。则 $X$ 的例外除子 $E_{i}$的 $\theta$-差异数定义为
   \[ a_{\theta}(E_{i};X,B)=-\operatorname{mult}_{E_{i}}C. \]
   或等价的，可以定义为
@@ -62,7 +62,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见定义\ref{sarkisovdeg
       {(X,B)}\ar[d]_{f}\ar@{.>}[r]^\Phi&(X',B')\ar[d]^{f'}\\
       S&S'} \]
 假设 $ B=\sum_{i}b_{i}B_{i}+\sum_{j}d_{j}D_j $ 和 $ B'=\sum_{j}d_{j}'D_{j}+\sum_{k}b_{k}'B_{k}' $，其中 $ B_{i} $ 是在 $ X $上但不在 $ X' $上的除子， $ B_k' $ 是在 $ X' $上但不在  $ X $上的除子，而 $ D_j $ 是在 $ X $ 和 $ X' $上的除子。由引理\ref{MMPrelatedConditation}，有 $ d_{j}=d_{j}' $。取一个有理数 $\epsilon$满足 
-\[ -\operatorname{totdiscrep}(X,B),-\operatorname{totdiscrep}(X',B')  <\epsilon <1 \]
+\[ -\operatorname{totdiscrep}(X,B),-\operatorname{totdiscrep}(X',B')  <\epsilon <1 ,\]
 并按如下定义函数 $ \theta: \{ \nu \} \to [0,1)_{\mathbb{Q}} $ ：
   \begin{itemize}
     \item 对于边界  $B,B'$的除子，有$ \theta(B_i)=b_i, \theta(D_{j})=d_{j},\theta(B_{k}')=b_{k}'$；
@@ -83,7 +83,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见定义\ref{sarkisovdeg
 使用命题 \ref{cat}中的假设和记号，可以定义Sarkisov 次数 ( Sarkisov degree )。取 $S'$ 上的极丰沛的除子 $A'$和足够大和足够可除的整数 $\mu'>1 $使得
 \[ \mathcal{H}'=|-\mu' (K_{X'}+B') +f'^*A'| \]
 是 $ X' $ 在 $ \mathrm{Spec}\,\mathbb{C}$上的极丰沛的完全线性系 。 令 $ (W,B_W) $ 是 $ X $ 和 $ X' $ 在 $ \mathcal{C}_{\theta} $ 中的公共对数解消，有射影态射 $ \sigma:W\to X$和   $\sigma':W\to X' $ 满足 $\sigma_*B_W=B, \sigma'_*B_W=B' $。令$\mathcal{H}_W:=\sigma'^*\mathcal{H}'$，那么  $\mathcal{H}:=\Phi^{-1}_*\mathcal{H}'=\sigma_*\mathcal{H}_W$。进一步，如果 $ \mathcal{H} $ 不是无基点的，那么
-\[ \sigma^*\mathcal{H}=\mathcal{H}_W+F \]
+\[ \sigma^*\mathcal{H}=\mathcal{H}_W+F ,\]
 其中 $ F=\sum f_{l}F_{l}\geqslant0 $ 是固定部分(fixed part)。线性系 $ \mathcal{H}' $中的一个一般除子 $H'$使得 $ H_W:=\sigma'^*H'=\sigma'^{-1}_*H'\in \mathcal{H}_W $，并记 $ H:=\Phi^{-1}_*H'=\sigma_*H_{W} $。那么 $H$ 是 $f$-丰沛的，且$ \sigma^*H=H_W+F $。 通过取进一步的解消，不妨设 $H_{W}$ 与$\sigma$ 和 $\sigma'$的例外除子各部分光滑且互相横截相交(即$(W,H_{W}+ \operatorname{Exc}\sigma+ \operatorname{Exc}\sigma')$是对数光滑的)。
 
 
@@ -93,12 +93,12 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见定义\ref{sarkisovdeg
  $\mathcal{C}_{\theta}$中关于 $H'$ (或 $\mathcal{H}'$)的Sarkisov次数是一个按字典序排序的三元组$ (\mu,\lambda,e) $，其中：
   \begin{itemize}
     \item \textbf{ 数值有效阈值$ \mu $}：令 $ C\subset X  $ 是被$ f $压缩的曲线，那么
-          \[ \mu:=-\frac{H.C}{(K_X+B).C} \]
+          \[ \mu:=-\frac{H\cdot C}{(K_X+B)\cdot C} .\]
           即 $ K_X+B+\frac{1}{\mu} H \equiv_S0$；
     \item \textbf{$ \theta $-典范 阈值  $ \frac{1}{\lambda} $}：  若$ \mathcal{H} $无基点则定义 $\lambda=0$；否则定义
-          \[ \frac{1}{\lambda}:=\max\{t:a_{\theta}(E;X,B+tH)\geqslant 0,  \forall \ X\text{上例外除子}E \}\]
+          \[ \frac{1}{\lambda}:=\max\{t:a_{\theta}(E;X,B+tH)\geqslant 0,  \forall \ X\text{上例外除子}E \};\]
     \item \textbf{ $(K_{X}+B_{X}+\frac{1}{\mu}H)$的$\theta$-无差除子个数}:  $ e=0 $ 若 $ \mathcal{H} $ 无基点 (此时 $ \lambda=0 $)则定义  $e=0$；否则定义
-          \[ e=\#\{E; E \text{ 是 }\sigma\text{-例外除子，且 } a_{\theta}(E;X,B+\frac{1}{\lambda} H)=0 \} \]
+          \[ e=\#\{E; E \text{ 是 }\sigma\text{-例外除子，且 } a_{\theta}(E;X,B+\frac{1}{\lambda} H)=0 \} .\]
   \end{itemize}
 \end{definition}
 
@@ -107,7 +107,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见定义\ref{sarkisovdeg
   \begin{enumerate}
     \item  Sarkisov次数取决于  $A', H'$ 和  $\theta$的选取。
     \item   取公共对数解消$ (W,B_W)\in \mathcal{C}_{\theta} $，其中 $ B_W=\sum \theta(E)E $ ，并且有射影双有理态射 $ \sigma:W\to X , \sigma':W\to X' $。 由于 $\sigma^*\mathcal{H}=\mathcal{H}_W+\sum f_{l}F_{l}$，所以有分歧公式：
-          \[ K_W+B_W+tH_W=\sigma^*(K_X+B+tH)+\sum(a_l-tf_l)E_l \]
+          \[ K_W+B_W+tH_W=\sigma^*(K_X+B+tH)+\sum(a_l-tf_l)E_l ,\]
           其中 $ \sum a_l E_l $ 是有效除子且支撑在 $ \mathrm{Exc}\,\sigma $上。那么 $\lambda:=\max\{ \frac{f_l}{a_l}\}$。如果$ \mathcal{H} $是无基点的，那么 $ \sum f_lF_l=0 $ 且$\lambda=0  $。
     \item   $ e $ 是公式
           \[ K_W+B_W+\frac{1}{\lambda} H_W=\sigma^*(K_X+B+\frac{1}{\lambda} H)+\sum(a_l-\frac{1}{\lambda} f_l)E_l .\]
@@ -122,16 +122,14 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见定义\ref{sarkisovdeg
     \item $(Z,B_{Z})\in \mathcal{C}_{\theta}$ 且 $(Z,B_{Z}+\frac{1}{\lambda}H_{Z})$ 具有$\theta$-终端奇点的 $\mathbb{Q}$-分解代数簇对；
     \item  $\rho(Z)=\rho(X)+1$;
     \item $(K_{X}+B+\frac{1}{\lambda}H)$是 $f$-无差的，即
-          \[ K_{Z}+B_{Z}+\frac{1}{\lambda}H_{Z}=f^*(K_{X}+B+\frac{1}{\lambda}H) \]
+          \[ K_{Z}+B_{Z}+\frac{1}{\lambda}H_{Z}=f^*(K_{X}+B+\frac{1}{\lambda}H) .\]
   \end{itemize}
 \end{lemma}
 \begin{proof}
   按照\cite[Proposition 1.6]{brunoLogSarkisovProgram1995}的思路来证明。取 定义\ref{sarkisovdegree}中的$ (W,B_{W})\in \mathcal{C}_{\theta}$和公共对数解消  $\sigma:W\to X,\sigma':W \to X'$ 。将 $(K_{X}+B+\frac{1}{\lambda}H)$的$\theta$-无差除子重新编号 $E_{1},\ldots ,E_{e}$ ，那么有
   \[ K_W+B_W+\frac{1}{\lambda} H_W=\sigma^*(K_X+B+\frac{1}{\lambda} H)+\sum_{l=1}^{e} 0\cdot E_{l}+\sum_{l>e}(a_l-\frac{1}{\lambda} f_l)E_l .\]
   在 $W$ 上运行相对于 $X$的对某丰沛除子标量的  $(K_{W}+B_{W}+\frac{1}{\lambda}H_{W})$-MMP，将终结于 $(W, B_{W}+\frac{1}{\lambda}H_{W})$相对于 $X$ 极小模型 $p:(Y, B_{Y}+\frac{1}{\lambda}H_{Y})\to X$，且 $p$ 的例外除子恰好是 $\cup_{i=1}^{e}E_{i}$，并且$p$是无差的：
-  \[
-    K_{Y}+B_{Y}+\frac{1}{\lambda}H_{Y}=p^*(K_{X}+B+\frac{1}{\lambda}H)
-    \]
+  \[ K_{Y}+B_{Y}+\frac{1}{\lambda}H_{Y}=p^*(K_{X}+B+\frac{1}{\lambda}H) .\]
   接下来运行相对于 $X$ 的对某丰沛除子标量的  $(K_{Y}+B_{Y})$-MMP ，将终结于  $(Y,B_{Y})$ 相对于 $X$的极小模型，这个极小模型就是$(X,B)$。令 $f: Z\to X$ 是MMP中的最后一个除子压缩，那么$f$就是满足条件的除子解压态射。 \end{proof}
 
 \section{构造Sarkisov连接}
@@ -150,7 +148,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见定义\ref{sarkisovdeg
 \begin{proof}
   分两种情况考虑：
   \begin{enumerate}
-    \item 假设 $\lambda\leqslant \mu$ 和  $ K_X+B+\frac{1}{\mu}H $ 不是数值有效的。记 $ f $ 是 $ (K_X+B) $-负性的极端射线$ R= \overline{\operatorname{ NE }}(X/S) $的压缩态射，那么由 $\mu$ 的定义有$ (K_X+B+\frac{1}{\mu}H).R=0 $ 。存在极端射线 $ P \subset \overline{\operatorname{ NE }}(X) $使得$ (K_X+B+\frac{1}{\mu}H).P<0 $ 且 $ F:=P+R $是极端面  (细节见 \cite [5.4.2]{cortiFactoringBirationalMaps} )。取  $ 0<\delta\ll 1 $ 使得 $ (K_X+B+(\frac{1}{\mu}-\delta)H).P<0 $，由于  $H$ 是 $f$-丰沛的，有 $  (K_X+B+(\frac{1}{\mu}-\delta)H).R<0 $。因此 $ F $ 是 $  (K_X+B+(\frac{1}{\mu}-\delta)H) $-负性的极端面。由于 $ (X,B+(\frac{1}{\mu}-\delta)H) $有 klt奇点，由压缩定理，存在关于 $F$ 的压缩态射 $ g:X\to T $  穿过 $ f:X\to S $。
+    \item 假设 $\lambda\leqslant \mu$ 和  $ K_X+B+\frac{1}{\mu}H $ 不是数值有效的。记 $ f $ 是 $ (K_X+B) $-负性的极端射线$ R= \overline{\operatorname{ NE }}(X/S) $的压缩态射，那么由 $\mu$ 的定义有$ (K_X+B+\frac{1}{\mu}H)\cdot R=0 $ 。存在极端射线 $ P \subset \overline{\operatorname{ NE }}(X) $使得$ (K_X+B+\frac{1}{\mu}H)\cdot P<0 $ 且 $ F:=P+R $是极端面  (细节见 \cite [5.4.2]{cortiFactoringBirationalMaps} )。取  $ 0<\delta\ll 1 $ 使得 $ (K_X+B+(\frac{1}{\mu}-\delta)H)\cdot P<0 $，由于  $H$ 是 $f$-丰沛的，有 $  (K_X+B+(\frac{1}{\mu}-\delta)H)\cdot R<0 $。因此 $ F $ 是 $  (K_X+B+(\frac{1}{\mu}-\delta)H) $-负性的极端面。由于 $ (X,B+(\frac{1}{\mu}-\delta)H) $有 klt奇点，由压缩定理，存在关于 $F$ 的压缩态射 $ g:X\to T $  穿过 $ f:X\to S $。
   \[ \xymatrix{
       X\ar[d]\ar[rdd]& \\
       S\ar[rd]&\\
@@ -170,7 +168,7 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见定义\ref{sarkisovdeg
              &T& } \]
         这是第四型的Sarkisov连接。
       \item 在有限多步翻转复合 $ X\dashrightarrow Z $后，第一个非翻转的压缩态射是一个除子压缩 $ p:Z\to X_1 $，且
-            \[ K_Z+B_Z+\frac{1}{\mu}H_Z=p^*(K_{X_1}+B_1+\frac{1}{\mu}H_1)+eE \]
+            \[ K_Z+B_Z+\frac{1}{\mu}H_Z=p^*(K_{X_1}+B_1+\frac{1}{\mu}H_1)+eE ,\]
             其中 $ e>0 ,E=\operatorname{Exc}\,p$ 且  $f_{1}: (X_1,B_1+\frac{1}{\mu}H_1) \to T$ 是关于 $(X,B+\frac{1}{\mu}H)$ 在 $T$ 上的极小模型。事实上  $ \overline{\operatorname{NE}}(X_1/T) $ 唯一的极端射线是$ (K_{X_1}+B_1+\frac{1}{\mu}H_1) $-平凡的，所以是 $ (K_{X_1}+B_1) $-负性的。所以 $ f_1:(X_1, B_1)\to T $ 是森纤维空间。
       \[ \xymatrix{
           X\ar@{.>}[r]\ar[d]& Z\ar[rd] \\
@@ -235,16 +233,16 @@ Bruno 和 Matsuki给出了$\lambda$的另一种定义 (见定义\ref{sarkisovdeg
     \item 只需证明 $ (K_X+B+\frac{1}{\mu'}H) $ 是 $ f $-数值有效的。 取公共解消 $\sigma:W\to X$ 和 $\sigma':W\to X'$，有分歧公式
           \[ \begin{aligned}
               K_W+B_W+\frac{1}{\mu'}H_W= & \sigma'^*(K_{X'}+B'+\frac{1}{\mu'}H')+\sum e'_jE_j+ \sum g_k'G_k' \\
-              =                          & \sigma^*(K_{X}+B+\frac{1}{\mu'}H)+\sum g_iG_i+\sum e_jE_j
+              =                          & \sigma^*(K_{X}+B+\frac{1}{\mu'}H)+\sum g_iG_i+\sum e_jE_j,
             \end{aligned} \]
           其中 $ \{G_i\}, \{E_j\} $ 是 $ \sigma $-例外除子，  $ \{E_j\}, \{G'_k\} $ 是 $ \sigma' $-例外除子。即$ G_{i}$是只在 $\sigma$上例外的除子，$ G'_{k}$是只在 $\sigma'$上例外除子，$E_{j}$是在二者上都例外的除子。 由于  $H_W=\sigma'^*H' $，所以 $ g_k'>0 $ 或者没有这样的 $ G'_k $ (这是由$B_{W}$的构造得到的)。取被 $f$ 压缩的的一般曲线 $ C\subset X $ ，且它在 $W$ 的双有理原像$ \tilde{C} $和 $ G_i, E_j $无交，并且不包含在$ G'_k $中。那么有
           \[ \begin{aligned}
-              C.\left(K_X+B+\frac{1}{\mu'}H\right)= & \tilde{C}.\left(\sigma^*\left(K_X+B+\frac{1}{\mu'}H\right)+\sum g_iG_i+\sum e_jE_j\right)           \\
-              =                                     & \tilde{C}.\left(\sigma'^*\left(K_{X'}+B'+\frac{1}{\mu'}H'\right)+\sum e'_jE_j+ \sum g_k'G_k'\right) \\
-              =                                     & \tilde{C}.\sigma'^*f'^*A'+\tilde{C}.\left(\sum g_k'G_k'\right) \geqslant0 .
+              C\cdot\left(K_X+B+\frac{1}{\mu'}H\right)= & \tilde{C}\cdot\left(\sigma^*\left(K_X+B+\frac{1}{\mu'}H\right)+\sum g_iG_i+\sum e_jE_j\right)           \\
+              =                                     & \tilde{C}\cdot\left(\sigma'^*\left(K_{X'}+B'+\frac{1}{\mu'}H'\right)+\sum e'_jE_j+ \sum g_k'G_k'\right) \\
+              =                                     & \tilde{C}\cdot\sigma'^*f'^*A'+\tilde{C}\cdot\left(\sum g_k'G_k'\right) \geqslant0 .
             \end{aligned} \]
           由此推出 $ (K_X+B+\frac{1}{\mu'}H) $ 是 $ f $-数值有效的，且 $ \mu\geqslant \mu' $;
-    \item 首先证明 $ \mu=\mu' $。只需证$\mu'\geqslant \mu $ ，同上，只需证$ (K_{X'}+B'+\frac{1}{\mu}H') $ 是 $ f' $-数值有效的。同上取 被 $f'$ 压缩的 $X'$ 上的一般曲线$ C' \subset X'$ ，并且在 $W$ 上的双有理原像$\tilde{C}'$ 和  $ G'_k, E_j $无交，并且不包含在 $ G_i $。那么同上可得到$C'.\left(K_{X'}+B'+\frac{1}{\mu}H'\right)\geqslant 0$，即 $ (K_{X'}+B'+\frac{1}{\mu}H') $ 是 $ f' $-数值有效的。而$ (K_{X'}+B'+\frac{1}{\mu'}H')\equiv_{f',\mathbb{Q}}0 $，所以$ \frac{1}{\mu}\geqslant \frac{1}{\mu'} $，这就推出$\mu'\geqslant \mu $。
+    \item 首先证明 $ \mu=\mu' $。只需证$\mu'\geqslant \mu $ ，同上，只需证$ (K_{X'}+B'+\frac{1}{\mu}H') $ 是 $ f' $-数值有效的。同上取 被 $f'$ 压缩的 $X'$ 上的一般曲线$ C' \subset X'$ ，并且在 $W$ 上的双有理原像$\tilde{C}'$ 和  $ G'_k, E_j $无交，并且不包含在 $ G_i $。那么同上可得到$C'\cdot\left(K_{X'}+B'+\frac{1}{\mu}H'\right)\geqslant 0$，即 $ (K_{X'}+B'+\frac{1}{\mu}H') $ 是 $ f' $-数值有效的。而$ (K_{X'}+B'+\frac{1}{\mu'}H')\equiv_{f',\mathbb{Q}}0 $，所以$ \frac{1}{\mu}\geqslant \frac{1}{\mu'} $，这就推出$\mu'\geqslant \mu $。
 
 接下来证明它们同构。 取 $X$ 上  极丰沛除子 $ D $，且$D'  $ 是在$ X' $上的严格双有理变换。那么  $ D' $ 是 $ f' $-丰沛的，所以存在$ 0<d\ll1 $使得：
           \begin{itemize}
@@ -265,7 +263,7 @@ Bruno和Matsuki\cite{brunoLogSarkisovProgram1995}给出的下降法的Sarkisov�
 \end{enumerate}
 \textbf{用反证法部分证明终结性： }
 简要的说明思路： 如果上一节中构造的Sarkisov连接构成无限长的序列，即有无限多个 $ X_i $ 和构造的映射：
-\[ X=X_0\dashrightarrow X_1\dashrightarrow \cdots\dashrightarrow X_i \dashrightarrow\cdots\dashrightarrow X'\]
+\[ X=X_0\dashrightarrow X_1\dashrightarrow \cdots\dashrightarrow X_i \dashrightarrow\cdots\dashrightarrow X'.\]
 \begin{enumerate}
   \item 由 $\mu_{i}$的离散性(DCC)，在有限步后 $\mu_{i}$ 是常值，不再下降。不妨设 $\mu=\mu_{0}=\mu_{i}$ 对所有 $i$成立。
   \item 如果序列中有一个第三型或第四型的 Sarkisov连接 $\psi_i$ ，那么后续每一个 Sarkisov 连接 $\psi_j, j>i$都是第三型或第四型 (见断言 \ref{R-Sarkisovdeg})。由于第三型 Sarkisov 连接的 Picard数严格下降，所以只有有限多个。于是在$j\gg 0$时 $\psi_j$ 全部为第四型Sarkisov连接，同时也是无限多个翻转的复合。对于三维代数簇对和四维伪有效的代数簇对，这样的翻转只有有限多步，这是一个矛盾。在高维其他情况还不清楚。

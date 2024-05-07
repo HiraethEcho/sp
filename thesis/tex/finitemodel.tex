@@ -19,10 +19,10 @@
   \cite[Corollary 1.1.5]{BCHM10} 令 $\pi:X\to U$ 是正规拟射影代数簇间的射影态射，并且 $V \subset \operatorname{WDiv}_{\mathbb{R}}(X)$是有限维有理仿射子空间，假设存在一个除子 $\Delta_{0} \in V$ 使得 $(X,\Delta_{0})$ 具有klt奇点。令 $A$是 相对于 $U$ 的一般的丰沛 $\mathbb{Q}$-除子，并且它和任何$V$ 中的除子都没有共同的素除子作为组成成分。那么
   \begin{enumerate}
     \item   存在有限多个相对于 $U$ 的双有理映射  $f_{i}:X \dashrightarrow   X_{i}$ 使得：
-          \[ \mathcal{E}_{A,\pi}(V) =\bigcup_{i}\mathcal{W}_{i} \]
+          \[ \mathcal{E}_{A,\pi}(V) =\bigcup_{i}\mathcal{W}_{i} ,\]
           其中  $\mathcal{W}_{i}=\mathcal{W}_{A,f_{i}}(V)$ 是定义在有理数上的多面体  (rational polytope)。且如果  $f:X \dashrightarrow  Y$ 是关于对某个 $D \in \mathcal{E}_{A,\pi}(V)$相对于 $U$ 的对数终端模型，那么对某个$i$ ，有  $f=f_{i}$ 。即 $X$ 关于$\mathcal{E}_{A,\pi}(V)$的对数终端模型一定是$f_{i}$中的一个。   
     \item   存在有限多个相对于$U$ 的 有理映射 $g_{j}:X \dashrightarrow  Z_{j}$使得： 
-          \[ \mathcal{E}_{A,\pi}(V) =\coprod_{j}\mathcal{A}_{j} \]
+          \[ \mathcal{E}_{A,\pi}(V) =\coprod_{j}\mathcal{A}_{j} ,\]
           其中$ \{\mathcal{A}_j=\mathcal{A}_{A,\pi,g_j}\} $ 是 $ \mathcal{E}_{A}(V) $的划分。 令 $\mathcal{C}_{j}$ 是 $\mathcal{A}_{j}$ 在$\mathcal{L}_{A,\pi}(V)$中的闭包；
     \item  对每个  $f_{i}$ 都存在某个 $g_{j}$ 和态射 $h_{ij}:Y_{i}\to Z_{j}$ 使得 $\mathcal{W}_{i} \subset \mathcal{C}_{j}$。
   \end{enumerate}
@@ -52,7 +52,7 @@
 \begin{proof}
   令 $U \subset G(r, V) $ 是不包含任何多面体 $\mathcal{C}_{i} \subset \mathcal{L}_{A}(V)$的面 (face)的$r$-维子空间  $V' \subset V$的集合。特别的，  $\mathcal{L}_{A}(V')$的内部包含在 $\mathcal{L}_{A}(V)$的内部。显然任何定义在有理数上的子空间 $[V']\in U$ 都满足定理 \ref{mapbetweenAM}的 (1)-(4)。 \end{proof}
 \begin{remark}
-  应用上述引理，本章从此开始，总假设$V$ 是满足定理\ref{mapbetweenAM}(1)-(4)的定义在有理数上的2-维空间。此时如果多面体$\mathcal{C}$是2维的，那么就张成Neron-Severi群，进而定理\ref{mapbetweenAM}.(3).1的条件就满足。
+  应用上述引理，本章从此开始，总假设$V$ 是满足定理\ref{mapbetweenAM}(1)-(4)的定义在有理数上的2-维空间。此时如果多面体$\mathcal{C}$是2维的，那么就张成Neron-Severi群，进而定理\ref{mapbetweenAM}.(3.1)的条件就满足。
 \end{remark}
 
 
@@ -77,9 +77,9 @@
   \end{enumerate}
 \end{lemma}
 \begin{remark}
-  引理\ref{mapbetweenAM2}.(1)中，态射$\pi$由定理\ref{mapbetweenAM}.(2)给出。引理\ref{mapbetweenAM2}.(1).1对应定理\ref{mapbetweenAM}.(3)成立的情况，而引理\ref{mapbetweenAM2}.(1).2则对应定理\ref{mapbetweenAM}.(3)不成立的情况。
+  引理\ref{mapbetweenAM2}.(1)中，态射$\pi$由定理\ref{mapbetweenAM}.(2)给出。引理\ref{mapbetweenAM2}.(1.1)对应定理\ref{mapbetweenAM}.(3)成立的情况，而引理\ref{mapbetweenAM2}.(1.2)则对应定理\ref{mapbetweenAM}.(3)不成立的情况。
 
-  引理\ref{mapbetweenAM2}.(2)中两个态射$p,q$由定理\ref{mapbetweenAM}.(2)给出，并且都是引理\ref{mapbetweenAM2}.(1).1.2的小双有理态射。这两个小双有理态射构成了一个平转。
+  引理\ref{mapbetweenAM2}.(2)中两个态射$p,q$由定理\ref{mapbetweenAM}.(2)给出，并且都是引理\ref{mapbetweenAM2}.(1.1.2)的小双有理态射。这两个小双有理态射构成了一个平转。
 \end{remark}
 最后给出引理来保证后续构造的Sarkisov连接中的每一个代数簇，都是$(W, B_{W})$-MMP的结果。
 \begin{lemma}
@@ -90,7 +90,7 @@
 这一节构造Sarkisov连接。 对于某些端点 $D \in \mathcal{E}_{A}(V)$，如果$ D=A+B $ 在 $ \mathcal{E}_A(V) $的边界上，并且在 $ \mathcal{L}_A(V) $的内部，那么可以构造对应的Sarkisov连接
 \[ \xymatrix{
               & Z=Z^{0}\ar[rd]\ar[ld]_{p}\ar@{.>}[rr]^{\text{关于}K+D \text{的平转}} &       & Z^{1}\ar[ld]\ar@{.>}[r] & \cdots\ar@{.>}[r] & Z^{k}=Z_{1}\ar[rd]^{q}\\
-    X         &                                                                      & Y^{1} &                         &                   &                          & X_{1} } \]
+    X         &                                                                      & Y^{1} &                         &                   &                          & X_{1} } ,\]
 其中$p,q$ 可能是同构，且$X,X_{1},Z,Z_{1},Z^{i},Y^{i}$都是$W$ 关于$D$ 的某种模型。 
 
 对包含$D$ 的多面体 $ \mathcal{C}_i $，将其中2维的记作$ \mathcal{T}_1, \ldots, \mathcal{T}_k $。通过重新排序，可以假设 $\mathcal{O}_{0}$是$\mathcal{T}_{1}$和 $ \mathcal{E}_{A}(V) $的边界的交 ( 即 $ \mathcal{T}_{1} \cap \partial \mathcal{E}_{A}(V) = \mathcal{O}_{0}  $)，类似的$\mathcal{O}_{k}$是$\mathcal{T}_{k}$和 $ \mathcal{E}_{A}(V) $的边界的交 ( 即 $ \mathcal{T}_{k} \cap \partial \mathcal{E}_{A}(V) = \mathcal{O}_{k}  $)，并且 $ \mathcal{O}_i=\mathcal{T}_i\cap\mathcal{T}_{i+1} $ 是1维的。如下图所示：
@@ -122,7 +122,7 @@
       X'\ar@{.>}[d]_p\ar@{.>}[rr]&&Y'\ar@{.>}[d]^q\\
       X\ar[d]_{\phi}&&Y\ar[d]^\psi\\
       S\ar[rd]^s&&T\ar[ld]_t\\
-      &R&} \]
+      &R&} .\]
   注意到 $ \rho(X_i/R)\leqslant 2 $ 且 $ \rho(X/S)=\rho(Y/T)=1 $，那么下列两种情况之一成立：
   \begin{enumerate}
     \item $ s $ 是一致态射 (identity)而 $ p $ 是除子压缩 (除子解压)；
@@ -146,7 +146,7 @@
 
 \begin{proof}
   由MMP-相关的假设，存在klt奇点的 $\mathbb{Q}$-分解代数簇对$(W,B_{W})$ 使得 $f:W\dashrightarrow X$ 和 $g:W \dashrightarrow Y$是 $(K_{W}+B_{W})$-MMP的输出。令 $p':W'\to W$ 是 $f$ 和 $g$的解消，记
-  \[ K_{W'}+B_{W'}=p'^*(K_{W}+B_{W})+E' \]
+  \[ K_{W'}+B_{W'}=p'^*(K_{W}+B_{W})+E' ,\]
   其中  $p'_*B_{W'}=B_{W}$，且$E'\geqslant 0$ 和 $B_{W'}\geqslant 0$ 没有公共组成成分， $E'$是例外除子。取 除子 $-F$满足：
 \begin{itemize}
   \item 相对于$W$ 丰沛的；
@@ -168,20 +168,20 @@
   取一般的丰沛 $\mathbb{Q}$-除子 $F_{1}\geqslant 0$ 和 $G_{1}\geqslant 0$ 使得 
     \[ F_{1}\sim_{\mathbb{Q}} -(K_{X}+f_*B_{0}+ f_*H)+\phi^*A_{S} \]
   且
-    \[G_{1}\sim_{\mathbb{Q}} -(K_{Y}+g_*B_{0}+ g_*H)+\psi^*A_{T} \]
+    \[G_{1}\sim_{\mathbb{Q}} -(K_{Y}+g_*B_{0}+ g_*H)+\psi^*A_{T} ,\]
   并且
   \[ K_{W}+B_{0}+H+F+G \]
   具有klt奇点，其中 $F=f^*F_{1},G=g^*G_{1}$.
   考虑由 $H_{1},\ldots , H_{k},F,G$张成的线性子空间，再被$B_{0}$平移，得到$\operatorname{WDiv}_{\mathbb{R}}(W)$的仿射子空间 $V_{0}$ (即 $V_{0}=B_{0}+ \langle H_{1},\ldots ,H_{k},F,G \rangle  $)。假设 $D=A+B \in \mathcal{L}_{A}(V_{0})$，那么
   \[ D-B_W=(A+B_{0}-B_{W})+(B-B_{0}) \]
   是丰沛除子 (由于 $B-B_{0}$是数值有效的，由$V_{0}$的定义可以得到)。注意到
-  \[ B_{0}+F+H \in \mathcal{A}_{A,\phi\circ f}(V_{0}), B_{0}+G+H \in \mathcal{A}_{\psi \circ g}(V_{0}) \]
+  \[ B_{0}+F+H \in \mathcal{A}_{A,\phi\circ f}(V_{0}), B_{0}+G+H \in \mathcal{A}_{\psi \circ g}(V_{0}) ,\]
   且 $f$和 $g$分别是关于  $K_{W}+B_{0}+F+H$和 $K_{W}+B_{0}+G+H$的弱对数典范模型。因此由定理\ref{mapbetweenAM} 推出 $V_{0}$满足定理\ref{mapbetweenAM}.(1)-(4)。
 
   由于 $H_{1},\ldots ,H_{k}$ 生成$W$的 Neron-Severi群，可以找到常数$h_{1},\ldots ,h_{k}$ 使得 $G \equiv \sum^{k}_{i=1} h_{i}H_{i}$。那么存在 $0< \delta\ll 1$使得 
   \[B_{0}+F+\delta G+H- \delta(\sum_{i=1}^{k} h_{i}H_{i}) \in \mathcal{L}_{A}(V_{0})\]
   且
-  \[ B_{0}+F+\delta G+H-\delta (\sum_i^k h_{i}H_{i}) \equiv B_{0}+F+H \]
+  \[ B_{0}+F+\delta G+H-\delta (\sum_i^k h_{i}H_{i}) \equiv B_{0}+F+H .\]
   因此, $\mathcal{A}_{A,\phi\circ f}$ 不含在 $\mathcal{L}_{A}(V_{0})$的边界中。类似的， $\mathcal{A}_{A,\psi\circ g}$ 不包含在 $\mathcal{L}_{A}(V_{0})$的边界中。特别的，由于$\rho(X/S)=\rho(Y/T)=1$，所以$\mathcal{A}_{A,\phi\circ f}$ 和   $\mathcal{A}_{A,\psi\circ g}$ 张成 $V_{0}$中的仿射平面。
 
   考虑 $F+H-A$ 和 $G+H-A$张成的空间，再被 $B_{0}$平移，得到仿射空间 $V_{1}$。由引理\ref{subspace}，将 $V_{1}$扰动得到定义在有理数上的仿射空间 $V$，这个空间即满足此引理。

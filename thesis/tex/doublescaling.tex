@@ -41,8 +41,8 @@
     \item $\tilde{\sigma}$ 是 $(K_{\tilde{W}}+B_{\tilde{W}})$-非正性的且 $(\tilde{W},B_{\tilde{W}})\geqslant (X,B)$；
   \end{itemize}
   \[ \xymatrix{
-    & \widetilde{W}\ar[ld]_{\pi}\ar[rd]^{\bar{\sigma}} & \\
-      (W,B_{W})\ar@{.>}[rr]^{\sigma} & &(X,B)
+     \widetilde{W}\ar[d]_{\pi}\ar[rd]^{\bar{\sigma}} & \\
+      (W,B_{W})\ar@{.>}[r]^{\sigma}  &(X,B)
     } \]
 \end{lemma}
 
@@ -69,7 +69,7 @@
     } \]
   和
   \[ \begin{aligned}
-      1 & =g_0\geqslant g_1 \geqslant \cdots \geqslant g_N   & =0 \\
+      1 & =g_0\geqslant g_1 \geqslant \cdots \geqslant g_N   & =0, \\
       % 0 & =h_0\leqslant h_{1} \leqslant \cdots \leqslant h_N &  \\
       0 & =h_0\leqslant h_{1} \leqslant \cdots \leqslant h_N & =1 \\
     \end{aligned} \]
@@ -103,17 +103,17 @@
 \begin{definition}\label{doubledegree}
   令 $C_{i}$ 是被 $f_{i}$ 压缩的 (也称为 $f$-垂直的，$f$-vertical )  $X_{i}$ 上的曲线，那么定义
   \begin{itemize}
-    \item $r_{i}:=\frac{H_{i}.C_{i}}{G_{i}.C_{i}}$；
+    \item $r_{i}:=\frac{H_{i}\cdot C_{i}}{G_{i}\cdot C_{i}}$；
     \item 令 $\Gamma$ 是满足下列条件的 $t\in [0,\frac{g_{i}}{r_{i}}] $的集合
       \begin{itemize}
         \item\label{singularcondition} $\left(W,B_{W}+g_{i}G_{W}+h_{i}H_{W}+t(H_{W}-r_{i}G_{W})\right)\geqslant \left(X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i}+t\left(H_{i}-r_{i}G_{i}\right)\right)$；
-        \item $K_{X_{i}}+B_{i}+g_{i}G_i+h_{i}H+t(H_{i}-r_{i}G_{i})$  数值有效.
+        \item $K_{X_{i}}+B_{i}+g_{i}G_i+h_{i}H+t(H_{i}-r_{i}G_{i})$  数值有效。
       \end{itemize}
           令 $s_{i}=\max\, \Gamma $;
     \item 记 $D_{W,i}=B_{W}+g_{i}G_{W}+h_{i}H_{W}$ 和 $D_{i}=B_{i}+g_{i}G_{i}+h_{i}H_{i}$，并记
       \[D_{W,i}(t)=B_{W}+g_{i}G_{W}+h_{i}H_{W}+t(H_{W}-r_{i}G_{W})\]
       和
-      \[D_{i}(t)=B_{i}+g_{i}G_{i}+h_{i}H_{i}+t (H_{i}-r_{i}G_{i})\]
+      \[D_{i}(t)=B_{i}+g_{i}G_{i}+h_{i}H_{i}+t (H_{i}-r_{i}G_{i}).\]
       令 $g_{i+1}=g_{i}-r_{i}s_{i}$ 和 $h_{i+1}=h_{i}+s_{i}$。注意到 $D_{W,i+1}=D_{W,i}(s_{i})$。
   \end{itemize}
 \end{definition}
@@ -139,7 +139,7 @@
   \item 若 $s_{i}$ 不是集合 $\Gamma$ 的第一个条件
     \[\left(W,B_{W}+g_{i}G_{W}+h_{i}H_{W}+t(H_{W}-r_{i}G_{W})\right)\geqslant \left(X_{i},B_{i}+g_{i}G_{i}+h_{i}H_{i}+t\left(H_{i}-r_{i}G_{i}\right)\right)\]
     的阈值，也就是说存在 $0<\epsilon\ll 1$，使得 $W$ 上任意除子$E$，都有
-  \[ a(E;X_{i},D_{i}(s_{i}+\epsilon))\geqslant a(E;W,D_{W,i}(s_{i}+\epsilon)) \]
+  \[ a(E;X_{i},D_{i}(s_{i}+\epsilon))\geqslant a(E;W,D_{W,i}(s_{i}+\epsilon)) ,\]
   并且 $K_{X_{i}}+D_{i}(s_{i}+\epsilon)$ 不是数值有效。那么对某个 $0< \delta \ll \epsilon $，存在一个 $2$ 维的 $(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta G_{i})$-负性 极端面 $F$，由$R=\mathbb{R}_{\geqslant 0}[C_{i}]$ 和另一个极端射线$P$张成 (spanned by $R$ and $P$)。于是存在关于 $F$   的压缩态射$X_{i}\to T_{i}$穿过 $f_{i}$。 
   \[ \xymatrix{
       X_{i}\ar[d]\ar[rdd]& \\
@@ -157,7 +157,7 @@
           X_{i}\ar@{.>}[r]\ar[d]& Z_{i}\ar[rd] \\
           S_{i}\ar[rd]& & X_{i+1}\ar[d]\\
                &T_{i}\ar[r]^{\sim}& S_{i+1} } \]
-    \item 若记 $X_{i}\dashrightarrow X_{i+1}$是翻转的复合，且 $X_{i+1}\to T_{i}$是关于 $\left(X_{i},D_{i}\left(s_{i}+\epsilon\right)\right)$ 相对于 $T_{i}$的极小模型。 令  $C'$ 是  $C_{i}$ 在 $X_{i+1}$上的双有理变换，则有 $(K_{X_{i+1}}+D_{i+1}(\epsilon)).C'=0$ 和 $(K_{X_{i+1}}+B_{i+1}).C'<0$，因此有压缩态射$X_{i+1} \to S_{i+1}$ 相对于 $T_i$。这个态射是森纤维空间，并且这是第四型Sarkisov连接。
+    \item 若记 $X_{i}\dashrightarrow X_{i+1}$是翻转的复合，且 $X_{i+1}\to T_{i}$是关于 $\left(X_{i},D_{i}\left(s_{i}+\epsilon\right)\right)$ 相对于 $T_{i}$的极小模型。 令  $C'$ 是  $C_{i}$ 在 $X_{i+1}$上的双有理变换，则有 $(K_{X_{i+1}}+D_{i+1}(\epsilon))\cdot C'=0$ 和 $(K_{X_{i+1}}+B_{i+1})\cdot C'<0$，因此有压缩态射$X_{i+1} \to S_{i+1}$ 相对于 $T_i$。这个态射是森纤维空间，并且这是第四型Sarkisov连接。
       \[ \xymatrix{
           X_{i}\ar@{.>}[rr]\ar[d]& &X_{i+1}\ar[d] \\
           S_{i}\ar[rd]& & S_{i+1}\ar[ld]\\
@@ -165,17 +165,17 @@
   \end{enumerate}
   注意到$ (K_{X_{i}}+D_{i}(s_{i})) $及其严格双有理变换都是相对于 $S_{i}$上数值平凡的，由锥定理\ref{conethm}，此时的$X_{i}\dashrightarrow X_{i+1}$是一系列$ (K_{X_{i}}+D_{i}(s_{i}))$-平凡映射的复合。
     \item 如果 $s_{i}$ 集合$\Gamma$的第一个条件\ref{singularcondition}的阈值，也就是说 存在  $0<\epsilon \ll 1$ 和 $W$ 上的  $\sigma_{i}$-例外除子 $E_{i}$ 使得
-  \[ a(E_{i};X_{i},D_{i}(s_{i}+\epsilon))< a(E_{i};W,D_{W,i}(s_{i}+\epsilon)) \]
+  \[ a(E_{i};X_{i},D_{i}(s_{i}+\epsilon))< a(E_{i};W,D_{W,i}(s_{i}+\epsilon)) .\]
   此时有
-  \[ a(E_{i};X_{i},D_{i}(s_{i}))= a(E_{i};W,D_{W,i}(s_{i}))=-\operatorname{mult}_{E_{i}}(D_{W,i}(s_{i}))\leqslant 0 \]
+  \[ a(E_{i};X_{i},D_{i}(s_{i}))= a(E_{i};W,D_{W,i}(s_{i}))=-\operatorname{mult}_{E_{i}}(D_{W,i}(s_{i}))\leqslant 0 .\]
   令 $p_{i}:Z_{i}\to X_{i}$ 是推论 \ref{extraction} 中除子 $E_{i}$的除子解压，并且记
-  \[K_{Z_{i}}+D_{Z_{i}}(s_{i})=K_{Z_{i}}+B_{Z_{i}}+g_{i+1}G_{Z_{i}}+h_{i+1}H_{Z_{i}}=p_{i}^*\left(K_{X_{i}}+D_{i}\left(s_{i}\right)\right)\]
+  \[K_{Z_{i}}+D_{Z_{i}}(s_{i})=K_{Z_{i}}+B_{Z_{i}}+g_{i+1}G_{Z_{i}}+h_{i+1}H_{Z_{i}}=p_{i}^*\left(K_{X_{i}}+D_{i}\left(s_{i}\right)\right).\]
   取充分小的 $\delta$ 使得 $0<\delta \ll \epsilon \ll 1$ 且
   \[ K_{Z_{i}}+\Delta_{i}=p_{i}^*(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta G_{i}) \]
   具有klt奇点。接下来运行相对于$S_{i}$ 的 $(K_{Z_{i}}+\Delta_{i})$-MMP。由于$Z_{i}$被$(K_{Z_{i}}+\Delta_{i})$-负性的曲线覆盖，所以$(K_{Z_{i}}+\Delta_{i})$相对于$S_{i}$不是伪有效的，这个MMP终结于森纤维空间。同时，对一任意$0<\delta'\leqslant\delta$，这也是$p_{i}^*(K_{X_{i}}+D_{i}(s_{i}+\epsilon)-\delta'G_{i})$-MMP。在有限多步翻转之后，要么终结于$(K_{Z_{i}}+\Delta_{i})$的森纤维空间，要么接着一个$(K_{Z_{i}}+\Delta_{i})$的除子压缩态射。
   \begin{enumerate}
     \item 若记 $Z_{i}\dashrightarrow X_{i+1}$是有限步翻转的复合，并终结于森纤维空间
-      \[X_{i+1}\to S_{i+1}\]
+      \[X_{i+1}\to S_{i+1},\]
       那么是第一型的Sarkisov连接。 
       \[ \xymatrix{
         &Z_{i}\ar@{.>}[r]\ar[ld] &X_{i+1}\ar[d] \\
@@ -183,7 +183,7 @@
           S_{i}   & & } \]
       在这种情况下有 $\rho(X_{i+1})=\rho(X_{i})+1$。
     \item 若记$Z_{i}\dashrightarrow Z_{i}'$是有限步翻转的复合，并且接着相对于 $S_{i}$的 除子压缩
-      \[q_{i}:Z_{i}'\to X_{i+1}\]
+      \[q_{i}:Z_{i}'\to X_{i+1},\]
      那么$X_{i+1}\to S_{i+1}:=S_{i}$是森纤维空间，这是第二型Sarkisov连接。
       \[ \xymatrix{
                                & Z_{i}\ar@{.>}[r]\ar[ld] & Z_{i}'\ar[rd] \\
@@ -201,19 +201,19 @@
     \item 在情况 (1) 中由于 $X_{i}\dashrightarrow X_{i+1}$ 是相对于 $T_{i}$的 $(K_{X_{i}}+D_{i}(s_{i}))$-平凡映射，所以对任意的$W$ 之上的除子$E$ ，都有
       \[a(E;X_{i},D_{i}(s_{i}))= a(E;X_{i+1},D_{i+1})\]
       和不等式
-      \[ a(E;X_{i+1},D_{i+1})\geqslant a(E;W,D_{W,i+1}) \]
+      \[ a(E;X_{i+1},D_{i+1})\geqslant a(E;W,D_{W,i+1}) ;\]
     \item 在情况 (2) 中由于 $X_{i}\dashrightarrow X_{i+1}$ 是相对于 $S_{i}$的 $(K_{X_{i}}+D_{i}(s_{i}))$-平凡映射，所以同样对任意的$W$ 之上的除子$E$ ，都有
       \[a(E;X_{i},D_{i}(s_{i}))= a(E;X_{i+1},D_{i+1})\]
       和不等式
-      \[ a(E;X_{i+1},D_{i+1})\geqslant a(E;W,D_{W,i+1}) \]
+      \[ a(E;X_{i+1},D_{i+1})\geqslant a(E;W,D_{W,i+1}) ;\]
     \item\label{2adicrepancy} 在情况 (1)中，任意 $W$之上的除子$E$ 和 $0<\epsilon\ll 1$，都有
-      \[a(E;X_{i},D_{i}(s_{i}+\epsilon))\leqslant a(E;X_{i+1},D_{i+1}(\epsilon))\] 
+      \[a(E;X_{i},D_{i}(s_{i}+\epsilon))\leqslant a(E;X_{i+1},D_{i+1}(\epsilon)).\] 
       并且因为 $X_{i} \not\cong X_{i+1}$，所以 有$W$ 之上的除子$F$使得 
-      \[a(F;X_{i},D_{i}(s_{i}+\epsilon))< a(F;X_{i+1},D_{i+1}(\epsilon))\]
+      \[a(F;X_{i},D_{i}(s_{i}+\epsilon))< a(F;X_{i+1},D_{i+1}(\epsilon)).\]
     \item\label{2bdiscrepancy} 在情况(2)中，任何$ W$之上的除子$E$ ，对所有$0<\epsilon\ll 1$都有
-      \[a(E;X_{i},D_{i}(s_{i}+\epsilon)-\delta G_{i})\leqslant a(E;X_{i+1},D_{i+1}(\epsilon)-\delta G_{i+1})\]
+      \[a(E;X_{i},D_{i}(s_{i}+\epsilon)-\delta G_{i})\leqslant a(E;X_{i+1},D_{i+1}(\epsilon)-\delta G_{i+1}).\]
       并且因为 $X_{i} \not\cong X_{i+1}$，所以 有$W$ 之上的除子$F$使得 
-      \[a(F;X_{i},D_{i}(s_{i}+\epsilon)-\delta G_{i})< a(F;X_{i+1},D_{i+1}(\epsilon)-\delta G_{i+1}) \]
+      \[a(F;X_{i},D_{i}(s_{i}+\epsilon)-\delta G_{i})< a(F;X_{i+1},D_{i+1}(\epsilon)-\delta G_{i+1}) .\]
     \item  $h_{i}\leqslant 1$，且 $h_{i}=1$ 当且仅当 $g_{i}=0$；
   \end{enumerate}
 \end{assertion}
@@ -224,7 +224,7 @@
   \[ \xymatrix{
     X=X_0\ar@{.>}[r]\ar[d]_{f_0}&X_{1}\ar@{.>}[r]\ar[d]_{f_1}& X_{2}\ar[d]_{f_2}\ar@{.>}[r] &\cdots\ar@{.>}[r]&X_{i}\ar[d]_{f_i}\ar@{.>}[r] &\cdots\\
     S=S_{0}&S_{1} &S_{2}&&S_{i}
-    } \]
+    } ,\]
   那么
   \begin{enumerate}
     \item 在同构意义下，只有有限多种森纤维空间 $f_{i}:X_{i}\to S_{i}$；
@@ -237,33 +237,33 @@
     \item 第一条本质上来自弱对数典范模型的有限性 (定理 \ref{finitewlcm})。  如下构造 $\operatorname{WDiv}_{\mathbb{R}}(W)$的仿射子空间 $V$：
       \begin{enumerate}
         \item 假设对某个$k$ 有  $h_{k}>0$。 由于 $H_{W}$ 是 数值有效 且是大除子，那么存在丰沛除子 $A_{W}$ 和有效除子 $C_{W}$  使得 $H_{W}\sim_{\mathbb{R}}A_{W}+C_{W}$。 此时取 $V$ 为  $B_{W},G_{W},H_{W},C_{W}$的组成成分的素除子张成的仿射空间。此时对于 $i>k$，定义$\Delta_{i}$为
-              \[ B_{W}+g_{i}G_{W}+h_{i}H_{W}\sim_{\mathbb{R}} h_{k}A_{W}+B_{W}+g_{i}G_{W}+(h_{i}-h_{k})H_{W}+h_{k}C_{W}=:\Delta_{i} \in \mathcal{L}_{h_{k}A_{W}}(V) \]
+              \[ B_{W}+g_{i}G_{W}+h_{i}H_{W}\sim_{\mathbb{R}} h_{k}A_{W}+B_{W}+g_{i}G_{W}+(h_{i}-h_{k})H_{W}+h_{k}C_{W}=:\Delta_{i} \in \mathcal{L}_{h_{k}A_{W}}(V) .\]
         \item 假设对所有$k$ 都有$h_{k}=0$，那么  $h_{i}\equiv 0$ 且 $g_{i}\equiv 1$。由于  $G_{W}$ 是 数值有效 且是大除子，那么存在丰沛除子 $A_{W}$和有效除子 $C_{W}$ 使得 $G_{W}\sim_{\mathbb{R}}A_{W}+C_{W}$。此时取 $V$ 为  $B_{W},C_{W}$的组成成分的素除子张成的仿射空间。此时定义 $\Delta_{i}$为
-              \[ B_{W}+G_{W}\sim_{\mathbb{R}} A_{W}+B_{W}+C_{W}=:\Delta_{i} \in \mathcal{L}_{A_{W}}(V) \]
+              \[ B_{W}+G_{W}\sim_{\mathbb{R}} A_{W}+B_{W}+C_{W}=:\Delta_{i} \in \mathcal{L}_{A_{W}}(V) .\]
       \end{enumerate}
           那么每一个 $X_{i}$ 都是$(W,\Delta_{i})$的弱对数典范模型。由弱对数典范模型的有限性，在同构意义下，存在有限多个 $\sigma_{i}: W\dashrightarrow X_{i}$。
 
           这样只证明了 $X_{i}$ 的有限性，此时需要森纤维空间 $X_{i}\to S_{i}$的有限性。接下来证明 在构造的Sarkisov连接的序列中，出现的$X_{i}$的森纤维空间在同构意义下只有有限多个。
           不妨设存在无穷子列 $\{i_{k}\}_{k=0}^{\infty} $使得 $X_{i_{k}}\cong X_{i_{0}}$。为简化记号，不妨设$X_{i_{0}}=X_{0}=X$ (注意，做此替换后$X_{0}$可能并不是Sarkisov纲领的初始起点，但为符号简便，仍将其记为$X$)。记$f_{i_{k}}$是关于极端射线 $R_{k} \subset \overline{\operatorname{NE}}(X_{i_{k}})= \overline{\operatorname{NE}}(X) $ 的森纤维空间压缩态射。 那么有
-          $(K_{X}+B).R_{i_{k}}<0  $ 且 $(K_{X}+B+g_{i_{k}}G+h_{i_{k}}H).R_{k}=0$， 并且 $H$ 和 $G$ 相对于 $S_{i_{k}}$ 是丰沛的。分三种情况证明：
+          $(K_{X}+B)\cdot R_{i_{k}}<0  $ 且 $(K_{X}+B+g_{i_{k}}G+h_{i_{k}}H)\cdot R_{k}=0$， 并且 $H$ 和 $G$ 相对于 $S_{i_{k}}$ 是丰沛的。分三种情况证明：
       \begin{enumerate}
 
         \item 如果对某$k$ 有  $h_{i_{k}}=1$，那么Sarkisov纲领终结，原序列是有限序列，断言显然成立。
-        \item 假设$h_{i_{k}}=0$ 对所有 $i_{k}$ 成立，那么 $g_{i_{k}}=1$。 因为 $G_{i_{k}}$ 是大除子，所以存在丰沛除子$A$ 和有效除子 $E$ 使得 $G=A+E$。  取充分小的 $\epsilon$ 使得$(X,D)$具有klt奇点，其中$D=B+(1-\epsilon)G+\frac{\epsilon}{2} E$，那么 $(K_{X}+D).R_{k}<0$且 $(K_{X}+D+\frac{\epsilon}{2} A).R_{k}<0$ 对所有$k$ 成立。由锥定理\ref{conethm}，有
+        \item 假设$h_{i_{k}}=0$ 对所有 $i_{k}$ 成立，那么 $g_{i_{k}}=1$。 因为 $G_{i_{k}}$ 是大除子，所以存在丰沛除子$A$ 和有效除子 $E$ 使得 $G=A+E$。  取充分小的 $\epsilon$ 使得$(X,D)$具有klt奇点，其中$D=B+(1-\epsilon)G+\frac{\epsilon}{2} E$，那么 $(K_{X}+D)\cdot R_{k}<0$且 $(K_{X}+D+\frac{\epsilon}{2} A)\cdot R_{k}<0$ 对所有$k$ 成立。由锥定理\ref{conethm}，有
               \[ \overline{\operatorname{NE}}(X)=\overline{\operatorname{NE}}(X)_{K_{X}+D+\frac{\epsilon}{2}A_{k}\geqslant 0} +\sum_{\alpha \in\Lambda\text{有限集}}R_{\alpha}. \]
               由于 森纤维空间$X=X_{i_{k}}\to S_{i_{k}}$ 是关于极端射线 $R_{\alpha}$的压缩态射，这样的射线有限，所以弱对数典范模型 $X=X_{i_{0}}$ 在构造的Sarkisov连接的序列中出现的森纤维空间在同构意义下有限；
-            \item 假设对某个 $k>0$ 有  $h_{i_{k}}>0$，那么通过截短子列，不妨设$0<h_{i_{0}}=h_{0}<1$ (注意，做此替换后$X_{0}$并不是Sarkisov纲领的初始起点，并且$g_{0}\neq 1$，但为符号简便，仍将其记为$X$  )。 因为 $H$ 是大除子，所以存在丰沛除子 $A$ 和有效除子 $E$ 使得 $H=A+E$。  取充分小的 $\epsilon$ 使得$(X,D)$具有klt奇点，其中$D=B+(1-\epsilon)H+\epsilon E$。那么 $(K_{X}+D).R_{k}<0$ 且 $(K_{X}+D+\epsilon A).R_{k}<0$ 对所有 $k$成立。同样由锥定理\ref{conethm}，有
-              \[ \overline{\operatorname{NE}}(X)=\overline{\operatorname{NE}}(X)_{K_{X}+D+\epsilon A}\geqslant 0 +\sum_{\alpha \in\Lambda\text{有限集}}R_{\alpha} \]
+            \item 假设对某个 $k>0$ 有  $h_{i_{k}}>0$，那么通过截短子列，不妨设$0<h_{i_{0}}=h_{0}<1$ (注意，做此替换后$X_{0}$并不是Sarkisov纲领的初始起点，并且$g_{0}\neq 1$，但为符号简便，仍将其记为$X$  )。 因为 $H$ 是大除子，所以存在丰沛除子 $A$ 和有效除子 $E$ 使得 $H=A+E$。  取充分小的 $\epsilon$ 使得$(X,D)$具有klt奇点，其中$D=B+(1-\epsilon)H+\epsilon E$。那么 $(K_{X}+D)\cdot R_{k}<0$ 且 $(K_{X}+D+\epsilon A)\cdot R_{k}<0$ 对所有 $k$成立。同样由锥定理\ref{conethm}，有
+              \[ \overline{\operatorname{NE}}(X)=\overline{\operatorname{NE}}(X)_{K_{X}+D+\epsilon A}\geqslant 0 +\sum_{\alpha \in\Lambda\text{有限集}}R_{\alpha} .\]
               同上，由于 森纤维空间$X=X_{i_{k}}\to S_{i_{k}}$ 是关于极端射线 $R_{\alpha}$的压缩态射，这样的射线有限，所以弱对数典范模型 $X=X_{i_{0}}$ 在构造的Sarkisov连接的序列中出现的森纤维空间在同构意义下有限；
       \end{enumerate}
     \item 若上述构造的 Sarkisov连接的序列是无限的，那么由(1) ，不妨设存在无穷子列 $\{i_{k}\}_{k=0}^{\infty} $使得 森纤维空间$X_{i_{k}}\to S_{i_{k}}$同构于$X_{i_{0}}\to S_{i_{0}}$。为简化记号，不妨设$X_{i_{0}}=X_{0}=X$ (同样的，做此替换后$X_{0}$可能并不是Sarkisov纲领的初始起点，并且可能有$g_{0}\neq 1,h_{0}\neq 0$，但为符号简便，仍将其记为$X$)。此时曲线$C_{i_{k}} \subset X$是相同的曲线，由$g_{i_{k}}$和$h_{i_{k}}$的构造可以得到 $g_{0}=g_{i_{k}}$ 和 $h_{0}=h_{i_{k}}$。由于序列 $h_{i}$ 和 $g_{i}$是单调的，所以 $h_{i}=h_{0}$ 和  $g_{i}=g_{0}$ 是常值，并且$r_{i}=r_{0},s_{i}=0$都是常值。
 
       若序列中存在命题\ref{2Constructlink}中(1)构造的第三或第四型Sarkisov连接，不妨设为 $X\dashrightarrow X_{1}$，那么由断言\ref{behavior2}的(4)，下一个Sarkisov连接也是 按(1)的构造，继而之后所有连接都是如此。再考虑Picard数，由于$X\cong X_{i_{1}}$， 显然之后都是第四型Sarkisov连接。由断言\ref{behavior2}的(4)，对任意 $ W$上的除子 $E$， 存在不等式
-      \[ a(E;X,D(s_{0}+\epsilon))\leqslant a(E;X_{1},D_{1}(\epsilon))\] 
+      \[ a(E;X,D(s_{0}+\epsilon))\leqslant a(E;X_{1},D_{1}(\epsilon)).\] 
       但是同样由断言\ref{behavior2}的(4)，还存在$W$ 之上的除子$F$，使得 
-      \[a(F;X,D(s_{0}+\epsilon))< a(F;X_{1},D_{1}(\epsilon))\]
+      \[a(F;X,D(s_{0}+\epsilon))< a(F;X_{1},D_{1}(\epsilon)),\]
       于是对$ X = X_{i_{0}}\cong X_{i_{1}} $ 有
-      \[a(F;X,D(\epsilon))< a(F;X_{i_{1}},D_{i_{1}}(\epsilon))\]
+      \[a(F;X,D(\epsilon))< a(F;X_{i_{1}},D_{i_{1}}(\epsilon)),\]
       矛盾。
 
       假设Sarkisov连接的序列全是由命题\ref{2Constructlink}中(2)构造的第一第二型Sarkisov连接。同样由Picard数可以得到，所有Sarkisov连接都是第二型。类似的，由断言\ref{behavior2}的(5)可以推出矛盾。
